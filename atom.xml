@@ -6,7 +6,7 @@
   <link href="http://5coder.cn/atom.xml" rel="self"/>
   
   <link href="http://5coder.cn/"/>
-  <updated>2021-05-19T13:15:52.510Z</updated>
+  <updated>2021-05-19T15:15:17.040Z</updated>
   <id>http://5coder.cn/</id>
   
   <author>
@@ -17,27 +17,153 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>（Day01）函数式编程与Js异步编程、手写Promise</title>
-    <link href="http://5coder.cn/2021/05/19/day01-han-shu-shi-bian-cheng-yu-js-yi-bu-bian-cheng-shou-xie-promise/"/>
-    <id>http://5coder.cn/2021/05/19/day01-han-shu-shi-bian-cheng-yu-js-yi-bu-bian-cheng-shou-xie-promise/</id>
-    <published>2021-05-19T13:11:13.000Z</published>
-    <updated>2021-05-19T13:15:52.510Z</updated>
+    <title>JavaScript 性能优化</title>
+    <link href="http://5coder.cn/2021/05/19/javascript-xing-neng-you-hua/"/>
+    <id>http://5coder.cn/2021/05/19/javascript-xing-neng-you-hua/</id>
+    <published>2021-05-19T14:54:45.000Z</published>
+    <updated>2021-05-19T15:15:17.040Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;Part1-·-JavaScript【深度剖析】&quot;&gt;&lt;a href=&quot;#Part1-·-JavaScript【深度剖析】&quot; class=&quot;headerlink&quot; title=&quot;Part1 · JavaScript【深度剖析】&quot;&gt;&lt;/a&gt;Part1 ·</summary>
+    <summary type="html">&lt;h2 id=&quot;一、性能优化介绍&quot;&gt;&lt;a href=&quot;#一、性能优化介绍&quot; class=&quot;headerlink&quot;</summary>
         
       
     
     
     
-    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    <category term="ES 新特性与 TypeScript、JS 性能优化" scheme="http://5coder.cn/categories/ES-%E6%96%B0%E7%89%B9%E6%80%A7%E4%B8%8E-TypeScript%E3%80%81JS-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
     
-    <category term="promise" scheme="http://5coder.cn/tags/promise/"/>
+    <category term="JavaScript" scheme="http://5coder.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TypeScript 语言</title>
+    <link href="http://5coder.cn/2021/05/19/typescript-yu-yan/"/>
+    <id>http://5coder.cn/2021/05/19/typescript-yu-yan/</id>
+    <published>2021-05-19T14:54:34.000Z</published>
+    <updated>2021-05-19T15:17:16.461Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;TypeScript语言-前置知识&quot;&gt;&lt;a href=&quot;#TypeScript语言-前置知识&quot; class=&quot;headerlink&quot; title=&quot;TypeScript语言-前置知识&quot;&gt;&lt;/a&gt;TypeScript语言-前置知识&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="ES 新特性与 TypeScript、JS 性能优化" scheme="http://5coder.cn/categories/ES-%E6%96%B0%E7%89%B9%E6%80%A7%E4%B8%8E-TypeScript%E3%80%81JS-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+    
+    <category term="TypeScript" scheme="http://5coder.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ECMAScript 新特性</title>
+    <link href="http://5coder.cn/2021/05/19/ecmascript-xin-te-xing/"/>
+    <id>http://5coder.cn/2021/05/19/ecmascript-xin-te-xing/</id>
+    <published>2021-05-19T14:54:24.000Z</published>
+    <updated>2021-05-19T15:07:57.739Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/05/19/WA5K6I3aVkFueLb.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;一、ECMAScript概述&quot;&gt;&lt;a href=&quot;#一、ECMAScript概述&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="ES 新特性与 TypeScript、JS 性能优化" scheme="http://5coder.cn/categories/ES-%E6%96%B0%E7%89%B9%E6%80%A7%E4%B8%8E-TypeScript%E3%80%81JS-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+    
+    <category term="ECMAScript" scheme="http://5coder.cn/tags/ECMAScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>手写 Promise 源码</title>
+    <link href="http://5coder.cn/2021/05/19/shou-xie-promise-yuan-ma/"/>
+    <id>http://5coder.cn/2021/05/19/shou-xie-promise-yuan-ma/</id>
+    <published>2021-05-19T14:31:14.000Z</published>
+    <updated>2021-05-19T14:51:24.838Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;手写Promise源码&quot;&gt;&lt;a href=&quot;#手写Promise源码&quot; class=&quot;headerlink&quot; title=&quot;手写Promise源码&quot;&gt;&lt;/a&gt;手写Promise源码&lt;/h2&gt;&lt;p&gt;抽象表达：Promise 是JS</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript 深度剖析" scheme="http://5coder.cn/categories/JavaScript-%E6%B7%B1%E5%BA%A6%E5%89%96%E6%9E%90/"/>
+    
+    
+    <category term="JavaScript" scheme="http://5coder.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript 异步编程</title>
+    <link href="http://5coder.cn/2021/05/19/javascript-yi-bu-bian-cheng/"/>
+    <id>http://5coder.cn/2021/05/19/javascript-yi-bu-bian-cheng/</id>
+    <published>2021-05-19T14:31:03.000Z</published>
+    <updated>2021-05-19T15:18:34.268Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;JavaScript异步编程&quot;&gt;&lt;a href=&quot;#JavaScript异步编程&quot; class=&quot;headerlink&quot; title=&quot;JavaScript异步编程&quot;&gt;&lt;/a&gt;JavaScript异步编程&lt;/h2&gt;&lt;h3 id=&quot;1-同步模式&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript 深度剖析" scheme="http://5coder.cn/categories/JavaScript-%E6%B7%B1%E5%BA%A6%E5%89%96%E6%9E%90/"/>
+    
+    
+    <category term="JavaScript" scheme="http://5coder.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>函数式编程范式</title>
+    <link href="http://5coder.cn/2021/05/19/han-shu-shi-bian-cheng-fan-shi/"/>
+    <id>http://5coder.cn/2021/05/19/han-shu-shi-bian-cheng-fan-shi/</id>
+    <published>2021-05-19T14:30:46.000Z</published>
+    <updated>2021-05-19T15:17:54.073Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、为什么要学习函数式编程&quot;&gt;&lt;a href=&quot;#一、为什么要学习函数式编程&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript 深度剖析" scheme="http://5coder.cn/categories/JavaScript-%E6%B7%B1%E5%BA%A6%E5%89%96%E6%9E%90/"/>
+    
+    
+    <category term="JavaScript" scheme="http://5coder.cn/tags/JavaScript/"/>
     
   </entry>
   

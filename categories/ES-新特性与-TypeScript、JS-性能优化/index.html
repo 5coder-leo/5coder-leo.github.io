@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="friends, Hexo">
+    <meta name="keywords" content="Category: ES 新特性与 TypeScript、JS 性能优化, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>friends | Hexo</title>
+    <title>Category: ES 新特性与 TypeScript、JS 性能优化 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,7 +269,7 @@
 <!--    // $('.bg-cover').css('background-image', 'url(https://gitee.com/cungudafa/source/raw/master/img/bg/hyo/1.png)');-->
 <!--    // $('.bg-cover').css('background-image', 'url(https://bing.rthe.net/wallpaper)');-->
 <!--    // 随机获取一张图片-->
-<!--    $('.bg-cover').css('background-image', 'url(/medias/featureimages/20.jpg)');-->
+<!--    $('.bg-cover').css('background-image', 'url(/medias/featureimages/10.jpg)');-->
 <!--    // $('.bg-cover').css('background-image', 'url(https://api.abcyun.co/api/others/randacgimage/token/5d8f31cf6a8ab)');-->
 <!--</script>-->
 <!--    修改策略-->
@@ -277,301 +277,201 @@
 
     </div>
 </div>
-<style>
-    .friends-container {
-        margin-top: -100px;
-        margin-bottom: 30px;
-    }
-
-    .friends-container .tag-title {
-        margin-bottom: 10px;
-        color: #3C4858;
-        font-size: 1.75rem;
-        font-weight: 400;
-    }
-
-    .frind-ship img {
-        border-radius: 50%;
-    }
-
-    /* 一下是按钮样式 */
-
-    .frind-ship {
-        padding: 10px 20px;
-    }
-
-    .frind-ship .title {
-        display: flex;
-        align-items: center;
-    }
-
-    .frind-ship .title div {
-        color: #fff;
-        padding-left: 10px;
-    }
-
-    .frind-ship .title img {
-        width: 100px;
-        height: 100px;
-        flex-shrink: 0;
-    }
-
-    .frind-ship .title h1 {
-        padding-bottom: 5px;
-        border-bottom: 2px solid #fff;
-        position: relative;
-        top:-15px;
-        left: 3px;
-    }
-
-    .friend-button {
-        display: flex;
-        justify-content: center;
-        margin-bottom: -27px;
-    }
-
-    .friend-button a {
-        border-radius: 40px;
-    }
-
-    .friend-all .tag-post {
-        margin-bottom: 30px;
-    }
-
-    .button-caution {
-        background-color: #FF4351;
-        border-color: #FF4351;
-        color: #FFF;
-    }
-
-    .button {
-        font-weight: 300;
-        font-size: 16px;
-        font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-        text-decoration: none;
-        text-align: center;
-        line-height: 40px;
-        height: 40px;
-        padding: 0 40px;
-        margin: 0;
-        display: inline-block;
-        appearance: none;
-        cursor: pointer;
-        border: none;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        -webkit-transition-property: all;
-        transition-property: all;
-        -webkit-transition-duration: .3s;
-        transition-duration: .3s;
-    }
-
-    .title {
-        margin-bottom: 0rem !important;
-    }
-
-    .card {
-        margin: 3rem 0 1rem 0 !important;
-    }
-
-    .button-glow.button-caution {
-        -webkit-animation-name: glowing-caution;
-        animation-name: glowing-caution;
-    }
-
-    @-webkit-keyframes glowing-caution {
-        from {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
-
-        50% {
-            -webkit-box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-            box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-        }
-
-        to {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
-    }
-
-    @keyframes glowing-caution {
-        from {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
-
-        50% {
-            -webkit-box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-            box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-        }
-
-        to {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
-    }
-
-    .button-caution:hover {
-        background-color: #ff7680;
-        border-color: #ff7680;
-        color: #FFF;
-        text-decoration: none;
-    }
-
-    .frind-card1 {
-        background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
-    }
-
-    .frind-card2 {
-        background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    }
-
-    .frind-card3 {
-        background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
-    }
-
-    .frind-card4 {
-        background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
-    }
-
-    .frind-card5 {
-        background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
-    }
-
-    .frind-card6 {
-        background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
-    }
-
-    .frind-card7 {
-        background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
-    }
-
-    .frind-card8 {
-        background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
-    }
-
-    .frind-card9 {
-        background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
-    }
-
-    .frind-card10 {
-        background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
-    }
-
-    article .card {
-        overflow: visible !important;
-    }
-</style>
 
 <main class="content">
-    <div class="container friends-container">
-        <div class="card">
-            <div class="card-content">
-                <div class="tag-title center-align">
-                    <i class="fas fa-address-book"></i>&nbsp;&nbsp;Friends
-                </div>
-                <article id="friends-link">
+
+    
+
+<div id="category-cloud" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-bookmark"></i>&nbsp;&nbsp;Post Categories
+            </div>
+            <div class="tag-chips">
+                
+                
+                
+                <a href="/categories/JavaScript-%E6%B7%B1%E5%BA%A6%E5%89%96%E6%9E%90/" title="JavaScript 深度剖析: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F9EBEA;">JavaScript 深度剖析
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/ES-%E6%96%B0%E7%89%B9%E6%80%A7%E4%B8%8E-TypeScript%E3%80%81JS-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" title="ES 新特性与 TypeScript、JS 性能优化: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            style="background-color: #F5EEF8;">ES 新特性与 TypeScript、JS 性能优化
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/05/19/javascript-xing-neng-you-hua/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="JavaScript 性能优化">
+                            
+                            <span class="card-title">JavaScript 性能优化</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                一、性能优化介绍
+性能优化时不可避免的
+
+哪些内容可以看做是性能优化
+任何一种可以提升程序运行效率，降低程序开销的行为，我们都可以看做是一种优化操作。这就意味着在软件开发的过程中，必然存在着很多值得优化的地方。
+
+无处不在的前端性能优化
+特
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-19
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/ES-%E6%96%B0%E7%89%B9%E6%80%A7%E4%B8%8E-TypeScript%E3%80%81JS-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="post-category">
+                                    ES 新特性与 TypeScript、JS 性能优化
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
                     
-                    
-                    <div class="row tags-posts friend-all">
+                    <div class="card-action article-tags">
                         
-                        
-                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
-                            <div class="card frind-card1">
-                                <div class="frind-ship">
-                                    <div class="title">
-                                        <img src="http://image.luokangyuan.com/1_qq_27922023.jpg" alt="img">
-                                        <div>
-                                            <h1 class="friend-name">码酱</h1>
-                                            <p style="position: relative;top: -35px;">我不是大佬，只是在追寻大佬的脚步</p>
-                                        </div>
-                                    </div>
-                                    <div class="friend-button">
-                                        <a href="http://luokangyuan.com/" target="_blank"
-                                            class="button button-glow button-rounded button-caution">
-                                            前去学习
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
-                            <div class="card frind-card2">
-                                <div class="frind-ship">
-                                    <div class="title">
-                                        <img src="http://image.luokangyuan.com/4027734.jpeg" alt="img">
-                                        <div>
-                                            <h1 class="friend-name">闪烁之狐</h1>
-                                            <p style="position: relative;top: -35px;">编程界大佬，技术牛，人还特别好</p>
-                                        </div>
-                                    </div>
-                                    <div class="friend-button">
-                                        <a href="https://blinkfox.github.io/" target="_blank"
-                                            class="button button-glow button-rounded button-caution">
-                                            前去学习
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
-                            <div class="card frind-card3">
-                                <div class="frind-ship">
-                                    <div class="title">
-                                        <img src="http://image.luokangyuan.com/avatar.jpg" alt="img">
-                                        <div>
-                                            <h1 class="friend-name">ja_rome</h1>
-                                            <p style="position: relative;top: -35px;">平凡的脚步也可以走出伟大的行程</p>
-                                        </div>
-                                    </div>
-                                    <div class="friend-button">
-                                        <a href="https://me.csdn.net/jlh912008548" target="_blank"
-                                            class="button button-glow button-rounded button-caution">
-                                            前去学习
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <a href="/tags/JavaScript/">
+                            <span class="chip bg-color">JavaScript</span>
+                        </a>
                         
                     </div>
                     
-                </article>
+                </div>
             </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/05/19/typescript-yu-yan/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="TypeScript 语言">
+                            
+                            <span class="card-title">TypeScript 语言</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                TypeScript语言-前置知识①、强类型与弱类型、静态类型与动态类型1.强类型与弱类型（类型安全）①、强类型语言：强类型语言也称为强类型定义语言。是一种总是强制类型定义的语言，要求变量的使用要严格符合定义，所有变量都必须先定义后使用。j
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-19
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/ES-%E6%96%B0%E7%89%B9%E6%80%A7%E4%B8%8E-TypeScript%E3%80%81JS-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="post-category">
+                                    ES 新特性与 TypeScript、JS 性能优化
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/TypeScript/">
+                            <span class="chip bg-color">TypeScript</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/05/19/ecmascript-xin-te-xing/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="ECMAScript 新特性">
+                            
+                            <span class="card-title">ECMAScript 新特性</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+一、ECMAScript概述ECMAScript，即 ECMA-262 定义的语言，并不局限于 Web 浏览器。事实上，这门语言没有输入和输出之类的方法。ECMA-262 将这门语言作为一个基准来定义，以便在它之上再构建更稳健的脚本语言。
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-19
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/ES-%E6%96%B0%E7%89%B9%E6%80%A7%E4%B8%8E-TypeScript%E3%80%81JS-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="post-category">
+                                    ES 新特性与 TypeScript、JS 性能优化
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/ECMAScript/">
+                            <span class="chip bg-color">ECMAScript</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
         </div>
-
-        
-
-        <div class="card">
-
-            
-
-            
-
-            
-
-            
-
-            
-
-        </div>
-    </div>
+    </article>
 </main>
 
-<script>
-    $(function () {
-        $('#friends-link').masonry({
-            itemSelector: '.friend-div'
-        });
-    });
-</script>
+
 
 
     <footer class="page-footer bg-color">
