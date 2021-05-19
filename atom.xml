@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  <subtitle>5coder</subtitle>
+  <link href="http://5coder.cn/atom.xml" rel="self"/>
+  
+  <link href="http://5coder.cn/"/>
+  <updated>2021-05-19T13:15:52.510Z</updated>
+  <id>http://5coder.cn/</id>
+  
+  <author>
+    <name>5coder</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>（Day01）函数式编程与Js异步编程、手写Promise</title>
+    <link href="http://5coder.cn/2021/05/19/day01-han-shu-shi-bian-cheng-yu-js-yi-bu-bian-cheng-shou-xie-promise/"/>
+    <id>http://5coder.cn/2021/05/19/day01-han-shu-shi-bian-cheng-yu-js-yi-bu-bian-cheng-shou-xie-promise/</id>
+    <published>2021-05-19T13:11:13.000Z</published>
+    <updated>2021-05-19T13:15:52.510Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Part1-·-JavaScript【深度剖析】&quot;&gt;&lt;a href=&quot;#Part1-·-JavaScript【深度剖析】&quot; class=&quot;headerlink&quot; title=&quot;Part1 · JavaScript【深度剖析】&quot;&gt;&lt;/a&gt;Part1 ·</summary>
+        
+      
+    
+    
+    
+    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="promise" scheme="http://5coder.cn/tags/promise/"/>
+    
+  </entry>
+  
+</feed>
