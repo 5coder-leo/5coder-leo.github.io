@@ -1,0 +1,2096 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="TypeScript 语言, JavaScript Vue">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>TypeScript 语言 | 5coder</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="5coder" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">5coder</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fa fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>Contact</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">5coder</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fa fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/53.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">TypeScript 语言</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/TypeScript/">
+                                <span class="chip bg-color">TypeScript</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/" class="post-category">
+                                大前端
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2021-05-19
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2022-08-09
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    7.7k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    31 Min
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="TypeScript语言-前置知识"><a href="#TypeScript语言-前置知识" class="headerlink" title="TypeScript语言-前置知识"></a>TypeScript语言-前置知识</h1><h2 id="①、强类型与弱类型、静态类型与动态类型"><a href="#①、强类型与弱类型、静态类型与动态类型" class="headerlink" title="①、强类型与弱类型、静态类型与动态类型"></a>①、强类型与弱类型、静态类型与动态类型</h2><h3 id="1-强类型与弱类型（类型安全）"><a href="#1-强类型与弱类型（类型安全）" class="headerlink" title="1.强类型与弱类型（类型安全）"></a>1.强类型与弱类型（类型安全）</h3><p><strong>①、强类型语言</strong>：强类型语言也称为强类型定义语言。是一种总是强制类型定义的语言，要求变量的使用要严格符合定义，所有变量都必须先定义后使用。**java、.NET、C++**等都是强制类型定义的。也就是说，一旦一个变量被指定了某个数据类型，如果不经过强制转换，那么它就永远是这个数据类型了。</p>
+<p>1974年美国两个专家做出解释：语言层面限制函数的实参类型必须与形参类型相同</p>
+<p>个人理解：强类型语言不允许有各种方式的隐式转换</p>
+<p>例如你有一个整数，如果不显式地进行转换，你不能将其视为一个字符串。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 接受一个整形的参数</span>
+    <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token keyword">int</span> num<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Main</span><span class="token punctuation">.</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// ok</span>
+        
+        <span class="token class-name">Main</span><span class="token punctuation">.</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token string">"100"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// error "100" is a string，不允许传入其他类型的值</span>
+        
+        <span class="token class-name">Main</span><span class="token punctuation">.</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token class-name">Interger</span><span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"100"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment">// ok，强制类型转换</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">D:<span class="token punctuation">\</span>DeskTop<span class="token punctuation">\</span>lagou<span class="token punctuation">\</span>Flow<span class="token operator">&gt;</span>python
+Python <span class="token number">3.7</span>.0 <span class="token punctuation">(</span>v3.7.0:1bf9cc5093, Jun <span class="token number">27</span> <span class="token number">2018</span>, 04:59:51<span class="token punctuation">)</span> <span class="token punctuation">[</span>MSC v.1914 <span class="token number">64</span> bit <span class="token punctuation">(</span>AMD64<span class="token punctuation">)</span><span class="token punctuation">]</span> on win32
+Type <span class="token string">"help"</span>, <span class="token string">"copyright"</span>, <span class="token string">"credits"</span> or <span class="token string">"license"</span> <span class="token keyword">for</span> <span class="token function">more</span> information.
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'100'</span> - <span class="token number">50</span>
+Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span>:
+  File <span class="token string">"&lt;stdin&gt;"</span>, line <span class="token number">1</span>, <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">&gt;</span>
+TypeError: unsupported operand type<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">for</span> -: <span class="token string">'str'</span> and <span class="token string">'int'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> abs<span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span>
+Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span>:
+  File <span class="token string">"&lt;stdin&gt;"</span>, line <span class="token number">1</span>, <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">&gt;</span>
+TypeError: bad operand <span class="token builtin class-name">type</span> <span class="token keyword">for</span> abs<span class="token punctuation">(</span><span class="token punctuation">)</span>: <span class="token string">'str'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>与其相对应的是弱类型语言：数据类型可以被忽略的语言。它与强类型定义语言相反， 一个变量可以赋不同数据类型的值。</p>
+<p><strong>②、弱类型语言：</strong>弱类型语言也称为弱类型定义语言。与强类型定义相反。像<strong>vb、php、js</strong>等就属于弱类型语言，语言层面不会限制实参的类型。</p>
+<p>个人理解：弱类型语言则允许任意的数据隐式类型转换</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ok</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token string">'100'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// ok</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">'100'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// ok</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Microsoft Windows <span class="token punctuation">[</span>版本 <span class="token number">10.0</span>.18363.1139<span class="token punctuation">]</span>
+<span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token number">2019</span> Microsoft Corporation。保留所有权利。
+
+D:<span class="token punctuation">\</span>DeskTop<span class="token punctuation">\</span>lagou<span class="token punctuation">\</span>Flow<span class="token operator">&gt;</span>node
+Welcome to Node.js v12.19.0.
+Type <span class="token string">".help"</span> <span class="token keyword">for</span> <span class="token function">more</span> information.
+<span class="token operator">&gt;</span> <span class="token string">'100'</span> - <span class="token number">50</span>
+<span class="token number">50</span>
+<span class="token operator">&gt;</span> Math.floor<span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span>
+NaN
+<span class="token operator">&gt;</span> Math.floor<span class="token punctuation">(</span>true<span class="token punctuation">)</span>
+<span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>JavaScript中所有的类型错误都是在代码执行（逻辑判断）的过程中抛出的，并不是在语法层面进行抛出。</p>
+<h3 id="2-静态类型与动态类型（类型检查）"><a href="#2-静态类型与动态类型（类型检查）" class="headerlink" title="2.静态类型与动态类型（类型检查）"></a>2.静态类型与动态类型（类型检查）</h3><ul>
+<li><p>静态类型语言</p>
+<p>一种在编译时，数据类型是固定的语言。大多数静态类型定义语言强制这一点，它要求你在使用所有变量之前要声明它们的数据类型。Java和C是静态类型定义语言。</p>
+</li>
+<li><p>动态类型语言</p>
+<p>一种在执行期间才去发现数据类型的语言，与静态类型定义相反。VBScript和Python是动态类型定义的，因为它们是在第一次给一个变量赋值的时候找出它的类型的。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> foo <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+foo <span class="token operator">=</span> <span class="token string">'bar'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>foo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 在JavaScript中，变量是没有类型的。而变量中存放的值是有类型的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/fPas346JDgeFwyu.png"></p>
+<h3 id="3-JavaScript类型系统特征"><a href="#3-JavaScript类型系统特征" class="headerlink" title="3.JavaScript类型系统特征"></a>3.JavaScript类型系统特征</h3><p>JavaScript为弱类型且动态类型，语言本身的系统非常薄弱，甚至说JavaScript根本没有类型系统—-【任性】，其缺失类型系统的可靠性【不靠谱】。</p>
+<p>早期JavaScript的目的并没有想到去处理很多程序，很多项目只有几十行上百行代码。</p>
+<h3 id="4-弱类型的问题及强类型的优势"><a href="#4-弱类型的问题及强类型的优势" class="headerlink" title="4.弱类型的问题及强类型的优势"></a>4.弱类型的问题及强类型的优势</h3><ul>
+<li><strong>弱类型的问题</strong>，运行阶段才能发现类型异常问题。例如在setTimeout中，当时间结束时才会发现错误，如果调试过程中没有等到足够的时间，那么这个类型错误就会形成隐患。</li>
+</ul>
+<p>示例一：运行时才能发现错误</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">.</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// obj.foo();</span>
+<span class="token comment">// ^</span>
+<span class="token comment">//</span>
+<span class="token comment">// TypeError: obj.foo is not a function</span>
+<span class="token comment">// at Object.&lt;anonymous&gt; (D:\DeskTop\lagou\Flow\01\01-getting-started.js:2:5)</span>
+<span class="token comment">// at Module._compile (internal/modules/cjs/loader.js:1015:30)</span>
+<span class="token comment">// at Object.Module._extensions..js (internal/modules/cjs/loader.js:1035:10)</span>
+<span class="token comment">// at Module.load (internal/modules/cjs/loader.js:879:32)</span>
+<span class="token comment">// at Function.Module._load (internal/modules/cjs/loader.js:724:14)</span>
+<span class="token comment">// at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)</span>
+<span class="token comment">// at internal/main/run_main_module.js:17:47</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例二：非预期结果</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">sun</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">sum</span><span class="token punctuation">(</span><span class="token string">'100'</span><span class="token punctuation">,</span> <span class="token string">'100'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 200</span>
+<span class="token comment">// 100100</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例三：数据错误</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">[</span><span class="token boolean">true</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">100</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">[</span><span class="token string">'true'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 100</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><strong>强类型的优势</strong>：错误更早的暴露、代码更智能，编码更准确、重构更方便、减少不必要的类型判断</li>
+</ul>
+<h2 id="②、Flow概述及方法"><a href="#②、Flow概述及方法" class="headerlink" title="②、Flow概述及方法"></a>②、Flow概述及方法</h2><h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h3><p>flow是 facebook 出品的 JavaScript **静态类型检查工具，<a target="_blank" rel="noopener" href="https://flow.org/en/docs/usage/**%E8%BF%99%E6%98%AF%E5%85%B6%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E9%93%BE%E6%8E%A5%E3%80%82Vue.js">https://flow.org/en/docs/usage/**这是其官方文档链接。Vue.js</a> 的源码利用了Flow 做了静态类型检查。</p>
+<p><strong>JavaScript</strong> 是<strong>动态类型语言</strong>，它的灵活性有目共睹，但是过于灵活的副作用是很容易就写出<strong>非常隐蔽的隐患代码</strong>，在<strong>编译期</strong>甚至看上去都<strong>不会报错</strong>，但在<strong>运行阶段</strong>就可能出现<strong>各种奇怪的 bug</strong></p>
+<p><strong>类型检查的定义</strong>：类型检查，就是在<strong>编译期</strong>尽早发现（<strong>由类型错误引起的</strong>）bug，又<strong>不影响代码运行</strong>（不需要运行时动态检查类型），使编写 JavaScript 具有和编写 Java 等强类型语言相近的体验</p>
+<p><strong>在vue中使用Flow做静态类型检查</strong>，是因为 <strong>Babel</strong> 和 <strong>ESLint</strong> 都有对应的 <strong>Flow 插件</strong>以支持语法，可以完全沿用<strong>现有的构建配置</strong>，非常小成本的改动就可以拥有<strong>静态类型检查的能力</strong></p>
+<p>类型注解</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token operator">:</span> number<span class="token punctuation">,</span> y<span class="token operator">:</span> number</span><span class="token punctuation">)</span><span class="token operator">:</span> number <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> x <span class="token operator">+</span> y      <span class="token comment">//x的类型是number,y的类型是number，函数的返回值类型是number</span>
+<span class="token punctuation">}</span>
+<span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'Hello'</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2-快速上手"><a href="#2-快速上手" class="headerlink" title="2.快速上手"></a>2.快速上手</h3><ol>
+<li><p>初始化模块</p>
+<ul>
+<li>yarn init -yes</li>
+</ul>
+</li>
+<li><p>安装flow</p>
+<ul>
+<li>yarn add flow-bin -dev</li>
+</ul>
+</li>
+<li><p>使用flow类型注解</p>
+<ul>
+<li><p>必须在文件文件开始处标记：@flow</p>
+</li>
+<li><p>关闭VS Code语法校验：setting，搜索JavaScript validate，找到enable，取消勾选</p>
+</li>
+<li><p>```js<br>// @flow</p>
+<p>function sum(a:number, b:number) {</p>
+<pre><code>return a + b;
+</code></pre>
+<p>}</p>
+<p>sum(100, 100)<br>sum(‘100’, ‘100’)</p>
+<p>let num:number = 100<br>num = ‘100’</p>
+<pre class="line-numbers language-none"><code class="language-none">
+4. 使用
+
+   - ```shell
+     yarn flow init
+     yarn flow  # 第一次会很慢，后续会很快
+     # yarn flow stop # 结束flow
+     
+     #Error ---------------------------------------------------------------------------------------------------- 01/01.js:8:12
+     
+     #Cannot call `sum` with `'100'` bound to `b` because string [1] is incompatible with number [2]. [incompatible-call]
+     
+     #   01/01.js:8:12
+     #   8| sum('100', '100')
+     #                 ^^^^^ [1]
+     
+     #References:
+     #   01/01.js:3:26
+     #   3| function sum(a:number, b:number) {
+     #                               ^^^^^^ [2]
+     <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+</ol>
+<h3 id="3-编译移除注解"><a href="#3-编译移除注解" class="headerlink" title="3.编译移除注解"></a>3.编译移除注解</h3><ul>
+<li>方案一：自动移除类型注解，官方提供的模块：flow-remove-types</li>
+</ul>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">yarn</span> <span class="token function">add</span> flow-remove-types --dev
+<span class="token function">yarn</span> flow-remove-types <span class="token builtin class-name">.</span> -d dist
+<span class="token comment"># yarn flow-remove-types [需要移除注解的文件，一般为src] -d [输出目录，如果不存在则新建，一般为dist]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>方案二：babel</li>
+</ul>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">yarn</span> <span class="token function">add</span> @babel/core @babel/cli @babel/preset-flow --dev<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>然后在项目中添加项目文件-【.babelrc】,然后在文件中输入：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">{</span>
+    <span class="token string">"presets"</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"@babel/preset-flow"</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>随后使用命令行</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">yarn</span> babel src -d dist<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="4-开发者工具插件"><a href="#4-开发者工具插件" class="headerlink" title="4.开发者工具插件"></a>4.开发者工具插件</h3><blockquote>
+<p><strong>VS Code搜索插件【flow language support】,flow官方提供的插件，可以实时显示类型异常。</strong>默认情况下，修改完代码，需要重新保存后才会检测类型异常。</p>
+<p>flow官网：<a target="_blank" rel="noopener" href="https://flow.org/en/docs/editors">https://flow.org/en/docs/editors</a></p>
+</blockquote>
+<h3 id="5-类型推断"><a href="#5-类型推断" class="headerlink" title="5.类型推断"></a>5.类型推断</h3><p>flow支持在代码编写过程中就进行类型推断，例如下面代码中，需要算一个数的平方，当传入非数字类型时，flow会进行代码提示，抛出类型错误。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// @flowfunction square(n: number) {	return n * n;}square('100')</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="6-类型注解"><a href="#6-类型注解" class="headerlink" title="6.类型注解"></a>6.类型注解</h3><p>在绝大多数情况下一样，它可以帮我们推断出来变量，或者是参数的具体类型，但是没有必要给所有的成员都去添加，它可以更明确的去限制类型注解，而且对我们后期去理解，也是有帮助的可能去使用。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> num<span class="token operator">:</span>number <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span><span class="token comment">// num = 'string',此时只能赋值数字类型function foo():number {    return 100}// 此时函数只能返回数字类型，如果函数没有返回值，默认返回undefined，那么也会提醒报错。没有返回值的函数，我们需要将函数返回值类型标注为void</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="7-原始类型"><a href="#7-原始类型" class="headerlink" title="7.原始类型"></a>7.原始类型</h3><p>在用法上flow，几乎没有任何的难度，无外乎就是使用flow命令去根据我们代码当中添加的类型注解，去检测我们代码当中的那些类型使用上的异常。值得我们再去了解的无外乎就是flow当中，具体支持哪些类型，以及，我们在类型注解上有没有一些更高级的用法，这里呢，我们具体来看。</p>
+<p>flow中能使用的类型有很多，最简单的就是JavaScript中的原始类型，目前原始类型共有6中，number、Boole、string、null、undefined、symbol。以下进行快速尝试：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/**
+ * 原始类型
+ *
+ * @flow
+ */</span>
+
+<span class="token keyword">const</span> a<span class="token operator">:</span> string <span class="token operator">=</span> <span class="token string">'foobar'</span>
+
+<span class="token keyword">const</span> b<span class="token operator">:</span> number <span class="token operator">=</span> <span class="token number">Infinity</span> <span class="token comment">// NaN // 100</span>
+
+<span class="token keyword">const</span> c<span class="token operator">:</span> boolean <span class="token operator">=</span> <span class="token boolean">false</span> <span class="token comment">// true</span>
+
+<span class="token keyword">const</span> d<span class="token operator">:</span> <span class="token keyword">null</span> <span class="token operator">=</span> <span class="token keyword">null</span>
+
+<span class="token keyword">const</span> e<span class="token operator">:</span> <span class="token keyword">void</span> <span class="token operator">=</span> <span class="token keyword">undefined</span>
+
+<span class="token keyword">const</span> f<span class="token operator">:</span> symbol <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="8-数组类型"><a href="#8-数组类型" class="headerlink" title="8.数组类型"></a>8.数组类型</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/**
+ * 数组类型
+ *
+ * @flow
+ */</span>
+
+<span class="token keyword">const</span> arr1<span class="token operator">:</span> Array<span class="token operator">&lt;</span>number<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+
+<span class="token keyword">const</span> arr2<span class="token operator">:</span> number<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+
+<span class="token comment">// 元组</span>
+<span class="token keyword">const</span> foo<span class="token operator">:</span> <span class="token punctuation">[</span>string<span class="token punctuation">,</span> number<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="9-对象类型"><a href="#9-对象类型" class="headerlink" title="9.对象类型"></a>9.对象类型</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/**
+ * 对象类型
+ *
+ * @flow
+ */</span>
+
+<span class="token keyword">const</span> obj1<span class="token operator">:</span> <span class="token punctuation">{</span> foo<span class="token operator">:</span> string<span class="token punctuation">,</span> bar<span class="token operator">:</span> number <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span> foo<span class="token operator">:</span> <span class="token string">'string'</span><span class="token punctuation">,</span> bar<span class="token operator">:</span> <span class="token number">100</span> <span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> obj2<span class="token operator">:</span> <span class="token punctuation">{</span> foo<span class="token operator">?</span><span class="token operator">:</span> string<span class="token punctuation">,</span> bar<span class="token operator">:</span> number <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span> bar<span class="token operator">:</span> <span class="token number">100</span> <span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> obj3<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token punctuation">[</span>string<span class="token punctuation">]</span><span class="token operator">:</span> string <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+obj3<span class="token punctuation">.</span>key1 <span class="token operator">=</span> <span class="token string">'value1'</span>
+obj3<span class="token punctuation">.</span>key2 <span class="token operator">=</span> <span class="token string">'value2'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="10-函数类型"><a href="#10-函数类型" class="headerlink" title="10.函数类型"></a>10.函数类型</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/**
+ * 函数类型
+ *
+ * @flow
+ */</span>
+
+<span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token function-variable function">callback</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">string<span class="token punctuation">,</span> number</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">callback</span><span class="token punctuation">(</span><span class="token string">'string'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">str<span class="token punctuation">,</span> n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// str =&gt; string</span>
+  <span class="token comment">// n =&gt; number</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="11-特殊类型"><a href="#11-特殊类型" class="headerlink" title="11.特殊类型"></a>11.特殊类型</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/**
+ * 特殊类型
+ *
+ * @flow
+ */</span>
+
+<span class="token comment">// 字面量类型</span>
+
+<span class="token keyword">const</span> a<span class="token operator">:</span> <span class="token string">'foo'</span> <span class="token operator">=</span> <span class="token string">'foo'</span>
+
+<span class="token keyword">const</span> type<span class="token operator">:</span> <span class="token string">'success'</span> <span class="token operator">|</span> <span class="token string">'warning'</span> <span class="token operator">|</span> <span class="token string">'danger'</span> <span class="token operator">=</span> <span class="token string">'success'</span>
+
+<span class="token comment">// ------------------------</span>
+
+<span class="token comment">// 声明类型</span>
+
+type StringOrNumber <span class="token operator">=</span> string <span class="token operator">|</span> number
+
+<span class="token keyword">const</span> b<span class="token operator">:</span> StringOrNumber <span class="token operator">=</span> <span class="token string">'string'</span> <span class="token comment">// 100</span>
+
+<span class="token comment">// ------------------------</span>
+
+<span class="token comment">// Maybe 类型</span>
+
+<span class="token keyword">const</span> gender<span class="token operator">:</span> <span class="token operator">?</span>number <span class="token operator">=</span> <span class="token keyword">undefined</span>
+<span class="token comment">// 相当于</span>
+<span class="token comment">// const gender: number | null | void = undefined</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="12-Mixed与Any"><a href="#12-Mixed与Any" class="headerlink" title="12.Mixed与Any"></a>12.Mixed与Any</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/**
+ * Mixed Any
+ *
+ * @flow
+ */</span>
+
+<span class="token comment">// string | number | boolean | ....</span>
+<span class="token keyword">function</span> <span class="token function">passMixed</span> <span class="token punctuation">(</span><span class="token parameter">value<span class="token operator">:</span> mixed</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">'string'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    value<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">'number'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    value <span class="token operator">*</span> value
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">passMixed</span><span class="token punctuation">(</span><span class="token string">'string'</span><span class="token punctuation">)</span>
+
+<span class="token function">passMixed</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
+
+<span class="token comment">// ---------------------------------</span>
+
+<span class="token keyword">function</span> <span class="token function">passAny</span> <span class="token punctuation">(</span><span class="token parameter">value<span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  value<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+  value <span class="token operator">*</span> value
+<span class="token punctuation">}</span>
+
+<span class="token function">passAny</span><span class="token punctuation">(</span><span class="token string">'string'</span><span class="token punctuation">)</span>
+
+<span class="token function">passAny</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="TypeScript语言"><a href="#TypeScript语言" class="headerlink" title="TypeScript语言"></a>TypeScript语言</h1><h2 id="一、TypeScript概述"><a href="#一、TypeScript概述" class="headerlink" title="一、TypeScript概述"></a>一、TypeScript概述</h2><p>TypeScript是一种由微软开发的自由和开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。</p>
+<p>TypeScript 扩展了 JavaScript 的句法，所以任何现有的 JavaScript 程序可以不加改变的在 TypeScript下工作。TypeScript 是为大型应用之开发而设计，而编译时它产生 JavaScript 以确保兼容性。任何一种JavaScript运行环境都支持TypeScript开发。</p>
+<ul>
+<li><p>缺点一：语言多了很多概念，提高学习成本。但其属于渐进式的，所以可以按照JavaScript标准语法来使用，在学习过程中了解到一个特性就可以使用一个特性。</p>
+</li>
+<li><p>缺点二：项目初期，TypeScript会增加一些时间成本，需要很多的类型声明。</p>
+</li>
+</ul>
+<h2 id="二、TypeScript快速上手"><a href="#二、TypeScript快速上手" class="headerlink" title="二、TypeScript快速上手"></a>二、TypeScript快速上手</h2><ol>
+<li><p>安装TypeScript</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">yarn</span> init --yes  <span class="token comment"># 初始化项目目录</span>
+<span class="token function">yarn</span> <span class="token function">add</span> typescript --dev  <span class="token comment"># 开发依赖</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>新建TypeScript文件，文件名01-getting-started.ts,其文件扩展名默认为**.ts**</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 可以完全按照 JavaScript 标准语法编写代码</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">hello</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">name<span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>  <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Hello, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">hello</span><span class="token punctuation">(</span><span class="token string">'TypeScript'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>使用TypeScript编译上述文件</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">yarn</span> tsc 01-getting-started.ts<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>编译后的文件01-getting-started.js：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"use strict"</span><span class="token punctuation">;</span>
+<span class="token comment">// 可以完全按照 JavaScript 标准语法编写代码</span>
+<span class="token keyword">var</span> <span class="token function-variable function">hello</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Hello, "</span> <span class="token operator">+</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token function">hello</span><span class="token punctuation">(</span><span class="token string">'TypeScript'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//# sourceMappingURL=01-getting-started.js.map</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<h2 id="三、TypeScript配置文件"><a href="#三、TypeScript配置文件" class="headerlink" title="三、TypeScript配置文件"></a>三、TypeScript配置文件</h2><p>tsc不仅仅可以编译单个文件，还可以编译整个项目或者整个工程。在编译整个项目前，我们需要先给整个项目创建一个TypeScript的配置文件。</p>
+<p>使用命令自动生成配置文件：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">yarn</span> tsc --init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在根目录下会多出tsconfig.json文件</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">{</span>
+  <span class="token string">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">/* Basic Options */</span>
+    <span class="token comment">// "incremental": true,                   /* Enable incremental compilation */</span>
+    <span class="token string">"target"</span><span class="token operator">:</span> <span class="token string">"ES2015"</span><span class="token punctuation">,</span>                          <span class="token comment">/* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019' or 'ESNEXT'. */</span>
+    <span class="token string">"module"</span><span class="token operator">:</span> <span class="token string">"commonjs"</span><span class="token punctuation">,</span>                     <span class="token comment">/* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */</span>
+    <span class="token string">"lib"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"ES2015"</span><span class="token punctuation">,</span> <span class="token string">"DOM"</span><span class="token punctuation">,</span> <span class="token string">"ES2017"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>                             <span class="token comment">/* Specify library files to be included in the compilation. */</span>
+    <span class="token comment">// "allowJs": true,                       /* Allow javascript files to be compiled. */</span>
+    <span class="token comment">// "checkJs": true,                       /* Report errors in .js files. */</span>
+    <span class="token comment">// "jsx": "preserve",                     /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */</span>
+    <span class="token comment">// "declaration": true,                   /* Generates corresponding '.d.ts' file. */</span>
+    <span class="token comment">// "declarationMap": true,                /* Generates a sourcemap for each corresponding '.d.ts' file. */</span>
+    <span class="token string">"sourceMap"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>                     <span class="token comment">/* Generates corresponding '.map' file. */</span>
+    <span class="token comment">// "outFile": "./",                       /* Concatenate and emit output to single file. */</span>
+    <span class="token string">"outDir"</span><span class="token operator">:</span> <span class="token string">"dist"</span><span class="token punctuation">,</span>                        <span class="token comment">/* Redirect output structure to the directory. */</span>
+    <span class="token string">"rootDir"</span><span class="token operator">:</span> <span class="token string">"src"</span><span class="token punctuation">,</span>                       <span class="token comment">/* Specify the root directory of input files. Use to control the output directory structure with --outDir. */</span>
+<span class="token punctuation">.</span>
+<span class="token punctuation">.</span>
+<span class="token punctuation">.</span>
+
+    <span class="token comment">/* Experimental Options */</span>
+    <span class="token comment">// "experimentalDecorators": true,        /* Enables experimental support for ES7 decorators. */</span>
+    <span class="token comment">// "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */</span>
+
+    <span class="token comment">/* Advanced Options */</span>
+    <span class="token string">"forceConsistentCasingInFileNames"</span><span class="token operator">:</span> <span class="token boolean">true</span>  <span class="token comment">/* Disallow inconsistently-cased references to the same file. */</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="四、TypeScript原始类型"><a href="#四、TypeScript原始类型" class="headerlink" title="四、TypeScript原始类型"></a>四、TypeScript原始类型</h2><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">// 原始数据类型</span>
+
+<span class="token keyword">const</span> a<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">=</span> <span class="token string">'foobar'</span>
+
+<span class="token keyword">const</span> b<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">100</span> <span class="token comment">// NaN Infinity</span>
+
+<span class="token keyword">const</span> c<span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token comment">// false</span>
+
+<span class="token comment">// 在非严格模式（strictNullChecks）下，</span>
+<span class="token comment">// string, number, boolean 都可以为空</span>
+<span class="token comment">// const d: string = null</span>
+<span class="token comment">// const d: number = null</span>
+<span class="token comment">// const d: boolean = null</span>
+
+<span class="token keyword">const</span> e<span class="token operator">:</span> <span class="token keyword">void</span> <span class="token operator">=</span> <span class="token keyword">undefined</span>
+
+<span class="token keyword">const</span> f<span class="token operator">:</span> <span class="token keyword">null</span> <span class="token operator">=</span> <span class="token keyword">null</span>
+
+<span class="token keyword">const</span> g<span class="token operator">:</span> <span class="token keyword">undefined</span> <span class="token operator">=</span> <span class="token keyword">undefined</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="五、TypeScript标准库声明"><a href="#五、TypeScript标准库声明" class="headerlink" title="五、TypeScript标准库声明"></a>五、TypeScript标准库声明</h2><p>标准库就是内置对象多对应的声明，代码中使用内置对象就必须引用对应的标准库，否则TypeScript就会报错。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// Symbol 是 ES2015 标准中定义的成员，</span>
+<span class="token comment">// 使用它的前提是必须确保有对应的 ES2015 标准库引用</span>
+<span class="token comment">// 也就是 tsconfig.json 中的 lib 选项必须包含 ES2015</span>
+<span class="token comment">// "lib": ["ES2015", "DOM", "ES2017"],TypeScript把BOM和DOM都归结到一个标准库中，为DOM</span>
+<span class="token keyword">const</span> h<span class="token operator">:</span> symbol <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// Promise</span>
+
+<span class="token comment">// const error: string = 100</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在上述**const h: symbol = Symbol()**中，如果配置文件中“target”为es5，那么会提示错误，因为，我们的symbol是es2015中新增的类型，所以需要将target改为es2015或以上才可以使用。</p>
+<h2 id="六、TypeScript中文错误消息"><a href="#六、TypeScript中文错误消息" class="headerlink" title="六、TypeScript中文错误消息"></a>六、TypeScript中文错误消息</h2><p>使TypeScript显示中文的错误消息，这样方便国人进行快速定位问题。</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">tsc --local zh-CN  <span class="token comment"># 绝大多数会使用中文</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>VS Code中，搜索TypeScript local，将TypeScript：local设置为zh-CN，此时VS Code报出的错误提示也会是中文的。不过，并不推荐这样做，锻炼英语，之后更便捷的阅读官方文档，这才是我这种菜鸟程序员的挑战。</p>
+<h2 id="七、TypeScript作用域问题"><a href="#七、TypeScript作用域问题" class="headerlink" title="七、TypeScript作用域问题"></a>七、TypeScript作用域问题</h2><p>不同文件中会有相同变量名的情况，此时TypeScript就会报出错误，重复定义变量。为解决这个办法，我们需要将变量放到不同的作用域或者使用exports导出，这样文件就作为一个模块，模块是有单独的作用域的。</p>
+<h2 id="八、TypeScript-Object类型"><a href="#八、TypeScript-Object类型" class="headerlink" title="八、TypeScript Object类型"></a>八、TypeScript Object类型</h2><p>TypeScript中的object并不单独指对象类型，而是泛指所有的非原始类型，也就是对象、数组、函数。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// Object 类型</span>
+
+<span class="token keyword">export</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// 确保跟其它示例没有成员冲突</span>
+
+<span class="token comment">// object 类型是指除了原始类型以外的其它类型</span>
+<span class="token keyword">const</span> foo<span class="token operator">:</span> <span class="token function-variable function">object</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// [] // {}  可以接受对象、数组、函数</span>
+
+<span class="token comment">// 如果需要明确限制对象类型，则应该使用这种类型对象字面量的语法，或者是「接口」</span>
+<span class="token keyword">const</span> obj<span class="token operator">:</span> <span class="token punctuation">{</span> foo<span class="token operator">:</span> number<span class="token punctuation">,</span> bar<span class="token operator">:</span> string <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span> foo<span class="token operator">:</span> <span class="token number">123</span><span class="token punctuation">,</span> bar<span class="token operator">:</span> <span class="token string">'string'</span> <span class="token punctuation">}</span>
+
+<span class="token comment">// 接口的概念后续介绍</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="九、TypeScript数组类型"><a href="#九、TypeScript数组类型" class="headerlink" title="九、TypeScript数组类型"></a>九、TypeScript数组类型</h2><p>TypeScript中定义数组的方式，与Flow中几乎完全一致。他有两种方式，第一种就是使用array泛型。第二种使用元素类型加方括号的形式。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 数组类型</span>
+
+<span class="token keyword">export</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// 确保跟其它示例没有成员冲突</span>
+
+<span class="token comment">// 数组类型的两种表示方式</span>
+
+<span class="token keyword">const</span> arr1<span class="token operator">:</span> Array<span class="token operator">&lt;</span>number<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+
+<span class="token keyword">const</span> arr2<span class="token operator">:</span> number<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>TypeScript中使用强类型的优势：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 案例 -----------------------</span>
+
+<span class="token comment">// 如果是 JS，需要判断是不是每个成员都是数字</span>
+<span class="token comment">// 使用 TS，类型有保障，不用添加类型判断</span>
+<span class="token keyword">function</span> <span class="token function">sum</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args<span class="token operator">:</span> number<span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> args<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">prev<span class="token punctuation">,</span> current</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> prev <span class="token operator">+</span> current<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// reduce回顾：第一个参数prev为累加的和，第二个参数为当前循环的项，函数体中写业务代码，默认值为0</span>
+
+<span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment">// =&gt; 6</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>一般情况下，数组应该保持同质，也就是说数组中的元素应该具有相同的类型。</strong></p>
+<h2 id="十、TypeScript元组类型"><a href="#十、TypeScript元组类型" class="headerlink" title="十、TypeScript元组类型"></a>十、TypeScript元组类型</h2><p>元组是array的一种子类型，是定义数组的一种特殊类型。长度固定，各索引位置上的值具有固定的已知类型。与其他多数类型不同，声明元组时必须显示注解类型。这是因为，创建元组使用的语法与数组相同（都使用方括号），而TypeScript遇到方括号，推导出来的是数组的类型。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">const</span> tuple<span class="token operator">:</span><span class="token punctuation">[</span>number<span class="token punctuation">,</span> string<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token string">'Leo'</span><span class="token punctuation">]</span>
+<span class="token comment">// const age = tuple[0]</span>
+<span class="token comment">// const name = tuple[1]</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">[</span>age<span class="token punctuation">,</span> name<span class="token punctuation">]</span> <span class="token operator">=</span> tuple
+<span class="token comment">// ---------------------</span>
+
+<span class="token keyword">const</span> entries<span class="token operator">:</span> <span class="token punctuation">[</span>string<span class="token punctuation">,</span> number<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  foo<span class="token operator">:</span> <span class="token number">123</span><span class="token punctuation">,</span>
+  bar<span class="token operator">:</span> <span class="token number">456</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">[</span>key<span class="token punctuation">,</span> value<span class="token punctuation">]</span> <span class="token operator">=</span> entries<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token comment">// key =&gt; foo, value =&gt; 123</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="十一、TypeScript枚举类型"><a href="#十一、TypeScript枚举类型" class="headerlink" title="十一、TypeScript枚举类型"></a>十一、TypeScript枚举类型</h2><p>枚举的作用是列举类型中包含的各个值。这是一种无序数结构，把键映射到值上。枚举可以理解为编译时键的固定访问对象，访问键时，TypeScript将检查指定的键是否存在。示例如下：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">// 文章对象</span>
+<span class="token keyword">const</span> post <span class="token operator">=</span> <span class="token punctuation">{</span>
+    title<span class="token operator">:</span> <span class="token string">"TypeScript介绍"</span><span class="token punctuation">,</span>
+    content<span class="token operator">:</span> <span class="token string">"简单介绍一下TypeScript语言"</span><span class="token punctuation">,</span>
+    status<span class="token operator">:</span> <span class="token number">2</span> <span class="token comment">// 1  0,</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里<strong>0表示草稿，1表示未发布，2代表已发布</strong>，为了防止出现其他值出现，我么可以使用枚举来限定其值。</p>
+<p>枚举特点：</p>
+<ul>
+<li>给一组数值起一个更好理解的名字</li>
+<li>一个枚举中只会存在几个固定的值，并不会出现超出范围的可能性</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 用对象模拟枚举</span>
+<span class="token keyword">const</span> PostStatus <span class="token operator">=</span> <span class="token punctuation">{</span>
+  Draft<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  Unpublished<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  Published<span class="token operator">:</span> <span class="token number">2</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 标准的数字枚举</span>
+<span class="token keyword">enum</span> PostStatus2 <span class="token punctuation">{</span>
+  Draft <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  Unpublished <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  Published <span class="token operator">=</span> <span class="token number">2</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 数字枚举，枚举值自动基于前一个值自增，如果不指定每个枚举类型的值，那么其值会从0自增</span>
+<span class="token keyword">enum</span> PostStatus3 <span class="token punctuation">{</span>
+  Draft <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">,</span>
+  Unpublished<span class="token punctuation">,</span> <span class="token comment">// =&gt; 7</span>
+  Published <span class="token comment">// =&gt; 8</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 字符串枚举，需要手动给每个成员明确一个初始化的值</span>
+<span class="token keyword">enum</span> PostStatus4 <span class="token punctuation">{</span>
+  Draft <span class="token operator">=</span> <span class="token string">'aaa'</span><span class="token punctuation">,</span>
+  Unpublished <span class="token operator">=</span> <span class="token string">'bbb'</span><span class="token punctuation">,</span>
+  Published <span class="token operator">=</span> <span class="token string">'ccc'</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 常量枚举，不会侵入编译结果</span>
+<span class="token keyword">const</span> <span class="token keyword">enum</span> PostStatus5 <span class="token punctuation">{</span>
+  Draft<span class="token punctuation">,</span>
+  Unpublished<span class="token punctuation">,</span>
+  Published
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>然后根据上面的枚举值，我们可以将文章状态的写法进行如下转换：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> post <span class="token operator">=</span> <span class="token punctuation">{</span>
+  title<span class="token operator">:</span> <span class="token string">'Hello TypeScript'</span><span class="token punctuation">,</span>
+  content<span class="token operator">:</span> <span class="token string">'TypeScript is a typed superset of JavaScript.'</span><span class="token punctuation">,</span>
+  status<span class="token operator">:</span> PostStatus<span class="token punctuation">.</span>Draft <span class="token comment">// 3 // 1 // 0</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// PostStatus[0] // =&gt; Draft</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>使用常量进行枚举时，编译ts文件后的js文件中会移出键值对形式的数组，改为在需要枚举的地方直接写入值，其他值则以注释的方式出现，如下为编译后的js文件：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"use strict"</span><span class="token punctuation">;</span><span class="token comment">// 枚举（Enum）Object.defineProperty(exports, "__esModule", { value: true });var post = {    title: 'Hello TypeScript',    content: 'TypeScript is a typed superset of JavaScript.',    status: 0 /* Draft */ // 3 // 1 // 0};// PostStatus[0] // =&gt; Draft//# sourceMappingURL=07-enum-types.js.map</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="十二、TypeScript函数类型"><a href="#十二、TypeScript函数类型" class="headerlink" title="十二、TypeScript函数类型"></a>十二、TypeScript函数类型</h2><p>函数的类型约束无外乎就是对函数的输入、输出进行类型限制，输入指的就是函数的参数，输出指的是函数的返回值。JavaScript中有两种函数声明方式，分别是函数声明和函数表达式。所以我们需要了解在这两种声明方式下，我们如何进行函数的类型约束。</p>
+<ul>
+<li>函数声明式：</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 函数类型</span>
+
+<span class="token keyword">export</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// 确保跟其它示例没有成员冲突</span>
+
+<span class="token keyword">function</span> <span class="token function">func1</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token operator">:</span> number<span class="token punctuation">,</span> b<span class="token operator">:</span> number <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token operator">...</span>rest<span class="token operator">:</span> number<span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span><span class="token operator">:</span> string <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">'func1'</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// a类型为数字类型，b类型为数字类型，...rest为参数默认值类型为数字，:string为函数返回值约束，如果没有...rest，则实参和形参个数必须相同</span>
+<span class="token keyword">function</span> <span class="token function">func0</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token operator">:</span> number<span class="token punctuation">,</span> b？<span class="token operator">:</span> number <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token operator">...</span>rest<span class="token operator">:</span> number<span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span><span class="token operator">:</span> string <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">'func1'</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 在参数声明冒号前加问号？，表示这个参数为可选值，无论可选参数或参数默认值，都只能出现在参数最后面</span>
+
+<span class="token function">func1</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span>
+
+<span class="token function">func1</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
+
+<span class="token function">func1</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>函数表达式：</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">func2</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token operator">:</span> number<span class="token punctuation">,</span> b<span class="token operator">:</span> number</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function-variable function">string</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token operator">:</span> number<span class="token punctuation">,</span> b<span class="token operator">:</span> number</span><span class="token punctuation">)</span><span class="token operator">:</span> string <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token string">'func2'</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="十三、TypeScript任意类型"><a href="#十三、TypeScript任意类型" class="headerlink" title="十三、TypeScript任意类型"></a>十三、TypeScript任意类型</h2><p>JavaScript本身是弱类型的语言，很多内置的API本身就支持接收任意类型的参数。而TypeScript又是基于JavaScript基础之上的，所以会在代码中用一个变量去接收任意一个类型的值。例：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">stringify</span> <span class="token punctuation">(</span><span class="token parameter">value<span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">stringify</span><span class="token punctuation">(</span><span class="token string">'string'</span><span class="token punctuation">)</span>
+
+<span class="token function">stringify</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
+
+<span class="token function">stringify</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>any属于动态类型</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> foo<span class="token operator">:</span> any <span class="token operator">=</span> <span class="token string">'string'</span>
+
+foo <span class="token operator">=</span> <span class="token number">100</span>
+
+foo<span class="token punctuation">.</span><span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">// 语法上不会报错，TypeScript不会对any进行类型检查，any 类型是不安全的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="十四、TypeScript隐式类型推断"><a href="#十四、TypeScript隐式类型推断" class="headerlink" title="十四、TypeScript隐式类型推断"></a>十四、TypeScript隐式类型推断</h2><p>在TypeScript中，如果我们没有通过类型注解取标记一个变量的类型，TypeScript会根据变量的使用情况去推断变量的类型。这种特性叫：隐式类型推断</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 隐式类型推断export {} // 确保跟其它示例没有成员冲突let age = 18 // number// age = 'string'  // 语法上会出现错误// 如果TypeScript无法对变量进行类型推断，那TypeScript就会对这个变量的类型注解为anylet foofoo = 100foo = 'string'  // 变量赋值任意类型的值，语法上都不会报错</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>虽然在TypeScript中支持隐式类型推断，这种隐式类型推断可以帮我们简化代码，但我们仍然建议大家对每个变量添加类型注解，这样便于我们后续更加直观的理解代码。</p>
+<h2 id="十五、TypeScript类型断言"><a href="#十五、TypeScript类型断言" class="headerlink" title="十五、TypeScript类型断言"></a>十五、TypeScript类型断言</h2><p>特殊情况下，TypeScript无法推断出变量的具体类型，开发者根据代码的使用情况，总是根据使用情况可以知道变量是什么类型的。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 类型断言export {} // 确保跟其它示例没有成员冲突// 假定这个 nums 来自一个明确的接口const nums = [110, 120, 119, 112]const res = nums.find(i =&gt; i &gt; 0)// const square = res * res，TypeScript此时推断返回值为number或undefined，即无法找到大于0的数字const num1 = res as number  // 开发者告诉TypeScript：你相信我，我断言res为number类型const num2 = &lt;number&gt;res // JSX 下不能使用</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>类型断言的方式有两种：</p>
+<ul>
+<li><p>as关键词（推荐使用）</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> num1 <span class="token operator">=</span> res <span class="token keyword">as</span> number<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>变量前面使用&lt;类型&gt;进行断言</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> num2 <span class="token operator">=</span> <span class="token operator">&lt;</span>number<span class="token operator">&gt;</span>res <span class="token comment">// JSX 下不能使用</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<blockquote>
+<p><strong>！注意：类型断言并不是类型转换</strong></p>
+</blockquote>
+<h2 id="十六、TypeScript接口"><a href="#十六、TypeScript接口" class="headerlink" title="十六、TypeScript接口"></a>十六、TypeScript接口</h2><p>Interfases接口，约定对象的结构，我们使用一个接口，就必须遵循这个接口全部的约定。TypeScript中，接口最直观的体现就是<strong>约定一个对象中应该有哪些成员</strong>，而且，成员的类型是固定的。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">printPost</span> <span class="token punctuation">(</span><span class="token parameter">post</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>post<span class="token punctuation">.</span>title<span class="token punctuation">)</span>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>post<span class="token punctuation">.</span>content<span class="token punctuation">)</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>此时该函数对于接受的参数post有一定的要求，也就是说post一定要有title和content属性，只不过这种要求为隐形的，并没有明确的表达，这时我们可以用接口明确的表达出来，此时我们可以定义一个接口：使用interface关键词。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">interface</span> <span class="token class-name">Post</span> <span class="token punctuation">{</span>    title<span class="token operator">:</span> string  <span class="token comment">// 类型限定，可以使用逗号分隔多个成员，更标准的是使用分号，当然也可以省略    content: string}function printPost (post: Post) {    // 显示的要求传入的对象必须要有title和content成员	console.log(post.title)	console.log(post.content)}printPost({    title: 'Hello TypeScript',    content: 'A javascript superset'})</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>接口中可以使用<strong>逗号</strong>分隔多个成员，更标准的是使用<strong>分号</strong>，当然也可以省略，根据自己团队习惯来</p>
+</blockquote>
+<p>编译完成后的JavaScript文件，发现在js代码中并没有接口，也就是说TypeScript中的接口只是对代码进行类型约束的，在实际运行的阶段，接口并无意义。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"use strict"</span><span class="token punctuation">;</span><span class="token comment">// 接口Object.defineProperty(exports, "__esModule", { value: true });function printPost(post) {    console.log(post.title);    console.log(post.content);}printPost({    title: 'Hello TypeScript',    content: 'A javascript superset'});//# sourceMappingURL=12-interface-basic.js.map</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>对于接口中约定的成员，还有一些特殊的用法。</p>
+<ul>
+<li><strong>可选成员</strong></li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 可选成员、只读成员、动态成员</span>
+
+<span class="token keyword">export</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// 确保跟其它示例没有成员冲突</span>
+
+<span class="token comment">// -------------------------------------------</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Post</span> <span class="token punctuation">{</span>
+  title<span class="token operator">:</span> string
+  content<span class="token operator">:</span> string
+  subtitle<span class="token operator">?</span><span class="token operator">:</span> string  <span class="token comment">// 表示为可选成员，其实就是将subtitle类型标注为string|undefined</span>
+  readonly summary<span class="token operator">:</span> string
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> hello<span class="token operator">:</span> Post <span class="token operator">=</span> <span class="token punctuation">{</span>
+  title<span class="token operator">:</span> <span class="token string">'Hello TypeScript'</span><span class="token punctuation">,</span>
+  content<span class="token operator">:</span> <span class="token string">'A javascript superset'</span><span class="token punctuation">,</span>
+  summary<span class="token operator">:</span> <span class="token string">'A javascript'</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><strong>只读成员</strong></li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 可选成员、只读成员、动态成员</span>
+
+<span class="token keyword">export</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// 确保跟其它示例没有成员冲突</span>
+
+<span class="token comment">// -------------------------------------------</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Post</span> <span class="token punctuation">{</span>
+  title<span class="token operator">:</span> string
+  content<span class="token operator">:</span> string
+  readonly summary<span class="token operator">:</span> string  <span class="token comment">// readonly表示此成员只读不能修改，在summary初始化完成后不能修改</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> hello<span class="token operator">:</span> Post <span class="token operator">=</span> <span class="token punctuation">{</span>
+  title<span class="token operator">:</span> <span class="token string">'Hello TypeScript'</span><span class="token punctuation">,</span>
+  content<span class="token operator">:</span> <span class="token string">'A javascript superset'</span><span class="token punctuation">,</span>
+  summary<span class="token operator">:</span> <span class="token string">'A javascript'</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>动态成员</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">interface</span> <span class="token class-name">Cache</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">[</span>prop<span class="token operator">:</span> string<span class="token punctuation">]</span><span class="token operator">:</span> string
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> cache<span class="token operator">:</span> Cache <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+cache<span class="token punctuation">.</span>foo <span class="token operator">=</span> <span class="token string">'value1'</span>  <span class="token comment">// cache可以任意添加成员，只不过需要遵循成员必须为string类型</span>
+cache<span class="token punctuation">.</span>bar <span class="token operator">=</span> <span class="token string">'value2'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="十七、TypeScript类的基本使用"><a href="#十七、TypeScript类的基本使用" class="headerlink" title="十七、TypeScript类的基本使用"></a>十七、TypeScript类的基本使用</h2><p>类<strong>classes</strong>，可以用来描述一类具体事务的抽象特征，例如手机属于一种类型，特征是可以打电话、发短信，在这种类型下，又可以细分某智能手机、某非智能手机（具体事物）。ES6以前，JavaScript都是由函数+原型模拟实现类，ES6开始，JavaScript中有了专门的class，TypeScript中除了使用ES6中类的所有用法，它还额外添加一些用法功能。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 类（Class）</span>
+
+<span class="token keyword">export</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// 确保跟其它示例没有成员冲突</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> string <span class="token comment">// = 'init name'</span>
+    age<span class="token operator">:</span> number
+
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token operator">:</span> string<span class="token punctuation">,</span> age<span class="token operator">:</span> number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
+    <span class="token punctuation">}</span>
+
+    <span class="token function">sayHi</span><span class="token punctuation">(</span>msg<span class="token operator">:</span> string<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">I am </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>msg<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在类的构造函数中，并不能直接使用this.name,需要在类中直接声明属性才可以使用。</p>
+<h2 id="十八、TypeScript类的访问修饰符"><a href="#十八、TypeScript类的访问修饰符" class="headerlink" title="十八、TypeScript类的访问修饰符"></a>十八、TypeScript类的访问修饰符</h2><p>TypeScript中类的特殊用法，首先是类成员的访问修饰符，接着使用上面定义的person</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 类的访问修饰符</span>
+
+<span class="token keyword">export</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// 确保跟其它示例没有成员冲突</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> name<span class="token operator">:</span> string <span class="token comment">// = 'init name'  共有成员，默认的修饰符，加不加都一样，但建议加上</span>
+    <span class="token keyword">private</span> age<span class="token operator">:</span> number  <span class="token comment">// 私有属性，只能在类内部访问</span>
+    <span class="token keyword">protected</span> gender<span class="token operator">:</span> boolean  <span class="token comment">// 受保护的属性，</span>
+
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token operator">:</span> string<span class="token punctuation">,</span> age<span class="token operator">:</span> number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
+        <span class="token keyword">this</span><span class="token punctuation">.</span>gender <span class="token operator">=</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">sayHi</span><span class="token punctuation">(</span>msg<span class="token operator">:</span> string<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">I am </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>msg<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token operator">:</span> string<span class="token punctuation">,</span> age<span class="token operator">:</span> number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>gender<span class="token punctuation">)</span>  这里可以访问到projected修饰符修饰的属性
+    <span class="token punctuation">}</span>  构造函数默认的修饰符为<span class="token keyword">public</span>，当它修饰符为<span class="token keyword">private</span>时，外部无法访问，使用静态方法可以访问
+
+    <span class="token keyword">static</span> <span class="token function">create</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token operator">:</span> string<span class="token punctuation">,</span> age<span class="token operator">:</span> number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span>  使用静态方法创建对象实例
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> tom <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'tom'</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>tom<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token comment">// console.log(tom.age)  无法访问age属性，为私有属性</span>
+<span class="token comment">// console.log(tom.gender)  无法访问gender，不能再外部使用，与private的区别是，projected只允许在此类中访问成员</span>
+
+<span class="token comment">// const jack = Student.create('jack', 18)  使用静态方法创建对象实例</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="十九、TypeScript类的只读属性"><a href="#十九、TypeScript类的只读属性" class="headerlink" title="十九、TypeScript类的只读属性"></a>十九、TypeScript类的只读属性</h2><p>对于类属性的修饰，还可以使用readonly进行修饰,只允许访问，不允许修改。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 类的只读属性export {} // 确保跟其它示例没有成员冲突class Person {    public name: string // = 'init name'    private age: number    // 只读成员    protected readonly gender: boolean  // readonly跟在访问修饰符后面，对于只读属性可以再类型声明的时候直接初始化，也可以在构造函数中初始化，二者选     // 其一    constructor(name: string, age: number) {        this.name = name        this.age = age        this.gender = true    }    sayHi(msg: string): void {        console.log(`I am ${this.name}, ${msg}`)        console.log(this.age)    }}const tom = new Person('tom', 18)console.log(tom.name)// tom.gender = false</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="二十、TypeScript类与接口"><a href="#二十、TypeScript类与接口" class="headerlink" title="二十、TypeScript类与接口"></a>二十、TypeScript类与接口</h2><p>相比于类，接口的概念更抽象。使用前面说到的手机的例子，手机是一个类型，这个类型的实例都是可以打电话发短信，但是能够打电话的不仅仅只有手机，座机也可以打电话，但座机并不属于手机这个类目，而是一个单独的类目，因为它不能发短信。这种情况下，这两个类之间有公共的特征，公共的特征我们一般使用接口进行抽象。第一次使用可能会有一些吃力，多从生活的角度思考。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 类与接口</span>
+
+<span class="token keyword">export</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// 确保跟其它示例没有成员冲突</span>
+
+<span class="token comment">// 一个接口只实现一个方法</span>
+<span class="token keyword">interface</span> <span class="token class-name">Eat</span> <span class="token punctuation">{</span>
+    <span class="token function">eat</span><span class="token punctuation">(</span>food<span class="token operator">:</span> string<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Run</span> <span class="token punctuation">{</span>
+    <span class="token function">run</span><span class="token punctuation">(</span>distance<span class="token operator">:</span> number<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span>
+<span class="token punctuation">}</span>
+    
+<span class="token comment">// 人类</span>
+<span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token keyword">implements</span> <span class="token class-name">Eat</span><span class="token punctuation">,</span> Run <span class="token punctuation">{</span>
+    <span class="token function">eat</span><span class="token punctuation">(</span>food<span class="token operator">:</span> string<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">优雅的进餐: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>food<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">run</span><span class="token punctuation">(</span><span class="token parameter">distance<span class="token operator">:</span> number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">直立行走: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>distance<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 动物类</span>
+<span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token keyword">implements</span> <span class="token class-name">Eat</span><span class="token punctuation">,</span> Run <span class="token punctuation">{</span>
+    <span class="token function">eat</span><span class="token punctuation">(</span>food<span class="token operator">:</span> string<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">呼噜呼噜的吃: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>food<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">run</span><span class="token punctuation">(</span><span class="token parameter">distance<span class="token operator">:</span> number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">爬行: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>distance<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="二十一、TypeScript抽象类"><a href="#二十一、TypeScript抽象类" class="headerlink" title="二十一、TypeScript抽象类"></a>二十一、TypeScript抽象类</h2><p>抽象类在某种程度上说与接口有点类似，他也是可以用来约束子类中必须要有某个成员。但是不同的是，抽象类可以办函一些具体的实现。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 抽线类</span>
+
+<span class="token keyword">export</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// 确保跟其它示例没有成员冲突</span>
+
+<span class="token comment">// abstract抽象类，在被abstract声明后，他只能被继承，不能被new一个实例对象</span>
+abstract <span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+    <span class="token function">eat</span><span class="token punctuation">(</span>food<span class="token operator">:</span> string<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">呼噜呼噜的吃: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>food<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+	
+    abstract <span class="token function">run</span><span class="token punctuation">(</span>distance<span class="token operator">:</span> number<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span>  <span class="token comment">// 抽象方法，不需要方法体，当父类中有抽象方法时，子类必须实现这个方法</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// dog继承自animal</span>
+<span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+    <span class="token function">run</span><span class="token punctuation">(</span>distance<span class="token operator">:</span> number<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'四脚爬行'</span><span class="token punctuation">,</span> distance<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> d <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+d<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token string">'狗粮'</span><span class="token punctuation">)</span>
+d<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="二十二、TypeScript泛型"><a href="#二十二、TypeScript泛型" class="headerlink" title="二十二、TypeScript泛型"></a>二十二、TypeScript泛型</h2><p>泛型指我们在定义函数、接口或类的时候，没有去指定具体的类型，等到使用的时候再去指定具体类型的特征。以函数为例，泛型就是我们在声明这个函数的时候，不去指定具体的类型，只在函数调用的时候去传递一个类型。作用是极大程度的复用我们的代码。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 泛型</span>
+
+<span class="token keyword">export</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// 确保跟其它示例没有成员冲突</span>
+<span class="token comment">// 创建一个指定长度的数组，数组元素为数字，返回值为数字类型的数组</span>
+<span class="token keyword">function</span> <span class="token function">createNumberArray</span><span class="token punctuation">(</span><span class="token parameter">length<span class="token operator">:</span> number<span class="token punctuation">,</span> value<span class="token operator">:</span> number</span><span class="token punctuation">)</span><span class="token operator">:</span> number<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ES6中的fill方法，Array创建一个长度为length，元素类型为number的空数组，然后使用fill填充值</span>
+    <span class="token comment">// Array为泛型类，在调用之前并不知道需要什么类型元素的数组，使用泛型参数进行声明元素类型&lt;number&gt;</span>
+    <span class="token keyword">const</span> arr <span class="token operator">=</span> Array<span class="token operator">&lt;</span>number<span class="token operator">&gt;</span><span class="token punctuation">(</span>length<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> arr
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">createStringArray</span><span class="token punctuation">(</span><span class="token parameter">length<span class="token operator">:</span> number<span class="token punctuation">,</span> value<span class="token operator">:</span> string</span><span class="token punctuation">)</span><span class="token operator">:</span> string<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> arr <span class="token operator">=</span> Array<span class="token operator">&lt;</span>string<span class="token operator">&gt;</span><span class="token punctuation">(</span>length<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> arr
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> createArray<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>length<span class="token operator">:</span> number<span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> arr <span class="token operator">=</span> Array<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>length<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> arr
+<span class="token punctuation">}</span>
+
+<span class="token comment">// const res = createNumberArray(3, 100)</span>
+<span class="token comment">// res =&gt; [100, 100, 100]</span>
+
+<span class="token keyword">const</span> res <span class="token operator">=</span> createArray<span class="token operator">&lt;</span>string<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'foo'</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>上述方法createNumberArray创建了一个数字类型的数组，但是当我们需要创建一个字符串类型的数组是，最笨的办法是再创建一个函数，更改其参数，这样就会造成冗余。更合理的办法就是使用泛型。将string或number变成一个参数createArray<t>,一般泛型参数为<strong>大写T</strong>。在使用的时候，我们在T的位置传递想要的类型，这样就可以同时满足上述两个需求了。</t></p>
+<h2 id="二十三、TypeScript类型声明"><a href="#二十三、TypeScript类型声明" class="headerlink" title="二十三、TypeScript类型声明"></a>二十三、TypeScript类型声明</h2><p>在实际开发过程中，我们会经常使用到一些第三方的npm模块，而这些npm模块并不一定都是使用TypeScript编写的。所以他提供的成员就不会有强类型的体验。</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">yarn</span> <span class="token function">add</span> lodash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 类型声明</span>
+<span class="token comment">// camelCase将字符串转换为驼峰格式</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> camelCase <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'lodash'</span>
+<span class="token keyword">import</span> qs <span class="token keyword">from</span> <span class="token string">'query-string'</span>  <span class="token comment">// </span>
+
+qs<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token string">'?key=value&amp;key2=value2'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// declare function camelCase (input: string): string  // 如果我们使用的第三方模块没有对应的类型声明模块，我们需要declare手动进行类型声明</span>
+
+<span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token function">camelCase</span><span class="token punctuation">(</span><span class="token string">'hello typed'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在直接导入时，会报错，无法找到类型声明文件<strong>import { camelCase } from <u>‘lodash’</u></strong></p>
+<p>目前很多第三方模块会提供类型声明的模块，我们安装@types-lodash。并且越来越多的模块在内部会直接支持类型声明。比如上面query-string模块。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">5coder</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://5coder.cn/2021/051950148.html">http://5coder.cn/2021/051950148.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint polocy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">5coder</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/TypeScript/">
+                                    <span class="chip bg-color">TypeScript</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .mvaline-card {
+        margin: 1.5rem auto;
+    }
+
+    .mvaline-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+</style>
+
+<div class="card mvaline-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="mvcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/minivaline/MiniValine.js"></script>
+<script>
+    new MiniValine({
+        el: '#mvcomments',
+        appId: 'BRF4be681muYUe2DWv5HkFRO-gzGzoHsz',
+        appKey: 'meWxgwz0afpFwqHpqO6CkD40',
+        mode: 'DesertsP',
+        placeholder: '道友，聊两句...',
+        pathname: window.location.pathname,
+        lang: '',
+        adminEmailMd5: 'e611edc239e400df892ab629424f7c0e',
+        tagMeta: ["管理员", "小伙伴", "访客"],
+        master: ["f74ce481cd1d3a1ff7692900064361e0"],
+        friends: ["b5bd5d836c7a0091aa8473e79ed4c25e", "adb7d1cd192658a55c0ad22a3309cecf", "3ce1e6c77b4910f1871106cb30dc62b0", "cfce8dc43725cc14ffcd9fb4892d5bfc"],
+        math: true,
+        md: true,
+        enableQQ: true,
+        NoRecordIP: false,
+        visitor: true,
+        maxNest: 6,
+        pageSize: 6,
+        serverURLs: '',
+        emoticonUrl: ["https://cdn.jsdelivr.net/npm/alus@latest", "https://cdn.jsdelivr.net/gh/MiniValine/qq@latest", "https://cdn.jsdelivr.net/gh/MiniValine/Bilibilis@latest", "https://cdn.jsdelivr.net/gh/MiniValine/tieba@latest", "https://cdn.jsdelivr.net/gh/MiniValine/twemoji@latest", "https://cdn.jsdelivr.net/gh/MiniValine/weibo@latest"],
+    });
+</script>
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2021/051953564.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="JavaScript 性能优化">
+                        
+                        <span class="card-title">JavaScript 性能优化</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    大前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/05191486.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="ECMAScript 新特性">
+                        
+                        <span class="card-title">ECMAScript 新特性</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    大前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ECMAScript/">
+                        <span class="chip bg-color">ECMAScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('2'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2022</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">5coder</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">151.6k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2021";
+                    var startMonth = "5";
+                    var startDate = "19";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="/" target="_blank">粤ICP备2021053102号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/5coder-leo" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:leo@5coder.cn" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=245616972" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 245616972" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

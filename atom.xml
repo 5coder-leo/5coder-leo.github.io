@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>5coder</title>
+  
+  <subtitle>5coder</subtitle>
+  <link href="http://5coder.cn/atom.xml" rel="self"/>
+  
+  <link href="http://5coder.cn/"/>
+  <updated>2022-08-09T12:00:09.050Z</updated>
+  <id>http://5coder.cn/</id>
+  
+  <author>
+    <name>5coder</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Nuxt.js 综合案例</title>
+    <link href="http://5coder.cn/2021/072632945.html"/>
+    <id>http://5coder.cn/2021/072632945.html</id>
+    <published>2021-07-26T13:35:34.000Z</published>
+    <updated>2022-08-09T12:00:09.050Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Nuxt-js-综合案例&quot;&gt;&lt;a href=&quot;#Nuxt-js-综合案例&quot; class=&quot;headerlink&quot; title=&quot;Nuxt.js 综合案例&quot;&gt;&lt;/a&gt;Nuxt.js 综合案例&lt;/h2&gt;&lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Nuxt.js" scheme="http://5coder.cn/tags/Nuxt-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nuxt.js基础</title>
+    <link href="http://5coder.cn/2021/072225880.html"/>
+    <id>http://5coder.cn/2021/072225880.html</id>
+    <published>2021-07-22T13:43:29.000Z</published>
+    <updated>2022-08-09T12:00:09.051Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Nuxt-js基础&quot;&gt;&lt;a href=&quot;#Nuxt-js基础&quot; class=&quot;headerlink&quot; title=&quot;Nuxt.js基础&quot;&gt;&lt;/a&gt;Nuxt.js基础&lt;/h2&gt;&lt;h2 id=&quot;Nuxt-js介绍&quot;&gt;&lt;a href=&quot;#Nuxt-js介绍&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Nuxt.js" scheme="http://5coder.cn/tags/Nuxt-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>服务端渲染基础</title>
+    <link href="http://5coder.cn/2021/07224909.html"/>
+    <id>http://5coder.cn/2021/07224909.html</id>
+    <published>2021-07-21T21:32:36.000Z</published>
+    <updated>2022-08-09T12:00:09.058Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;服务端渲染基础&quot;&gt;&lt;a href=&quot;#服务端渲染基础&quot; class=&quot;headerlink&quot; title=&quot;服务端渲染基础&quot;&gt;&lt;/a&gt;服务端渲染基础&lt;/h2&gt;&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Nuxt.js" scheme="http://5coder.cn/tags/Nuxt-js/"/>
+    
+    <category term="服务端渲染" scheme="http://5coder.cn/tags/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vuex 状态管理</title>
+    <link href="http://5coder.cn/2021/071931096.html"/>
+    <id>http://5coder.cn/2021/071931096.html</id>
+    <published>2021-07-19T13:22:53.000Z</published>
+    <updated>2022-08-09T12:00:09.054Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Vuex状态管理&quot;&gt;&lt;a href=&quot;#Vuex状态管理&quot; class=&quot;headerlink&quot; title=&quot;Vuex状态管理&quot;&gt;&lt;/a&gt;Vuex状态管理&lt;/h1&gt;&lt;h2 id=&quot;课程目标&quot;&gt;&lt;a href=&quot;#课程目标&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Vuex" scheme="http://5coder.cn/tags/Vuex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue.js 源码剖析-响应式原理、虚拟 DOM、模板编译和组件化</title>
+    <link href="http://5coder.cn/2021/071840057.html"/>
+    <id>http://5coder.cn/2021/071840057.html</id>
+    <published>2021-07-18T13:34:37.000Z</published>
+    <updated>2022-08-09T12:00:09.053Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-请简述Vue首次渲染过程&quot;&gt;&lt;a href=&quot;#1-请简述Vue首次渲染过程&quot; class=&quot;headerlink&quot; title=&quot;1.请简述Vue首次渲染过程&quot;&gt;&lt;/a&gt;1.请简述Vue首次渲染过程&lt;/h2&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="大前端(杂识)" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF-%E6%9D%82%E8%AF%86/"/>
+    
+    
+    <category term="Vue源码解析" scheme="http://5coder.cn/tags/Vue%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue.js 源码剖析-模板编译和组件化</title>
+    <link href="http://5coder.cn/2021/071650852.html"/>
+    <id>http://5coder.cn/2021/071650852.html</id>
+    <published>2021-07-15T22:38:14.000Z</published>
+    <updated>2022-08-09T12:00:09.054Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Vue-js-源码剖析-模板编译和组件化&quot;&gt;&lt;a href=&quot;#Vue-js-源码剖析-模板编译和组件化&quot; class=&quot;headerlink&quot; title=&quot;Vue.js 源码剖析-模板编译和组件化&quot;&gt;&lt;/a&gt;Vue.js</summary>
+        
+      
+    
+    
+    
+    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Vue模板编译" scheme="http://5coder.cn/tags/Vue%E6%A8%A1%E6%9D%BF%E7%BC%96%E8%AF%91/"/>
+    
+    <category term="Vue组件化" scheme="http://5coder.cn/tags/Vue%E7%BB%84%E4%BB%B6%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue.js 源码剖析-虚拟DOM</title>
+    <link href="http://5coder.cn/2021/070923019.html"/>
+    <id>http://5coder.cn/2021/070923019.html</id>
+    <published>2021-07-08T21:27:00.000Z</published>
+    <updated>2022-08-09T12:00:09.053Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Vue-js-源码剖析-虚拟DOM&quot;&gt;&lt;a href=&quot;#Vue-js-源码剖析-虚拟DOM&quot; class=&quot;headerlink&quot; title=&quot;Vue.js 源码剖析-虚拟DOM&quot;&gt;&lt;/a&gt;Vue.js 源码剖析-虚拟DOM&lt;/h1&gt;&lt;hr&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Vue虚拟DOM" scheme="http://5coder.cn/tags/Vue%E8%99%9A%E6%8B%9FDOM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue.js 源码剖析-响应式原理-随堂测试</title>
+    <link href="http://5coder.cn/2021/07074548.html"/>
+    <id>http://5coder.cn/2021/07074548.html</id>
+    <published>2021-07-06T22:40:46.000Z</published>
+    <updated>2022-08-09T12:00:09.052Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Vue-js-源码剖析-响应式原理-随堂测试&quot;&gt;&lt;a href=&quot;#Vue-js-源码剖析-响应式原理-随堂测试&quot; class=&quot;headerlink&quot; title=&quot;Vue.js 源码剖析-响应式原理-随堂测试&quot;&gt;&lt;/a&gt;Vue.js</summary>
+        
+      
+    
+    
+    
+    <category term="大前端(杂识)" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF-%E6%9D%82%E8%AF%86/"/>
+    
+    
+    <category term="Vue响应式" scheme="http://5coder.cn/tags/Vue%E5%93%8D%E5%BA%94%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue.js 源码剖析-响应式原理</title>
+    <link href="http://5coder.cn/2021/062142659.html"/>
+    <id>http://5coder.cn/2021/062142659.html</id>
+    <published>2021-06-21T13:30:13.000Z</published>
+    <updated>2022-08-09T12:00:09.052Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Vue源码解析-响应式原理&quot;&gt;&lt;a href=&quot;#Vue源码解析-响应式原理&quot; class=&quot;headerlink&quot; title=&quot;Vue源码解析-响应式原理&quot;&gt;&lt;/a&gt;Vue源码解析-响应式原理&lt;/h1&gt;&lt;h2 id=&quot;课程目标&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Vue响应式" scheme="http://5coder.cn/tags/Vue%E5%93%8D%E5%BA%94%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面试题分享1</title>
+    <link href="http://5coder.cn/2021/062023260.html"/>
+    <id>http://5coder.cn/2021/062023260.html</id>
+    <published>2021-06-20T12:16:24.000Z</published>
+    <updated>2022-08-09T12:00:09.060Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;前端面试题分享：&lt;code&gt;fn1.call.call(fn2)&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class=&quot;line-numbers language-js&quot; data-language=&quot;js&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="前端面试题" scheme="http://5coder.cn/categories/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+    
+    <category term="call" scheme="http://5coder.cn/tags/call/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>3-1作业</title>
+    <link href="http://5coder.cn/2021/061816452.html"/>
+    <id>http://5coder.cn/2021/061816452.html</id>
+    <published>2021-06-17T21:36:40.000Z</published>
+    <updated>2022-08-09T12:00:09.048Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;一、简单题&quot;&gt;&lt;a href=&quot;#一、简单题&quot; class=&quot;headerlink&quot; title=&quot;一、简单题&quot;&gt;&lt;/a&gt;一、简单题&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;1、当我们点击按钮的时候动态给 data</summary>
+        
+      
+    
+    
+    
+    <category term="大前端(杂识)" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF-%E6%9D%82%E8%AF%86/"/>
+    
+    
+    <category term="Vue响应式" scheme="http://5coder.cn/tags/Vue%E5%93%8D%E5%BA%94%E5%BC%8F/"/>
+    
+    <category term="Diff" scheme="http://5coder.cn/tags/Diff/"/>
+    
+    <category term="VueRouter" scheme="http://5coder.cn/tags/VueRouter/"/>
+    
+    <category term="Snabbdom" scheme="http://5coder.cn/tags/Snabbdom/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Virtual DOM 的实现原理</title>
+    <link href="http://5coder.cn/2021/060417380.html"/>
+    <id>http://5coder.cn/2021/060417380.html</id>
+    <published>2021-06-03T21:37:23.000Z</published>
+    <updated>2022-08-09T12:00:09.051Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Virtual-DOM的实现原理&quot;&gt;&lt;a href=&quot;#Virtual-DOM的实现原理&quot; class=&quot;headerlink&quot; title=&quot;Virtual DOM的实现原理&quot;&gt;&lt;/a&gt;Virtual DOM的实现原理&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Vue" scheme="http://5coder.cn/tags/Vue/"/>
+    
+    <category term="Vue响应式原理" scheme="http://5coder.cn/tags/Vue%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>模拟Vue.js响应式原理</title>
+    <link href="http://5coder.cn/2021/052627165.html"/>
+    <id>http://5coder.cn/2021/052627165.html</id>
+    <published>2021-05-25T21:26:42.000Z</published>
+    <updated>2022-08-09T12:00:09.058Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;模拟-Vue-js-响应式原理&quot;&gt;&lt;a href=&quot;#模拟-Vue-js-响应式原理&quot; class=&quot;headerlink&quot; title=&quot;模拟 Vue.js 响应式原理&quot;&gt;&lt;/a&gt;模拟 Vue.js</summary>
+        
+      
+    
+    
+    
+    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Vue" scheme="http://5coder.cn/tags/Vue/"/>
+    
+    <category term="Vue响应式原理" scheme="http://5coder.cn/tags/Vue%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>为什么我建议你卸载这些APP？</title>
+    <link href="http://5coder.cn/2021/052341852.html"/>
+    <id>http://5coder.cn/2021/052341852.html</id>
+    <published>2021-05-23T13:22:28.000Z</published>
+    <updated>2022-08-09T12:00:09.056Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;作者 | 鸣哥</summary>
+        
+      
+    
+    
+    
+    <category term="鸡汤" scheme="http://5coder.cn/categories/%E9%B8%A1%E6%B1%A4/"/>
+    
+    
+    <category term="鸡汤" scheme="http://5coder.cn/tags/%E9%B8%A1%E6%B1%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue-Router 原理实现</title>
+    <link href="http://5coder.cn/2021/052360218.html"/>
+    <id>http://5coder.cn/2021/052360218.html</id>
+    <published>2021-05-23T02:20:13.000Z</published>
+    <updated>2022-08-09T12:00:09.052Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Vue-Router-原理实现&quot;&gt;&lt;a href=&quot;#Vue-Router-原理实现&quot; class=&quot;headerlink&quot; title=&quot;Vue-Router 原理实现&quot;&gt;&lt;/a&gt;Vue-Router</summary>
+        
+      
+    
+    
+    
+    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Vue-Router" scheme="http://5coder.cn/tags/Vue-Router/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue.js基础回顾</title>
+    <link href="http://5coder.cn/2021/052341703.html"/>
+    <id>http://5coder.cn/2021/052341703.html</id>
+    <published>2021-05-23T01:29:59.000Z</published>
+    <updated>2022-08-09T12:00:09.053Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;一、Vue基础结构&quot;&gt;&lt;a href=&quot;#一、Vue基础结构&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Vue" scheme="http://5coder.cn/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git与远程仓库链接</title>
+    <link href="http://5coder.cn/2021/052153620.html"/>
+    <id>http://5coder.cn/2021/052153620.html</id>
+    <published>2021-05-21T12:15:13.000Z</published>
+    <updated>2022-08-09T12:00:09.049Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;GitHub上创建空仓库（服务器创建空仓库），复制仓库地址&lt;/li&gt;
+&lt;li&gt;按照下图操作，将本地仓库与远程仓库链接&lt;/li&gt;
+&lt;li&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="Git" scheme="http://5coder.cn/categories/Git/"/>
+    
+    
+    <category term="Git" scheme="http://5coder.cn/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>小白NGINX</title>
+    <link href="http://5coder.cn/2021/052037541.html"/>
+    <id>http://5coder.cn/2021/052037541.html</id>
+    <published>2021-05-20T14:49:37.000Z</published>
+    <updated>2022-08-09T12:00:09.057Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;em&gt;Nginx 是一个采用主从架构的 Web 服务器，可用于反向代理、负载均衡器、邮件代理和 HTTP 缓存&lt;/em&gt;。&lt;/p&gt;
+&lt;p&gt;Emmm，上面的 Nginx 介绍看过去有些复杂而且充满了不明觉厉的术语。Relax，在这篇文章里，我（原作者）会先带你理解</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="http://5coder.cn/categories/Linux/"/>
+    
+    
+    <category term="Nginx" scheme="http://5coder.cn/tags/Nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>什么是VLAN</title>
+    <link href="http://5coder.cn/2021/052058690.html"/>
+    <id>http://5coder.cn/2021/052058690.html</id>
+    <published>2021-05-20T14:48:33.000Z</published>
+    <updated>2022-08-09T12:00:09.056Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;什么是VLAN&quot;&gt;&lt;a href=&quot;#什么是VLAN&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="网络" scheme="http://5coder.cn/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="VLAN" scheme="http://5coder.cn/tags/VLAN/"/>
+    
+    <category term="DNS" scheme="http://5coder.cn/tags/DNS/"/>
+    
+    <category term="网关" scheme="http://5coder.cn/tags/%E7%BD%91%E5%85%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从ES6到ES10的新特性万字大总结</title>
+    <link href="http://5coder.cn/2021/052021044.html"/>
+    <id>http://5coder.cn/2021/052021044.html</id>
+    <published>2021-05-20T14:47:12.000Z</published>
+    <updated>2022-08-09T12:00:09.056Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;从ES6到ES10的新特性万字大总结&quot;&gt;&lt;a href=&quot;#从ES6到ES10的新特性万字大总结&quot; class=&quot;headerlink&quot; title=&quot;从ES6到ES10的新特性万字大总结&quot;&gt;&lt;/a&gt;从ES6到ES10的新特性万字大总结&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="大前端(杂识)" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF-%E6%9D%82%E8%AF%86/"/>
+    
+    
+    <category term="ES6" scheme="http://5coder.cn/tags/ES6/"/>
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,1475 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Vue.js 源码剖析-响应式原理、虚拟 DOM、模板编译和组件化, JavaScript Vue">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Vue.js 源码剖析-响应式原理、虚拟 DOM、模板编译和组件化 | 5coder</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="5coder" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">5coder</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fa fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>Contact</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">5coder</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fa fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/58.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Vue.js 源码剖析-响应式原理、虚拟 DOM、模板编译和组件化</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Vue%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/">
+                                <span class="chip bg-color">Vue源码解析</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF-%E6%9D%82%E8%AF%86/" class="post-category">
+                                大前端(杂识)
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2021-07-18
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2022-08-09
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    2.7k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    11 Min
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="1-请简述Vue首次渲染过程"><a href="#1-请简述Vue首次渲染过程" class="headerlink" title="1.请简述Vue首次渲染过程"></a>1.请简述Vue首次渲染过程</h2><h3 id="1-实例创建完成后，调用-mount-方法"><a href="#1-实例创建完成后，调用-mount-方法" class="headerlink" title="1.实例创建完成后，调用$mount()方法"></a>1.实例创建完成后，调用<code>$mount()</code>方法</h3><p>完整版中会先调用<code>src/platforms/web/entry-runtime-with-compiler.js</code>中重写的<code>$mount()</code>(即进行模板编译)，其中：</p>
+<ul>
+<li>先判断<code>options</code>中是否有<code>render</code>，如果没有传递<code>render</code>，调用<code>compileToFunctions()</code>，生成render()函数</li>
+<li>然后设置<code>options.render = render</code></li>
+</ul>
+<p>然后调用原来的<code>$mount()</code>（在<code>src/platform/web/runtime/index.js</code>中定义），其中会调用<code>mountComponent(this, el, hydrating)</code></p>
+<h3 id="2-mountComponent-this-el-hydrating"><a href="#2-mountComponent-this-el-hydrating" class="headerlink" title="2.mountComponent(this, el, hydrating)"></a>2.mountComponent(this, el, hydrating)</h3><ul>
+<li>触发<code>beforeMount：callHook</code>(vm, ‘beforeMount’)`</li>
+<li>定义函数<code>updateComponent = () =&gt; { vm._update(vm._render(), hydrating) }</code><ul>
+<li><code>vm._render()</code>生成虚拟DOM（<code>vm._render()</code>定义在<code>src/core/instance/render.js</code>中）</li>
+<li><code>vm._update()</code>将虚拟DOM转换成真是DOM(<code>vm._update()</code>定义在<code>src/core/instance/lifecycle.js</code>中)</li>
+</ul>
+</li>
+<li>创建<code>Watcher</code>实例，把<code>updateComponent</code>传递进去，<code>updateComponent</code>是在<code>Watcher</code>中通过<code>Watcher</code>的<code>get()</code>实例方法执行的</li>
+<li>触发<code>mounted</code>；返回实例<code>return vm</code></li>
+</ul>
+<h3 id="3-watcher-get"><a href="#3-watcher-get" class="headerlink" title="3.watcher.get()"></a>3.watcher.get()</h3><p>首次渲染创建的是渲染<code>Watcher</code>，创建完<code>Watcher</code>实例后会调用一个get()方法，<code>get()</code>中会调用<code>updateComponent()</code>，<code>updateComponent()</code>中会调用<code>vm._update(VNode. hydrating)</code>，而其中的<code>VNode</code>是调用<code>vm._render()</code>创建<code>VNode</code></p>
+<p><code>vm._render()</code>的执行过程：</p>
+<ul>
+<li>获取创建实例时存放在<code>options</code>中的<code>render</code>函数：<code>const { render, _parentVnode } = vm.$options</code></li>
+<li>调用<code>render.call(vm.renderProxy, vm.$createElement)</code>（这个<code>render</code>是创建实例<code>new Vue()</code>时传入的<code>render()</code>，或者是编译<code>template</code>生成的<code>render()</code>），最后返回<code>VNode</code></li>
+</ul>
+<p>然后执行<code>vm._update(VNode, hydrating)</code>，其中：</p>
+<ul>
+<li>调用<code>vm.__patch__(vm.$el, vnode)</code>挂载真实<code>DOM</code></li>
+<li>将<code>vm.__patch__</code>的返回值记录在<code>vm.$el</code>中</li>
+</ul>
+<hr>
+<h2 id="2-请简述-Vue-响应式原理"><a href="#2-请简述-Vue-响应式原理" class="headerlink" title="2.请简述 Vue 响应式原理"></a>2.请简述 Vue 响应式原理</h2><p>Vue使用观察者模式来对其数据进行响应式处理，过程如下：</p>
+<h3 id="创建观察者"><a href="#创建观察者" class="headerlink" title="创建观察者"></a>创建观察者</h3><ul>
+<li><p>在创建 <code>Vue</code> 实例时，调用的 <code>this._init(options)</code> 中会执行 <code>initInjections(vm)</code>、<code>initState(vm)</code>，这两个方法中分别会对 <code>inject</code> 的成员、本实例的 <code>props</code> 和 <code>data</code> 进行响应式处理</p>
+</li>
+<li><p><code>initInjections(vm)</code> 中会遍历 <code>inject</code> 的成员，通过 <code>defineReactive(vm, key, result[key])</code> 将每个成员转换成响应式属性（即劫持 <code>getter/setter</code>）</p>
+</li>
+<li><p><code>initState(vm)</code> 中调用 <code>initProps(vm, opts.props)</code>，其中编辑 <code>props</code> 属性，通过 <code>defineReactive(props, key, value)</code> 将属性转换成<code>getter</code>、<code>setter</code>，然后存入 <code>props</code>（也是 <code>vm._props</code>）中</p>
+</li>
+<li><p><code>initState(vm)</code> 中调用 <code>initData(vm, opts.props)</code>，其中调用 <code>observe(data, true /* asRootData */)</code> 对 <code>data</code> 进行响应式处理</p>
+</li>
+<li><p><code>defineReactive(obj, key, val, customSetter?, shallow?)</code></p>
+<ul>
+<li>会将传入的 <code>key</code> 换成响应式属性，即其劫持 <code>getter/setter</code> （ <code>Object.defineProperty( obj, key, { ..., get(){...}, set(){...} } )</code> ）</li>
+<li>为每个属性 <code>key</code> 生成一个 <code>Dep</code> 对象 <code>dep</code>（<code>const dep = new Dep()</code>）；<code>dep</code> 会在 <code>getter</code> 中收集依赖（即相应属性的 <code>Watcher</code> 对象），在 <code>setter</code> 中调用 <code>dep.notify()</code> 派发更新；</li>
+<li>在需要递归观察子对象时，会调用 <code>observe(val)</code>（<code>let childOb = !shallow &amp;&amp; observe(val)</code>），若 <code>val</code> 是个对象，则会为这个对象创建一个 <code>Observer</code> 对象，并返回。</li>
+</ul>
+</li>
+<li><p><code>observe (value, asRootData?)</code></p>
+<ul>
+<li>判断 <code>value</code> 是否是对象，不是对象就返回</li>
+<li>是对象，则这个对象可称之为 观测对象 ，然后为这个对象创建一个 <code>Observer</code> 对象 ：<code>ob = new Observer(value)</code>，并返回 <code>ob</code>（在 <code>defineReactive</code> 中，这个返回的 <code>ob</code> 会在 <code>getter</code> 中收集依赖相应的依赖）</li>
+<li><code>Observer</code> 构造函数中，会新建一个 <code>Dep</code> 对象 <code>dep</code>，这里的 <code>dep</code> 是为传入的 观测对象（进行响应式处理的对象）收集依赖（<code>Watcher</code>）；与 <code>defineReactive</code> 中的 <code>dep</code> 不一样</li>
+<li>将 <code>Observer</code> 实例挂载到 观测对象 的 <code>__ob__</code> 属性：<code>def(value, '__ob__', this)</code></li>
+<li>若 <code>value</code> 不是数组，则执行 <code>this.walk(value)</code> 方法，遍历 <code>value</code> 中的每一个属性，然后调用 <code>defineReactive(obj, keys[i])</code></li>
+<li>若 <code>value</code> 是数组<ul>
+<li><code>Vue</code> 并没有对数组对象的索引调用 <code>defineReactive</code> 来生成 <code>getter/setter</code>，而是重写了原生数组中会更改原数组的方法，调用这些新方法后，数组对象对应的 <code>dep</code> 对象会调用 dep.notify 方法来驱动视图的更新</li>
+<li>重写的数组方法：<code>'push'， 'pop', 'shift', 'unshift', 'splice', 'sort', 'reverse'</code></li>
+<li>重写数组方法后，调用 <code>this.observeArray(value)</code>，作用是当数组中的元素存在对象时，为数组中的每一个对象创建一个 <code>observer</code> 实例</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>至此，创建观察者结束</p>
+<h3 id="依赖的收集"><a href="#依赖的收集" class="headerlink" title="依赖的收集"></a>依赖的收集</h3><ul>
+<li>在进行挂载时（ 调用 <code>$mount()</code> ），会执行 <code>mountComponent</code> 方法，其中会创建一个渲染 <code>Watcher</code> 对象</li>
+<li>渲染 <code>Watcher</code> 对象构造函数的最后会执行 <code>get()</code> 方法，<code>get()</code> 中会先执行 <code>pushTarget(this)</code>，<code>pushTarget</code> 中则会将 Dep.target 设置为该 <code>watcher</code>（<code>Dep.target = target</code>）</li>
+<li>然后调用 <code>this.getter.call(vm, vm)</code>，即执行了 <code>vm._update(vm._render(), hydrating)</code>，而 <code>vm._render()</code> 中执行 <code>render.call(vm._renderProxy, vm.$createElement)</code> 以生成 <code>vnode</code>，这个生成 <code>VNode</code> 的过程中，会触发 相应的响应式数据的 <code>getter</code> ，然后其中的 <code>dep.depend()</code> 则会收集当前实例 <code>watcher</code></li>
+</ul>
+<p>当生成完 <code>VNode</code> 后，就完成了响应式数据的的依赖收集</p>
+<h3 id="通知的发送"><a href="#通知的发送" class="headerlink" title="通知的发送"></a>通知的发送</h3><p>但修改某个响应式数据时，会触发该数据的 <code>setter</code></p>
+<ul>
+<li>如果新值是对象，且需要递归观察子对象时执行 <code>childOb = !shallow &amp;&amp; observe(newVal)</code>，将新增也进行响应式处理</li>
+<li>调用 <code>dep.notify()</code> 派发更新，<code>notify</code> 会调用每个订阅者（<code>watcher</code>）的 <code>update</code> 方法实现更新</li>
+<li><code>watcher</code> 的 <code>update</code> 中使用 <code>queueWatcher()</code> 判断 <code>watcher</code> 是否被处理，若没有，则把 <code>watcher</code> 添加进 <code>queue</code> 队列中，并调用 <code>flushSchedulerQueue()</code></li>
+<li><code>flushSchedulerQueue()</code> 中先触发 <code>beforeUpdate</code> 钩子函数，然后调用 <code>watcher.run()</code></li>
+<li><code>watcher.run()</code> 中会调用 <code>get()</code> 方法，<code>get</code> 中执行 <code>getter</code>，而 <code>getter</code> 就是传入的 <code>updateComponent</code> 方法，<code>updateComponent</code> 中执行 <code>vm._update(vm._render(), hydrating)</code>，如此就完成了视图的更新</li>
+<li>然后 <code>flushSchedulerQueue()</code> 后续代码中 还原更新步骤的初始状态、触发 <code>actived</code> 钩子函数、触发 <code>updated</code> 钩子函数</li>
+</ul>
+<hr>
+<h2 id="3-请简述虚拟-DOM-中-Key-的作用和好处"><a href="#3-请简述虚拟-DOM-中-Key-的作用和好处" class="headerlink" title="3.请简述虚拟 DOM 中 Key 的作用和好处"></a>3.请简述虚拟 DOM 中 Key 的作用和好处</h2><p><code>Key</code> 是用来优化 <code>Diff</code> 算法的。<code>Diff</code>算法核心在于同层次节点比较，<code>Key</code> 就是用于在比较同层次新、旧节点时，判断其是否相同。</p>
+<p><code>Key</code> 一般用于生成一列同类型节点时使用，这种情况下，当修改这些同类型节点的某个内容、变更位置、删除、添加等时，此时界面需要更新视图，<code>Vue</code> 会调用 <code>patch</code> 方法通过对比新、旧节点的变化来更新视图。其从根节点开始若新、旧 <code>VNode</code> 相同，则调用 <code>patchVnode</code></p>
+<p><code>patchVnode</code> 中若新节点没有文本，且新节点和旧节点都有有子节点，则需对子节点进行 <code>Diff</code> 操作，即调用 <code>updateChildren</code>，<code>Key</code> 就在 <code>updateChildren</code> 起了大作用</p>
+<p><code>updateChildren</code> 中会遍历对比上步中的新、旧节点的子节点，并按 Diff 算法通过 <code>sameVnode</code> 来判断要对比的节点是否相同</p>
+<ul>
+<li>若这里的子节点未设置 <code>Key</code>，则此时的每个新、旧子节点在执行 <code>sameVnode</code> 时会判定相同，然后再次执行一次 <code>patchVnode</code> 来对比这些子节点的子节点</li>
+<li>若设置了 <code>Key</code>，当执行 <code>sameVnode</code><ul>
+<li>若 <code>Key</code> 不同 <code>sameVnode</code> 返回 <code>false</code>，然后执行后续判断；</li>
+<li>若 <code>Key</code> 相同 <code>sameVnode</code> 返回 <code>true</code>，然后再执行 patchVnode 来对比这些子节点的子节点</li>
+</ul>
+</li>
+</ul>
+<p>即，使用了 <code>Key</code> 后，可以优化新、旧节点的对比判断，减少了遍历子节点的层次，少使用很多次 <code>patchVnode</code></p>
+<hr>
+<h2 id="4-请简述-Vue-中模板编译的过程"><a href="#4-请简述-Vue-中模板编译的过程" class="headerlink" title="4.请简述 Vue 中模板编译的过程"></a>4.请简述 Vue 中模板编译的过程</h2><h3 id="Vue-模板编译入口文件执行过程"><a href="#Vue-模板编译入口文件执行过程" class="headerlink" title="Vue 模板编译入口文件执行过程"></a>Vue 模板编译入口文件执行过程</h3><p>在完整版 Vue 中，<code>src/platforms/web/entry-runtime-with-compiler.js</code> 里先保留 <code>Vue</code> 实例的 <code>mount</code>方法，然后重写该<code>mount</code>方法，然后重写该<code>mount</code> 方法，这个重写的方法就是完整版 <code>Vue</code> 中的模板编译器，其中在 <code>$options</code> 上挂载了模板编译后生成的 <code>render</code> 函数。</p>
+<p><code>$options</code> 上的 <code>render</code> 函数是由 <code>compileToFunctions(template, options, vm)</code> 这个函数生成，即将 <code>template</code> 转换成了 <code>render</code> 函数。所以这里就是完成了首次加载时对模板的编译。</p>
+<p>这里梳理下生成 <code>render</code> 函数的相关函数的调用过程</p>
+<h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>调用 <code>compileToFunctions(template, options, vm)</code></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// src/platforms/web/entry-runtime-with-compiler.js </span>
+<span class="token comment">// 把 template 转换成 render 函数</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> render<span class="token punctuation">,</span> staticRenderFns <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">compileToFunctions</span><span class="token punctuation">(</span>template<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  outputSourceRange<span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">!==</span> <span class="token string">'production'</span><span class="token punctuation">,</span>
+  shouldDecodeNewlines<span class="token punctuation">,</span>
+  shouldDecodeNewlinesForHref<span class="token punctuation">,</span>
+  delimiters<span class="token operator">:</span> options<span class="token punctuation">.</span>delimiters<span class="token punctuation">,</span>
+  comments<span class="token operator">:</span> options<span class="token punctuation">.</span>comments
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">)</span>
+options<span class="token punctuation">.</span>render <span class="token operator">=</span> render
+options<span class="token punctuation">.</span>staticRenderFns <span class="token operator">=</span> staticRenderFns<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p><code>compileToFunctions</code> 是由 src/platforms/web/compiler/index.js 里的 <code>createCompiler(baseOptions)</code> 生成的。<code>baseOptions</code> 里是一些关于指令、模块、HTML标签相关的方法，这里不予关心。</p>
+<p>所以 <strong>第一步</strong> 中 <code>compileToFunctions</code> 是这里的 <code>createCompiler</code> 返回的函数。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// src/platforms/web/compiler/index.js</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> baseOptions <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./options'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> createCompiler <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'compiler/index'</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span> compile<span class="token punctuation">,</span> compileToFunctions <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">createCompiler</span><span class="token punctuation">(</span>baseOptions<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token punctuation">{</span> compile<span class="token punctuation">,</span> compileToFunctions <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p><code>createCompiler</code> 来自于 src/compiler/index.js，其中调用了 <code>createCompilerCreator(function baseCompile (template, options))</code> 方法</p>
+<p>所以 <strong>第二步</strong> 中的 <code>createCompiler</code> 来自于这里的 <code>createCompilerCreator</code> 返回的函数，<code>createCompilerCreator</code> 中传入 函数 <code>baseCompile</code> 作为参数</p>
+<p>那么 <strong>第一步</strong> 中的 <code>compileToFunctions</code> 就是这里的 <code>createCompilerCreator</code> 返回的函数执行（即执行 <code>createCompiler(baseOptions)</code>）后返回的函数</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// src/compiler/index.js</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> createCompiler <span class="token operator">=</span> <span class="token function">createCompilerCreator</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">baseCompile</span> <span class="token punctuation">(</span>
+  <span class="token parameter">template<span class="token operator">:</span> string<span class="token punctuation">,</span>
+  options<span class="token operator">:</span> CompilerOptions</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> CompiledResult <span class="token punctuation">{</span>
+  <span class="token comment">// 把模板转换成 ast 抽象语法树</span>
+  <span class="token comment">// 抽象语法树，用来以树形的方式描述代码结构</span>
+  <span class="token keyword">const</span> ast <span class="token operator">=</span> <span class="token function">parse</span><span class="token punctuation">(</span>template<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>optimize <span class="token operator">!==</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 优化抽象语法树</span>
+    <span class="token function">optimize</span><span class="token punctuation">(</span>ast<span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 把抽象语法树生成字符串形式的 js 代码</span>
+  <span class="token keyword">const</span> code <span class="token operator">=</span> <span class="token function">generate</span><span class="token punctuation">(</span>ast<span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    ast<span class="token punctuation">,</span>
+    <span class="token comment">// 渲染函数</span>
+    render<span class="token operator">:</span> code<span class="token punctuation">.</span>render<span class="token punctuation">,</span>
+    <span class="token comment">// 静态渲染函数，生成静态 VNode 树</span>
+    staticRenderFns<span class="token operator">:</span> code<span class="token punctuation">.</span>staticRenderFns
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h3><p><code>createCompilerCreator</code> 来自于 <code>src/compiler/create-compiler.js</code></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// src/compiler/create-compiler.js</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">createCompilerCreator</span> <span class="token punctuation">(</span><span class="token parameter">baseCompile<span class="token operator">:</span> Function</span><span class="token punctuation">)</span><span class="token operator">:</span> Function <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function">createCompiler</span> <span class="token punctuation">(</span><span class="token parameter">baseOptions<span class="token operator">:</span> CompilerOptions</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">function</span> <span class="token function">compile</span> <span class="token punctuation">(</span>
+          <span class="token parameter">template<span class="token operator">:</span> string<span class="token punctuation">,</span>
+          options<span class="token operator">?</span><span class="token operator">:</span> CompilerOptions</span>
+        <span class="token punctuation">)</span><span class="token operator">:</span> CompiledResult <span class="token punctuation">{</span>
+            <span class="token keyword">const</span> finalOptions <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>baseOptions<span class="token punctuation">)</span>
+            <span class="token operator">...</span><span class="token punctuation">.</span>
+            <span class="token keyword">const</span> compiled <span class="token operator">=</span> <span class="token function">baseCompile</span><span class="token punctuation">(</span>template<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> finalOptions<span class="token punctuation">)</span>
+            <span class="token operator">...</span>
+            <span class="token keyword">return</span> compiled
+        <span class="token punctuation">}</span>
+        
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+          compile<span class="token punctuation">,</span>
+          compileToFunctions<span class="token operator">:</span> <span class="token function">createCompileToFunctionFn</span><span class="token punctuation">(</span>compile<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>可以看出这个函数返回了 <code>createCompiler(baseOptions)</code> 函数，则往上推可知 <strong>第二步</strong> 中的</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// src/platforms/web/compiler/index.js</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span> compile<span class="token punctuation">,</span> compileToFunctions <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">createCompiler</span><span class="token punctuation">(</span>baseOptions<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>其实就是执行的这里的 <code>function createCompiler (baseOptions: CompilerOptions){...}</code>，这个 <code>createCompiler</code> 函数里返回了方法 <code>compile、compileToFunctions</code></p>
+<p>方法 <code>compile</code> 中执行了传入的函数参数 <code>baseCompile</code>，这个 <code>baseCompile</code> 是 <strong>第三步</strong> 中传入的，其返回值为 <code>ast、render、staticRenderFns</code></p>
+<p>而方法 <code>compileToFunctions</code> 正是 <strong>第一步</strong> 中调用的 <code>compileToFunctions(template, options, vm)</code>，其来自于 <code>createCompileToFunctionFn(compile)</code></p>
+<h3 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h3><p><code>createCompileToFunctionFn</code> 来自于 <code>src/compiler/to-function.js</code></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// src/compiler/to-function.js</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">createCompileToFunctionFn</span> <span class="token punctuation">(</span><span class="token parameter">compile<span class="token operator">:</span> Function</span><span class="token punctuation">)</span><span class="token operator">:</span> Function <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function">compileToFunctions</span> <span class="token punctuation">(</span>
+        <span class="token parameter">template<span class="token operator">:</span> string<span class="token punctuation">,</span>
+        options<span class="token operator">?</span><span class="token operator">:</span> CompilerOptions<span class="token punctuation">,</span>
+        vm<span class="token operator">?</span><span class="token operator">:</span> Component</span>
+      <span class="token punctuation">)</span><span class="token operator">:</span> CompiledFunctionResult <span class="token punctuation">{</span>
+        <span class="token operator">...</span>
+        
+        <span class="token comment">// 1. 读取缓存中的 CompiledFunctionResult 对象，如果有直接返回</span>
+        <span class="token keyword">const</span> key <span class="token operator">=</span> options<span class="token punctuation">.</span>delimiters
+          <span class="token operator">?</span> <span class="token function">String</span><span class="token punctuation">(</span>options<span class="token punctuation">.</span>delimiters<span class="token punctuation">)</span> <span class="token operator">+</span> template
+          <span class="token operator">:</span> template
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>cache<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> cache<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+        
+        <span class="token comment">// 2. 把模板编译为编译对象(render, staticRenderFns)，字符串形式的js代码</span>
+        <span class="token keyword">const</span> compiled <span class="token operator">=</span> <span class="token function">compile</span><span class="token punctuation">(</span>template<span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+        
+        <span class="token comment">// 3. 把字符串形式的js代码转换成js方法</span>
+        res<span class="token punctuation">.</span>render <span class="token operator">=</span> <span class="token function">createFunction</span><span class="token punctuation">(</span>compiled<span class="token punctuation">.</span>render<span class="token punctuation">,</span> fnGenErrors<span class="token punctuation">)</span>
+        res<span class="token punctuation">.</span>staticRenderFns <span class="token operator">=</span> compiled<span class="token punctuation">.</span>staticRenderFns<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">code</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token function">createFunction</span><span class="token punctuation">(</span>code<span class="token punctuation">,</span> fnGenErrors<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        
+        <span class="token comment">// 4. 缓存并返回res对象(render, staticRenderFns方法)</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>cache<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> res<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><code>createCompileToFunctionFn</code> 返回函数 <code>compileToFunctions</code>，即 <strong>第四步</strong> 中 <code>createCompiler</code> 函数返回的 <code>compileToFunctions</code>，所以是 <strong>第一步</strong> 中调用的 <code>compileToFunctions</code> 就是在执行这里的 <code>compileToFunctions</code>。</p>
+<h3 id="总结过程"><a href="#总结过程" class="headerlink" title="总结过程"></a>总结过程</h3><ul>
+<li>执行 <code>src/platforms/web/entry-runtime-with-compiler.js</code> 中的 <code>compileToFunctions(template, options, vm)</code></li>
+<li>执行 <code>src/compiler/to-function.js</code> 中的 <code>compileToFunctions</code>，<code>compileToFunctions</code> 中调用 <code>compile(template, options)</code></li>
+<li>执行 <code>src/compiler/create-compiler.js</code> 中的 <code>compile</code>，<code>compile</code> 中调用 <code>baseCompile(template.trim(), finalOptions)</code></li>
+<li>执行 <code>src/compiler/index.js</code> 传入 <code>createCompilerCreator</code> 中的函数参数 baseCompile(template, options)，返回 <code>ast、render、staticRenderFns</code></li>
+<li><code>src/compiler/create-compiler.js</code> 中 <code>const compiled = { ast、render、staticRenderFns }</code>，返回 <code>compiled</code></li>
+<li><code>src/compiler/to-function.js</code> 中返回 <code>res</code>，即返回 <code>render, staticRenderFns</code> 方法</li>
+<li><code>src/platforms/web/entry-runtime-with-compiler.js</code> 获取 <code>render、staticRenderFns</code></li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">5coder</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://5coder.cn/2021/071840057.html">http://5coder.cn/2021/071840057.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint polocy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">5coder</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Vue%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/">
+                                    <span class="chip bg-color">Vue源码解析</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .mvaline-card {
+        margin: 1.5rem auto;
+    }
+
+    .mvaline-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+</style>
+
+<div class="card mvaline-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="mvcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/minivaline/MiniValine.js"></script>
+<script>
+    new MiniValine({
+        el: '#mvcomments',
+        appId: 'BRF4be681muYUe2DWv5HkFRO-gzGzoHsz',
+        appKey: 'meWxgwz0afpFwqHpqO6CkD40',
+        mode: 'DesertsP',
+        placeholder: '道友，聊两句...',
+        pathname: window.location.pathname,
+        lang: '',
+        adminEmailMd5: 'e611edc239e400df892ab629424f7c0e',
+        tagMeta: ["管理员", "小伙伴", "访客"],
+        master: ["f74ce481cd1d3a1ff7692900064361e0"],
+        friends: ["b5bd5d836c7a0091aa8473e79ed4c25e", "adb7d1cd192658a55c0ad22a3309cecf", "3ce1e6c77b4910f1871106cb30dc62b0", "cfce8dc43725cc14ffcd9fb4892d5bfc"],
+        math: true,
+        md: true,
+        enableQQ: true,
+        NoRecordIP: false,
+        visitor: true,
+        maxNest: 6,
+        pageSize: 6,
+        serverURLs: '',
+        emoticonUrl: ["https://cdn.jsdelivr.net/npm/alus@latest", "https://cdn.jsdelivr.net/gh/MiniValine/qq@latest", "https://cdn.jsdelivr.net/gh/MiniValine/Bilibilis@latest", "https://cdn.jsdelivr.net/gh/MiniValine/tieba@latest", "https://cdn.jsdelivr.net/gh/MiniValine/twemoji@latest", "https://cdn.jsdelivr.net/gh/MiniValine/weibo@latest"],
+    });
+</script>
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2021/071931096.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/56.jpg" class="responsive-img" alt="Vuex 状态管理">
+                        
+                        <span class="card-title">Vuex 状态管理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    大前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Vuex/">
+                        <span class="chip bg-color">Vuex</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/071650852.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Vue.js 源码剖析-模板编译和组件化">
+                        
+                        <span class="card-title">Vue.js 源码剖析-模板编译和组件化</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    大前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Vue%E6%A8%A1%E6%9D%BF%E7%BC%96%E8%AF%91/">
+                        <span class="chip bg-color">Vue模板编译</span>
+                    </a>
+                    
+                    <a href="/tags/Vue%E7%BB%84%E4%BB%B6%E5%8C%96/">
+                        <span class="chip bg-color">Vue组件化</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('2'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2022</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">5coder</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">151.6k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2021";
+                    var startMonth = "5";
+                    var startDate = "19";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="/" target="_blank">粤ICP备2021053102号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/5coder-leo" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:leo@5coder.cn" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=245616972" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 245616972" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
