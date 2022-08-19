@@ -416,7 +416,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-08-09
+                    2022-08-19
                 </div>
                 
 
@@ -730,7 +730,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">alaryLevel1</span><span class="token punctuation">(</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">alaryLevel1</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="四、纯函数"><a href="#四、纯函数" class="headerlink" title="四、纯函数"></a>四、纯函数</h2><h3 id="1-纯函数概念"><a href="#1-纯函数概念" class="headerlink" title="1.纯函数概念"></a>1.纯函数概念</h3><p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/Qkcl9Iz3BiKFV6y.jpg"></p>
+<h2 id="四、纯函数"><a href="#四、纯函数" class="headerlink" title="四、纯函数"></a>四、纯函数</h2><h3 id="1-纯函数概念"><a href="#1-纯函数概念" class="headerlink" title="1.纯函数概念"></a>1.纯函数概念</h3><p><img src="http://5coder.cn/img/Qkcl9Iz3BiKFV6y.jpg"></p>
 <ul>
 <li><p><strong>纯函数：相同的输入永远会得到相同的输出</strong>，而且没有任何可观察的副作用</p>
 <ul>
@@ -962,9 +962,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li><p>函数组合可以让我们把细粒度的函数重新组合生成一个新的函数</p>
 </li>
 </ul>
-<h3 id="1-管道"><a href="#1-管道" class="headerlink" title="1.管道"></a>1.管道</h3><p>下面这张图表示程序中使用函数处理数据的过程，给fn函数输入参数a，返回结果b。可以想象a数据通过一个管道得到了b数据。<br><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/U7WhJzs6V4rlqT2.jpg"></p>
+<h3 id="1-管道"><a href="#1-管道" class="headerlink" title="1.管道"></a>1.管道</h3><p>下面这张图表示程序中使用函数处理数据的过程，给fn函数输入参数a，返回结果b。可以想象a数据通过一个管道得到了b数据。<br><img src="http://5coder.cn/img/U7WhJzs6V4rlqT2.jpg"></p>
 <p>当fn函数比较复杂的时候，我们可以把函数fn拆分成多个小函数，此时多了中间运算过程产生的m和n。</p>
-<p>下面这张图中可以想象成把fn这个管道拆分成了3个管道f1，f2，f3，数据a通过管道f3得到结果m，m再通过管道f2得到结果n，n通过管道f1得到最终结果b。<br><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/sR7fNPpy1lZjDw8.jpg"></p>
+<p>下面这张图中可以想象成把fn这个管道拆分成了3个管道f1，f2，f3，数据a通过管道f3得到结果m，m再通过管道f2得到结果n，n通过管道f1得到最终结果b。<br><img src="http://5coder.cn/img/sR7fNPpy1lZjDw8.jpg"></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">fn <span class="token operator">=</span> <span class="token function">compose</span><span class="token punctuation">(</span>f1<span class="token punctuation">,</span>f2<span class="token punctuation">,</span>f3<span class="token punctuation">)</span>
 b <span class="token operator">=</span> <span class="token function">fn</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 

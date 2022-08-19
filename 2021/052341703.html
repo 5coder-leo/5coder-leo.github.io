@@ -416,7 +416,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-08-09
+                    2022-08-19
                 </div>
                 
 
@@ -457,14 +457,14 @@
 <ol>
 <li>这是最基础的Vue代码，在创建Vue实例时，传入<code>el</code>和<code>data</code>选项，Vue内部会把<code>data</code>中的数据传入到<code>el</code>指向的模板中，并把模板渲染到浏览器。</li>
 </ol>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/98EjT6puZt5nlBF.png" alt="image-20210523093150780"></p>
+<p><img src="http://5coder.cn/img/98EjT6puZt5nlBF.png" alt="image-20210523093150780"></p>
 <ol start="2">
 <li>本段代码执行的效果与上面相同，这里使用了render选项和**$mount<strong>方法。使用</strong>Vue-cli<strong>脚手架创建的代码解构与下面的代码相同，</strong>render<strong>方法接受一个参数，参数为</strong>h<strong>函数，</strong>h<strong>函数在后面的笔记中会有详细的讲解，这里简单介绍一下，h函数的作用是创建虚拟dom，</strong>render<strong>方法把h函数创建的虚拟dom返回。​</strong>$mount**的作用是把虚拟dom转换成真实dom渲染到浏览器。</li>
 </ol>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/TnFxfGS3zP5iYOV.png" alt="image-20210523093852667"></p>
+<p><img src="http://5coder.cn/img/TnFxfGS3zP5iYOV.png" alt="image-20210523093852667"></p>
 <h1 id="二、Vue的生命周期"><a href="#二、Vue的生命周期" class="headerlink" title="二、Vue的生命周期"></a>二、Vue的生命周期</h1><p>下面给出vue生命周期图示，每个生命周期函数作用都会讲到。</p>
 <p>每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做<strong>生命周期钩子</strong>的函数，这给了用户在不同阶段添加自己的代码的机会。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/9mk8PLyboMi6uwV.png" alt="20210323232204766.png"></p>
+<p><img src="http://5coder.cn/img/9mk8PLyboMi6uwV.png" alt="20210323232204766.png"></p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>

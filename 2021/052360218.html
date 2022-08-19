@@ -416,7 +416,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-08-09
+                    2022-08-19
                 </div>
                 
 
@@ -552,7 +552,7 @@ Vue<span class="token punctuation">.</span>config<span class="token punctuation"
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>vm<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>打开浏览器，打印vm实例，发现vm实例中并无router相关的属性。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/g2W65s8Xtaw9fFr.png"></p>
+<p><img src="http://5coder.cn/img/g2W65s8Xtaw9fFr.png"></p>
 </li>
 <li><p>传入router对象</p>
 <p>将router对象解开注释，在浏览器控制台打印vm实例。</p>
@@ -569,12 +569,12 @@ Vue<span class="token punctuation">.</span>config<span class="token punctuation"
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>vm<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/Tz2uN3rWpYIJUZw.png"></p>
+<p><img src="http://5coder.cn/img/Tz2uN3rWpYIJUZw.png"></p>
 <p>发现vm实例中多出了属性$route和$router属性。</p>
 <ul>
 <li><p>$route</p>
 <p>route是一个跳转的路由对象，每一个路由都会有一个route对象，是一个局部的对象，可以获取对应的name,path,params,query等</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/mDbk2HtwN6ngsSc.png"></p>
+<p><img src="http://5coder.cn/img/mDbk2HtwN6ngsSc.png"></p>
 <ul>
 <li>$route.path<br>字符串，等于当前路由对象的路径，会被解析为绝对路径，如 <code>"/home/news"</code> 。</li>
 <li>$route.params<br>对象，包含路由中的动态片段和全匹配片段的键值对</li>
@@ -592,7 +592,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </li>
 <li><p>$router</p>
 <p>$router是VueRouter的一个对象，通过Vue.use(VueRouter)和VueRouter构造函数得到一个router的实例对象，这个对象中是一个全局的对象，他包含了所有的路由包含了许多关键的对象和属性。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/tHy76qjJxMCNLeV.png"></p>
+<p><img src="http://5coder.cn/img/tHy76qjJxMCNLeV.png"></p>
 <p>举例：history对象</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>path<span class="token operator">:</span><span class="token string">'home'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 本质是向history栈中添加一个路由，在我们看来是 切换路由，但本质是在添加一个history记录</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -602,18 +602,18 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </li>
 </ol>
 <h2 id="2-动态路由"><a href="#2-动态路由" class="headerlink" title="2.动态路由"></a>2.动态路由</h2><p>代码示例：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/MRqg8TNYynwb74h.png"></p>
+<p><img src="http://5coder.cn/img/MRqg8TNYynwb74h.png"></p>
 <p>首先配置首页路径，其路径为固定”/“。详情页的路径为”/detail/:id”，不同商品对应不同的id，<code>:id</code>为占位符，告诉component要展示的商品，这就是动态路由。detail路由规则中，component组件采用路由懒加载的方式加载路由，用户访问详情页时才加载该组件。</p>
 <p>组件中如何获取动态路由规则中的动态id？</p>
 <ul>
 <li>方式1：通过当前路由规则<code>{{ $route.params.id }}</code>，获取数据</li>
 <li>方式2：路由规则中开启props传参</li>
 </ul>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/RfosrUwIHl6BcjT.png"></p>
+<p><img src="http://5coder.cn/img/RfosrUwIHl6BcjT.png"></p>
 <h2 id="3-嵌套路由"><a href="#3-嵌套路由" class="headerlink" title="3.嵌套路由"></a>3.嵌套路由</h2><p>当多个组件中有相同的路由，可以把相同的内容提取到公共的组件中。如下图所示，加入首页、详情页有相同的头和尾，这时可以提取新的组件layout，把头和尾放到layout组件中，中间部分动态变化的使用router-view占位。访问首页时，将index组件和layout组件合并输出。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/bjdzc3Pn2vfoxCM.png"></p>
+<p><img src="http://5coder.cn/img/bjdzc3Pn2vfoxCM.png"></p>
 <p>由于首页和详情页面有相同的头和尾，所以将相同的头和尾提取到components中的layout.vue组件中。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/L9TMSi1aumeFjYt.png"></p>
+<p><img src="http://5coder.cn/img/L9TMSi1aumeFjYt.png"></p>
 <p>Index.vue、Detail.vue、Login.vue</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;!-- -------------------------------Index.vue------------------------------- --&gt;
 &lt;template&gt;
@@ -682,11 +682,11 @@ export default {
 <p>路由规则中，首先配置的登录页面，当访问登陆页面时，直接加载Login组件。因为首页和详情页有相同的头和尾，而头和尾都提取到layout组件中，所以这里使用了<strong>嵌套路由</strong>，嵌套路由中会将外部的path与children中的path进行合并，分别加载Layout组件和Index组件，把他们合并到一起。</p>
 <p>当嵌套路由中的path为根路径时，Index组件中的path可以写为空字符串。children中的path可以写为相对路径，也可以写为绝对路径，空字符串为相对路径。当访问根时，先加载Layout，再去加载Index，合并到一起进行渲染。</p>
 <p>访问详情页时，外面的路径为根路径，Detail中配置的路径为相对路径，路径拼接后：”/detail/:id”，合并Layout和Detail后渲染出来。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/rFhfvWHYicSLPDR.png"></p>
+<p><img src="http://5coder.cn/img/rFhfvWHYicSLPDR.png"></p>
 <p>浏览器访问效果：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/y86emD4zdM1UoIk.png"></p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/myjW7eVwtZoIR4u.png"></p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/pU19vKumQa5Hhln.png"></p>
+<p><img src="http://5coder.cn/img/y86emD4zdM1UoIk.png"></p>
+<p><img src="http://5coder.cn/img/myjW7eVwtZoIR4u.png"></p>
+<p><img src="http://5coder.cn/img/pU19vKumQa5Hhln.png"></p>
 <h2 id="4-编程式导航"><a href="#4-编程式导航" class="headerlink" title="4.编程式导航"></a>4.编程式导航</h2><p>编程式导航<a target="_blank" rel="noopener" href="https://router.vuejs.org/zh/guide/essentials/navigation.html"><strong>官方文档</strong></a></p>
 <p>之前在页面跳转时使用<code>router-link</code>形成超链接，但是在登陆页面时需要点击按钮跳转到首页，这时就需要使用编程式导航，调<code>用$router.push()</code>方法。</p>
 <ul>
@@ -695,7 +695,7 @@ export default {
 <li>第一种方式是字符串-跳转的路由地址</li>
 <li>第二种方式是对象，对象为{ name: ‘Home’ }，其中name来源于router/index.js中路由规则中的name属性，如图：</li>
 </ul>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/1kCXnyGANKsHPgt.png"></p>
+<p><img src="http://5coder.cn/img/1kCXnyGANKsHPgt.png"></p>
 </li>
 <li><p>Index.vue中，两个按钮分别绑定replace和getDetail方法。replace方法与push方法类似，都可以跳转到指定的路径，它们的参数形式也是一样的，但是replace方法不会记录历史，它会将当前的地址直接替换为’/login’地址。</p>
 <p>push方法传递路由参数，首先需要指定跳转的路由名称<code>name: 'Detail'</code>，接着使用params指定路由参数。</p>
@@ -703,7 +703,7 @@ export default {
 <li><p>Detail.vue中使用go方法：跳转到历史中的某一次路径，它可以使负数，也就是后退，当参数为-1时与<code>$router.back()</code>方法效果相同。</p>
 </li>
 </ul>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/ReDFIjCUOL2bn3z.png"></p>
+<p><img src="http://5coder.cn/img/ReDFIjCUOL2bn3z.png"></p>
 <h2 id="5-Hash-模式和-History-模式的区别"><a href="#5-Hash-模式和-History-模式的区别" class="headerlink" title="5.Hash 模式和 History 模式的区别"></a>5.Hash 模式和 History 模式的区别</h2><p><code>vue-router</code>默认hash模式——使用URL的hash来模拟一个完整的URL，于是当URL改变时，页面不会重新加载。</p>
 <p>如果不想要很丑的hash，可以使用路由的history模式，这种模式充分利用<code>history.pushState</code> API来完成URl跳转而无需重新加载页面。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
@@ -715,8 +715,8 @@ export default {
 <p><code>http://blog.5coder.cn/user/id</code>，也好看！</p>
 <p>不过这种模式要玩好，还需要后台配置支持。因为我们的应用是个单页客户端应用，如果后台没有正确的配置，当用户在浏览器直接访问 <code>http://oursite.com/user/id</code> 就会返回 404，这就不好看了。</p>
 <p>所以呢，你要在服务端增加一个覆盖所有情况的候选资源：如果 URL 匹配不到任何静态资源，则应该返回同一个 <code>index.html</code> 页面，这个页面就是你 app 依赖的页面。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/qtNlXpJ9RYM2EVr.png"></p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/tKYyfsveLOjhpWa.png"></p>
+<p><img src="http://5coder.cn/img/qtNlXpJ9RYM2EVr.png"></p>
+<p><img src="http://5coder.cn/img/tKYyfsveLOjhpWa.png"></p>
 <h2 id="6-History-模式"><a href="#6-History-模式" class="headerlink" title="6.History 模式"></a>6.History 模式</h2><p>History模式的使用</p>
 <ul>
 <li>History需要服务器的支持</li>
@@ -726,10 +726,10 @@ export default {
 </li>
 <li>在服务端应该出了静态资源外都返回单页应用的index.html</li>
 </ul>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/zUIkK7wQBPMEfXq.png"></p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/BzTIUiLqoE8nVQf.png"></p>
+<p><img src="http://5coder.cn/img/zUIkK7wQBPMEfXq.png"></p>
+<p><img src="http://5coder.cn/img/BzTIUiLqoE8nVQf.png"></p>
 <h2 id="7-History-模式-Node-js"><a href="#7-History-模式-Node-js" class="headerlink" title="7.History 模式 - Node.js"></a>7.History 模式 - Node.js</h2><p>接下来通过node开发的web服务器演示vue-router的history模式。项目目录结构如下：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/fg1S8CBbacz9djL.png"></p>
+<p><img src="http://5coder.cn/img/fg1S8CBbacz9djL.png"></p>
 <p>express开发的Web服务器：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
 <span class="token comment">// 导入处理 history 模式的模块</span>
@@ -763,16 +763,16 @@ app<span class="token punctuation">.</span><span class="token function">listen</
 </li>
 </ul>
 <p>安装好的nginx目录如下图：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/YKlEoP5nA19qufX.png"></p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/C1msbSd8tMkJvVI.png"></p>
+<p><img src="http://5coder.cn/img/YKlEoP5nA19qufX.png"></p>
+<p><img src="http://5coder.cn/img/C1msbSd8tMkJvVI.png"></p>
 <p>命令行中启动nginx <code>start nginx.ext</code>，启动后在浏览器中访问localhost，如果现实下图则证明启动成功。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/R7ibO1FAXe4chnU.png"></p>
+<p><img src="http://5coder.cn/img/R7ibO1FAXe4chnU.png"></p>
 <p>将打包好的dist目录内容拷贝到nginx/html目录中，再次刷新浏览器localhost路径可以看到刚才写的index.html，并且about、video都是可以正常进行跳转的。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/znI5TCDBEf4Fyks.png"></p>
+<p><img src="http://5coder.cn/img/znI5TCDBEf4Fyks.png"></p>
 <p>当浏览器地址为localhost/about或者localhost/video时，刷新浏览器会出现404，如下图，因为nginx并未处理vue-router的history模式，当刷新时，服务器中不存在请求路径中对应的文件，所以服务器会返回404页面。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/Bg1tbz3smwUScDK.png"></p>
+<p><img src="http://5coder.cn/img/Bg1tbz3smwUScDK.png"></p>
 <p>nginx解决vue-router的history模式，需要修改nginx/conf/nginx.conf的文件内容，如下：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/jrvlKg8cza564SW.png"></p>
+<p><img src="http://5coder.cn/img/jrvlKg8cza564SW.png"></p>
 <p>修改nginx.conf后，需要重启nginx——<code>nginx -s reload</code>，再次刷新浏览器，发现nginx并未返回404页面，其工作的原理是：</p>
 <p>nginx服务器会判断当前请求的页面服务器上不存在，它会把单页应用默认的首页index.html返回给浏览器，浏览器接收到这个页面之后，会再去判断路由地址，发现是about，于是会加载about组件对应的内容，并且把它渲染浏览器上来，这是history执行的一个过程。</p>
 <h2 id="9-VueRouter-实现原理"><a href="#9-VueRouter-实现原理" class="headerlink" title="9.VueRouter 实现原理"></a>9.VueRouter 实现原理</h2><p>vue-router有两种模式，一种是hash模式，另外一种是history模式，此处使用history模式来模拟，hash模式可以自己实现，差别很小。</p>
@@ -809,7 +809,7 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
     <span class="token function-variable function">render</span><span class="token operator">:</span> <span class="token parameter">h</span> <span class="token operator">=&gt;</span> <span class="token function">h</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/V9dtQF68YLa5rzX.png"></p>
+<p><img src="http://5coder.cn/img/V9dtQF68YLa5rzX.png"></p>
 <h2 id="11-VueRouter-install"><a href="#11-VueRouter-install" class="headerlink" title="11.VueRouter-install"></a>11.VueRouter-install</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> _Vue <span class="token operator">=</span> <span class="token keyword">null</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">VueRouter</span><span class="token punctuation">{</span>
     <span class="token comment">// 静态方法install，Vue.use()调用install方法时会传入两个参数：</span>
@@ -943,7 +943,7 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 
 <p>命令行运行<code>yarn serve</code>，启动浏览器发现两个错误，第一个是运行时版本和完整版本的错误，错误内容：</p>
 <blockquote>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/M6PBIQpJgCfFdWn.png"></p>
+<p><img src="http://5coder.cn/img/M6PBIQpJgCfFdWn.png"></p>
 <p>你正在使用的是只包含运行时版本的，没有模板编辑器不可用，你可以使用预编译把模板编译成render函数或者使用包含编译器版本的内容</p>
 </blockquote>
 <p>第二个错误是router-view组件错误，因为还没有创建router-view组件，暂时不理会。</p>
@@ -954,15 +954,15 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 </ul>
 <p>下面使用两种方法解决这个问题。</p>
 <h2 id="15-VueRouter-完整版的-Vue"><a href="#15-VueRouter-完整版的-Vue" class="headerlink" title="15.VueRouter-完整版的 Vue"></a>15.VueRouter-完整版的 Vue</h2><p>使用完整版Vue解决上面提到的Vue运行时版本的错误。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/vdp6mVE3ICloFU4.png"></p>
+<p><img src="http://5coder.cn/img/vdp6mVE3ICloFU4.png"></p>
 <p>找到runtimeCompiler选项</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/yAE6NadFGklMfXW.png"></p>
+<p><img src="http://5coder.cn/img/yAE6NadFGklMfXW.png"></p>
 <p>接着在项目的根目录创建vue.config.js，内容如下，之后重启项目，回到浏览器，发现第一个运行时版本的错误以及消失了。打开Element发现Home和About也都被渲染为a链接。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>export <span class="token punctuation">{</span>
     runtimeCompiler<span class="token operator">:</span> <span class="token boolean">true</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/D5qrEu1Jgem4vlT.png"></p>
+<p><img src="http://5coder.cn/img/D5qrEu1Jgem4vlT.png"></p>
 <h2 id="16-VueRouter-render"><a href="#16-VueRouter-render" class="headerlink" title="16.VueRouter-render"></a>16.VueRouter-render</h2><p>下面使用运行时版本的Vue解决之前的问题。运行时版本的Vue不带编译器，不支持组件中的template的选项。编译器的作用就是把template的编译成render函数。正在运行时版本的Vue中，组件可以直接写render函数。所以重点是render函数怎么写？</p>
 <p>这个时候你可能会有疑问，在使用单文件组件的时候一直在写template模板，也没有写render函数，为什么单文件组件可以正常工作呢？这是因为在打包的过程中，把单文件的template编译成了render函数，叫做预编译。下面使用运行时版本解决之前的问题，解决之前，删除上面创建的vue.config.js文件。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 创建initComponent方法，用来创建router-link组件。</span>
@@ -1044,7 +1044,7 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="18-VueRouter-initEvent"><a href="#18-VueRouter-initEvent" class="headerlink" title="18.VueRouter-initEvent"></a>18.VueRouter-initEvent</h2><p>最后再来实现类图中的最后一个方法initEvent，在这个方法中要来注册一个事件popstate。之前的工作都已经实现了路由点击跳转的功能，但是点击浏览器的前进和后退按钮，地址栏确实发生了变化，但是组件却没重新加载这个地址对应的组件，所以在initEvent中处理这个问题，也就是历史发生变化的时候，要去加载当前地址栏中的地址对应的组件，并且把它渲染出来。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/AeaOrRWgz3CBcMK.png"></p>
+<p><img src="http://5coder.cn/img/AeaOrRWgz3CBcMK.png"></p>
 <p>到这里模拟vue-router的history模式就全部做完了。</p>
 <h2 id="19-最终文件"><a href="#19-最终文件" class="headerlink" title="19.最终文件"></a>19.最终文件</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> _Vue <span class="token operator">=</span> <span class="token keyword">null</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">VueRouter</span> <span class="token punctuation">{</span>

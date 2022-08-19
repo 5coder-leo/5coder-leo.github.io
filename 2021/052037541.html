@@ -416,7 +416,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-08-09
+                    2022-08-19
                 </div>
                 
 
@@ -455,33 +455,33 @@
             <div id="articleContent">
                 <p><em>Nginx 是一个采用主从架构的 Web 服务器，可用于反向代理、负载均衡器、邮件代理和 HTTP 缓存</em>。</p>
 <p>Emmm，上面的 Nginx 介绍看过去有些复杂而且充满了不明觉厉的术语。Relax，在这篇文章里，我（原作者）会先带你理解 Nginx 的架构和专有术语，最后实践一把安装和配置 <strong>Nginx</strong>。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/q7r9OEdkxBVuwln.jpg"></p>
+<p><img src="http://5coder.cn/img/q7r9OEdkxBVuwln.jpg"></p>
 <p>简单来说，你只要记住一点：<em>Nginx 是个神奇的 Web 服务器</em>。（注：神奇之处下文会娓娓道来）</p>
 <p>那什么是 Web 服务器呢？简而言之，Web 服务器就是一个中间人。举个例子，你要访问 <code>hellogithub.com</code>（注：原文例子为 dev.to），在地址栏输入 <code>https://hellogithub.com</code> 时，你的浏览器会找到 <code>https://hellogithub.com</code> 的网络服务器地址并将它指向后端服务器，后端服务器再返回响应给客户端。</p>
 <h2 id="代理-vs-反向代理"><a href="#代理-vs-反向代理" class="headerlink" title="代理 vs 反向代理"></a><strong>代理 vs 反向代理</strong></h2><p>Nginx 的基本特性是代理，所以你一定要明白什么是<strong>代理</strong>和<strong>反向代理</strong>。</p>
 <h3 id="代理"><a href="#代理" class="headerlink" title="代理"></a><strong>代理</strong></h3><p>看个小例子，现在我们有 N 个客户端（N &gt;= 1），一个中间 Web 服务器（在本例中，我们称之为代理）和一个服务器。这个例子主要的场景是，服务器不知道哪个客户端在请求（响应）。是不是有点难以理解？下面让我用示意图讲解下：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/dHWV6JLXwz4rgmI.jpg"></p>
+<p><img src="http://5coder.cn/img/dHWV6JLXwz4rgmI.jpg"></p>
 <p>如图，<em>client1</em> 和 <em>client2</em> 通过代理服务器向服务器发送请求 <em>request1</em> 和 <em>request2</em>，此时后端服务器不知道 <em>request1</em> 是由 <em>client1</em> 发送的还是 <em>client2</em> 发送的，但会执行（响应）操作。</p>
 <h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a><strong>反向代理</strong></h3><p>简单来说，反向代理与代理的功能相反。现在我们有一个客户端、一个中间 Web 服务器和 N 个后端服务器（N &gt;= 1），同样的来看下示意图：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/v2-2d5a169d1b6781b636e6fa27d7402399_b.jpg"></p>
+<p><img src="http://5coder.cn/img/v2-2d5a169d1b6781b636e6fa27d7402399_b.jpg"></p>
 <p>如图，客户端将通过 Web 服务器发送请求。而 Web 服务器会通过一个算法，当中最有意思的算法是轮询，直接将请求指向许多后端服务器中的一个，并通过 Web 服务器将响应返回给客户端。因此，在上面的例子中，客户端其实并不知道在与哪个后端服务器进行交互。</p>
 <h2 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a><strong>负载均衡</strong></h2><p>又是枯燥的一个名词：负载均衡，不过它很好理解，因为负载均衡本身就是<strong>反向代理</strong>的一个实例。</p>
 <p>来看看负载均衡和反向代理的本质区别。在负载均衡中，你必须有 2 个或者更多的后端服务器，但在反向代理中，多台服务器不是必需的，甚至一台后端服务器也能运作。我们再深入点，如果我们有很多来自客户端的请求，负载均衡器会检查每个后端服务器的状态，均匀地分配请求，更快地向客户端发送响应。</p>
 <h2 id="有状态-vs-无状态应用"><a href="#有状态-vs-无状态应用" class="headerlink" title="有状态 vs 无状态应用"></a><strong>有状态 vs 无状态应用</strong></h2><p>Okay，在我们开始实践 Nginx 之前，先搞清所有的基本知识！</p>
 <h3 id="有状态应用"><a href="#有状态应用" class="headerlink" title="有状态应用"></a><strong>有状态应用</strong></h3><p>有状态应用存了一个额外变量，只用来保存服务器中单个实例使用所需的信息。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/8QLK1FxkDNntWyB.jpg"></p>
+<p><img src="http://5coder.cn/img/8QLK1FxkDNntWyB.jpg"></p>
 <p>如图所示，一个后端服务器 <em>server1</em> 存储了一些信息，服务器 <em>server2</em> 并不存储此信息，因此，客户端 (上图 Bob) 的交互可能会也可能不会得到想要的结果，因为它可能会与 <em>server1</em> 或 <em>server2</em> 交互。在本例中，<em>server1</em> 允许 Bob 查看数据文件，但 <em>server2</em> 不允许。因此，虽然有状态应用避免对数据库的多次 API 调用，并且（响应）速度更快，但它可能会在不同的服务器上导致这个（无法得到想要结果）问题。</p>
 <h3 id="无状态应用"><a href="#无状态应用" class="headerlink" title="无状态应用"></a><strong>无状态应用</strong></h3><p>无状态应用有更多的数据库 API 调用，但当客户端与不同后端服务器的交互时，无状态应用却存在更少的问题。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/XQiwhWptVSuzdvU.jpg"></p>
+<p><img src="http://5coder.cn/img/XQiwhWptVSuzdvU.jpg"></p>
 <p>没明白？简单来说，如果我通过 Web 服务器从客户端向后端服务器 <em>server1</em> 发送请求，它将向客户端返回一个令牌，用于任何进一步的访问请求。客户端可以使用令牌并向 Web 服务器发送请求。此 Web 服务器将请求连同令牌一起发送到任意后端服务器，而每个后端服务器都能提供相同的所需结果。</p>
 <h2 id="Nginx-是什么"><a href="#Nginx-是什么" class="headerlink" title="Nginx 是什么?"></a><strong>Nginx 是什么?</strong></h2><p>Nginx 是网络服务器，到目前为止，我的整个博客一直在用这个网络服务器。老实说，Nginx 这就像个<strong>中间人</strong>。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/v2-0502aeb476680bcae43090ec92467803_b.jpg"></p>
+<p><img src="http://5coder.cn/img/v2-0502aeb476680bcae43090ec92467803_b.jpg"></p>
 <p>这个图不难理解，它是目前为止所有概念的一个组合。在这里，我们有 3 个后端服务器运行在 3001、3002 和 3003 端口，这些后端服务器都能访问同一个运行在 5432 端口的数据库。</p>
 <p>当一个客户端向 <code>https://localhost</code> （默认端口 443）发起一个 <code>GET /employees</code> 请求时，Nginx 将基于算法向任意后端服务器发送请求，从数据库获取数据并将 JSON 数据返回 Nginx Web 服务器再发送给客户端。</p>
 <p>如果我们使用一个诸如轮询这样的算法，它让 <em>client2</em> 向 <code>https://localhost</code> 发送一个请求，然后 Nginx 服务器会先将请求传到 3000 端口并将响应返回给客户端。对另一个请求，Nginx 会把请求传给 3002 端口，以此类推。</p>
 <p>知识储备完成！到这里，你对 Nginx 是什么以及 Nginx 所涉及的术语有了一个清晰的理解。是时候，了解安装和配置技术了。</p>
 <h2 id="开始安装-Nginx"><a href="#开始安装-Nginx" class="headerlink" title="开始安装 Nginx"></a><strong>开始安装 Nginx</strong></h2><p>时机到了，如果你了解了上面的概念，可以动手开始 Nginx 实践了。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/v2-dce888494829e097fdbe8e3695bb056a_b.jpg" alt="img"></p>
+<p><img src="http://5coder.cn/img/v2-dce888494829e097fdbe8e3695bb056a_b.jpg" alt="img"></p>
 <p>嗯，Nginx 的安装过程对任何系统来说都很简单。我是一个 Mac OSX 用户，所以例子的命令是基于 macOS 的， <strong><a href="https://link.zhihu.com/?target=https://ubuntu.com/tutorials/install-and-configure-nginx%232-installing-nginx">Ubuntu</a><strong>、</strong><a href="https://link.zhihu.com/?target=https://www.maketecheasier.com/install-nginx-server-windows/">Windows</a></strong> 和其他 Linux 发行版操作和例子类似。</p>
 <pre class="line-numbers language-text" data-language="text"><code class="language-text">$ brew install Nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -492,7 +492,7 @@
 $ sudo nginx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>执行上面指令，再打开浏览器并输入 <code>http://localhost:8080/</code> 回车查看下，你会看到以下画面！</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/v2-5e6766e81f555711aabf7a1cd1554fba_b.jpg" alt="img"></p>
+<p><img src="http://5coder.cn/img/v2-5e6766e81f555711aabf7a1cd1554fba_b.jpg" alt="img"></p>
 <h2 id="Nginx-基本配置-amp-示例"><a href="#Nginx-基本配置-amp-示例" class="headerlink" title="Nginx 基本配置 &amp; 示例"></a><strong>Nginx 基本配置 &amp; 示例</strong></h2><p>下面，我们通过实操来感受下 Nginx 的魔力。</p>
 <p>首先，在本地创建如下的目录结构:</p>
 <pre class="line-numbers language-text" data-language="text"><code class="language-text">.

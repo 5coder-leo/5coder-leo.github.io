@@ -416,7 +416,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-08-09
+                    2022-08-19
                 </div>
                 
 
@@ -454,7 +454,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="Git版本控制"><a href="#Git版本控制" class="headerlink" title="Git版本控制"></a>Git版本控制</h2><p><strong>为什么要进行版本控制？</strong>  最简单的例子，当我们用文字处理软件工作时（如Word）时需要进行修改，而有时候又不确定修改的内容是不是需要的，因此会产生许多个文件，如图：  </p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617191834286.png"></p>
+<p><img src="http://5coder.cn/img/image-20210617191834286.png"></p>
 <p>每一个文件都是在之前的文件基础上进行微小的修改，久而久之，不但文件冗杂，而且还不清楚修改的内容是什么，是一种很杂乱的方式。</p>
 <p>而版本控制就是解决这一问题——通过记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的系统。</p>
 <p>采取版本控制后，你可以将文件还原到之前的状态，比较各状态之间的细节从而查出是修改了哪个地方，找出哪里出了问题。甚至你可以随意删改项目中的文件，照样可以恢复到之前的样子，因而增加了容错率，提供了更多可能性。</p>
@@ -463,7 +463,7 @@
 <p>​    </p>
 <h2 id="git本地操作"><a href="#git本地操作" class="headerlink" title="git本地操作"></a>git本地操作</h2><p>git设计简单，是完全分布式，允许成千上万个并行开发的分支(Branch)，有能力管理超大规模的项目，是目前首选的版本控制软件。</p>
 <h2 id="一、工作流程"><a href="#一、工作流程" class="headerlink" title="一、工作流程"></a>一、工作流程</h2><p>git的三个工作区域，对应着三种状态：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617191854594.png"></p>
+<p><img src="http://5coder.cn/img/image-20210617191854594.png"></p>
 <p> git 工作流程如下：    </p>
 <ol>
 <li><p> 在工作目录中修改文件。（modified）  </p>
@@ -544,12 +544,12 @@ test<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
 <p>以上就是git的本地基本操作，包括创建一个仓库，更改、暂存和提交，查看仓库的提交历史，版本回退。  </p>
 <h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p>分支是把工作从主线上分离开来，以免影响开发主线。在不同的分支上你可以尝试各种各样的增删改，实现不同的设想。而git的分支模型是它最突出的特点，也是git脱颖而出的原因。</p>
 <h2 id="一、分支概念"><a href="#一、分支概念" class="headerlink" title="一、分支概念"></a>一、分支概念</h2><p>在版本回退里，你可以回溯到之前的任意版本，而这些版本都是处于一条时间线上，这条时间线就是一个分支。<br> 默认的分支为master分支，本身可以看做一个指针，HEAD指针则指向master指针，如图：    </p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617191928000.png"></p>
+<p><img src="http://5coder.cn/img/image-20210617191928000.png"></p>
 <p>每次提交都会多出一个节点，指针也随之移动。<br> 当我们创建新的分支时，也就创建了一个新的指针，我们通过命令将HEAD指针移到新指针上：  </p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617192002448.png"></p>
+<p><img src="http://5coder.cn/img/image-20210617192002448.png"></p>
 <p>新提交一次后，新指针向前移动，master指针不变，这就产生了分支：<br> 我们可以将两条分支合并，之后可以删掉新分支。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617192018984.png"></p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617192039725.png"></p>
+<p><img src="http://5coder.cn/img/image-20210617192018984.png"></p>
+<p><img src="http://5coder.cn/img/image-20210617192039725.png"></p>
 <p>这样就完成了分支的合并。</p>
 <h2 id="二、分支使用"><a href="#二、分支使用" class="headerlink" title="二、分支使用"></a>二、分支使用</h2><p>1.git branch：查看当前所有分支      </p>
 <pre class="line-numbers language-text" data-language="text"><code class="language-text">$ git branch
@@ -599,10 +599,10 @@ $ ls
 <p>进入github的帐户设置，点击左侧的SSH and GPG keys，将~/.ssh/id_rsa.pub公钥文件的内容粘贴到文本区，然后点击”Add key”    </p>
 <p>SSH访问配置成功     </p>
 <h3 id="创建、维护和管理你自己的项目。"><a href="#创建、维护和管理你自己的项目。" class="headerlink" title="创建、维护和管理你自己的项目。"></a>创建、维护和管理你自己的项目。</h3><p>1.点击页面右上角的＋号，点击New repository按钮</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/v2-3cf6e399f56ab213b6626c3420fee410_b.png"></p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/v2-f518348e215125a7cf1e044adf9567cb_b.png"></p>
+<p><img src="http://5coder.cn/img/v2-3cf6e399f56ab213b6626c3420fee410_b.png"></p>
+<p><img src="http://5coder.cn/img/v2-f518348e215125a7cf1e044adf9567cb_b.png"></p>
 <p>Respository name是必填项目，而其余都是选填项，可以默认。<br> 点击Create respository按钮  ，即创建了一个新的仓库<br> 这时候可以将项目分享给其他人，通过HTTP和SSH的形式。  </p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617192124001.png"></p>
+<p><img src="http://5coder.cn/img/image-20210617192124001.png"></p>
 <p>2.对仓库进行操作，使本地和github同步  </p>
 <pre class="line-numbers language-text" data-language="text"><code class="language-text">$ git remote add origin     **********（仓库地址）   
 （添加远程仓库至本地）
@@ -625,9 +625,9 @@ Checking connectivity... done.<span aria-hidden="true" class="line-numbers-rows"
 
 <p>此时远程仓库的文件全部克隆至本地。</p>
 <p>4.添加合作者<br> 点击边栏的 “Settings” 链接，然后从左侧菜单中选择 “Collaborators” 。 然后，在输入框中填写用户名，点击 “Add collaborator.” 此时可以给予他们提交的权限。  </p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617192752177.png"></p>
+<p><img src="http://5coder.cn/img/image-20210617192752177.png"></p>
 <p>5.Fork按钮可以将他人项目派生下来，在你的空间中创建一个完全属于你的项目副本。  </p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617192804015.png"></p>
+<p><img src="http://5coder.cn/img/image-20210617192804015.png"></p>
 <p>如何对项目做出贡献呢？    </p>
 <ol>
 <li><p> 将派生出的副本克隆到本地</p>

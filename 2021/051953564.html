@@ -416,7 +416,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-08-09
+                    2022-08-19
                 </div>
                 
 
@@ -488,7 +488,7 @@
 <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>上述函数体内定义一个数组，数组长度足够大，为了当前函数在调用的时，程序可以向内存申请比较大的内存空间。执行函数过程中，我们使用性能检测工具，我们会发现，内存变化如下，内存持续升高，且并没有回落，这就是<strong>内存泄漏</strong>。内存泄漏会导致我们的页面处于卡顿状态，因此需要对内存进行人为管理。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/1ygFrKDCSvhGX6m.png"></p>
+<p><img src="http://5coder.cn/img/1ygFrKDCSvhGX6m.png"></p>
 <h3 id="2-内存管理介绍"><a href="#2-内存管理介绍" class="headerlink" title="2.内存管理介绍"></a>2.内存管理介绍</h3><ul>
 <li>内存：由可读写单元组成，表示一片可操作性空间</li>
 <li>管理：<strong>人为的去操作</strong>一片空间的申请、使用和释放</li>
@@ -539,9 +539,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token comment">// }</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>可达对象图示</strong></p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/dnkGj8bH4vzoZCp.png"></p>
+<p><img src="http://5coder.cn/img/dnkGj8bH4vzoZCp.png"></p>
 <p>如果我们在代码中做一些操作，比如使用delete将obj上的o1的应用以及o2中对obj1的应用删除掉，那么出现下面的情况：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/WgRhFJ7xmadZzfu.png"></p>
+<p><img src="http://5coder.cn/img/WgRhFJ7xmadZzfu.png"></p>
 <h2 id="三、GC算法介绍"><a href="#三、GC算法介绍" class="headerlink" title="三、GC算法介绍"></a>三、GC算法介绍</h2><h3 id="1-GC定义与作用"><a href="#1-GC定义与作用" class="headerlink" title="1.GC定义与作用"></a>1.GC定义与作用</h3><ul>
 <li>GC就是垃圾回收机制的简写（Garbage Collection）</li>
 <li>GC可以找到内存中的垃圾、并释放和回收空间</li>
@@ -606,7 +606,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>遍历所有对象清除没有标记对象</li>
 <li>回收相应的空间</li>
 </ul>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/EbjthkT2PHoQWar.png"></p>
+<p><img src="http://5coder.cn/img/EbjthkT2PHoQWar.png"></p>
 <p><strong>优点：</strong></p>
 <ol>
 <li>实现简单</li>
@@ -622,7 +622,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <ul>
 <li>标记整理可以看作是标记清除的增强</li>
 <li>标记阶段的操作和标记清除一致</li>
-<li><strong>清除阶段会先执行整理，移动对象位置</strong><br><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/fix37uO2hUNelFv.png"><br><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/YEVdhFxWa9CJPHw.png"></li>
+<li><strong>清除阶段会先执行整理，移动对象位置</strong><br><img src="http://5coder.cn/img/fix37uO2hUNelFv.png"><br><img src="http://5coder.cn/img/YEVdhFxWa9CJPHw.png"></li>
 </ul>
 <p>优缺点：该算法可以有效的利用堆，但是整理需要花比较多的时间成本</p>
 <h2 id="四、V8引擎"><a href="#四、V8引擎" class="headerlink" title="四、V8引擎"></a>四、V8引擎</h2><h3 id="1-认识V8"><a href="#1-认识V8" class="headerlink" title="1.认识V8"></a>1.认识V8</h3><ul>
@@ -638,7 +638,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>针对不同对象采用不同算法</li>
 </ul>
 <p>V8 使用了分代和大数据的内存分配，在回收内存时使用精简整理的算法标记未引用的对象，然后消除没有标记的对象，最后整理和压缩那些还未保存的对象，即可完成垃圾回收。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/UDEPWurlJf38TgN.png"></p>
+<p><img src="http://5coder.cn/img/UDEPWurlJf38TgN.png"></p>
 <p><strong>V8中常用的GC算法</strong></p>
 <ul>
 <li>分代回收</li>
@@ -651,7 +651,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p><strong>年轻分代</strong>中的对象垃圾回收主要通过Scavenge算法进行垃圾回收。在Scavenge的具体实现中，主要采用了Cheney算法：通过复制的方式实现的垃圾回收算法。它将堆内存分为两个 semispace，<strong>一个处于使用中（From空间）</strong>，<strong>另一个处于闲置状态（To空间）</strong>。当分配对象时，先是在From空间中进行分配。当开始进行垃圾回收时，会检查From空间中的存活对象，这些存活对象将被复制到To空间中，而非存活对象占用的空间将会被释放。完成复制后，From空间和To空间的角色发生对换。在垃圾回收的过程中，就是通过将存活对象在两个 semispace 空间之间进行复制。</p>
 <p><strong>年轻分代中的对象有机会晋升为年老分代，条件主要有两个：一个是对象是否经历过Scavenge回收，一个是To空间的内存占用比超过限制。</strong></p>
 </blockquote>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/8MIBQo1xF6SYPz4.png"></p>
+<p><img src="http://5coder.cn/img/8MIBQo1xF6SYPz4.png"></p>
 <p>V8<strong>内存分配</strong></p>
 <ul>
 <li>V8内存空间一分为二</li>
@@ -695,7 +695,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>老生代区域垃圾回收不适合复制算法</li>
 </ul>
 <p><strong>增量标记优化垃圾回收</strong></p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/15sl9QVXnHtSxwo.png"></p>
+<p><img src="http://5coder.cn/img/15sl9QVXnHtSxwo.png"></p>
 <p>图示中，程序在标记阶段被暂停运行，等待标记完成自动运行，当遇到大块需要标记的对象时，程序需要暂停很长一段时间，对用户体验很不友好，因此采用增量标记，将一大块分解为多个小块进行标记，减少每次程序暂停的时长，优化用户体验。最后标记完成后统一进行回收。</p>
 <h3 id="5-V8垃圾回收总结"><a href="#5-V8垃圾回收总结" class="headerlink" title="5.V8垃圾回收总结"></a>5.V8垃圾回收总结</h3><ul>
 <li>V8是一款主流的JavaScript引擎</li>
@@ -736,16 +736,16 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </ul>
 <h3 id="3-监控内存的几种方式"><a href="#3-监控内存的几种方式" class="headerlink" title="3.监控内存的几种方式"></a>3.监控内存的几种方式</h3><h4 id="3-1任务管理器监控内存"><a href="#3-1任务管理器监控内存" class="headerlink" title="3.1任务管理器监控内存"></a>3.1任务管理器监控内存</h4><p>打开浏览器，按键【Shift】+ 【Esc】，调出浏览器任务管理器。找到我们的目标标签页，刚开始可能没有JavaScript内存，可以在目标标签页任务上右键，然后选择JavaScript内存。</p>
 <p>记录JavaScript内存（<strong>JavaScript堆占用的内存，表示界面中所有可达对象占用的内存</strong>）及内存占用空间（<strong>原生内存，DOM节点占用的内存</strong>），点击按钮，记录每次内存的变化。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/SPLj7pfv2G8uIgr.gif"></p>
+<p><img src="http://5coder.cn/img/SPLj7pfv2G8uIgr.gif"></p>
 <h4 id="3-2Timeline记录内存"><a href="#3-2Timeline记录内存" class="headerlink" title="3.2Timeline记录内存"></a>3.2Timeline记录内存</h4><p>上述浏览器任务管理器更多的是用于判断当前脚本是否存在内存问题，而不能具体定位到问题。我们使用Timeline时间线记录内存变化，更精确的记录到内存变化。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/R7IQYzxwmM5WTnK.gif"></p>
+<p><img src="http://5coder.cn/img/R7IQYzxwmM5WTnK.gif"></p>
 <h4 id="3-3堆快照查找分离DOM"><a href="#3-3堆快照查找分离DOM" class="headerlink" title="3.3堆快照查找分离DOM"></a>3.3堆快照查找分离DOM</h4><p>什么是分离DOM</p>
 <ul>
 <li>界面元素存货在DOM树上</li>
 <li>垃圾对象时的DOM节点（当前DOM从存活的DOM树上分离，且js中没有应用这个DOM）</li>
 <li>分离状态的DOM节点（当前DOM节点从当前DOM树分离，但js中还在应用它）</li>
 </ul>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/sG2P5SjBt6xdKRU.gif"></p>
+<p><img src="http://5coder.cn/img/sG2P5SjBt6xdKRU.gif"></p>
 <p>在点击按钮后，DOM中生成了分离的DOM，造成内存空间的浪费，因此我们需要将代码中的temEle置空，这样让GC对垃圾进行回收即可。</p>
 <h4 id="3-4判断是否存在频繁GC"><a href="#3-4判断是否存在频繁GC" class="headerlink" title="3.4判断是否存在频繁GC"></a>3.4判断是否存在频繁GC</h4><p>为什么要确定频繁垃圾回收</p>
 <ul>
@@ -763,7 +763,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>本质上就是采集大量的执行脚本进行数学统计和分析</li>
 <li>使用基于Benchmark.js的<a target="_blank" rel="noopener" href="https://jsbench.me/%E4%BD%BF%E7%94%A8">https://jsbench.me/使用</a></li>
 </ul>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/dK9hqBWRvkMaZEy.png"></p>
+<p><img src="http://5coder.cn/img/dK9hqBWRvkMaZEy.png"></p>
 <p>代码需要优化的原因：</p>
 <ul>
 <li>JavaScript中的内存管理自动完成</li>
@@ -808,7 +808,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>测试结果：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/IHKBSgCf3hk5eT7.png"></p>
+<p><img src="http://5coder.cn/img/IHKBSgCf3hk5eT7.png"></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> i<span class="token punctuation">,</span> str <span class="token operator">=</span> <span class="token string">''</span>
 <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">1000</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   str <span class="token operator">+=</span> i
@@ -820,7 +820,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/YCe95UdsnzbRIGy.png"></p>
+<p><img src="http://5coder.cn/img/YCe95UdsnzbRIGy.png"></p>
 <p><strong>缓存全局变量</strong>代码演示：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
@@ -855,7 +855,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>测试结果：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/qkaxNHsS9b51AV7.png"></p>
+<p><img src="http://5coder.cn/img/qkaxNHsS9b51AV7.png"></p>
 <h3 id="3-通过原型对象添加附加方法"><a href="#3-通过原型对象添加附加方法" class="headerlink" title="3.通过原型对象添加附加方法"></a>3.通过原型对象添加附加方法</h3><p>代码演示：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">fn1</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">foo</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -871,7 +871,7 @@ fn2<span class="token punctuation">.</span>prototype<span class="token punctuati
 <span class="token keyword">let</span> f2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">fn2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>测试结果：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/gB4rej8DLWpXE1V.png"></p>
+<p><img src="http://5coder.cn/img/gB4rej8DLWpXE1V.png"></p>
 <h3 id="4-避开闭包陷阱"><a href="#4-避开闭包陷阱" class="headerlink" title="4.避开闭包陷阱"></a>4.避开闭包陷阱</h3><p>关于闭包：</p>
 <ul>
 <li>闭包是一种强大的语法</li>
@@ -919,7 +919,7 @@ fn2<span class="token punctuation">.</span>prototype<span class="token punctuati
 <span class="token keyword">const</span> b <span class="token operator">=</span> p2<span class="token punctuation">.</span>age<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>测试结果：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/DJc2S8mXkajpEtM.png"></p>
+<p><img src="http://5coder.cn/img/DJc2S8mXkajpEtM.png"></p>
 <h3 id="6-For循环优化及选择最优循环方法"><a href="#6-For循环优化及选择最优循环方法" class="headerlink" title="6.For循环优化及选择最优循环方法"></a>6.For循环优化及选择最优循环方法</h3><p>代码示例：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arrList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
 arrList<span class="token punctuation">[</span><span class="token number">10000</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'icoder'</span>
@@ -931,7 +931,7 @@ arrList<span class="token punctuation">[</span><span class="token number">10000<
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>测试结果：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/Wxw3UcVpADs6IjO.png"></p>
+<p><img src="http://5coder.cn/img/Wxw3UcVpADs6IjO.png"></p>
 <p><strong>选择最优循环方法</strong></p>
 <p>代码示例：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arrList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
@@ -946,7 +946,7 @@ arrList<span class="token punctuation">.</span><span class="token function">forE
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>测试结果（forEach效率最高）：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/tes9K4yoF3XQH6T.png"></p>
+<p><img src="http://5coder.cn/img/tes9K4yoF3XQH6T.png"></p>
 <h3 id="7-文档碎片优化节点添加、克隆优化节点操作"><a href="#7-文档碎片优化节点添加、克隆优化节点操作" class="headerlink" title="7.文档碎片优化节点添加、克隆优化节点操作"></a>7.文档碎片优化节点添加、克隆优化节点操作</h3><p>代码示例：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
@@ -971,7 +971,7 @@ document<span class="token punctuation">.</span>body<span class="token punctuati
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>测试结果：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/rvEJSaMpK26j54Z.png"></p>
+<p><img src="http://5coder.cn/img/rvEJSaMpK26j54Z.png"></p>
 <p><strong>克隆优化节点操作</strong></p>
 <p>代码示例：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
@@ -996,12 +996,12 @@ document<span class="token punctuation">.</span>body<span class="token punctuati
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>测试结果：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/fzEUXm5dwyingl7.png"></p>
+<p><img src="http://5coder.cn/img/fzEUXm5dwyingl7.png"></p>
 <h3 id="8-直接量替换new-Object"><a href="#8-直接量替换new-Object" class="headerlink" title="8.直接量替换new Object"></a>8.直接量替换new Object</h3><p>代码示例：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
 <span class="token keyword">var</span> a1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>a1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>a1<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2</span>a1<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p>测试结果：<br><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/BUjOkDgVzJPSIT9.png"></p>
+<p>测试结果：<br><img src="http://5coder.cn/img/BUjOkDgVzJPSIT9.png"></p>
 <h3 id="9-堆栈中的JS执行过程"><a href="#9-堆栈中的JS执行过程" class="headerlink" title="9.堆栈中的JS执行过程"></a>9.堆栈中的JS执行过程</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
 
 <span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token parameter">b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1017,7 +1017,7 @@ document<span class="token punctuation">.</span>body<span class="token punctuati
 <span class="token keyword">let</span> fn <span class="token operator">=</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/FgN4vncbWzUrQp9.jpg"></p>
+<p><img src="http://5coder.cn/img/FgN4vncbWzUrQp9.jpg"></p>
 <h3 id="10-减少判断层"><a href="#10-减少判断层" class="headerlink" title="10.减少判断层"></a>10.减少判断层</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token parameter">part<span class="token punctuation">,</span> chapter</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> parts <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'ES2015'</span><span class="token punctuation">,</span> <span class="token string">'工程化'</span><span class="token punctuation">,</span> <span class="token string">'Vue'</span><span class="token punctuation">,</span> <span class="token string">'Reach'</span><span class="token punctuation">,</span> <span class="token string">'Node'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>part<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1079,7 +1079,7 @@ document<span class="token punctuation">.</span>body<span class="token punctuati
 <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>测试结果：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/eFGblMkyauDAO8K.png"></p>
+<p><img src="http://5coder.cn/img/eFGblMkyauDAO8K.png"></p>
 <h3 id="12-减少数据读取次数"><a href="#12-减少数据读取次数" class="headerlink" title="12.减少数据读取次数"></a>12.减少数据读取次数</h3><p>代码示例：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
@@ -1104,7 +1104,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>测试结果：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/53YtRCWn2o1jsaT.png"></p>
+<p><img src="http://5coder.cn/img/53YtRCWn2o1jsaT.png"></p>
 <h3 id="13-字面量与构造式"><a href="#13-字面量与构造式" class="headerlink" title="13.字面量与构造式"></a>13.字面量与构造式</h3><p>代码示例：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">test</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1120,7 +1120,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>测试结果：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/LUPtoS5zT64Nx8B.png"></p>
+<p><img src="http://5coder.cn/img/LUPtoS5zT64Nx8B.png"></p>
 <h3 id="14-减少循环体中活动"><a href="#14-减少循环体中活动" class="headerlink" title="14.减少循环体中活动"></a>14.减少循环体中活动</h3><p>代码示例：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">test</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">var</span> i
@@ -1139,7 +1139,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>测试结果：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/Lw4hojUnXibfu2x.png"></p>
+<p><img src="http://5coder.cn/img/Lw4hojUnXibfu2x.png"></p>
 <h3 id="15-惰性函数与性能"><a href="#15-惰性函数与性能" class="headerlink" title="15.惰性函数与性能"></a>15.惰性函数与性能</h3><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>

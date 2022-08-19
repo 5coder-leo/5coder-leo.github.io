@@ -416,7 +416,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-08-09
+                    2022-08-19
                 </div>
                 
 
@@ -491,9 +491,9 @@
 <li><strong>view</strong>，以声明方式将state映射到视图</li>
 <li><strong>actions</strong>，响应在view上的用户输入导致的状态变化</li>
 </ul>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210719213045881.png"></p>
+<p><img src="http://5coder.cn/img/image-20210719213045881.png"></p>
 <h2 id="组件间通信方式回顾"><a href="#组件间通信方式回顾" class="headerlink" title="组件间通信方式回顾"></a>组件间通信方式回顾</h2><p>大多数场景下的组件都并不是独立存在的，而是相互协作共同构成了一个复杂的业务功能。在 Vue 中为不同的组件关系提供了不同的通信规则。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210719213508962.png"></p>
+<p><img src="http://5coder.cn/img/image-20210719213508962.png"></p>
 <h3 id="父传子：Props-Down"><a href="#父传子：Props-Down" class="headerlink" title="父传子：Props Down"></a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/components.html#%E9%80%9A%E8%BF%87-Prop-%E5%90%91%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE">父传子：Props Down</a></h3><ul>
 <li>子组件中通过props接受数据</li>
 <li>父组件中给子组件通过相应属性传值</li>
@@ -529,10 +529,10 @@ template<span class="token operator">:</span> <span class="token string">'&lt;h3
 
 <p>这不仅为你的组件提供了文档，还会在它们遇到错误的类型时从浏览器的 JavaScript 控制台提示用户。你会在这个页面接下来的部分看到<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/components-props.html#Prop-%E9%AA%8C%E8%AF%81">类型检查和其它 prop 验证</a>。</p>
 </blockquote>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210719213708568.png"></p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210719213815350.png"></p>
-<h3 id="子传父：Event-Up"><a href="#子传父：Event-Up" class="headerlink" title="子传父：Event Up"></a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/components.html#%E7%9B%91%E5%90%AC%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BA%8B%E4%BB%B6">子传父：Event Up</a></h3><p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210720054418797.png"></p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210720054522110.png"></p>
+<p><img src="http://5coder.cn/img/image-20210719213708568.png"></p>
+<p><img src="http://5coder.cn/img/image-20210719213815350.png"></p>
+<h3 id="子传父：Event-Up"><a href="#子传父：Event-Up" class="headerlink" title="子传父：Event Up"></a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/components.html#%E7%9B%91%E5%90%AC%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BA%8B%E4%BB%B6">子传父：Event Up</a></h3><p><img src="http://5coder.cn/img/image-20210720054418797.png"></p>
+<p><img src="http://5coder.cn/img/image-20210720054522110.png"></p>
 <h3 id="非父子组件：Event-Bus"><a href="#非父子组件：Event-Bus" class="headerlink" title="非父子组件：Event Bus"></a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/migration.html#dispatch-%E5%92%8C-broadcast-%E6%9B%BF%E6%8D%A2">非父子组件：Event Bus</a></h3><p>我们可以使用一个非常简单的Event Bus来解决这个问题：</p>
 <p>eventbus.js</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -668,7 +668,7 @@ bus<span class="token punctuation">.</span><span class="token function">$emit</s
 </ul>
 <p>建议符合这种场景的业务使用 Vuex 来进行数据管理，例如非常典型的场景：购物车。</p>
 <p><strong>注意：Vuex 不要滥用，不符合以上需求的业务不要使用，反而会让你的应用变得更麻烦。</strong></p>
-<h3 id="核心概念回顾"><a href="#核心概念回顾" class="headerlink" title="核心概念回顾"></a>核心概念回顾</h3><p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/vuex.png"></p>
+<h3 id="核心概念回顾"><a href="#核心概念回顾" class="headerlink" title="核心概念回顾"></a>核心概念回顾</h3><p><img src="http://5coder.cn/img/vuex.png"></p>
 <ul>
 <li><code>Store</code>:仓库，<code>store</code>是使用<code>Vuex</code>应用程序的核心，每一个应用仅有一个<code>store</code>。<code>store</code>是一个容器，包含应用中的大部分状态，当然我们不能直接改变<code>store</code>中的应用状态，我们需要通过提交<code>mutation</code>的方式改变状态。</li>
 <li><code>State</code>：就是状态，保存在store中。因为<code>store</code>是唯一的，所以<code>state</code>状态也是惟一的，称为单一状态树。但是所有的状态都保存在<code>state</code>中的话，会让程序难以维护，可以通过后续的模块解决该问题。<ul>
@@ -837,7 +837,7 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/vuex.gif" alt="vuex"></p>
+<p><img src="http://5coder.cn/img/vuex.gif" alt="vuex"></p>
 <h4 id="Action"><a href="#Action" class="headerlink" title="Action"></a><a target="_blank" rel="noopener" href="https://vuex.vuejs.org/zh/guide/actions.html#action">Action</a></h4><p><code>Action</code>类似于<code>mutation</code>，不同在于：</p>
 <ul>
 <li><code>Action</code>提交的是<code>mutation</code>，而不是直接变更状态</li>
@@ -900,25 +900,25 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 <h4 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h4><p>由于使用单一状态树，应用的所有状态会集中到一个比较大的对象。当应用变得非常复杂时，store 对象就有可能变得相当臃肿。</p>
 <p>为了解决以上问题，Vuex 允许我们将 store 分割成模块（module）。每个模块拥有自己的 state、mutation、action、getter、甚至是嵌套子模块。在案例中体会 Module 的使用。</p>
 <p>目录结构：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210720231254540.png"></p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210720231711492.png"></p>
+<p><img src="http://5coder.cn/img/image-20210720231254540.png"></p>
+<p><img src="http://5coder.cn/img/image-20210720231711492.png"></p>
 <h4 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h4><p>之前在介绍核心概念时说过，所有的状态变更必须通过提交<code>mutation</code>，但是这仅仅是一个<strong>约定</strong>。如果你想的话，可以在组建中随时获取<code>$store.state.msg</code>，对它进行修改。从语法层面来说，这是没有问题的，但是这样操作破坏了<code>Vuex</code>的约定。如果在组件中直接修改<code>state</code>，那在<code>dev-tools</code>中无法追踪状态的变更。开启严格模式之后，如果在组件中直接修改<code>state</code>状态，会抛出错误。演示如下：</p>
 <p><code>store/index.js</code>中添加<code>strict: true</code></p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210721055156446.png"></p>
+<p><img src="http://5coder.cn/img/image-20210721055156446.png"></p>
 <p>在<code>App.vue</code>中添加如下代码，点击按钮直接修改<code>store</code>中<code>state.msg</code>的值</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210721055240615.png" alt="image-20210721055240615"></p>
+<p><img src="http://5coder.cn/img/image-20210721055240615.png" alt="image-20210721055240615"></p>
 <p>打开浏览器进行测试，发现$store.state.msg的值确实被修改了，但是console中会抛出异常。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210721055417299.png"></p>
+<p><img src="http://5coder.cn/img/image-20210721055417299.png"></p>
 <p>需要注意的是：不要再生产模式下开启严格模式，严格模式会深度检查状态树，来检查不合规的状态改变，会影响性能。可以再开发环境中启用严格模式，在生产模式下关闭严格模式。调整后的代码：</p>
 <ul>
 <li>当<code>npm run serve</code>时，<code>process.env.NODE_ENV</code>为<code>development</code>开发环境；</li>
 <li>当<code>npm run build</code>时，<code>process.env.NODE_ENV</code>是<code>production</code>。这样就可以根据环境来动态的设置严格模式。</li>
 </ul>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210721055707152.png"></p>
+<p><img src="http://5coder.cn/img/image-20210721055707152.png"></p>
 <h2 id="购物车案例"><a href="#购物车案例" class="headerlink" title="购物车案例"></a>购物车案例</h2><p>接下来我们通过一个购物车案例来演示 Vuex 在项目中的使用方式，首先把购物车的项目模板下载下来。</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/goddlts/vuex-cart-demo-template.git">模板地址</a></p>
 <p>案例演示</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/cart.gif" alt="cart"></p>
+<p><img src="http://5coder.cn/img/cart.gif" alt="cart"></p>
 <p>server.js，在访问数据时，必须先使用<code>node server.js</code>启动server接口</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span>
 <span class="token keyword">const</span> cors <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'cors'</span><span class="token punctuation">)</span>
@@ -1470,18 +1470,18 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 <li>这个函数内可以注册一个函数，让它可以在<code>mutaions</code>之后再执行</li>
 <li>就像在<code>axios</code>中的过滤器，在所有请求之后统一完成一件事</li>
 </ul>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210721221103084.png"></p>
+<p><img src="http://5coder.cn/img/image-20210721221103084.png"></p>
 <ul>
 <li><code>mutation</code>的结构<ul>
 <li>如果想在<code>cart</code>模块中的<code>mutation</code>之行结束之后再来调用调用，<code>product</code>模块中不需要，可以使用<code>mutation</code></li>
 </ul>
 </li>
 </ul>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210721221642267.png"></p>
+<p><img src="http://5coder.cn/img/image-20210721221642267.png"></p>
 <ul>
 <li>注册插件</li>
 </ul>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210721221144978.png" alt="image-20210721221144978"></p>
+<p><img src="http://5coder.cn/img/image-20210721221144978.png" alt="image-20210721221144978"></p>
 <ul>
 <li><p>最终实现</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>

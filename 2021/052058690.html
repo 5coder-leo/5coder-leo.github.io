@@ -424,7 +424,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-08-09
+                    2022-08-19
                 </div>
                 
 
@@ -479,12 +479,12 @@
 <h3 id="单臂路由与三层交换机"><a href="#单臂路由与三层交换机" class="headerlink" title="单臂路由与三层交换机"></a><strong>单臂路由与三层交换机</strong></h3><p>我们知道要实现不同vlan间通信，就必须需要有路由功能，不同VLAN之间相互通信的两种方式（单臂路由、三层交换机）。</p>
 <p><strong>什么是单臂路由？</strong></p>
 <p>单臂路由的实现方式，其实就是普通二层交换机加路由器，从而实现不同vlan间的可以互相通信。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/sXF6iOJ5BpS4kNC.jpg"></p>
+<p><img src="http://5coder.cn/img/sXF6iOJ5BpS4kNC.jpg"></p>
 <p><strong>那什么是三层交换机呢？</strong></p>
 <p>对于小型的网络，单臂路由可以应付，但随着VLAN之间流量的不断增加，很可能导致路由器成为整个网络的瓶颈，出现掉包、或者通信堵塞。</p>
 <p>为了解决上述问题，三层交换机应运而生。三层交换机，本质上就是“带有路由功能的（二层）交换机”。路由属于OSI参照模型中第三层网络层的功能，因此带有第三层路由功能的交换机才被称为“三层交换机”。</p>
 <p>关于三层交换机的内部结构，可以参照下面的简图。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/QNSoe1xaEkpODib.jpg"></p>
+<p><img src="http://5coder.cn/img/QNSoe1xaEkpODib.jpg"></p>
 <p>在一台本体内，分别设置了交换机模块和路由器模块；而内置的路由模块与交换模块相同，使用ASIC硬件处理路由。因此，与传统的路由器相比，可以实现高速路由。并且，路由与交换模块是汇聚链接的，由于是内部连接，可以确保相当大的带宽，所以对于正规的项目，需要使用三层交换机来实现网网络间的通信。</p>
 <h3 id="什么是网关"><a href="#什么是网关" class="headerlink" title="什么是网关"></a><strong>什么是网关</strong></h3><p>在了解了vlan与三层交换机后，能不能通信，还需要看网关是否正确。</p>
 <h3 id="什么是网关-1"><a href="#什么是网关-1" class="headerlink" title="什么是网关"></a><strong>什么是网关</strong></h3><p>网关(Gateway)又称网间连接器、协议转换器。网关在传输层上以实现网络互连，是最复杂的网络互连设备，仅用于两个高层协议不同的网络互连。</p>
@@ -497,7 +497,7 @@
 <p>比如有网络A和网络B，<br><strong>网络A：</strong>的IP地址范围为“192.168.1.1~192. 168.1.254”，子网掩255.255.255.0；<br>如果需要与其它网段通信，那么它的网关可以设置为192.168.1.1，当然也可以设置为<strong>网段内</strong>其它的一个ip地址。</p>
 <p><strong>网络B：</strong>的IP地址范为“192.168.2.1~192.168.2.254”，子网掩码255.255.255.0。<br>如果需要与其它网段通信，那么它的网关可以设置为192.168.2.1，当然也可以设置为<strong>网段内</strong>其它的一个ip地址。</p>
 </blockquote>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/FdwNiZLtQoepXMD.jpg"></p>
+<p><img src="http://5coder.cn/img/FdwNiZLtQoepXMD.jpg"></p>
 <h3 id="网关是如何实现通信？"><a href="#网关是如何实现通信？" class="headerlink" title="网关是如何实现通信？"></a><strong>网关是如何实现通信？</strong></h3><p>在没有<strong>路由器</strong>的情况下，不同的两个网络之间是<strong>不能</strong>进行TCP/IP通信的，即使是两个网络连接在同一台交换机(或集线器)上，TCP/IP协议也会根据子网掩码(255.255.255.0)判定两个网络中的主机处在不同的网络里。而要实现这两个网络之间的通信，则<strong>必须通过网关</strong>。</p>
 <p>如果<strong>网络A</strong>中的主机发现<strong>数据包</strong>的目的主机<strong>不在</strong>本地网络中，就把数据包转发给它<strong>自己的网关</strong>，再由网关转发给网络B的网关，网络B的网关再转发给网络B的某个主机(如附图所示)。网络B向网络A转发数据包的过程。</p>
 <p>所以说，只有设置好网关的<strong>IP地址</strong>，TCP/IP协议才能实现不同网络之间的相互通信。</p>
@@ -511,7 +511,7 @@
 <p>虽然现在已经ipv6了，但我们基本用的大多数还是ipv4协议，所谓ip就是你电脑整个<strong>网络的编号</strong>。其他电脑想访问电脑就得需要这个编号。但是这个编号很多情况下是一直在<strong>变化</strong>的。唯一不变的是你的MAC地址：<strong>物理地址</strong>。</p>
 <p>MAC是网络中用来标识网卡设备的唯一网络地址。由相关硬件制造商统一分配，每台电脑的MAC地址都是<strong>唯一</strong>的。</p>
 <p>做个比喻，你经常搬家，你没搬一次家都有一个地址，XX小区XX单元XX号，这个就是IP。但是你的名字不变，这个就是MAC，不同的是我们的<strong>MAC不允许重名</strong>。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/a29fgLdsZJrPp6A.jpg"></p>
+<p><img src="http://5coder.cn/img/a29fgLdsZJrPp6A.jpg"></p>
 <p>我们的<strong>IP分为两个部分</strong>：如上图分为<strong>网络部分</strong>和<strong>主机部分</strong>。网络部分好比就是你在XX省XX市XX镇，这个是国家固定下来了的。但是XX小区XX单元XX号是开发商自己定的。两个编号加起来就是你的ip了。不同的是在现实中两个编号的长度是固定的，在网络上A、B、C、D的ip地址却是变化的，这个在前天有详细讲到。</p>
 <h3 id="MAC地址-1"><a href="#MAC地址-1" class="headerlink" title="MAC地址"></a><strong>MAC地址</strong></h3><p>子网掩码是为了区分网络位和主机位，上面我们说到过，一个ip地址是由<strong>网络部分</strong>和<strong>主机部分</strong>。正如一个人的名字由姓与名组成。</p>
 <p>那么我们可以把IP地址比作一个人的名字，那么子网掩码就像是一份名单，可以快速的知道那些人同姓，那些人不同姓，把同姓的人分在一组，让他们之前可以互相交流。</p>

@@ -416,7 +416,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-08-09
+                    2022-08-19
                 </div>
                 
 
@@ -537,7 +537,7 @@
 <li><p>yarn dev执行打包，用的是rollup，-w参数是坚挺稳健的变化，文件变化自动重新打包</p>
 </li>
 <li><p>结果</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210621215220709.png"></p>
+<p><img src="http://5coder.cn/img/image-20210621215220709.png"></p>
 </li>
 </ul>
 </li>
@@ -546,7 +546,7 @@
 <li><p>examples的实例中引入的是vue.min.js，将其改为vue.js</p>
 </li>
 <li><p>打开Chrome的调试工具中的source</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210621215534350.png"></p>
+<p><img src="http://5coder.cn/img/image-20210621215534350.png"></p>
 </li>
 </ul>
 <iframe src="http://5coder.cn/static/video/20210621_215739.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" height="500" width="700" autoplay="false"> </iframe>
@@ -632,9 +632,9 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210621232639624.png"></p>
+<p><img src="http://5coder.cn/img/image-20210621232639624.png"></p>
 <p>将vue版本改为<code>vue.runtime.js</code>，发现浏览器报错，提示更改为render函数或者用compiler-included build。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210621232855357.png"></p>
+<p><img src="http://5coder.cn/img/image-20210621232855357.png"></p>
 <p>更改template如下：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
@@ -667,12 +667,12 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210621233125601.png"></p>
+<p><img src="http://5coder.cn/img/image-20210621233125601.png"></p>
 <h4 id="使用vue-cli创建项目时查看vue构件版本"><a href="#使用vue-cli创建项目时查看vue构件版本" class="headerlink" title="使用vue-cli创建项目时查看vue构件版本"></a>使用vue-cli创建项目时查看vue构件版本</h4><p>在使用<code>vue create projectName</code>创建的项目中，查看<code>vue</code>的构建版本。由于Vue对<code>webpack.config.js</code>进行了深度封装，所以在目录中无法看到其配置文件，但是Vue提供了命令行来查看配置文件。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">vue inspect  <span class="token comment"># 直接输出到控制台</span>
 vue inspect <span class="token operator">&gt;</span> output.js  <span class="token comment"># 将执行vue inspect命令后的结果输出到output.js文件中</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210622055014013.png"></p>
+<p><img src="http://5coder.cn/img/image-20210622055014013.png"></p>
 <blockquote>
 <p>output.js不是一个有效的<code>webpack</code>配置文件，不能拿来直接使用。</p>
 </blockquote>
@@ -689,7 +689,7 @@ vue inspect <span class="token operator">&gt;</span> output.js  <span class="tok
 </ul>
 </li>
 </ul>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210622060735123.png"></p>
+<p><img src="http://5coder.cn/img/image-20210622060735123.png"></p>
 <p>以上内容来自<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15741177Eh?p=96"><strong>coderwhy</strong>哔哩哔哩动画第96节视频</a></p>
 </blockquote>
 <h2 id="寻找入口文件"><a href="#寻找入口文件" class="headerlink" title="寻找入口文件"></a>寻找入口文件</h2><ul>
@@ -772,7 +772,7 @@ vue inspect <span class="token operator">&gt;</span> output.js  <span class="tok
 </ul>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>    el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>    template<span class="token operator">:</span> <span class="token string">'&lt;h3&gt;Hello template&lt;/h3&gt;'</span><span class="token punctuation">,</span>    <span class="token function">render</span> <span class="token punctuation">(</span><span class="token parameter">h</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    	<span class="token keyword">return</span> <span class="token function">h</span><span class="token punctuation">(</span><span class="token string">'h4'</span><span class="token punctuation">,</span> <span class="token string">'Hello render'</span><span class="token punctuation">)</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210622223137140.png"></p>
+<p><img src="http://5coder.cn/img/image-20210622223137140.png"></p>
 </li>
 </ul>
 <h4 id="Vue的构造函数在哪里"><a href="#Vue的构造函数在哪里" class="headerlink" title="Vue的构造函数在哪里"></a>Vue的构造函数在哪里</h4><blockquote>
@@ -841,7 +841,7 @@ vue inspect <span class="token operator">&gt;</span> output.js  <span class="tok
 </ul>
 </li>
 </ul>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/Snipaste_2021-06-23_06-11-34.png" alt="Snipaste_2021-06-23_06-11-34"></p>
+<p><img src="http://5coder.cn/img/Snipaste_2021-06-23_06-11-34.png" alt="Snipaste_2021-06-23_06-11-34"></p>
 <h2 id="Vue的初始化"><a href="#Vue的初始化" class="headerlink" title="Vue的初始化"></a>Vue的初始化</h2><h3 id="src-core-global-api-index-js"><a href="#src-core-global-api-index-js" class="headerlink" title="src/core/global-api/index.js"></a>src/core/global-api/index.js</h3><ul>
 <li>初始化Vue的静态方法</li>
 </ul>
@@ -1069,7 +1069,7 @@ vue inspect <span class="token operator">&gt;</span> output.js  <span class="tok
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210628055348086.png"></p>
+<p><img src="http://5coder.cn/img/image-20210628055348086.png"></p>
 <h3 id="src-core-instance-index-js"><a href="#src-core-instance-index-js" class="headerlink" title="src/core/instance/index.js"></a>src/core/instance/index.js</h3><ul>
 <li>定义Vue的构造函数</li>
 <li>初始化Vue的实例成员</li>
@@ -1265,25 +1265,25 @@ vue inspect <span class="token operator">&gt;</span> output.js  <span class="tok
 </ul>
 </li>
 <li><p>stateMixin(Vue)</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210628060200588.png"></p>
+<p><img src="http://5coder.cn/img/image-20210628060200588.png"></p>
 </li>
 <li><p>eventsMixin(Vue)</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210628060108441.png"></p>
+<p><img src="http://5coder.cn/img/image-20210628060108441.png"></p>
 </li>
 <li><p>lifecycleMixin(Vue)</p>
 </li>
 </ul>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210628060417525.png"></p>
+<p><img src="http://5coder.cn/img/image-20210628060417525.png"></p>
 <ul>
 <li>renderMixin(Vue)</li>
 </ul>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210628060433991.png"></p>
+<p><img src="http://5coder.cn/img/image-20210628060433991.png"></p>
 <h2 id="首次渲染过程"><a href="#首次渲染过程" class="headerlink" title="首次渲染过程"></a>首次渲染过程</h2><ul>
 <li>Vue初始化完毕，开始真正的执行</li>
 <li>调用new Vue()之前，已经初始化完毕</li>
 <li>通过调试代码，记录首次渲染过程</li>
 </ul>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/%E9%A6%96%E6%AC%A1%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B.png" alt="首次渲染过程"></p>
+<p><img src="http://5coder.cn/img/%E9%A6%96%E6%AC%A1%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B.png" alt="首次渲染过程"></p>
 <h2 id="数据响应式原理"><a href="#数据响应式原理" class="headerlink" title="数据响应式原理"></a>数据响应式原理</h2><p>参考之前的文章：<a target="_blank" rel="noopener" href="http://blog.5coder.cn/2021/052627165.html">模拟Vue.js响应式原理</a>，文章中自己模拟了响应式原理，实现了简易版的响应式机制，其中的思想与方法与Vue.js源码吻合，可对照查看。</p>
 <h3 id="通过查看源码解决下面问题-1"><a href="#通过查看源码解决下面问题-1" class="headerlink" title="通过查看源码解决下面问题"></a>通过查看源码解决下面问题</h3><ul>
 <li><code>vm.msg = { count: 0 }</code>，重新给属性赋值，是否是响应式的？</li>
@@ -1831,7 +1831,7 @@ Dep<span class="token punctuation">.</span>target <span class="token operator">=
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<h3 id="数据响应式原理总结"><a href="#数据响应式原理总结" class="headerlink" title="数据响应式原理总结"></a>数据响应式原理总结</h3><p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B.png"></p>
+<h3 id="数据响应式原理总结"><a href="#数据响应式原理总结" class="headerlink" title="数据响应式原理总结"></a>数据响应式原理总结</h3><p><img src="http://5coder.cn/img/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B.png"></p>
 <h3 id="动态添加一个响应式属性"><a href="#动态添加一个响应式属性" class="headerlink" title="动态添加一个响应式属性"></a>动态添加一个响应式属性</h3><blockquote>
 <p>当我们给一个响应式对象，动态增加一个对象，这个属性是否为响应式？</p>
 </blockquote>
@@ -1867,21 +1867,21 @@ Dep<span class="token punctuation">.</span>target <span class="token operator">=
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210706052116706.png"></p>
+<p><img src="http://5coder.cn/img/image-20210706052116706.png"></p>
 <p>打开浏览器开发者模式，分别键入如下内容：</p>
 <ul>
 <li><p><code>vm.obj.name = 'abc'</code></p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210706052150370.png"></p>
+<p><img src="http://5coder.cn/img/image-20210706052150370.png"></p>
 <p><strong>可以发现，动态给<code>obj</code>增加<code>name</code>属性，视图并未更新，说明此时<code>name</code>属性不是响应式的</strong></p>
 </li>
 <li><p><code>vm.$set(vm.obj, 'name', 'zhangsan')</code></p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210706052431324.png"></p>
+<p><img src="http://5coder.cn/img/image-20210706052431324.png"></p>
 <p>可以使用<code>vm.$set(vm.obj, 'name', 'zhangsan')</code>来给响应式对象动态添加响应式属性(或者使用Vue.set())。</p>
 <p>使用vm.$set()方法改变数组的第一个元素的值：<code>vm.$set(vm.arr, 0, 100)</code>。vm.$set()<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#vm-set">官方文档</a></p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210706053012528.png"></p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210706053024997.png"></p>
+<p><img src="http://5coder.cn/img/image-20210706053012528.png"></p>
+<p><img src="http://5coder.cn/img/image-20210706053024997.png"></p>
 <p>不能给Vue实例或者Vue实例的跟数组对象动态的添加响应式属性。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210706053237085.png"></p>
+<p><img src="http://5coder.cn/img/image-20210706053237085.png"></p>
 </li>
 </ul>
 <h2 id="实例方法-数据"><a href="#实例方法-数据" class="headerlink" title="实例方法/数据"></a>实例方法/数据</h2><h3 id="vm-set"><a href="#vm-set" class="headerlink" title="vm.$set"></a>vm.$set</h3><h4 id="定义位置"><a href="#定义位置" class="headerlink" title="定义位置"></a>定义位置</h4><ul>
@@ -2262,19 +2262,19 @@ vm<span class="token punctuation">.</span><span class="token function">$watch</s
 
   - 计算属性watcher
 
-    ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210707055015275.png)
+    ![](http://5coder.cn/img/image-20210707055015275.png)
 
   - 用户watcher（侦听器）
 
-    ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210707055122029.png)
+    ![](http://5coder.cn/img/image-20210707055122029.png)
 
-    ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210707055217763.png)
+    ![](http://5coder.cn/img/image-20210707055217763.png)
 
   - 渲染watcher
 
-    ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210707055333356.png)
+    ![](http://5coder.cn/img/image-20210707055333356.png)
 
-    ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210707055459252.png)
+    ![](http://5coder.cn/img/image-20210707055459252.png)
     - 查看渲染`watcher`的执行过程
       - 当数据更新，`defineReactive`的`set`方法中调用`dep.notify()`
       - 调用`watcher`的`update()`
@@ -2350,10 +2350,10 @@ vm<span class="token punctuation">.</span><span class="token function">$watch</s
 <li><p>src/core/util/next-tick.js</p>
 </li>
 <li><p>$nextTick()实例方法</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210707063325418.png"></p>
+<p><img src="http://5coder.cn/img/image-20210707063325418.png"></p>
 </li>
 <li><p>$nextTick()静态方法</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210707063356290.png"></p>
+<p><img src="http://5coder.cn/img/image-20210707063356290.png"></p>
 </li>
 </ul>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">nextTick</span> <span class="token punctuation">(</span><span class="token parameter">cb<span class="token operator">?</span><span class="token operator">:</span> Function<span class="token punctuation">,</span> ctx<span class="token operator">?</span><span class="token operator">:</span> Object</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>

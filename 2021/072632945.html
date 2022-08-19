@@ -416,7 +416,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-08-09
+                    2022-08-19
                 </div>
                 
 
@@ -491,7 +491,7 @@
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="导入样式资源"><a href="#导入样式资源" class="headerlink" title="导入样式资源"></a>导入样式资源</h2><p>当前目录结构：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/1627261549024.png" alt="1627261549024"></p>
+<p><img src="http://5coder.cn/img/1627261549024.png" alt="1627261549024"></p>
 <p><code>app.html</code>：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">{{</span> <span class="token attr-name">HTML_ATTRS</span> <span class="token attr-name">}}</span><span class="token punctuation">&gt;</span></span>
@@ -693,7 +693,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>当前效果：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/1627262711486.png"></p>
+<p><img src="http://5coder.cn/img/1627262711486.png"></p>
 <p>访问localhost:3000时，首先加载pages/index.vue组件，在nuxt-child中加载子路由，子路由path为空字符串‘’，因此访问localhost:3000时会同时加载<code>pages/index.vue</code>、<code>pages/layout/index.vue</code>、<code>pages/home/index.vue</code>三个组件</p>
 <h2 id="登录注册"><a href="#登录注册" class="headerlink" title="登录注册"></a>登录注册</h2><p>在模板网址中找到登录模板，由于当前项目登录/注册业务不复杂，所以使用同一个组件模板，利用<code>this.$route.name</code>将其处理为动态组件。其中需要处理文字显示、按钮显示、路有指向，代码如下：</p>
 <p><code>pages/login/index.vue</code></p>
@@ -1113,7 +1113,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/1627269694843.png"></p>
+<p><img src="http://5coder.cn/img/1627269694843.png"></p>
 <h2 id="处理导航链接高亮"><a href="#处理导航链接高亮" class="headerlink" title="处理导航链接高亮"></a>处理导航链接高亮</h2><ul>
 <li><p>修改nuxt.js提供的路有导航高亮，默认值为<code>nuxt-link-active</code>，修改为模板中定义的<code>active</code>（<a target="_blank" rel="noopener" href="https://zh.nuxtjs.org/docs/2.x/configuration-glossary/configuration-router#linkactiveclass">官方文档</a>）</p>
 <p><code>vue.config.js</code></p>
@@ -1180,7 +1180,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>当前目录结构：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/1627270097786.png"></p>
+<p><img src="http://5coder.cn/img/1627270097786.png"></p>
 </li>
 </ul>
 <h2 id="封装请求模块"><a href="#封装请求模块" class="headerlink" title="封装请求模块"></a>封装请求模块</h2><ul>
@@ -1198,7 +1198,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 </ul>
 <h2 id="登录注册-1"><a href="#登录注册-1" class="headerlink" title="登录注册"></a>登录注册</h2><h3 id="实现基本登录功能"><a href="#实现基本登录功能" class="headerlink" title="实现基本登录功能"></a>实现基本登录功能</h3><ul>
 <li><p>登录接口</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/1627279394859.png"></p>
+<p><img src="http://5coder.cn/img/1627279394859.png"></p>
 </li>
 </ul>
 <p><code>pages/login/index.vue</code></p>
@@ -1350,11 +1350,11 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <li><p>此处处理用户登录错误时的显示内容</p>
 </li>
 <li><p>未处理时，登录请求错误会出现如下页面：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/1627282436215.png"></p>
+<p><img src="http://5coder.cn/img/1627282436215.png"></p>
 </li>
 <li><p>错误信息如下：</p>
 <ul>
-<li><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/1627282574328.png"></li>
+<li><img src="http://5coder.cn/img/1627282574328.png"></li>
 </ul>
 </li>
 <li><p>使用<code>try {} catch {err}</code>捕获异常</p>
@@ -1382,7 +1382,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>处理完错误后页面如下：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/1627282636518.png"></p>
+<p><img src="http://5coder.cn/img/1627282636518.png"></p>
 </li>
 </ul>
 <h3 id="用户注册"><a href="#用户注册" class="headerlink" title="用户注册"></a>用户注册</h3><p>由于注册需要提供用户名，所以在data中的user中添加username，并使用v-model绑定到input框中。</p>
@@ -1574,7 +1574,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <p>中间件允许你定义一个自定义函数运行在一个页面或一组页面渲染之前。</p>
 <p>您可以通过在 middleware/ 目录中创建一个文件来创建命名中间件，文件名将是中间件名称。</p>
 </blockquote>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210726221657192.png"></p>
+<p><img src="http://5coder.cn/img/image-20210726221657192.png"></p>
 <p><code>middleware/authenticated.js</code></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>store<span class="token punctuation">,</span> redirect<span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment">// 如果用户没有登录</span>
@@ -1752,8 +1752,8 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <li><p>相应query参数变化</p>
 </li>
 </ul>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210726230706868.png"></p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210726230718855.png"></p>
+<p><img src="http://5coder.cn/img/image-20210726230706868.png"></p>
+<p><img src="http://5coder.cn/img/image-20210726230718855.png"></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">watchQuery<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'page'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="获取标签列表（Popular-Tags）"><a href="#获取标签列表（Popular-Tags）" class="headerlink" title="获取标签列表（Popular Tags）"></a>获取标签列表（Popular Tags）</h3><ul>
@@ -2258,7 +2258,7 @@ Vue<span class="token punctuation">.</span><span class="token function">filter</
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<h3 id="把Markdown转为HTMl"><a href="#把Markdown转为HTMl" class="headerlink" title="把Markdown转为HTMl"></a>把Markdown转为HTMl</h3><p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210727221929254.png"></p>
+<h3 id="把Markdown转为HTMl"><a href="#把Markdown转为HTMl" class="headerlink" title="把Markdown转为HTMl"></a>把Markdown转为HTMl</h3><p><img src="http://5coder.cn/img/image-20210727221929254.png"></p>
 <p>使用第三方插件<a target="_blank" rel="noopener" href="https://markdown-it.docschina.org/">markdown-it</a>，该插件可以将<code>markdown</code>语法转换为<code>HTML</code>。在获取到<code>article.body</code>后，使用该插件方法将其转为<code>HTML</code>。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span>getArticle<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@/api/article"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> MarkdownIt <span class="token keyword">from</span> <span class="token string">'markdown-it'</span>
@@ -2279,8 +2279,8 @@ Vue<span class="token punctuation">.</span><span class="token function">filter</
 <p>在模板中，使用<code>v-html</code>指令填充<code>article.body</code></p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-md-12<span class="token punctuation">"</span></span> <span class="token attr-name">v-html</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>article.body<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="展示文章作者相关信息"><a href="#展示文章作者相关信息" class="headerlink" title="展示文章作者相关信息"></a>展示文章作者相关信息</h3><p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210727222805705.png"></p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210727222834093.png"></p>
+<h3 id="展示文章作者相关信息"><a href="#展示文章作者相关信息" class="headerlink" title="展示文章作者相关信息"></a>展示文章作者相关信息</h3><p><img src="http://5coder.cn/img/image-20210727222805705.png"></p>
+<p><img src="http://5coder.cn/img/image-20210727222834093.png"></p>
 <p>文章详情页面中有两部分功能相似：</p>
 <blockquote>
 <p>文章作者信息、关注按钮、点赞按钮</p>
@@ -2408,8 +2408,8 @@ Vue<span class="token punctuation">.</span><span class="token function">filter</
 <p>TODO 关注按钮事件，其原理与点赞按钮相同，封装API请求，点击按钮，判断当前状态，更改数据</p>
 <h3 id="设置页面meta优化SEO"><a href="#设置页面meta优化SEO" class="headerlink" title="设置页面meta优化SEO"></a>设置页面meta优化SEO</h3><ul>
 <li><p>修改页面标题，希望在页面标题中出现文章的标题</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210727225038839.png"></p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210727225100076.png"></p>
+<p><img src="http://5coder.cn/img/image-20210727225038839.png"></p>
+<p><img src="http://5coder.cn/img/image-20210727225100076.png"></p>
 </li>
 </ul>
 <p><a target="_blank" rel="noopener" href="https://www.nuxtjs.cn/api/pages-head">特定页面的Meta标签用法</a></p>
@@ -2493,7 +2493,7 @@ Vue<span class="token punctuation">.</span><span class="token function">filter</
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>显示效果</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210727225840268.png"></p>
+<p><img src="http://5coder.cn/img/image-20210727225840268.png"></p>
 <h3 id="文章评论"><a href="#文章评论" class="headerlink" title="文章评论"></a>文章评论</h3><ul>
 <li>首先封装组件<code>article-comments.vue</code>，将评论部分抽离出来单独获取数据。</li>
 <li>使用Vue生命周期函数mounted（此部分不需要SEO优化，因此采用客户端渲染）加载数据</li>

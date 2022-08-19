@@ -420,7 +420,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-08-09
+                    2022-08-19
                 </div>
                 
 
@@ -463,9 +463,9 @@
 <p>（2）不利于 SEO</p>
 <p>当搜索引擎爬取网站 HTML 文件时，单页应用的 <strong>HTML</strong> 没有内容，因为他它需要通过客户端 <strong>JavaScript</strong>解析执行才能生成网页内容，而目前的主流的搜索引擎对于这一部分内容的抓取还不是很好。</p>
 <p>为了解决这两个缺陷，业界借鉴了传统的服务端直出 <strong>HTML</strong> 方案，提出在服务器端执行前端框架（<strong>React/Vue/Angular</strong>）代码生成网页内容，然后将渲染好的网页内容返回给客户端，客户端只需要负责展示就可以了；</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210722054438075.png"></p>
+<p><img src="http://5coder.cn/img/image-20210722054438075.png"></p>
 <p>当然不仅仅如此，为了获得更好的用户体验，同时会在客户端将来自服务端渲染的内容激活为一个 <strong>SPA</strong>应用，也就是说之后的页面内容交互都是通过客户端渲染处理。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210722054511593.png"></p>
+<p><img src="http://5coder.cn/img/image-20210722054511593.png"></p>
 <p>这种方式简而言之就是：</p>
 <ul>
 <li>通过服务端渲染首屏直出，解决首屏渲染慢以及不利于 <strong>SEO</strong> 问题</li>
@@ -483,7 +483,7 @@
 <p><strong>渲染本质其实就是字符串的解析替换</strong>，实现方式有很多种；但是我们这里要关注的并不是如何渲染，而是<strong>在哪里渲染</strong>的问题？</p>
 <h2 id="传统的服务端渲染"><a href="#传统的服务端渲染" class="headerlink" title="传统的服务端渲染"></a>传统的服务端渲染</h2><p>最早期，Web 页面渲染都是在服务端完成的，即服务端运行过程中将所需的数据结合页面模板渲染为HTML，响应给客户端浏览器。所以浏览器呈现出来的是直接包含内容的页面。</p>
 <p>工作流程：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210722054849960.png"></p>
+<p><img src="http://5coder.cn/img/image-20210722054849960.png"></p>
 <p>这种方式的代表性技术有：<strong>ASP、PHP、JSP</strong>，再到后来的一些相对高级一点的服务端框架配合一些模板引擎。</p>
 <p>无论如何这种方式对于没有玩儿过后端开发的同学来说可能会比较陌生，所以下面通过我们前端同学比较熟悉的 <code>Node.js</code> 来了解一下这种方式。</p>
 <p>安装依赖：</p>
@@ -555,7 +555,7 @@ app<span class="token punctuation">.</span><span class="token function">listen</
 <p><strong>但是不得不说，在网页应用并不复杂的情况下，这种方式也是可取的。</strong></p>
 <h2 id="客户端渲染"><a href="#客户端渲染" class="headerlink" title="客户端渲染"></a>客户端渲染</h2><p>传统的服务端渲染有很多问题，但是这些问题随着客户端 <code>Ajax</code> 技术的普及得到了有效的解决，<code>Ajax</code> 技术可以使得客户端动态获取数据变为可能，也就是说原本服务端渲染这件事儿也可以拿到客户端做了。</p>
 <p>下面是基于客户端渲染的 <code>SPA</code> 应用的基本工作流程。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210722055247274.png"></p>
+<p><img src="http://5coder.cn/img/image-20210722055247274.png"></p>
 <p>下面我们以一个 <code>Vue.js</code> 创建的单页面应用为例来了解一下这种方式的渲染过程。</p>
 <p>通过这个示例可以了解到我们就可以把【数据处理】和【页码渲染】这两件事儿分开了，也就是【后端】负责数据处理，【前端】负责页面渲染，这种分离模式极大的提高了开发效率和可维护性。</p>
 <p>而且这样一来，【前端】更为独立，也不再受限制于【后端】，它可以选择任意的技术方案或框架来处理页面渲染。</p>
@@ -581,7 +581,7 @@ app<span class="token punctuation">.</span><span class="token function">listen</
 <p>接下来我要通过一个开箱即用的解决方案来带领大家了解一下什么是现代化的服务端渲染，或者说同构渲染。</p>
 <p><code>Nuxt.js</code> 是一个基于 <code>Vue.js</code> 生态开发的一个第三方服务端渲染框架，通过它我们可以轻松构建现代化的服务端渲染应用。</p>
 <p><strong>isomorphic web apps</strong>（同构应用）：<strong>isomorphic/universal</strong>，基于 <code>react</code>、<code>vue</code> 框架，<strong>客户端渲染和服务器端渲染的结合，在服务器端执行一次，用于实现服务器端渲染（首屏直出），在客户端再执行一次，用于接管页面交互，核心解决 SEO 和首屏渲染慢的问题。</strong></p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210722055605590.png"></p>
+<p><img src="http://5coder.cn/img/image-20210722055605590.png"></p>
 <ol>
 <li>客户端发起请求</li>
 <li>服务端渲染首屏内容 + 生成客户端 SPA 相关资源</li>
@@ -602,7 +602,7 @@ app<span class="token punctuation">.</span><span class="token function">listen</
 </ul>
 </li>
 </ul>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210722055819198.png"></p>
+<p><img src="http://5coder.cn/img/image-20210722055819198.png"></p>
 <p><strong>相关技术：</strong></p>
 <ul>
 <li>React 生态中的 <code>Next.js</code></li>
@@ -610,7 +610,7 @@ app<span class="token punctuation">.</span><span class="token function">listen</
 <li>Angular 生态中的 <code>Angular Universal</code></li>
 </ul>
 <p><strong>实现原理：</strong></p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210722055925933.png"></p>
+<p><img src="http://5coder.cn/img/image-20210722055925933.png"></p>
 <p><strong>服务端渲染的问题：</strong></p>
 <ul>
 <li>开发条件所限。浏览器特定的代码，只能在某些<strong>生命周期钩子函数 (lifecycle hook)</strong> 中使用；一些<strong>外部扩展库 (external library)</strong> 可能需要特殊处理，才能在服务器渲染应用程序中运行。</li>
@@ -620,7 +620,7 @@ app<span class="token punctuation">.</span><span class="token function">listen</
 <p>在对你的应用程序使用<strong>服务器端渲染 (SSR)</strong> 之前，你应该问的第一个问题是，是否真的需要它。这主要取决于<strong>内容到达时间</strong> (time-to-content) 对应用程序的重要程度。例如，如果你正在构建一个内部仪表盘，初始加载时的额外几百毫秒并不重要，这种情况下去使用服务器端渲染 (SSR) 将是一个小题大作之举。然而，内容到达时间 (time-to-content) 要求是绝对关键的指标，在这种情况下，服务器端渲染(SSR) 可以帮助你实现最佳的初始加载性能。</p>
 <p>事实上，很多网站是出于效益的考虑才启用服务端渲染，性能倒是在其次。 假设 A 网站页面中有一个关键字叫“前端性能优化”，这个关键字是 JS 代码跑过一遍后添加到 HTML 页面中的。那么客户端渲染模式下，我们在搜索引擎搜索这个关键字，是找不到 A 网站的——搜索引擎只会查找现成的内容，不会帮你跑 JS 代码。A 网站的运营方见此情形，感到很头大：搜索引擎搜不出来，用户找不到我们，谁还会用我的网站呢？为了把“现成的内容”拿给搜索引擎看，A 网站不得不启用服务端渲染。 但性能在其次，不代表性能不重要。</p>
 <h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>项目结构：</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210722220302857.png"></p>
+<p><img src="http://5coder.cn/img/image-20210722220302857.png"></p>
 <p><code>pages/index.vue</code></p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>

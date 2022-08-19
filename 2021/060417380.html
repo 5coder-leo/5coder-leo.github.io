@@ -420,7 +420,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-08-09
+                    2022-08-19
                 </div>
                 
 
@@ -497,7 +497,7 @@ align<span class="token punctuation">,</span>title<span class="token punctuation
 <h3 id="3-为什么使用Virtual-DOM"><a href="#3-为什么使用Virtual-DOM" class="headerlink" title="3.为什么使用Virtual DOM"></a>3.为什么使用Virtual DOM</h3><ul>
 <li><p>手动操作DOM比较麻烦，还需要考虑浏览器兼容性问题，虽然jQuery等库简化DOM操作，但随着项目的复杂DOM操作负责提升</p>
 <p>jQuery开发的列表<a target="_blank" rel="noopener" href="https://codesandbox.io/s/jq-demo-5i7qp?file=/index.html">demo</a>，列表有三种功能：增加、排序、删除，三种功能增加渐变效果，在2s之内把透明度从0变为1。通过点击增加、排序、删除按钮，发现页面每次都需要闪烁，其内部是重新渲染所有列表，性能消耗较高</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/izVHJKWlDroh2tT.gif"></p>
+<p><img src="http://5coder.cn/img/izVHJKWlDroh2tT.gif"></p>
 </li>
 <li><p>为了简化DOM的负责操作，于是出现了各种的MVVM框架，MVVM矿建解决了视图和状态的同步问题</p>
 </li>
@@ -505,7 +505,7 @@ align<span class="token punctuation">,</span>title<span class="token punctuation
 </li>
 <li><p>Virtual DOM的好处是当状态改变时不需要立即更新DOM，只需要创建一个虚拟树来描述DOM，Virtual DOM内部将弄清楚如何有效(<strong>diff算法</strong>)的更新DOM</p>
 <p>Virtual DOM列表<a target="_blank" rel="noopener" href="https://codesandbox.io/s/jq-demo-4hbyb?file=/index.html">案例演示</a>，可以看到当点击增加时，只有列表第一条在变化，整个页面并没有闪烁。通过Virtual DOM可有效减少DOM操作，Virtual记录上一次状态。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/gDTbA1F7hZCS2oz.gif"></p>
+<p><img src="http://5coder.cn/img/gDTbA1F7hZCS2oz.gif"></p>
 </li>
 <li><p>参考GitHub上<a target="_blank" rel="noopener" href="https://github.com/Matt-Esch/virtual-dom">virtual-dom</a>的描述</p>
 <ul>
@@ -525,7 +525,7 @@ align<span class="token punctuation">,</span>title<span class="token punctuation
 </ul>
 </li>
 </ul>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/5QhHaZcxpKoCDJl.png"></p>
+<p><img src="http://5coder.cn/img/5QhHaZcxpKoCDJl.png"></p>
 <h3 id="5-Virtual-DOM库"><a href="#5-Virtual-DOM库" class="headerlink" title="5.Virtual DOM库"></a>5.Virtual DOM库</h3><ul>
 <li><a target="_blank" rel="noopener" href="https://github.com/snabbdom/snabbdom">Snabbdom</a><ul>
 <li>Vue2.x内部使用的Virtual DOM就是改造的Snabbdom</li>
@@ -597,7 +597,7 @@ md snabbdom-demo
 
 <blockquote>
 <p>注意：此时运行的话，项目会报错，提示找不到<code>init/h</code>模块，因为模块路径并不是<code>snabbdom/init</code>，这个路径是在package.json中的<code>exports</code>字段设置的，而我们使用的打包工具不支持<code>exports</code>这个字段，webpack4也不支持，webpack5支持该字段。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/fvRIz9ZgeTPwF1c.png"></p>
+<p><img src="http://5coder.cn/img/fvRIz9ZgeTPwF1c.png"></p>
 <p>该字段在导入<code>snabbdom/init</code>的时候回补全路径成<code>snabbdom/build/package/init.js</code></p>
 </blockquote>
 <pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"exports"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -662,10 +662,10 @@ md snabbdom-demo
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>命令行运行<code>yarn dev</code>，查看结果</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/Yj5s46tyR73bPZc.png"></p>
+<p><img src="http://5coder.cn/img/Yj5s46tyR73bPZc.png"></p>
 <p>再加一个小功能：假设页面上有一个按钮，当点击按钮时，把<code>id</code>是<code>container</code>的<code>div</code>改成Hello Snabbdom，并且更改类样式。</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/lb7zgO1VPkB93mY.png"></p>
-<p>结果演示：<img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/KV4UkexDc5uRtis.png"></p>
+<p><img src="http://5coder.cn/img/lb7zgO1VPkB93mY.png"></p>
+<p>结果演示：<img src="http://5coder.cn/img/KV4UkexDc5uRtis.png"></p>
 <p>案例二：在<code>div</code>中创建两个子元素：<code>h</code>和<code>p</code>标签。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span>init<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'snabbdom/build/package/init'</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span>h<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'snabbdom/build/package/h'</span>
@@ -679,7 +679,7 @@ md snabbdom-demo
 
 <span class="token keyword">let</span> oldVNode <span class="token operator">=</span> <span class="token function">patch</span><span class="token punctuation">(</span>app<span class="token punctuation">,</span> vnode<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/luEnD57tcdWOeAs.png"></p>
+<p><img src="http://5coder.cn/img/luEnD57tcdWOeAs.png"></p>
 <p>拓展1：</p>
 <blockquote>
 <p>两秒中后更新h标签和p标签中的文本内容</p>
@@ -705,7 +705,7 @@ md snabbdom-demo
   <span class="token function">patch</span><span class="token punctuation">(</span>oldVNode<span class="token punctuation">,</span> vnode<span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/ZzFB7SoLud3VstD.gif"></p>
+<p><img src="http://5coder.cn/img/ZzFB7SoLud3VstD.gif"></p>
 <p>拓展2：</p>
 <blockquote>
 <p>两秒后清空div标签的内容</p>
@@ -728,7 +728,7 @@ md snabbdom-demo
   <span class="token function">patch</span><span class="token punctuation">(</span>oldVNode<span class="token punctuation">,</span> vnode<span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/XWG9SNfIaOwcbgy.gif"></p>
+<p><img src="http://5coder.cn/img/XWG9SNfIaOwcbgy.gif"></p>
 <h3 id="4-模块"><a href="#4-模块" class="headerlink" title="4.模块"></a>4.模块</h3><p>Snabbdom 的核心库并不能处理DOM元素的属性/样式/事件等，如果需要处理的话，可以使用模块</p>
 <h4 id="常用模块"><a href="#常用模块" class="headerlink" title="常用模块"></a>常用模块</h4><ul>
 <li>官方提供了6个模块<ul>
@@ -795,7 +795,7 @@ md snabbdom-demo
 <span class="token keyword">let</span> app <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span>
 <span class="token function">patch</span><span class="token punctuation">(</span>app<span class="token punctuation">,</span> vnode<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/L1sDmbwxZ7SnjqG.png"></p>
+<p><img src="http://5coder.cn/img/L1sDmbwxZ7SnjqG.png"></p>
 <h2 id="三、Snabbdom源码解析"><a href="#三、Snabbdom源码解析" class="headerlink" title="三、Snabbdom源码解析"></a>三、Snabbdom源码解析</h2><blockquote>
 <p>接下来学习Snabbdom源码，因为Vue中的虚拟DOM是通过改造Snabbdom实现的。所以看完Snabbdom源码之后，就掌握了Vue中虚拟DOM的实现原理。通过查看Snabbdom源码，可以掌握VNode到底是什么，<code>h()、init()、patch()</code>到底是如何工作的。</p>
 </blockquote>
@@ -1018,7 +1018,7 @@ md snabbdom-demo
 </li>
 <li><code>diff</code>过程只是进行同层级比较</li>
 </ul>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/ykzGs5gIqB8DFa2.png"></p>
+<p><img src="http://5coder.cn/img/ykzGs5gIqB8DFa2.png"></p>
 <h4 id="init"><a href="#init" class="headerlink" title="init"></a>init</h4><ul>
 <li><p>功能：<code>init(modules, domAPI)</code>, 返回<code>patch()</code>函数（高阶函数）</p>
 </li>
@@ -1401,7 +1401,7 @@ md snabbdom-demo
 </ul>
 </li>
 </ul>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/aSVb3ZNoyTWgeck.png"></p>
+<p><img src="http://5coder.cn/img/aSVb3ZNoyTWgeck.png"></p>
 <p>源码位置：src/package/init.ts</p>
 <pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">patchVnode</span> <span class="token punctuation">(</span>oldVnode<span class="token operator">:</span> VNode<span class="token punctuation">,</span> vnode<span class="token operator">:</span> VNode<span class="token punctuation">,</span> insertedVnodeQueue<span class="token operator">:</span> VNodeQueue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">const</span> hook <span class="token operator">=</span> vnode<span class="token punctuation">.</span>data<span class="token operator">?.</span>hook
@@ -1464,7 +1464,7 @@ md snabbdom-demo
 <li><p>在DOM操作的时候我们很少很少会把一个<strong>父节点移动/更新到某一个子节点</strong></p>
 </li>
 <li><p>因此只需要找<strong>同级别</strong>的<strong>子节点</strong>一次比较，然后<strong>再找下一级别的节点比较</strong>，这样算法的时间复杂度为O(n)</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/HOKszpbk76tA9yZ.png"></p>
+<p><img src="http://5coder.cn/img/HOKszpbk76tA9yZ.png"></p>
 </li>
 <li><p>在进行同级别节点比较的时候，首先会对新老节点数组的<strong>开始和结尾</strong>节点设置<strong>标记索引</strong>，遍历的过程中移动索引</p>
 </li>
@@ -1477,7 +1477,7 @@ md snabbdom-demo
 <li><p><code>oldStartVnode</code> / <code>newEndVnode</code>（旧开始节点 / 新结束节点）</p>
 </li>
 <li><p><code>oldEndVnode</code> / <code>newStartVnode</code>（旧结束节点 / 新开始节点）</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/ZjSoAHM1vYNJCm5.png"></p>
+<p><img src="http://5coder.cn/img/ZjSoAHM1vYNJCm5.png"></p>
 </li>
 </ul>
 </li>
@@ -1492,7 +1492,7 @@ md snabbdom-demo
 <li><p>调用<code>patchVnode</code>对比和更新节点</p>
 </li>
 <li><p>把旧开始和新开始索引往后移动<code>oldStartIdx++</code> / <code>oldEndIdx++</code></p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/njXLUz5tsFNWvql.png"></p>
+<p><img src="http://5coder.cn/img/njXLUz5tsFNWvql.png"></p>
 </li>
 </ul>
 </li>
@@ -1503,7 +1503,7 @@ md snabbdom-demo
 <li><p>把<code>oldStartVnode</code>对应的DOM元素，移动到右边</p>
 </li>
 <li><p>更新索引</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20200103125428541.png"></p>
+<p><img src="http://5coder.cn/img/image-20200103125428541.png"></p>
 </li>
 </ul>
 </li>
@@ -1514,7 +1514,7 @@ md snabbdom-demo
 <li><p>把<code>oldEndVnode</code>对应的DOM元素，移动到左边</p>
 </li>
 <li><p>更新索引</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20200103125735048.png"></p>
+<p><img src="http://5coder.cn/img/image-20200103125735048.png"></p>
 </li>
 </ul>
 </li>
@@ -1537,7 +1537,7 @@ md snabbdom-demo
 </li>
 <li>如果相同，把<code>elmToMove</code>对应的DOM元素，移动到左边</li>
 </ul>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20200109184822439.png"></p>
+<p><img src="http://5coder.cn/img/image-20200109184822439.png"></p>
 </li>
 </ul>
 </li>
@@ -1550,10 +1550,10 @@ md snabbdom-demo
 </ul>
 </li>
 <li><p>如果老节点的数组先遍历完（<code>oldStartIdx &gt; oldEndIdx</code>），说明新节点有剩余，把剩余节点批量插入到右边</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20200103150918335.png"></p>
+<p><img src="http://5coder.cn/img/image-20200103150918335.png"></p>
 </li>
 <li><p>如果新节点的数组先遍历完（<code>newStartIdx &gt; newEndIdx</code>），说明老节点有剩余，把剩余节点批量删除</p>
-<p><img src="https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20200109194751093.png"></p>
+<p><img src="http://5coder.cn/img/image-20200109194751093.png"></p>
 </li>
 </ul>
 </li>
