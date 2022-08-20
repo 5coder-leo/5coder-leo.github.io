@@ -6,7 +6,7 @@
   <link href="http://5coder.cn/atom.xml" rel="self"/>
   
   <link href="http://5coder.cn/"/>
-  <updated>2022-08-14T09:39:44.668Z</updated>
+  <updated>2022-08-20T14:59:47.446Z</updated>
   <id>http://5coder.cn/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>李鑫是傻逼！</title>
+    <link href="http://5coder.cn/2022/082053829.html"/>
+    <id>http://5coder.cn/2022/082053829.html</id>
+    <published>2022-08-20T14:59:22.000Z</published>
+    <updated>2022-08-20T14:59:47.446Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;http://5coder.cn/img/1661007585_c5a2977bfa7c142509b5bdc3bf38772b.png&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>函数式编程-review</title>
@@ -511,35 +532,6 @@
     
     
     <category term="Nginx" scheme="http://5coder.cn/tags/Nginx/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>什么是VLAN</title>
-    <link href="http://5coder.cn/2021/052058690.html"/>
-    <id>http://5coder.cn/2021/052058690.html</id>
-    <published>2021-05-20T14:48:33.000Z</published>
-    <updated>2022-08-19T13:10:07.557Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;什么是VLAN&quot;&gt;&lt;a href=&quot;#什么是VLAN&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="网络" scheme="http://5coder.cn/categories/%E7%BD%91%E7%BB%9C/"/>
-    
-    
-    <category term="VLAN" scheme="http://5coder.cn/tags/VLAN/"/>
-    
-    <category term="DNS" scheme="http://5coder.cn/tags/DNS/"/>
-    
-    <category term="网关" scheme="http://5coder.cn/tags/%E7%BD%91%E5%85%B3/"/>
     
   </entry>
   
