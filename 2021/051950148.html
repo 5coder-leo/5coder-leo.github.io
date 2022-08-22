@@ -416,21 +416,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-08-19
+                    2022-08-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    7.7k
+                    7.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    31 Min
+                    32 Min
                 </div>
                 
 
@@ -453,7 +453,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="TypeScript语言-前置知识"><a href="#TypeScript语言-前置知识" class="headerlink" title="TypeScript语言-前置知识"></a>TypeScript语言-前置知识</h1><h2 id="①、强类型与弱类型、静态类型与动态类型"><a href="#①、强类型与弱类型、静态类型与动态类型" class="headerlink" title="①、强类型与弱类型、静态类型与动态类型"></a>①、强类型与弱类型、静态类型与动态类型</h2><h3 id="1-强类型与弱类型（类型安全）"><a href="#1-强类型与弱类型（类型安全）" class="headerlink" title="1.强类型与弱类型（类型安全）"></a>1.强类型与弱类型（类型安全）</h3><p><strong>①、强类型语言</strong>：强类型语言也称为强类型定义语言。是一种总是强制类型定义的语言，要求变量的使用要严格符合定义，所有变量都必须先定义后使用。**java、.NET、C++**等都是强制类型定义的。也就是说，一旦一个变量被指定了某个数据类型，如果不经过强制转换，那么它就永远是这个数据类型了。</p>
+                <h1 id="TypeScript语言-前置知识"><a href="#TypeScript语言-前置知识" class="headerlink" title="TypeScript语言-前置知识"></a>TypeScript语言-前置知识</h1><h2 id="一、强类型与弱类型、静态类型与动态类型"><a href="#一、强类型与弱类型、静态类型与动态类型" class="headerlink" title="一、强类型与弱类型、静态类型与动态类型"></a>一、强类型与弱类型、静态类型与动态类型</h2><h3 id="1-强类型与弱类型（类型安全）"><a href="#1-强类型与弱类型（类型安全）" class="headerlink" title="1.强类型与弱类型（类型安全）"></a>1.强类型与弱类型（类型安全）</h3><p><strong>①、强类型语言</strong>：强类型语言也称为强类型定义语言。是一种总是强制类型定义的语言，要求变量的使用要严格符合定义，所有变量都必须先定义后使用。**java、.NET、C++**等都是强制类型定义的。也就是说，一旦一个变量被指定了某个数据类型，如果不经过强制转换，那么它就永远是这个数据类型了。</p>
 <p>1974年美国两个专家做出解释：语言层面限制函数的实参类型必须与形参类型相同</p>
 <p>个人理解：强类型语言不允许有各种方式的隐式转换</p>
 <p>例如你有一个整数，如果不显式地进行转换，你不能将其视为一个字符串。</p>
@@ -543,7 +543,7 @@ obj<span class="token punctuation">.</span><span class="token function">foo</spa
 <span class="token comment">// at internal/main/run_main_module.js:17:47</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>示例二：非预期结果</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">sun</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 	<span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
@@ -561,7 +561,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <ul>
 <li><strong>强类型的优势</strong>：错误更早的暴露、代码更智能，编码更准确、重构更方便、减少不必要的类型判断</li>
 </ul>
-<h2 id="②、Flow概述及方法"><a href="#②、Flow概述及方法" class="headerlink" title="②、Flow概述及方法"></a>②、Flow概述及方法</h2><h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h3><p>flow是 facebook 出品的 JavaScript **静态类型检查工具，<a target="_blank" rel="noopener" href="https://flow.org/en/docs/usage/**%E8%BF%99%E6%98%AF%E5%85%B6%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E9%93%BE%E6%8E%A5%E3%80%82Vue.js">https://flow.org/en/docs/usage/**这是其官方文档链接。Vue.js</a> 的源码利用了Flow 做了静态类型检查。</p>
+<h2 id="②、Flow概述及方法"><a href="#②、Flow概述及方法" class="headerlink" title="②、Flow概述及方法"></a>②、Flow概述及方法</h2><h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h3><p>flow是 facebook 出品的 JavaScript <strong>静态类型检查工具，<a target="_blank" rel="noopener" href="https://flow.org/en/docs/usage/">https://flow.org/en/docs/usage/</a></strong>  这是其官方文档链接。Vue.js 的源码利用了Flow 做了静态类型检查。</p>
 <p><strong>JavaScript</strong> 是<strong>动态类型语言</strong>，它的灵活性有目共睹，但是过于灵活的副作用是很容易就写出<strong>非常隐蔽的隐患代码</strong>，在<strong>编译期</strong>甚至看上去都<strong>不会报错</strong>，但在<strong>运行阶段</strong>就可能出现<strong>各种奇怪的 bug</strong></p>
 <p><strong>类型检查的定义</strong>：类型检查，就是在<strong>编译期</strong>尽早发现（<strong>由类型错误引起的</strong>）bug，又<strong>不影响代码运行</strong>（不需要运行时动态检查类型），使编写 JavaScript 具有和编写 Java 等强类型语言相近的体验</p>
 <p><strong>在vue中使用Flow做静态类型检查</strong>，是因为 <strong>Babel</strong> 和 <strong>ESLint</strong> 都有对应的 <strong>Flow 插件</strong>以支持语法，可以完全沿用<strong>现有的构建配置</strong>，非常小成本的改动就可以拥有<strong>静态类型检查的能力</strong></p>
@@ -588,37 +588,41 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </li>
 <li><p>关闭VS Code语法校验：setting，搜索JavaScript validate，找到enable，取消勾选</p>
 </li>
-<li><p>```js<br>// @flow</p>
-<p>function sum(a:number, b:number) {</p>
-<pre><code>return a + b;
-</code></pre>
-<p>}</p>
-<p>sum(100, 100)<br>sum(‘100’, ‘100’)</p>
-<p>let num:number = 100<br>num = ‘100’</p>
-<pre class="line-numbers language-none"><code class="language-none">
-4. 使用
-
-   - ```shell
-     yarn flow init
-     yarn flow  # 第一次会很慢，后续会很快
-     # yarn flow stop # 结束flow
-     
-     #Error ---------------------------------------------------------------------------------------------------- 01/01.js:8:12
-     
-     #Cannot call `sum` with `'100'` bound to `b` because string [1] is incompatible with number [2]. [incompatible-call]
-     
-     #   01/01.js:8:12
-     #   8| sum('100', '100')
-     #                 ^^^^^ [1]
-     
-     #References:
-     #   01/01.js:3:26
-     #   3| function sum(a:number, b:number) {
-     #                               ^^^^^^ [2]
-     <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
 </ol>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">
+<span class="token comment">// @flow</span>
+
+<span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token operator">:</span>number<span class="token punctuation">,</span> b<span class="token operator">:</span>number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+<span class="token function">sum</span><span class="token punctuation">(</span><span class="token string">'100'</span><span class="token punctuation">,</span> <span class="token string">'100'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">let</span> num<span class="token operator">:</span>number <span class="token operator">=</span> <span class="token number">100</span>
+num <span class="token operator">=</span> <span class="token string">'100'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>使用</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">yarn</span> flow init
+<span class="token function">yarn</span> flow  <span class="token comment"># 第一次会很慢，后续会很快</span>
+<span class="token comment"># yarn flow stop # 结束flow</span>
+
+<span class="token comment">#Error ---------------------------------------------------------------------------------------------------- 01/01.js:8:12</span>
+
+<span class="token comment">#Cannot call `sum` with `'100'` bound to `b` because string [1] is incompatible with number [2]. [incompatible-call]</span>
+
+<span class="token comment">#   01/01.js:8:12</span>
+<span class="token comment">#   8| sum('100', '100')</span>
+<span class="token comment">#                 ^^^^^ [1]</span>
+
+<span class="token comment">#References:</span>
+<span class="token comment">#   01/01.js:3:26</span>
+<span class="token comment">#   3| function sum(a:number, b:number) {</span>
+<span class="token comment">#                               ^^^^^^ [2]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="3-编译移除注解"><a href="#3-编译移除注解" class="headerlink" title="3.编译移除注解"></a>3.编译移除注解</h3><ul>
 <li>方案一：自动移除类型注解，官方提供的模块：flow-remove-types</li>
 </ul>
@@ -647,7 +651,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// @flowfunction square(n: number) {	return n * n;}square('100')</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="6-类型注解"><a href="#6-类型注解" class="headerlink" title="6.类型注解"></a>6.类型注解</h3><p>在绝大多数情况下一样，它可以帮我们推断出来变量，或者是参数的具体类型，但是没有必要给所有的成员都去添加，它可以更明确的去限制类型注解，而且对我们后期去理解，也是有帮助的可能去使用。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> num<span class="token operator">:</span>number <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span><span class="token comment">// num = 'string',此时只能赋值数字类型function foo():number {    return 100}// 此时函数只能返回数字类型，如果函数没有返回值，默认返回undefined，那么也会提醒报错。没有返回值的函数，我们需要将函数返回值类型标注为void</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> num<span class="token operator">:</span>number <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>  <span class="token comment">// num = 'string',此时只能赋值数字类型</span>
+<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span>number <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token number">100</span>
+<span class="token punctuation">}</span><span class="token comment">// 此时函数只能返回数字类型，如果函数没有返回值，默认返回undefined，那么也会提醒报错。没有返回值的函数，我们需要将函数返回值类型标注为void</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="7-原始类型"><a href="#7-原始类型" class="headerlink" title="7.原始类型"></a>7.原始类型</h3><p>在用法上flow，几乎没有任何的难度，无外乎就是使用flow命令去根据我们代码当中添加的类型注解，去检测我们代码当中的那些类型使用上的异常。值得我们再去了解的无外乎就是flow当中，具体支持哪些类型，以及，我们在类型注解上有没有一些更高级的用法，这里呢，我们具体来看。</p>
 <p>flow中能使用的类型有很多，最简单的就是JavaScript中的原始类型，目前原始类型共有6中，number、Boole、string、null、undefined、symbol。以下进行快速尝试：</p>
@@ -774,7 +781,24 @@ type StringOrNumber <span class="token operator">=</span> string <span class="to
 
 <span class="token function">passAny</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h3 id="13-Flow类型小结"><a href="#13-Flow类型小结" class="headerlink" title="13.Flow类型小结"></a><strong>13.Flow类型小结</strong></h3><p>Flow所有类型的文档：</p>
+<p><a target="_blank" rel="noopener" href="https://flow.org/en/docs/types">https://flow.org/en/docs/types</a></p>
+<p>第三方类型手册</p>
+<p><a target="_blank" rel="noopener" href="https://www.saltycrane.com/cheat-sheets/flow-type/latest/">https://www.saltycrane.com/cheat-sheets/flow-type/latest/</a></p>
+<h3 id="14-Flow运行环境API"><a href="#14-Flow运行环境API" class="headerlink" title="14.Flow运行环境API"></a>14.Flow运行环境API</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/facebook/flow/blob/master/lib/core.js">https://github.com/facebook/flow/blob/master/lib/core.js</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/facebook/flow/blob/master/lib/dom.js">https://github.com/facebook/flow/blob/master/lib/dom.js</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/facebook/flow/blob/master/lib/bom.js">https://github.com/facebook/flow/blob/master/lib/bom.js</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/facebook/flow/blob/master/lib/cssom.js">https://github.com/facebook/flow/blob/master/lib/cssom.js</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/facebook/flow/blob/master/lib/node.js">https://github.com/facebook/flow/blob/master/lib/node.js</a></p>
+</li>
+</ul>
 <h1 id="TypeScript语言"><a href="#TypeScript语言" class="headerlink" title="TypeScript语言"></a>TypeScript语言</h1><h2 id="一、TypeScript概述"><a href="#一、TypeScript概述" class="headerlink" title="一、TypeScript概述"></a>一、TypeScript概述</h2><p>TypeScript是一种由微软开发的自由和开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。</p>
+<p><img src="http://5coder.cn/img/1661157287_e5a684aca0ab3936570855fdde86b234.png"></p>
 <p>TypeScript 扩展了 JavaScript 的句法，所以任何现有的 JavaScript 程序可以不加改变的在 TypeScript下工作。TypeScript 是为大型应用之开发而设计，而编译时它产生 JavaScript 以确保兼容性。任何一种JavaScript运行环境都支持TypeScript开发。</p>
 <ul>
 <li><p>缺点一：语言多了很多概念，提高学习成本。但其属于渐进式的，所以可以按照JavaScript标准语法来使用，在学习过程中了解到一个特性就可以使用一个特性。</p>
@@ -1815,7 +1839,7 @@ qs<span class="token punctuation">.</span><span class="token function">parse</sp
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">154.7k</span>&nbsp;字
+                class="white-color">154.5k</span>&nbsp;字
             
             
             
@@ -2071,8 +2095,6 @@ $(function () {
     })();
 </script>
 
-    
-    <script src="/libs/others/clicklove.js" async="async"></script>
     
     
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>

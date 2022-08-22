@@ -416,21 +416,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-08-19
+                    2022-08-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    11.2k
+                    10.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    46 Min
+                    44 Min
                 </div>
                 
 
@@ -1225,34 +1225,97 @@ m<span class="token punctuation">.</span><span class="token function">set</span>
 <blockquote>
 <p>Chrome-console控制台</p>
 </blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 打印数组[]    length: 0    __proto__: Array(0)        ...        Symbol(Symbol.iterator): ƒ values()  // Symbol.iterator可迭代接口        Symbol(Symbol.unscopables): {copyWithin: true, entries: true, fill: true, find: true, findIndex: true, …}        __proto__: Object</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 打印SetSet(0) {}    [[Entries]]    size: (...)    __proto__: Set        add: ƒ add()        ...        Symbol(Symbol.iterator): ƒ values()  // Symbol.iterator可迭代接口        Symbol(Symbol.toStringTag): "Set"        get size: ƒ size()        __proto__: Object</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 打印MapMap(0) {}    [[Entries]]    size: (...)    __proto__: Map        clear: ƒ clear()        ...        Symbol(Symbol.iterator): ƒ entries()  // Symbol.iterator可迭代接口        Symbol(Symbol.toStringTag): "Map"        get size: ƒ size()        __proto__: Object</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<p><img src="http://5coder.cn/img/1661133699_d2688d1e1f8dce39260f8248906ed768.png"></p>
+<p><img src="http://5coder.cn/img/1661133738_b5a54153dc752f470515a5a85c6865be.png"></p>
+<p><img src="http://5coder.cn/img/1661133761_22bf5332c64d90ac1dd9da489c6d2f70.png"></p>
 <p>继续看看Symbol.iterator到底实现了什么：</p>
 <blockquote>
 <p>Chrome-console控制台</p>
 </blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'bar'</span><span class="token punctuation">,</span> <span class="token string">'baz'</span><span class="token punctuation">]</span>undefinedarr<span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span>Array Iterator <span class="token punctuation">{</span><span class="token punctuation">}</span>	__proto__<span class="token operator">:</span> Array Iterator    	next<span class="token operator">:</span> ƒ <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>		arguments<span class="token operator">:</span> <span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span>        caller<span class="token operator">:</span> <span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span>        length<span class="token operator">:</span> <span class="token number">0</span>        name<span class="token operator">:</span> <span class="token string">"next"</span>		<span class="token operator">...</span><span class="token keyword">const</span> iterator <span class="token operator">=</span> arr<span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span>undefinediterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>value<span class="token operator">:</span> <span class="token string">"foo"</span><span class="token punctuation">,</span> done<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="http://5coder.cn/img/1661133856_5577cfaa941e8c49807288e48c359d19.png"></p>
+<p>value中的就是数组中的第一个元素，done为false，当再次调用时，结果为相同的结构，此时的done为false。done属性的作用就是表示数组内部的属性是否全部遍历完成。</p>
+<p><img src="http://5coder.cn/img/1661134414_3a2dfd7a898ec2f141cc78fcc0e44b5e.png"></p>
+<h3 id="2-实现iterator接口"><a href="#2-实现iterator接口" class="headerlink" title="2.实现iterator接口"></a>2.实现iterator接口</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      <span class="token function-variable function">next</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+          value<span class="token operator">:</span> <span class="token string">'zce'</span><span class="token punctuation">,</span>
+          done<span class="token operator">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>value中的就是数组中的第一个元素，done为false，当再次调用时，结果为相同的结构，此时的done为false。</p>
-<blockquote>
-<p>Chrome-console控制台</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">iterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>value<span class="token operator">:</span> <span class="token string">"bar"</span><span class="token punctuation">,</span> done<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">}</span>iterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>value<span class="token operator">:</span> <span class="token string">"bar"</span><span class="token punctuation">,</span> done<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>done属性的作用就是表示数组内部的属性是否全部遍历完成。</p>
-<p>模拟迭代器：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 迭代器（Iterator）const set = new Set(['foo', 'bar', 'baz'])const iterator = set[Symbol.iterator]()console.log(iterator.next())  // { value: 'foo', done: false }console.log(iterator.next())  // { value: 'bar', done: false }console.log(iterator.next())  // { value: 'baz', done: false }console.log(iterator.next())  // { value: undefined, done: true }console.log(iterator.next())  // { value: undefined, done: true }while (true) {  const current = iterator.next()  if (current.done) {    break // 迭代已经结束了，没必要继续了  }  console.log(current.value)}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="2-实现iterator接口"><a href="#2-实现iterator接口" class="headerlink" title="2.实现iterator接口"></a>2.实现iterator接口</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 实现可迭代接口（Iterable）const obj = {    // 实现了可迭代接口，Iterable，约定内部必须有用于范湖迭代器的iterator方法    [Symbol.iterator]: function () {        // 实现了迭代器接口，iterator其内部有用于迭代的next方法        return {            next: function () {                // 迭代结果接口，iterationResult，约定对象内部必须要有value属性，来表示当前被迭代到的数据，值为任意类型，done属性用来表示迭代是否结束                return {                    value: 'zce',                    done: true                }            }        }    }}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>    store<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'bar'</span><span class="token punctuation">,</span> <span class="token string">'baz'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>    <span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token number">0</span>        <span class="token keyword">const</span> self <span class="token operator">=</span> <span class="token keyword">this</span>        <span class="token keyword">return</span> <span class="token punctuation">{</span>            <span class="token function-variable function">next</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>                <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token punctuation">{</span>                    value<span class="token operator">:</span> self<span class="token punctuation">.</span>store<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">,</span>                    done<span class="token operator">:</span> index <span class="token operator">&gt;=</span> self<span class="token punctuation">.</span>store<span class="token punctuation">.</span>length                <span class="token punctuation">}</span>                index<span class="token operator">++</span>                <span class="token keyword">return</span> result            <span class="token punctuation">}</span>        <span class="token punctuation">}</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  store<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'bar'</span><span class="token punctuation">,</span> <span class="token string">'baz'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">const</span> self <span class="token operator">=</span> <span class="token keyword">this</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      <span class="token function-variable function">next</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token punctuation">{</span>
+          value<span class="token operator">:</span> self<span class="token punctuation">.</span>store<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">,</span>
+          done<span class="token operator">:</span> index <span class="token operator">&gt;=</span> self<span class="token punctuation">.</span>store<span class="token punctuation">.</span>length
+        <span class="token punctuation">}</span>
+        index<span class="token operator">++</span>
+        <span class="token keyword">return</span> result
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="3-迭代器模式"><a href="#3-迭代器模式" class="headerlink" title="3.迭代器模式"></a>3.迭代器模式</h3><p>迭代器模式（特别是在 ECMAScript 这个语境下）描述了一个方案，即可以把有些结构称为“可迭代对象”（iterable），因为它们实现了正式的 Iterable 接口，而且可以通过迭代器 Iterator 消费。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 迭代器设计模式// 场景：你我协同开发一个任务清单应用// 我的代码 ===============================const todos = {  life: ['吃饭', '睡觉', '打豆豆'],  learn: ['语文', '数学', '外语'],  work: ['喝茶'],  // 提供统一遍历访问接口  each: function (callback) {    const all = [].concat(this.life, this.learn, this.work)    for (const item of all) {      callback(item)    }  },  // 提供迭代器（ES2015 统一遍历访问接口）  [Symbol.iterator]: function () {    const all = [...this.life, ...this.learn, ...this.work]    let index = 0    return {      next: function () {        return {          value: all[index],          done: index++ &gt;= all.length        }      }    }  }}// 你的代码 ===============================// 实现统一遍历接口之前// for (const item of todos.life) {//   console.log(item)// }// for (const item of todos.learn) {//   console.log(item)// }// for (const item of todos.work) {//   console.log(item)// }// 实现统一遍历接口之后todos.each(function (item) {  console.log(item)})console.log('-------------------------------')for (const item of todos) {  console.log(item)}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 迭代器设计模式// 场景：你我协同开发一个任务清单应用//</span>
+<span class="token comment">// 我的代码 ===============================</span>
+<span class="token keyword">const</span> todos <span class="token operator">=</span> <span class="token punctuation">{</span>
+  life<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'吃饭'</span><span class="token punctuation">,</span> <span class="token string">'睡觉'</span><span class="token punctuation">,</span> <span class="token string">'打豆豆'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  learn<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'语文'</span><span class="token punctuation">,</span> <span class="token string">'数学'</span><span class="token punctuation">,</span> <span class="token string">'外语'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  work<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'喝茶'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token comment">// 提供统一遍历访问接口</span>
+  <span class="token function-variable function">each</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">callback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> all <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>life<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>learn<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>work<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> item <span class="token keyword">of</span> all<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">callback</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 提供迭代器（ES2015 统一遍历访问接口）</span>
+  <span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> all <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token keyword">this</span><span class="token punctuation">.</span>life<span class="token punctuation">,</span> <span class="token operator">...</span><span class="token keyword">this</span><span class="token punctuation">.</span>learn<span class="token punctuation">,</span> <span class="token operator">...</span><span class="token keyword">this</span><span class="token punctuation">.</span>work<span class="token punctuation">]</span>
+    <span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      <span class="token function-variable function">next</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+          value<span class="token operator">:</span> all<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">,</span>
+          done<span class="token operator">:</span> index<span class="token operator">++</span> <span class="token operator">&gt;=</span> all<span class="token punctuation">.</span>length
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token comment">// 你的代码 ===============================// 实现统一遍历接口之前//</span>
+<span class="token comment">// for (const todoLife of todos.life) {</span>
+<span class="token comment">//   console.log(todoLife)</span>
+<span class="token comment">// }</span>
+<span class="token comment">// for (const todoLearn of todos.learn) {</span>
+<span class="token comment">//   console.log(todoLearn)</span>
+<span class="token comment">// }</span>
+<span class="token comment">// for (const todoWork of todos.work) {</span>
+<span class="token comment">//   console.log(todoWork)</span>
+<span class="token comment">// }</span>
+
+
+<span class="token comment">// todos.each(function (item) {</span>
+<span class="token comment">//   console.log(item)</span>
+<span class="token comment">// })</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> todo <span class="token keyword">of</span> todos<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>todo<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// for (const todo of todos.life) {</span>
+<span class="token comment">//   console.log(todo)</span>
+<span class="token comment">// }</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="十九、生成器及生成器的应用"><a href="#十九、生成器及生成器的应用" class="headerlink" title="十九、生成器及生成器的应用"></a>十九、生成器及生成器的应用</h2><p>生成器是 ECMAScript 6 新增的一个极为灵活的结构，拥有在一个函数块内暂停和恢复代码执行的能力。这种新能力具有深远的影响，比如，使用生成器可以自定义迭代器和实现协程。其可以避免异步编程中回调嵌套过深的问题，提供更好的额异步编程解决方案。</p>
 <h3 id="1-基本用法"><a href="#1-基本用法" class="headerlink" title="1.基本用法"></a>1.基本用法</h3><p>生成器的形式是一个函数，函数名称前面加一个星号（*）表示它是一个生成器。只要是可以定义函数的地方，就可以定义生成器。</p>
@@ -1915,7 +1978,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">154.7k</span>&nbsp;字
+                class="white-color">154.5k</span>&nbsp;字
             
             
             
@@ -2171,8 +2234,6 @@ $(function () {
     })();
 </script>
 
-    
-    <script src="/libs/others/clicklove.js" async="async"></script>
     
     
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>

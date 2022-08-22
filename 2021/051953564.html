@@ -423,7 +423,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    6.4k
+                    6.5k
                 </div>
                 
 
@@ -476,6 +476,8 @@
 <li>V8中的GC算法实现垃圾回收</li>
 </ul>
 </li>
+<li>Performance工具</li>
+<li>代码优化实例</li>
 </ul>
 <h2 id="二、内存管理"><a href="#二、内存管理" class="headerlink" title="二、内存管理"></a>二、内存管理</h2><blockquote>
 <p>Memory Management</p>
@@ -512,7 +514,7 @@ obj <span class="token operator">=</span> <span class="token keyword">null</span
 </ul>
 <p>JavaScript中的可达对象</p>
 <ul>
-<li>可以访问到的对象就是科大对象（引用、作用域链）</li>
+<li>可以访问到的对象就是可达对象（引用、作用域链）</li>
 <li>可达的标准就是从根触发是否能够被找到</li>
 <li>JavaScript中的根可以理解为全局变量</li>
 </ul>
@@ -540,7 +542,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <p><strong>可达对象图示</strong></p>
 <p><img src="http://5coder.cn/img/dnkGj8bH4vzoZCp.png"></p>
-<p>如果我们在代码中做一些操作，比如使用delete将obj上的o1的应用以及o2中对obj1的应用删除掉，那么出现下面的情况：</p>
+<p>如果我们在代码中做一些操作，比如使用delete将obj上的o1的应用以及o2中对obj1的应用删除掉，那么出现下面的情况：o1无法被找到，则被标记为垃圾。</p>
 <p><img src="http://5coder.cn/img/WgRhFJ7xmadZzfu.png"></p>
 <h2 id="三、GC算法介绍"><a href="#三、GC算法介绍" class="headerlink" title="三、GC算法介绍"></a>三、GC算法介绍</h2><h3 id="1-GC定义与作用"><a href="#1-GC定义与作用" class="headerlink" title="1.GC定义与作用"></a>1.GC定义与作用</h3><ul>
 <li>GC就是垃圾回收机制的简写（Garbage Collection）</li>
@@ -613,6 +615,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>与保守式GC算法兼容（保守式GC在后面介绍）</li>
 </ol>
 <p><strong>缺点：</strong></p>
+<p><img src="http://5coder.cn/img/1661161556_6cda0071f708177d2abb214294ebde19.png"></p>
 <ol>
 <li>碎片化：如上图所示，在回收过程中会产生被细化的分块，到后面，即时堆中分块的总大小够用，但是却因为分块太小而不能执行分配</li>
 <li>分配速度：因为分块不是连续的，因此每次分块都要遍历空闲链表，找到足够大的分块，从而造成时间短的浪费</li>
@@ -1743,7 +1746,7 @@ oUl<span class="token punctuation">.</span><span class="token function">addEvent
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">154.7k</span>&nbsp;字
+                class="white-color">154.5k</span>&nbsp;字
             
             
             
@@ -1999,8 +2002,6 @@ $(function () {
     })();
 </script>
 
-    
-    <script src="/libs/others/clicklove.js" async="async"></script>
     
     
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
