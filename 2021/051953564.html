@@ -416,21 +416,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-08-19
+                    2022-08-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    6.1k
+                    6.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    24 Min
+                    25 Min
                 </div>
                 
 
@@ -630,7 +630,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>V8使用c++开发，在运行JavaScript之前，相比其他的JavaScript的引擎转换成字节码或解释执行，V8将其编译成原生机器码（IA-32, x86-64, ARM, or MIPS CPUs），并且使用了如<strong>内联缓存</strong>（Inline caching）等方法来提高性能</li>
 <li>有了这些功能，JavaScript程序在V8引擎下的运行速度媲美二进制程序</li>
 <li>V8支持众多操作系统，如Windows、Linux、Android等，也支持其他硬件架构，如IA32、X64、ARM等，具有很好的可移植和跨平台特性</li>
-<li>V8内存设限（64位1.5GB，32位700MB）</li>
+<li>V8内存设限（64位1.5GB，32位不超过800MB）</li>
 </ul>
 <h3 id="2-V8垃圾回收策略"><a href="#2-V8垃圾回收策略" class="headerlink" title="2.V8垃圾回收策略"></a>2.V8垃圾回收策略</h3><ul>
 <li>采用分代回收的思想</li>
@@ -660,7 +660,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </ul>
 <p><strong>新生代对象回收实现</strong></p>
 <ul>
-<li>回收过程曹勇复制算法+标记整理算法</li>
+<li>回收过程采用复制算法+标记整理算法</li>
 <li>新生代内存分为两个等大小空间</li>
 <li>使用空间为From，空闲空间为To</li>
 <li>活动对象存储于From空间</li>
@@ -674,29 +674,34 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </ul>
 </li>
 </ul>
+<p><img src="http://5coder.cn/img/1661175081_4eed18a482b32b1ce1ce23ac145b288d.png"></p>
 <h3 id="4-V8回收老生代对象"><a href="#4-V8回收老生代对象" class="headerlink" title="4.V8回收老生代对象"></a>4.V8回收老生代对象</h3><ul>
 <li>老年代对象放在右侧老生代区域</li>
-<li>64位操作系统1.4G，32位操作系统700M</li>
-<li>老年代对象就是指存活时间较长的对象</li>
+<li><strong>64位操作系统1.4G，32位操作系统700M</strong></li>
+<li>老年代对象就是指存活时间较长的对象（全局变量、闭包中的数据）</li>
 </ul>
 <blockquote>
 <p>对于年老分代中的对象，由于存活对象占较大比重，再采用上面的方式会有两个问题：一个是存活对象较多，复制存活对象的效率将会很低；另一个问题依然是浪费一半空间的问题。为此，V8在年老分代中主要采用了Mark-Sweep（标记清除）标记清除和Mark-Compact（标记整理）相结合的方式进行垃圾回收。</p>
 </blockquote>
 <p><strong>老年代对象回收实现</strong></p>
 <ul>
-<li>主要曹勇标记清除、标记整理、增量标记算法</li>
-<li>首先使用标记清除完成垃圾空间的回收</li>
-<li>采用标记整理进行空间优化</li>
+<li>主要采用标记清除、标记整理、增量标记</li>
+<li>首先使用标记清除完成垃圾空间的回收（主要采用标记清除）</li>
+<li>采用标记整理进行空间优化（当新生代中的内容往老生代移动时，当老生代空间不足的时候，会进行整理空间）</li>
 <li>采用增量标记进行效率优化</li>
 </ul>
 <p>老生代与新生代回收对象细节对比：</p>
 <ul>
-<li>新生代区域垃圾回收使用空间换时间</li>
-<li>老生代区域垃圾回收不适合复制算法</li>
+<li>新生代区域垃圾回收使用空间换时间-复制算法。每时每刻都会有空闲的空间存在，但是该部分空间很小。</li>
+<li>老生代区域垃圾回收不适合复制算法<ul>
+<li>老生代存储空间比较大，一分为二的话就会有大量的空间被浪费</li>
+<li>老生代数据比较多，复制时消耗的时间就会比较多</li>
+</ul>
+</li>
 </ul>
 <p><strong>增量标记优化垃圾回收</strong></p>
 <p><img src="http://5coder.cn/img/15sl9QVXnHtSxwo.png"></p>
-<p>图示中，程序在标记阶段被暂停运行，等待标记完成自动运行，当遇到大块需要标记的对象时，程序需要暂停很长一段时间，对用户体验很不友好，因此采用增量标记，将一大块分解为多个小块进行标记，减少每次程序暂停的时长，优化用户体验。最后标记完成后统一进行回收。</p>
+<p>图示中，程序在标记阶段被暂停运行，等待标记完成自动运行，当遇到大块需要标记的对象时，程序需要暂停很长一段时间，对用户体验很不友好，因此采用增量标记，将一大块分解为多个小块进行标记，减少每次程序暂停的时长，优化用户体验。最后标记完成后统一进行回收。例如第一步先遍历查找第一层可达的属性，第二步进行查找第二层可达，最终完成清除。这样的垃圾回收对用户暂停的体验就比较友好了。</p>
 <h3 id="5-V8垃圾回收总结"><a href="#5-V8垃圾回收总结" class="headerlink" title="5.V8垃圾回收总结"></a>5.V8垃圾回收总结</h3><ul>
 <li>V8是一款主流的JavaScript引擎</li>
 <li>V8设置内存上限</li>
@@ -716,7 +721,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>Performance使用步骤为：</p>
 <ol>
 <li>打开浏览器输入目标地址</li>
-<li>进入开发人员工具面板（F12），选择performance</li>
+<li>进入开发人员工具面板（F12），选择Performance</li>
 <li>开启录制功能，访问具体界面</li>
 <li>执行用户行为，一段时间后停止录制</li>
 <li>分析界面中记录的内存信息</li>
@@ -737,6 +742,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <h3 id="3-监控内存的几种方式"><a href="#3-监控内存的几种方式" class="headerlink" title="3.监控内存的几种方式"></a>3.监控内存的几种方式</h3><h4 id="3-1任务管理器监控内存"><a href="#3-1任务管理器监控内存" class="headerlink" title="3.1任务管理器监控内存"></a>3.1任务管理器监控内存</h4><p>打开浏览器，按键【Shift】+ 【Esc】，调出浏览器任务管理器。找到我们的目标标签页，刚开始可能没有JavaScript内存，可以在目标标签页任务上右键，然后选择JavaScript内存。</p>
 <p>记录JavaScript内存（<strong>JavaScript堆占用的内存，表示界面中所有可达对象占用的内存</strong>）及内存占用空间（<strong>原生内存，DOM节点占用的内存</strong>），点击按钮，记录每次内存的变化。</p>
 <p><img src="http://5coder.cn/img/SPLj7pfv2G8uIgr.gif"></p>
+<blockquote>
+<p>注意：以上动图中，数组超过最大长度，为录制的时候失误，请调整数组长度后，点击按钮进行观察结果</p>
+<p>array的最大长度为Math.pow(2,32)-1<br>var arr = new Array(Math.pow(2,32));//报错Invalid array length<br>为什么呢，无符号int型的最大长度为2的32次方-1<br>为什么是2的32次方-1<br>整型为4个字节，一个字节8，即32位，本来第一位为符号位，无符号整型就从第一位开始计数了，所以范围为0到2的32次方-1</p>
+</blockquote>
 <h4 id="3-2Timeline记录内存"><a href="#3-2Timeline记录内存" class="headerlink" title="3.2Timeline记录内存"></a>3.2Timeline记录内存</h4><p>上述浏览器任务管理器更多的是用于判断当前脚本是否存在内存问题，而不能具体定位到问题。我们使用Timeline时间线记录内存变化，更精确的记录到内存变化。</p>
 <p><img src="http://5coder.cn/img/R7IQYzxwmM5WTnK.gif"></p>
 <h4 id="3-3堆快照查找分离DOM"><a href="#3-3堆快照查找分离DOM" class="headerlink" title="3.3堆快照查找分离DOM"></a>3.3堆快照查找分离DOM</h4><p>什么是分离DOM</p>
@@ -1734,7 +1743,7 @@ oUl<span class="token punctuation">.</span><span class="token function">addEvent
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">154.4k</span>&nbsp;字
+                class="white-color">154.7k</span>&nbsp;字
             
             
             
