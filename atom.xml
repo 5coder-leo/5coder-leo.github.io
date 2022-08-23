@@ -6,7 +6,7 @@
   <link href="http://5coder.cn/atom.xml" rel="self"/>
   
   <link href="http://5coder.cn/"/>
-  <updated>2022-08-14T09:39:44.668Z</updated>
+  <updated>2022-08-23T15:03:23.254Z</updated>
   <id>http://5coder.cn/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript-堆栈问题</title>
+    <link href="http://5coder.cn/2022/082336194.html"/>
+    <id>http://5coder.cn/2022/082336194.html</id>
+    <published>2022-08-23T09:22:53.000Z</published>
+    <updated>2022-08-23T15:03:23.254Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;JavaScript-堆栈问题&quot;&gt;&lt;a href=&quot;#JavaScript-堆栈问题&quot; class=&quot;headerlink&quot; title=&quot;JavaScript-堆栈问题&quot;&gt;&lt;/a&gt;JavaScript-堆栈问题&lt;/h2&gt;&lt;h3 id=&quot;1-堆栈处理&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="JavaScript" scheme="http://5coder.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo-theme-matery主题使用</title>
+    <link href="http://5coder.cn/2022/082310663.html"/>
+    <id>http://5coder.cn/2022/082310663.html</id>
+    <published>2022-08-23T02:52:49.000Z</published>
+    <updated>2022-08-23T13:44:39.834Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;hexo-theme-matery主题使用&quot;&gt;&lt;a href=&quot;#hexo-theme-matery主题使用&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="大前端(杂识)" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF-%E6%9D%82%E8%AF%86/"/>
+    
+    
+    <category term="hexo-theme-matery" scheme="http://5coder.cn/tags/hexo-theme-matery/"/>
+    
+  </entry>
   
   <entry>
     <title>函数式编程-review</title>
@@ -124,7 +174,7 @@
     <link href="http://5coder.cn/2021/071931096.html"/>
     <id>http://5coder.cn/2021/071931096.html</id>
     <published>2021-07-19T13:22:53.000Z</published>
-    <updated>2022-08-19T13:10:07.169Z</updated>
+    <updated>2022-08-23T13:44:39.831Z</updated>
     
     
       
@@ -149,7 +199,7 @@
     <link href="http://5coder.cn/2021/071840057.html"/>
     <id>http://5coder.cn/2021/071840057.html</id>
     <published>2021-07-18T13:34:37.000Z</published>
-    <updated>2022-08-09T12:00:09.053Z</updated>
+    <updated>2022-08-23T13:44:39.819Z</updated>
     
     
       
@@ -201,7 +251,7 @@
     <link href="http://5coder.cn/2021/070923019.html"/>
     <id>http://5coder.cn/2021/070923019.html</id>
     <published>2021-07-08T21:27:00.000Z</published>
-    <updated>2022-08-19T13:10:07.502Z</updated>
+    <updated>2022-08-23T13:44:39.822Z</updated>
     
     
       
@@ -252,7 +302,7 @@
     <link href="http://5coder.cn/2021/062142659.html"/>
     <id>http://5coder.cn/2021/062142659.html</id>
     <published>2021-06-21T13:30:13.000Z</published>
-    <updated>2022-08-19T13:10:07.397Z</updated>
+    <updated>2022-08-23T13:44:39.815Z</updated>
     
     
       
@@ -336,7 +386,7 @@
     <link href="http://5coder.cn/2021/060417380.html"/>
     <id>http://5coder.cn/2021/060417380.html</id>
     <published>2021-06-03T21:37:23.000Z</published>
-    <updated>2022-08-19T13:10:07.384Z</updated>
+    <updated>2022-08-23T13:44:39.808Z</updated>
     
     
       
@@ -415,7 +465,7 @@
     <link href="http://5coder.cn/2021/052360218.html"/>
     <id>http://5coder.cn/2021/052360218.html</id>
     <published>2021-05-23T02:20:13.000Z</published>
-    <updated>2022-08-19T13:10:07.635Z</updated>
+    <updated>2022-08-23T13:44:39.812Z</updated>
     
     
       
@@ -440,7 +490,7 @@
     <link href="http://5coder.cn/2021/052341703.html"/>
     <id>http://5coder.cn/2021/052341703.html</id>
     <published>2021-05-23T01:29:59.000Z</published>
-    <updated>2022-08-19T13:10:07.573Z</updated>
+    <updated>2022-08-23T13:44:39.826Z</updated>
     
     
       
@@ -485,61 +535,6 @@
     
     
     <category term="Git" scheme="http://5coder.cn/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>小白NGINX</title>
-    <link href="http://5coder.cn/2021/052037541.html"/>
-    <id>http://5coder.cn/2021/052037541.html</id>
-    <published>2021-05-20T14:49:37.000Z</published>
-    <updated>2022-08-19T13:10:07.588Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;em&gt;Nginx 是一个采用主从架构的 Web 服务器，可用于反向代理、负载均衡器、邮件代理和 HTTP 缓存&lt;/em&gt;。&lt;/p&gt;
-&lt;p&gt;Emmm，上面的 Nginx 介绍看过去有些复杂而且充满了不明觉厉的术语。Relax，在这篇文章里，我（原作者）会先带你理解</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="http://5coder.cn/categories/Linux/"/>
-    
-    
-    <category term="Nginx" scheme="http://5coder.cn/tags/Nginx/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>什么是VLAN</title>
-    <link href="http://5coder.cn/2021/052058690.html"/>
-    <id>http://5coder.cn/2021/052058690.html</id>
-    <published>2021-05-20T14:48:33.000Z</published>
-    <updated>2022-08-19T13:10:07.557Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;什么是VLAN&quot;&gt;&lt;a href=&quot;#什么是VLAN&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="网络" scheme="http://5coder.cn/categories/%E7%BD%91%E7%BB%9C/"/>
-    
-    
-    <category term="VLAN" scheme="http://5coder.cn/tags/VLAN/"/>
-    
-    <category term="DNS" scheme="http://5coder.cn/tags/DNS/"/>
-    
-    <category term="网关" scheme="http://5coder.cn/tags/%E7%BD%91%E5%85%B3/"/>
     
   </entry>
   

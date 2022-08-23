@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="zh-CN">
 
 
 <head>
@@ -60,7 +60,7 @@
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -71,7 +71,7 @@
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -82,7 +82,7 @@
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -93,7 +93,7 @@
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -104,18 +104,7 @@
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fa fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>Contact</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -126,14 +115,14 @@
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>Friends</span>
+      <span>友情链接</span>
     </a>
     
   </li>
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -163,7 +152,7 @@
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -174,7 +163,7 @@
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -185,7 +174,7 @@
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -196,7 +185,7 @@
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -207,18 +196,7 @@
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fa fa-comments"></i>
-			
-			Contact
+			关于
 		</a>
           
         </li>
@@ -229,7 +207,7 @@
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			Friends
+			友情链接
 		</a>
           
         </li>
@@ -247,35 +225,57 @@
 </header>
 
     <style type="text/css">
-    /* don't remove. */
-    .about-cover {
-        height: 90.2vh;
-    }
+  /* don't remove. */
+  .page404-cover {
+    /* height: 75vh; */
+    height: 88vh;
+  }
+
+  #svgContainer {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  header .brand-logo .logo-span {
+    color: #222;
+  }
+
+  header .nav-menu li i {
+    color: #222;
+  }
+
+  header .nav-menu li span {
+    color: #222;
+  }
+
+  header .button-collapse i {
+    color: #222;
+  }
 </style>
-<div class="bg-cover pd-header about-cover">
-    <div class="container">
-        <div class="row">
-            <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-                <div class="brand">
-                    <div class="title center-align">
-                        404
-                    </div>
-                    <div class="description center-align">
-                        Oops～，我崩溃了！找不到你想要的页面 :(
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 
-    <script>
-        // 每天切换 banner 图.  Switch banner image every day.
-        var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-        $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+<script src="/libs/my404/bodymovin.js"></script>
+<script src="/libs/my404/data.js"></script>
+
+<div class="bg-cover pd-header page404-cover">
+    <div id="svgContainer"></div>
+
+    <script type="text/javascript">
+      var svgContainer = document.getElementById('svgContainer');
+      var animItem = bodymovin.loadAnimation({
+        wrapper: svgContainer,
+        animType: 'svg',
+        loop: true,
+        animationData: JSON.parse(animationData)
+      });
     </script>
-
+</div>
 
 
     <footer class="page-footer bg-color">
@@ -293,7 +293,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">154.5k</span>&nbsp;字
+                class="white-color">159.9k</span>&nbsp;字
             
             
             
@@ -406,8 +406,8 @@
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
         <div id="searchResult"></div>
