@@ -394,7 +394,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-19
+                    2022-08-28
                 </div>
                 
 
@@ -408,7 +408,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    4 分
                 </div>
                 
 
@@ -431,7 +431,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="JavaScript异步编程"><a href="#JavaScript异步编程" class="headerlink" title="JavaScript异步编程"></a>JavaScript异步编程</h2><h3 id="1-同步模式"><a href="#1-同步模式" class="headerlink" title="1.同步模式"></a>1.同步模式</h3><blockquote>
+                <h2 id="JavaScript异步编程"><a href="#JavaScript异步编程" class="headerlink" title="JavaScript异步编程"></a>JavaScript异步编程</h2><h3 id="一、同步模式"><a href="#一、同步模式" class="headerlink" title="一、同步模式"></a>一、同步模式</h3><blockquote>
 <p>同步模式指的就是我们代码中的任务依次执行，程序执行的顺序与代码的编写顺序一致。</p>
 <p>以下代码为同步模式的代码，具体分析其执行顺序</p>
 </blockquote>
@@ -454,11 +454,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token comment">// Bar task</span>
 <span class="token comment">// Global end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>复制地址到浏览器地址栏查看动图演示：</p>
-<p><a href="http://5coder.cn/img/202208152208328.gif">http://5coder.cn/img/202208152208328.gif</a></p>
+<p><img src="http://5coder.cn/img/202208152208328.gif" alt="无法查看时复制链接到浏览器观看：http://5coder.cn/img/202208152208328.gif"></p>
 <p>分析：</p>
 <blockquote>
-<ul>
+<ol>
 <li><p>首先分析代码结构，本段代码为同步模式，js在读取到代码时，先将一个（anonymous）匿名函数放到调用栈。</p>
 </li>
 <li><p>在读取到第一行console.log(‘Global begin’)时，将其压到调用栈，随后去执行，当控制台打印出结果后，将其弹出调用栈，继续下一行代码；</p>
@@ -469,9 +468,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </li>
 <li><p>最后将console.log(‘Global end’)压入调用栈并执行，随后将其弹出，代码运行完成，将(anonymous)弹出调用栈，程序完全结束。</p>
 </li>
-</ul>
+</ol>
 </blockquote>
-<h3 id="2-异步模式"><a href="#2-异步模式" class="headerlink" title="2.异步模式"></a>2.异步模式</h3><p>在浏览器端，耗时很长的操作都应该异步执行，避免浏览器失去响应，最好的例子就是Ajax操作。在服务器端，”异步模式”甚至是唯一的模式，因为执行环境是单线程的，如果允许同步执行所有http请求，服务器性能会急剧下降，很快就会失去响应。</p>
+<h3 id="二、异步模式"><a href="#二、异步模式" class="headerlink" title="二、异步模式"></a>二、异步模式</h3><p>在浏览器端，耗时很长的操作都应该异步执行，避免浏览器失去响应，最好的例子就是Ajax操作。在服务器端，”异步模式”甚至是唯一的模式，因为执行环境是单线程的，如果允许同步执行所有http请求，服务器性能会急剧下降，很快就会失去响应。</p>
 <p>异步调用并不会阻止代码的顺序执行，而是在将来的某一个时刻触发设置好的逻辑，所以我们</p>
 <ol>
 <li>并不知道逻辑什么时候会被调用</li>
@@ -497,7 +496,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token comment">// inner invoke</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>复制地址到浏览器地址栏查看动图演示：</p>
-<p><a href="http://5coder.cn/img/202208152208762.gif">http://5coder.cn/img/202208152208762.gif</a></p>
+<p><img src="http://5coder.cn/img/202208152208762.gif" alt="无法查看时复制链接到浏览器观看：http://5coder.cn/img/202208152208762.gif"></p>
 <p>分析：</p>
 <blockquote>
 <p>首先分析代码结构，本段代码为异步模式，js在读取到代码时，先将一个（<code>anonymous</code>）匿名函数放到调用栈。</p>
@@ -510,7 +509,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>此时随倒计时，<code>timer1</code>倒计时完毕，程序进入<code>timer1</code>内部，将<code>console.log('timer1 invoke')</code>压入调用栈并执行后弹出。</p>
 <p>随后<code>inner()</code>计时器进入任务队列，在倒计时结束后，压入调用栈并执行后弹出。至此，程序执行完毕。</p>
 </blockquote>
-<h3 id="3-回调函数"><a href="#3-回调函数" class="headerlink" title="3.回调函数"></a>3.回调函数</h3><p>回调函数指的是需要在将来不确定的某一时刻异步调用的函数。通常，在这种回调函数中，我们经常需要频繁地访问外部数据。</p>
+<h3 id="三、回调函数"><a href="#三、回调函数" class="headerlink" title="三、回调函数"></a>三、回调函数</h3><p>回调函数指的是需要在将来不确定的某一时刻异步调用的函数。通常，在这种回调函数中，我们经常需要频繁地访问外部数据。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token parameter">callback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -523,7 +522,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'起始就是调用者告诉执行者：异步任务结束后应该做什么'</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="4-Promise概述"><a href="#4-Promise概述" class="headerlink" title="4.Promise概述"></a>4.Promise概述</h3><p>由于上述回调函数可以存在嵌套关系，因此容易导致<strong>回调地狱</strong>问题，即产生如下代码：</p>
+<h3 id="四、Promise概述"><a href="#四、Promise概述" class="headerlink" title="四、Promise概述"></a>四、Promise概述</h3><p>由于上述回调函数可以存在嵌套关系，因此容易导致<strong>回调地狱</strong>问题，即产生如下代码：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">$<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'url1'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">data1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     $<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'url2'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">data2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         $<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'url3'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">data3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -542,6 +541,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <p>因此提出<code>Promise</code>承诺，即在回调函数中，承诺在异步完成后下一步干什么。</p>
 <p><code>Promise</code>存在三种状态，及承诺开始<code>pending</code>，承诺兑现<code>fulfilled</code>以及承诺失败<code>rejected</code>。并且，承诺的状态一旦确定就不可在被改变，即当状态为<code>fulfilled</code>时，此<code>promise</code>的状态就不可再变为<code>rejected</code>，反之同样。</p>
+<p><a href="http://5coder.cn/2021/0519741.html">传送：Promise基本使用</a></p>
 <p><code>fulfilled</code>与<code>rejected</code>存在<code>onFulfilled</code>和<code>onRejected</code>状态。</p>
 <ul>
 <li>什么是<code>promise</code>?</li>
@@ -1023,7 +1023,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">159.9k</span>&nbsp;字
+                class="white-color">165.5k</span>&nbsp;字
             
             
             
