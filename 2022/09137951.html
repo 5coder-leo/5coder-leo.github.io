@@ -1,0 +1,1489 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="06-Listing的撰写, JavaScript Vue">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>06-Listing的撰写 | 5coder</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="5coder" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">5coder</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">5coder</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '4a012e0b7cba0fe9de7d3c466e3830e7dfd1a36c260954c55e911d3162202c2c';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">06-Listing的撰写</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E4%BA%9A%E9%A9%AC%E9%80%8A%E6%96%B0%E6%89%8B%E8%AE%AD%E7%BB%83%E8%90%A50-1%E6%95%99%E7%A8%8B/">
+                                <span class="chip bg-color">亚马逊新手训练营0~1教程</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E4%BA%9A%E9%A9%AC%E9%80%8A%E6%96%B0%E6%89%8B%E8%AE%AD%E7%BB%83%E8%90%A50-1%E6%95%99%E7%A8%8B/" class="post-category">
+                                亚马逊新手训练营0~1教程
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-09-13
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-09-15
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    8.8k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    30 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="06-Listing的撰写"><a href="#06-Listing的撰写" class="headerlink" title="06-Listing的撰写"></a>06-Listing的撰写</h1><p>更新于：2022-04-20 7:14:47</p>
+<h2 id="如何写一条合格的listing什么是listing？"><a href="#如何写一条合格的listing什么是listing？" class="headerlink" title="如何写一条合格的listing什么是listing？"></a>如何写一条合格的listing什么是listing？</h2><p>在亚马逊平台listing就像是我们店铺的销售人员，Listing的颜值高不高，话术好不好，直接影响到我们产品的销量。</p>
+<p>比如用户搜到我们的产品页面，其实就是几秒钟的时间，准确来说是7秒，我们的产品主图能不能吸引用户，标题是否吸引，价格怎么样，能不能形成订单，是很快决定的。买家觉得没有亮点马上会就转到其他产品去。</p>
+<p>我们要做的是提升销售员listing的颜值：比如说产品图片、文字的排版啊，精练谈吐和话术，如：五点及描述的可读性，是否通顺，语法是不是符合老外习惯，还是写的我们的CHINAGILISH?用户关键词是不是埋的准确到位？</p>
+<p>一位专业的销售人员对销售的影响巨大，同样的，Listing是亚马逊运营中最基础也是最重要的一个环节。</p>
+<p>一句话来说，就是怎么让我们自己的listing在众多竞争对手中脱颖而出，get 到用户的需求点，让用户迅速作出购买决定。</p>
+<h2 id="O-优质listing的一些基本原则"><a href="#O-优质listing的一些基本原则" class="headerlink" title="Ø 优质listing的一些基本原则"></a>Ø 优质listing的一些基本原则</h2><h3 id="1、什么是Listing"><a href="#1、什么是Listing" class="headerlink" title="1、什么是Listing"></a>1、什么是Listing</h3><p>Listing :亚马逊商品详情页面，是展示产品所有信息的独立商品页面</p>
+<p>包含以下7个主要要素：标题、图片、商品要点、商品描述、搜索关键词、EBC(Enhanced Brand Content文版品牌描述）)/A+页面、分类节点；</p>
+<p>还包含品牌名、评论、价格、配送方式等等其他要素。：产品图片、标题、五点、定价、产品描述、search term等词的后台填写。</p>
+<p>同时，还有一项隐性工作，也是以上所有文字类工作的基础，收集整理产品关键词。关键词这块我们下一节课会详细来讲。</p>
+<p>接下来我们就来讲这些内容。</p>
+<h4 id="1、listing的基本要素"><a href="#1、listing的基本要素" class="headerlink" title="1、listing的基本要素"></a>1、listing的基本要素</h4><p>影响listing完整度的主要要素</p>
+<h5 id="1）标题"><a href="#1）标题" class="headerlink" title="1）标题"></a>1）标题</h5><p><strong>如何写一个合格的标题？</strong></p>
+<p>标题是最直接的关键词搜索来源，是买家最直观的对我们产品信息的理解和把握，帮助买家解读产品的重要属性，让买家从标题上就能知道我们产品的独特特性和差异化，和产品图片一起，最大可能的吸引客户点击欲和购买欲。</p>
+<p><strong>标题的写法</strong></p>
+<ol>
+<li><p>每个字的首字母必须大写（除了a, an,and, or, for, on, the之类的词）</p>
+</li>
+<li><p>不能有任何特殊字符或标点符号(®, ©,™, !, $, &amp;, , etc.)</p>
+</li>
+<li><p>不能在中文输入法状态下输入任何内容（会变成乱码）；</p>
+</li>
+<li><p>如有数字描述，要用阿拉伯数字，不要使用文字，例如：要写2，不要写Two。如包含批量销售，请在商品名称后面添加（pack of X）。</p>
+</li>
+<li><p>标题简明扼要，不能过长、不要堆砌关键字，服装&lt;80字符，鞋包&lt;50字符，其他品类&lt;150字符（1个英文字母、1个标点或空格算作1个字符）</p>
+</li>
+</ol>
+<p>不能有重复关键字或者不同单词描述同一个意思的关键字。不要出现过多的产品细节（如多型号商品，不超过三个型号）可以在描述或产品特性中补充。</p>
+<p>不要用”关键词堆砌“我们的商品名称，这会让买家体验变差，导致转化率降低。搜索引擎也会检测到这一情况，并降低我们的排名</p>
+<p>一般来说是80-120个字符，电子类产品140个字符左右，手机端超过140个字符权重不高的，不好展示，上完listing后大家一定要习惯用手机去亚马逊前台看自己产品展示的情况。</p>
+<p>去看标题、图片、五点等、是不是可以很好的按自己预期的样子展示出来。大家都知道现在移动端的流量是巨大的。</p>
+<p>6.不能有公司，促销，物流，运费或其他任何与商品本身无关的信息，</p>
+<p>例如:</p>
+<p>a. “Free Shipping”, “2 days express delivery”</p>
+<p>b. “Best Seller”, “Hot Item”, “Latestdesign, New Fashion”</p>
+<p>Money-back Satisfaction Guarantee”</p>
+<p>d. “Customizable please email me your idea or design”,</p>
+<p>可以使用短横线（-），斜杠和&amp;符号句号。</p>
+<p><strong>使用变体关系的商品名称</strong></p>
+<p>在变体关系中，仅父ASIN的商品名称显示在详情页面上，买家将ASIN加上购物车后，系统才会显示所选 的子ASIN的商品名称。所以呢，一定要在子ASIN的商品名称加上变体属性，比如尺寸，颜色什么的.</p>
+<p>这里有个要点就是，标题里一定是放核心关键词，不是放长尾关键词。</p>
+<p>至于是怎么埋词，需要结合我们自己的推广节奏来调整。</p>
+<p>Tip：放核心关键词，不是放长尾词。</p>
+<p><strong>标题的应包含的内容：</strong></p>
+<ul>
+<li><p>品牌名，型号，系列名称</p>
+</li>
+<li><p>产品名称（核心关键词）就是你要推的那个词</p>
+</li>
+<li><p>重要特征或亮点</p>
+</li>
+<li><p> 产品材质或主要成分</p>
+</li>
+<li><p>产品颜色、尺寸、数量</p>
+</li>
+</ul>
+<p><strong>标题公式</strong></p>
+<p>标题=品牌+核心关键词+亮点+其他关键词+次要卖点+材质+尺寸+用途+数量+颜色</p>
+<p>标题=品牌+关键词+亮点+适用范围+产品特性（材质/尺寸/颜色等）</p>
+<p>标题最后一部分基本是补充产品相关的材质、尺码或者颜色信息即可，丰富产品信息，从而提高买家对产品的认知度。</p>
+<p>这里说一下，在我们品牌还是新品牌的时候，没有什么影响力，建议品牌不要放左边第一个位置，或者可以放后边。因为标题的权重是从左到右排序的，越核心重要的词要越往前边放。</p>
+<h5 id="1）越重要的词放在越前面"><a href="#1）越重要的词放在越前面" class="headerlink" title="1）越重要的词放在越前面"></a><strong>1）越重要的词放在越前面</strong></h5><p>这是什么产品?有什么特性或与别人不同的地方?</p>
+<p>位置越靠前的词越重要。现在移动端用户居多，在手机上能被显示的标题内容有限，再往后的位置也很少再注意看，所以需要在短短几个词之内展现产品特性，兼顾电脑端和移动端，从而达成即亲近A10算法，又照顾到顾客浏览标题体验的目的。</p>
+<p>标题优化的注意事项不要提供不准确、具有误导性或不相关的信息，</p>
+<p>不要提供过长的内容。堆砌关键词</p>
+<p>不要提供其他字段（比如商品名称、作者、商品描述、要点、品牌等）中已提供的冗余信息。这不会提高您的商品在搜索结果中的排位。</p>
+<p>不要输入仅暂时有效的陈述，如“新品”、“促销”、“有现货”等。</p>
+<p>请勿包含具有辱骂或攻击性质的词语。</p>
+<p>可以将缩写、别名、（书籍等的）主题和（书籍、电影等的）主要人物等用作关键词</p>
+<p>这里给大家推荐一个字符计算工具，当然有很多工具是可以用的啊，你们有其他好的工具也是OK</p>
+<p>字节字符计算工具：<a target="_blank" rel="noopener" href="http://www.mingmu.net/zishu.html">http://www.mingmu.net/zishu.html</a></p>
+<p>接下来，我们讲到五点描述，bullet point</p>
+<h5 id="2）五点描述填写技巧"><a href="#2）五点描述填写技巧" class="headerlink" title="2）五点描述填写技巧"></a>2）五点描述填写技巧</h5><p>BulletPoint一般来说是买家第二个阅读的内容。</p>
+<p>看完Bullet Point以后买家就会知道商品符不符合他们的要求。</p>
+<p>所以我们要突出强调商品的主要功能，我们要做的是在买家在想起来疑问之前就解决了他们的问题。</p>
+<p>我们通过测试，精细布局撰写商品要点是可以提升销量的。</p>
+<p>买家依靠商品要点来了解重要的商品功能，因为这些要点可以突出有关商品的重要信息或特殊信息。</p>
+<p>\1. 最重要的写在第一条</p>
+<p>\2. 比较重要的卖点在前三条写完</p>
+<p>\3. 每一条一个卖点</p>
+<p>\4. 每条卖点归纳一个小标题，减少客户判断时间</p>
+<p>这个小标题大家要注意， 我们到前台去看还是会有很多的中国卖家用中文在字符来框标题的，这个不要用啊。没什么卵用，而且还暴露了你是中国卖家.</p>
+<p><img src="http://5coder.cn/img/1663060970_a17c89711dbbcc43300e59c4c3acc93d.jpg" alt="img"> </p>
+<h6 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h6><p>a. 每一要点最多500个字符（含标点和空格），一般建议控制在200个字符以内，请勿包含促销和定价信息</p>
+<p>b. 每个要点应简洁但具有描述性；些处不应使用段落</p>
+<p>c. 如果商品是套装商品，请列出套装中包含的商品和每个商品的尺寸（如适用）</p>
+<p>d. 使用分号分隔单个要点中的短语</p>
+<p>e. 要点中始终使用阿拉伯数字，切勿使用拼写数字</p>
+<p>f. 以句子形式编写要点（无标点符号）</p>
+<p>g. 不支持Type 1 ASCII字符（R C ,TM等）或其他特殊字符</p>
+<p><img src="http://5coder.cn/img/1663060970_a2aa9a2899852125a50c68fd83715dae.jpg" alt="img"> </p>
+<p>编写商品要点时，需要遵守这些要求：</p>
+<p>突出说明您希望买家注意的五项关键特点，例如尺寸、适龄性、商品的理想状况、技能水平、成分含量和原产地等。</p>
+<p>保持顺序一致。如果您的第一个商品要点是原产地，那么请为所有商品保持相同的顺序。</p>
+<p>重申商品名称和描述中的重要信息。</p>
+<p>请在每条商品要点开头使用大写。</p>
+<p>请以句段编写，不要在结尾加入标点符号。</p>
+<p>请勿包含促销和定价信息。</p>
+<p>我们亚马逊卖家很多是从1688、环球资源拿货，同质化严重，所以开发产品的时候就要注意，开发有亮点、有自己特色的产品。如果是拿的标品，尽量做一点差异化。产品描述这边也是。</p>
+<h5 id="http-www-shopping-com-国外搜索购物比价网站"><a href="#http-www-shopping-com-国外搜索购物比价网站" class="headerlink" title="http://www.shopping.com/ 国外搜索购物比价网站"></a><a href="https://link.zhihu.com/?target=http://www.shopping.com/">http://www.shopping.com/</a> 国外搜索购物比价网站</h5><h5 id="3）Search-Term"><a href="#3）Search-Term" class="headerlink" title="3）Search Term"></a>3）Search Term</h5><p><img src="http://5coder.cn/img/1663060970_b825e24d5d679444731cd5df315ae9cc.jpg" alt="img"> </p>
+<p>关键词的作用</p>
+<p>达成产品能够被搜索到的目的；补充完善标题不能覆盖的关键词，增加搜索和曝光的可能性</p>
+<p>关键词的写法</p>
+<p>不能滥用知名品牌名</p>
+<p>不能滥用不相干的关键词</p>
+<p>不要和标题中的关键词重复使用</p>
+<p>请使用单个空格来分隔关键词。无需输入逗号、分号或插入符号。</p>
+<p>输入多个单词作为搜索词时，请按最符合逻辑的顺序排列它们。买家更有可能搜索大型毛绒泰迪熊玩具，而不是搜索泰迪毛绒熊玩具。请勿提供空格、标点符号、大写和复数的变体（“80GB”和“80 GB”、“computer”和“computers”等）。我们的搜索引擎将自动在搜索时包含不同的大小写形式、词形和拼写变体。</p>
+<p>请勿包含带有主观色彩的表达，如“惊艳”、“优质”。等词语，因为大多数买家不会在查询中使用带有主观色彩的词语。</p>
+<p>请勿在商品名称中包含常见拼写错误。亚马逊的搜索引擎会弥补常见的买家拼写错误并提供校正建议。</p>
+<p>注意： 亚马逊保留在检索商品时不使用卖家提供的所有关键词的权利。</p>
+<p>不使用所有关键词的原因包括但不限于：搜索运算效率、对搜索结果的潜在操纵、不相关的搜索词及攻击性或非法词语</p>
+<h5 id="4）图片要求"><a href="#4）图片要求" class="headerlink" title="4）图片要求"></a>4）图片要求</h5><h6 id="通用图片标准："><a href="#通用图片标准：" class="headerlink" title="通用图片标准："></a>通用图片标准：</h6><p>· 图片必须准确展示商品，且仅展示待售商品。</p>
+<p>· 商品及其所有特色都必须清晰可见。</p>
+<p>· 主图片应该采用纯白色背景（纯白色可与亚马逊搜索和商品详情页面融为一体 - RGB 色值为 255、255、255）。</p>
+<p>· 主图片必须是实际商品的专业照片（不得是图形、插图、实物模型或占位符），且不得展示不出售的配件、可能令买家产生困惑的支撑物、不属于商品一部分的文字，或者标志/水印/内嵌图片。</p>
+<p>· 图片必须与商品名称相符。</p>
+<p>· 图片的最长边不应低于 1,600 像素。满足此最小尺寸要求可在网站上实现缩放功能。事实证明，提供缩放功能可以提高销量。</p>
+<p>· 图片最长边不得超过 10,000 像素。</p>
+<p>· 亚马逊接受 JPEG (.jpg)、TIFF (.tif) 或 GIF (.gif) 文件格式，但首选 JPEG。</p>
+<p>· 我们的服务器不支持 .gif 格式的动图。</p>
+<p>· 图片不得包含裸体或有性暗示意味。</p>
+<p>· 鞋靴主图片应采用单只鞋靴，呈 45 度角朝向左侧。</p>
+<p>· 女装和男装主图片应采用模特照。</p>
+<p>· 所有儿童和婴儿服装图片均应采用平放拍摄照（不借助模特）。</p>
+<p>主图：</p>
+<p>主图片标准中不允许出现在问题：</p>
+<p>l 采用非纯白背景的图片（RGB低于255）</p>
+<p>l 商品上或背景中有文字、标志、边框、色块、水印或其他图形</p>
+<p>l 包含同一商品的多张图片</p>
+<p>l 最长边放大到最大允许尺寸时，商品占画面不到85%</p>
+<p>l 模糊、马赛克或锯齿边缘</p>
+<p>l 主图片是有人/商品穿戴在模特身上（成人服装除外)</p>
+<p>l 商品图片不能包含任何亚马逊标志或商标、亚马逊标志或商标的变体、任何容易让人混淆的与亚马逊标志或商标相似的内容。这包括但不限于任何含有AMAZON,PRIME .ALEXA或Amazon Smile设计的文字 或标志。</p>
+<p>l 商品图片不能包含亚马逊商城使用的任何 标记、标记的变体、任何 容易让人混淆的与标记相似的内容。这包括但不限于“Amazon’s choice””优质的选择”、“Amazon Alexa”、”与Alexa合作”“畅销商品”或“热卖商品”</p>
+<p>附图：</p>
+<p>“主图片应配有一引起附加的图片，以从不同的其二他来展示商品，展示使用中的商品在”主图片“中没有显示的细节，请遵循上述图片标准，经保证你所有的商吕图片的质量的一致性。</p>
+<h6 id="图片链接生成工具："><a href="#图片链接生成工具：" class="headerlink" title="图片链接生成工具："></a>图片链接生成工具：</h6><p><a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a></p>
+<p>如何用Github生成图片链接</p>
+<p>在使用模板上传Listing的时候, 图片是需要使用链接上传的, （我之前一般都是后台直接上传图片的，上一节课有说到，因为可能当时先上产品，准备发货出去，货在路上的时候就来准备优化Listing。当然，如果提前一切准备妥当也是非常可的啊）</p>
+<p>一般来说，很多人会使用图床去生产链接, 但是现在很多国内的图床都是要付费或者就是有图片张数限制, 而且很多图床也会将你的图片泄露出去,也有同学会用QQ空间来生成链接上传，但是如果多店铺运营的话，图片也可能会存在关联。</p>
+<p>我亲测了一个同学推荐的Github去存储图片，非常不错的。</p>
+<p>首次使用的需要先在网站注册一下:</p>
+<p>填写了用户名, 邮箱和密码之后, 邮箱会收到一封Github的认证邮箱, 直接点击邮件中的”Verify Email Address”就会直接跳转到Github的网站, 如下图:</p>
+<p><img src="http://5coder.cn/img/1663060970_6089a7db353dcf03c94f6ec10241f313.jpg" alt="img"> </p>
+<p><img src="http://5coder.cn/img/1663060970_d65f2c8d40d0468106b9e791ab8969b0.jpg" alt="img"> </p>
+<p>这边可以点击”Create a repository” 创建一个资料库, 在Github中是可以创建多个资料库的, 我们习惯一个父体做一个资料库, 这样方便管理. 点击了之后会来到下一个页面:</p>
+<p>需要填写的地方只有”Repository name”, 这个可以按照产品线的名称来填写. 同时存储的图片不想被别人看到, 可以选”Private”. 填完之后点击”Create repository”, 到达下一个页面:</p>
+<p><img src="http://5coder.cn/img/1663060970_21f5bc5723a938bc7c65b5d56b427176.jpg" alt="img"> </p>
+<p>选择”Issues”</p>
+<p><img src="http://5coder.cn/img/1663060970_1dd6222fa27fd77dc002942712c18e7c.jpg" alt="img"> </p>
+<p>点击”New isues”</p>
+<p><img src="http://5coder.cn/img/1663060970_159c95da3185d67623fbe734d067bb74.jpg" alt="img"> </p>
+<p><img src="http://5coder.cn/img/1663060970_9d2e93fabffc422bbcce23cc23bc6597.jpg" alt="img"> </p>
+<p><img src="http://5coder.cn/img/1663060970_42b641e7c5cf4c7537bf56744d23ed33.jpg" alt="img"> </p>
+<p>这样生成的链接就能直接用在模板中了. 然后点击”Submit new issue”, 将这个图片保存在GitHub中, 这样如果后期需要重新上传链接, 还可以再这里找回来. 具体方法就是找到你想要的图片, 右击选择”copy link address”就可以啦。</p>
+<h6 id="图片素材"><a href="#图片素材" class="headerlink" title="图片素材"></a>图片素材</h6><p>推荐一个制作图片的网站， 需要FQ才能上</p>
+<p>比较好用，功能很强大，而且不收费，他们的素材模板风格都很不错，<a target="_blank" rel="noopener" href="https://spark.adobe.com/">https://spark.adobe.com/</a></p>
+<p>特色功能:</p>
+<p>\1. 简单的拼图，有按使用场景的各类风格模板可以选择(seasonal，business，travel，food等等)</p>
+<p>\2. 可以添加各种组件，包括文本，图标等等，他们的字体，颜色，图标库都非常丰富。</p>
+<p>\3. 还可以添加文本生成动图保存成短小的视频或gif格式。</p>
+<p>\4. 保存的时候可以选择尺寸，常用的Social media比如fb page cover, ad cover, ins story都有，还可以自定义尺寸，个人觉得这个功能真的很好啊，常用来做简单的banner，活动海报。</p>
+<p>\5. 上手很简单，基本就是自己选择一个模板，他们模板库很丰富，然后替换自己的图片和内容就好了。</p>
+<p>Pixabay是一个支持中文搜索的免费可商用图库。</p>
+<p>网址：<a target="_blank" rel="noopener" href="http://pixabay.com/">http://pixabay.com/</a></p>
+<p>里面有很多不同类型的摄影照片，大家可以通过Pixabay去寻找自己想要的图片，简直完美解决各种场合的分辨率要求，真的是一个图片搜索神器</p>
+<p>Gratisography</p>
+<p>网址：<a target="_blank" rel="noopener" href="http://pixabay.com/">http://pixabay.com/</a></p>
+<p>Gratisography是一个免费高分辨率摄影图片库，所有的图片都可以用于个人或者商业用途，每周更新图片你只需要点击即可下载。</p>
+<p>designerspics</p>
+<p>网站：<a target="_blank" rel="noopener" href="http://www.designerspics.com/">http://www.designerspics.com</a></p>
+<p>主要是有大量免费高分辨率的生活、工作、休闲图片，关键的是可商业用途</p>
+<p>StockSnap是一个提供可自由下载使用的高清晰摄影图片作品的素材库，所提供的资源相当实用，网站由多位摄影师组成，提供丰富的免费照片，随意使用无需经过授权。</p>
+<p>网站：<a target="_blank" rel="noopener" href="https://stocksnap.io/">https://stocksnap.io/</a></p>
+<p>图片整体布局：</p>
+<p>总分总结构，主图+5卖点图+包装图或场景图。</p>
+<p>统筹规范：统一字号字体、颜色等；一图一卖点；图面整洁有序。</p>
+<h4 id="1、主图"><a href="#1、主图" class="headerlink" title="1、主图"></a>1、主图</h4><p>主图主要功能，是负责点击，我们的主图好不好，图片</p>
+<h5 id="1-gt-在主图的表现手法上，可以夸张一点，可以大一点。"><a href="#1-gt-在主图的表现手法上，可以夸张一点，可以大一点。" class="headerlink" title="1>在主图的表现手法上，可以夸张一点，可以大一点。"></a>1&gt;在主图的表现手法上，可以夸张一点，可以大一点。</h5><p>有些卖家的主图他是做了3D渲染的效果</p>
+<h5 id="2-gt-如有丰富的配件，一定要把配件也放到主图上，做差异。"><a href="#2-gt-如有丰富的配件，一定要把配件也放到主图上，做差异。" class="headerlink" title="2>如有丰富的配件，一定要把配件也放到主图上，做差异。"></a>2&gt;如有丰富的配件，一定要把配件也放到主图上，做差异。</h5><h5 id="3-gt-角度差异化。"><a href="#3-gt-角度差异化。" class="headerlink" title="3>角度差异化。"></a>3&gt;角度差异化。</h5><h5 id="主图的角度千万不要千变一律的一样。"><a href="#主图的角度千万不要千变一律的一样。" class="headerlink" title="主图的角度千万不要千变一律的一样。"></a>主图的角度千万不要千变一律的一样。</h5><h5 id="只有一种情况下一样，你比他们便宜，评论比较多。"><a href="#只有一种情况下一样，你比他们便宜，评论比较多。" class="headerlink" title="只有一种情况下一样，你比他们便宜，评论比较多。"></a>只有一种情况下一样，你比他们便宜，评论比较多。</h5><h5 id="其次，你有一个配件他没有，然后这样你就一样的角度，同时把你的配件发上去，这样的主图才会比较有优势"><a href="#其次，你有一个配件他没有，然后这样你就一样的角度，同时把你的配件发上去，这样的主图才会比较有优势" class="headerlink" title="其次，你有一个配件他没有，然后这样你就一样的角度，同时把你的配件发上去，这样的主图才会比较有优势"></a>其次，你有一个配件他没有，然后这样你就一样的角度，同时把你的配件发上去，这样的主图才会比较有优势</h5><h4 id="2-第二张，第三张图是最重要的，尤其是第二张，最影响我们转换率。"><a href="#2-第二张，第三张图是最重要的，尤其是第二张，最影响我们转换率。" class="headerlink" title="2. 第二张，第三张图是最重要的，尤其是第二张，最影响我们转换率。"></a>2. 第二张，第三张图是最重要的，尤其是第二张，最影响我们转换率。</h4><p>例：如一个买家因为主图够新颖点进来，会立马看第二张，第三张图片。</p>
+<p>如果你的第二张图片没有抓住他们注意力，很大一部分就会流失掉，就会离开。</p>
+<p>（数据：一个美国买家在亚马逊，对一个商品做决策，离开只有7秒的时间。）</p>
+<p>所以要放入我们的核心卖点，以及产品如有多功能，一定要放入多功能图，让他们对产品感兴趣继续看下去。</p>
+<h4 id="3、第四，第五，第六，第七张图，尽可能的去放入场景图"><a href="#3、第四，第五，第六，第七张图，尽可能的去放入场景图" class="headerlink" title="3、第四，第五，第六，第七张图，尽可能的去放入场景图"></a>3、第四，第五，第六，第七张图，尽可能的去放入场景图</h4><p>根据我们的广告关键词去优化我们场景图。</p>
+<p>卖家后台右上角搜索框：搜索“商品图片要求”，点</p>
+<h5 id="5）Description-A-内容限制"><a href="#5）Description-A-内容限制" class="headerlink" title="5）Description/A+内容限制"></a>5）Description/A+内容限制</h5><h6 id="如果我们还没有品牌备案，做不了A-页面，Description一定要认真写，这点也非常重要。这里是对五点描述及卖点的补充。同样的可以进入我们的关键词，产品功能、SIZE、包装等信息"><a href="#如果我们还没有品牌备案，做不了A-页面，Description一定要认真写，这点也非常重要。这里是对五点描述及卖点的补充。同样的可以进入我们的关键词，产品功能、SIZE、包装等信息" class="headerlink" title="如果我们还没有品牌备案，做不了A+页面，Description一定要认真写，这点也非常重要。这里是对五点描述及卖点的补充。同样的可以进入我们的关键词，产品功能、SIZE、包装等信息"></a>如果我们还没有品牌备案，做不了A+页面，Description一定要认真写，这点也非常重要。这里是对五点描述及卖点的补充。同样的可以进入我们的关键词，产品功能、SIZE、包装等信息</h6><h6 id="商品详情页面"><a href="#商品详情页面" class="headerlink" title="商品详情页面"></a>商品详情页面</h6><p>可以帮助我们优化页面，增加转化率和流量，提升买家体验</p>
+<p>帮助我们的产品提升流量与转化率</p>
+<p>a. 具有商品名称、主图、品牌名称、要点和描述</p>
+<p>b. 商品名称介与50-100个字符之间，不含声明，避免关键词堆砌或全用大写字母</p>
+<p>c. 3-5个要点，每个要点在120个字符以内</p>
+<p>d. 具有搜索词</p>
+<p>e. 具有2-5张轮播图片，包括一张缩放图片</p>
+<p>f. 商品描述在500字符以内</p>
+<p>关键词搜索</p>
+<p>关键词是指你页面中出现的字词，买家可以通过搜索引擎使用这些字词找到你的页面</p>
+<p>要选择不超过3个关键词作为目标，包含在你详情页面的要素中</p>
+<p>要研究买家搜索这些关键词的频率，提升排名的难度以及目前排名靠前的网页</p>
+<p>要根据”当买家搜索这个关键词时他们想看到什么”这一思路来调整你的页面</p>
+<p>要在“搜索词”或“通用关键词”字段中加入你的目标关键词</p>
+<p>不要在你的页面任何部分(包括商品名称、要点、商品描述）堆砌关键词，这会影响文本的可读性；关键词堆砌(例如：餐垫用来垫杯子的垫子非常适合垫）这样会影响买家体验、买家信任并降低转化率。搜索引擎会检测到并处罚关键词滥用行为</p>
+<h5 id="6）视频"><a href="#6）视频" class="headerlink" title="6）视频"></a>6）视频</h5><h6 id="资格："><a href="#资格：" class="headerlink" title="资格："></a>资格：</h6><p>必须拥有有效的亚马逊卖家账户，才能在卖家平台中上传和管理视频</p>
+<p>如果销售权限被撤销，（根据亚马逊政策指南或其他规定），您将没有资格管理的上传视频。并且之前上传的视频也可能从网站上移除</p>
+<p>美国站卖家必须是在亚马逊品牌注册上注册且在AMAZON.COM上销售商品的专业卖家，日本站无需品牌注册。</p>
+<p>如果我们因你违反本内容政策而暂停或撤销你的视频权限，在收到我们进一步的通知之前，你没有资格上传视频，并且你的原有视频将被移除</p>
+<p>视频必须全部采用英文形式</p>
+<p>所有权限暂停都适用于账户持有人，任何试图通过创建其他账户或身份来规避暂停权限的行为，都将导致上述账户被永久禁用。</p>
+<h6 id="声明："><a href="#声明：" class="headerlink" title="声明："></a>声明：</h6><p>必须支持所有明示暗示的声明</p>
+<p>您可以提供自己的个人观点，但需要明确注明。价格可以合理解释为事实陈太的声明均必须准确且可证实</p>
+<p>与商品特征（如安全性、绩效、技术规格、尺寸、重量等）相关的声明必须准确</p>
+<p>提及或描述的任何奖项（例如“2017年最佳商品”）均必须得到商品详情页面上详细信息的支持。</p>
+<p>必须是自己视频中推广的所有商品ASIN 的品牌所有者</p>
+<h6 id="视频内容要求"><a href="#视频内容要求" class="headerlink" title="视频内容要求"></a>视频内容要求</h6><p>\1. 视频内容中不可出现第三方的广告或品牌标示</p>
+<p>\2. 卖家应掌握视频播放版权，包括音乐播放版权等。第三方的视频如（土豆网、优酷、youtube等），即使抹去logo也不允许使用。</p>
+<p>\3. 视频内容应围绕此产品展开，建议使用趣味性、可读性、产品介绍性强的视频内容</p>
+<p>\4. 视频内容不可违反目标站点国家的任何法律、行政法规</p>
+<h6 id="规则标准："><a href="#规则标准：" class="headerlink" title="规则标准："></a>规则标准：</h6><p>\1. 视频长宽比例推荐为16:9或4:3</p>
+<p>2.每一段视频大小应该控制在50-100M以下，格式为WMV或MP4格式</p>
+<p>3.视频画面质量需要清晰流畅，音质需要通畅稳定</p>
+<h5 id="8）品牌旗舰店"><a href="#8）品牌旗舰店" class="headerlink" title="8）品牌旗舰店"></a>8）品牌旗舰店</h5><p>a. 讲述品牌故事并展示商品</p>
+<p>帮助买家在亚马逊上发现商品组和和相关商品</p>
+<p>b. 无需编码即可设计品牌旗舰店</p>
+<p>使用可拖放的模块或预先设计好的模板即可创建自定义的多级页面品牌旗舰店，而无需编写任何代码。</p>
+<p>c. 借助广告提升网站流量</p>
+<p>可以通过亚马逊站内广告，结合在亚马逊之外的营销活动利用独特易读的短URL网址来吸引消费者光临品牌旗舰店</p>
+<p><img src="http://5coder.cn/img/1663060970_52e173667112d5edd92a9e7bebcba5c6.jpg" alt="img"> </p>
+<h5 id="9）各类风格指南"><a href="#9）各类风格指南" class="headerlink" title="9）各类风格指南"></a>9）各类风格指南</h5><p>不同的类目有不同的写法，也不同的风格。当然他的收录是有不同的规则的。</p>
+<p>他这个风格指南有个pdf文档，就是根据第一栏的文件模板类目里面去给你做了文档汇总。</p>
+<p><img src="http://5coder.cn/img/1663060970_56510760012d0e36748f7721eb0cb0a9.jpg" alt="img"> </p>
+<p>右边这所有的信息就基本上涵盖了你这条listing所有要注意的细节点。</p>
+<p>当我们的运营完成了一条listing。那该怎么去判断他写的好是合规还是不好呢？通过这个风格指南就能知道他做的怎么样。</p>
+<p>右边所有信息涵盖了你LISTING所有要注意的细节点</p>
+<h4 id="类目节点"><a href="#类目节点" class="headerlink" title="类目节点"></a>类目节点</h4><p>1.一定要选择一个贴合产品的类目。</p>
+<p>2.是否品牌垄断</p>
+<p>去这个类目里看BSR top100。BSR100里有没有大牌占比较高的，或者有没有垄断的品牌。</p>
+<p>如一个类目里面品牌有垄断，同时有较多的大牌在里面。这种情况进入的可能性会比较低。</p>
+<p>选择红海类目还是蓝海类目，取决于你对这个产品的把握。产品是否有核心的竞争力，以及公司的配套资源能不能匹配。</p>
+<p>比如有一款很优势的产品，但评论前期没有多大的优势，公司也没有测评的资源。可以先从小类目数量少点类目，慢慢的去积累评论。</p>
+<p>等评论稳定、成熟了，此时可以进入大类目去获得更多的流量。</p>
+<h5 id="10）什么是-亚马逊-review？"><a href="#10）什么是-亚马逊-review？" class="headerlink" title="10）什么是 亚马逊 review？"></a>10）什么是 亚马逊 review？</h5><p>我们都知道,产品review非常重要,直接影响买家是否下单购买，一条新建的listing往往会因为没有review而造成订单转化率不高。</p>
+<p>Review，也就是亚马逊平台用户给我们的产品留下的产品评价。</p>
+<p>注册亚马逊买家账户的用户都可以对产品的listing做出评价，可以对自己感兴趣的listing发表review。（前提是该买家帐号在亚马逊平台上至少有一次的购买记录。）</p>
+<p>review评价的内容只能针对产品本身，跟卖家的服务水平、物流时效没有关系，亚马逊平台自检系统也会随机的对产品Review做出检测，对于违规的Review，系统会自动删除。所以有一些爆粗的的评论我们是可以点击report来申诉的。也有被系统删除的机会。</p>
+<p>Review一般来说有以四种类型：</p>
+<ol>
+<li>直评</li>
+</ol>
+<p>直评，就是买家不用购买产品，就可以直接对商品进行评论。</p>
+<p>亚马逊规则是允许没有购买的人也可以针产品进行评价，所以跟实际情况会有一定的偏差，也就导致了有部分人直接给某商品上多条好评或差评，从而影响到部分权重，甚至影响销售。</p>
+<p>因为乱刷直评的现象越来越严重，亚马逊平台就把直评的权重降低了。导致现在直评对卖家的店铺星级、产品转化率起不了大作用。。</p>
+<ol start="3">
+<li>VP评论</li>
+</ol>
+<p>VP评论，就是亚马逊买家购买产品后，留下的最真实的评论，当产品评价被标示为Verified Purchase，标示着撰写该产品评价的顾客在亚马逊上购买了该产品。</p>
+<p>只有确认在亚马逊购买该产品的顾客才能在评价加上此标签，所以它的可信度更高、更富有说服力，占有超级高的权重，VP评论经常排在前面。</p>
+<p>当然如果评价没有被标注为Verified Purchase，也并不代表评论者没有使用过该产品，仅代表亚马逊无法确定该订单是在亚马逊上完成的。</p>
+<p>大家一起来聊一聊，评价的权重 是怎么样的？</p>
+<p>文字评论、图片评论、视频评论？哪个权重最大？</p>
+<p>权重大小依次是视频评论&gt;图片评论&gt;文字评论；</p>
+<ol start="4">
+<li>Vn绿标评论</li>
+</ol>
+<p>Vn绿标评论在亚马逊Review中占有最高的权重，也更不容易被删除，优质的Vine Review可以让卖家快速建立起产品可信度和品牌声誉。</p>
+<p>Vn绿标评论的来源可追溯至亚马逊推出的一个组织——Vine Voice！受邀参加Amazon Vine项目的产品，将由供应商提供给亚马逊，然后再由Amazon官方将产品免费送给Vine评论员，要求他们撰写评论。这类评论就是带有Vn小绿标的评论。</p>
+<p>Vn绿标评论的权重更高但想获得这类评论，首先得有优秀的review ranker，这是加入Amazon Vine项目的基础。</p>
+<p>这个VINE功能我们之前有说过，也是需要品牌卖家才能解锁的。</p>
+<p>最近亚马逊平台变动，就是对最近的评价权重会更高了，说明平台更注重评价的时效性。</p>
+<h5 id="11-QA是什么"><a href="#11-QA是什么" class="headerlink" title="11)QA是什么"></a>11)QA是什么</h5><p>Q&amp;A即Customer Questions &amp; Answers（客户的问题和答案），这个版块主要的目的是为用户提供一个sellers（卖家）与buyers（买家）、buyers与buyers之间交流产品特性、功能、质量品质等问题的区域，主要以问答的模式进行。</p>
+<p>QA是我们对产品的的补充。在在产品页面的顶部，而且在转化中也发挥比较重要作用，我们适当的布局能极大影响转换率。</p>
+<p>很多同学认为QA就是买家来问的。</p>
+<p>其实我们自己也是可以上的。目前来说，找服务商上QA还是相对安全，而且也非常便宜。5-6RMB一Q一A。</p>
+<p>QA相关注意事项</p>
+<p>1.可以适当的插入关键词，但是不能堆砌关键词。</p>
+<p>2.可以找买家账号来进行回复，提升可信度。</p>
+<p>3.不要发广告内容，也不要在QA中推销产品。</p>
+<p>4.不可以自问自答，也就是说卖家们是不能进行自己提问的，需要买家的账号来进行提问，卖家们只拥有回答的权限，当然如果卖家用自己的买家号来进行提问，就需要注意电脑使用的IP问题。</p>
+<p>5.12个月内物满50美元的买家就能进行提问，在亚马逊调整了QA的提问要求后，现在能够留QA的买家是需要在过去12个月内购买超过50美金并不包含折扣金额的买家。</p>
+<p>6.禁止如下信息:垃圾信息，包括广告、竞赛、其他公司的网站推荐信息等为推销产品的重复性信息。不能很好解决买家疑惑，反而是困扰、窘迫买家的信息。</p>
+<p>鼓动买家去做非法、危险行为的信息。</p>
+<p>侵犯他人隐私的信息、诋毁活供给他人的信息。</p>
+<p>那QA我们应该怎么上呢，哪里来？</p>
+<ol>
+<li>竞争对手的好评</li>
+</ol>
+<p>把整个品类或者说竞争对手QA里面评论最多的去搬运过来，这些也是用户关心的点，同时把自己的关键词埋进去</p>
+<ol start="2">
+<li>竞争对手的差评</li>
+</ol>
+<p>竞争对手的差评，也就是产品的痛点。这个是买家比较关心的点。</p>
+<p>我们可以把痛点排序，然后针对最重要的安排至少两个问题，而且要把这个问题顶置在第一第二的位置，彻底解决客户的担忧疑虑。</p>
+<p>回复的时候也是要正面积极回复。还有一个重点就是针对产品无法改变的缺陷，一定要安排有QA，这样会减少往后的投诉问题</p>
+<p>竞争对手那里出现了差评痛点，就比如说，我们对标餐垫竞争对手里的差评说，这个餐垫洗了烘干后会起球，或者变形等等，我们就可以在QA提问：这个餐垫可以洗吗？洗后会变形起球吗？我在品牌买的洗过之后就影响美观了</p>
+<p>我们可以安排上ANSWER,（我们自己的品牌）还有（上面问题提到的品牌我都买过，这个洗完后完全没问题。好用得很balabala~~`</p>
+<p>卖家是可以回复A的，但是我们可以换个思路，王婆卖瓜，自卖自夸是可以的，但是自已夸一万遍都不如别人夸一遍是吧。</p>
+<ol start="3">
+<li>产品使用功能及性能提问</li>
+</ol>
+<p>针对产品使用问题提问，注意埋词；针对产品缺陷提问，注意埋词。</p>
+<p>再说一下评论，之前我们卖家是可以直接后台订单管理地方，可以向卖家邀评的，最近很多小伙伴收到邮件通知说可能会关毕</p>
+<p>还有一项，我们卖家原本可以在评论下面回复的功能也关闭了。所以呢，养优质买家账号来给自己评论或上QA也是有必要的。</p>
+<p>listing 的所有要素讲完了，这里想做个小调查，亚马逊平台上这些要素的权重 ，先后顺序是怎么样的？</p>
+<p>权重 Tittle &gt; Search Term &gt; Bullet Point&gt; Description</p>
+<p>以前是标题的权重大于5点描述大于长描述大于search term，但现在是标题的权重还是最大。其次是search term的权重，第三是5点描述的权重。第四是description的权重。</p>
+<p>所以大家在埋入关键词的时，可以根据自己的一些决策去埋关键词。因为自动广告抓取标题和search term，所以这两块的关键词埋入一定要非常注意。</p>
+<p>同时要注意的是，重复的埋入相同的关键词是不会对你的一个listing排名有帮助的，同时也会给一定的降权，因为这是属于作弊的行为。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">5coder</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://5coder.cn/2022/09137951.html">http://5coder.cn/2022/09137951.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">5coder</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E4%BA%9A%E9%A9%AC%E9%80%8A%E6%96%B0%E6%89%8B%E8%AE%AD%E7%BB%83%E8%90%A50-1%E6%95%99%E7%A8%8B/">
+                                    <span class="chip bg-color">亚马逊新手训练营0~1教程</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/091329194.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="07-关键词的调研与布局">
+                        
+                        <span class="card-title">07-关键词的调研与布局</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-13
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%BA%9A%E9%A9%AC%E9%80%8A%E6%96%B0%E6%89%8B%E8%AE%AD%E7%BB%83%E8%90%A50-1%E6%95%99%E7%A8%8B/" class="post-category">
+                                    亚马逊新手训练营0~1教程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BA%9A%E9%A9%AC%E9%80%8A%E6%96%B0%E6%89%8B%E8%AE%AD%E7%BB%83%E8%90%A50-1%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">亚马逊新手训练营0~1教程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/091326252.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/31.jpg" class="responsive-img" alt="【第一课】公开课：独立站运营系统解析与训练营介绍">
+                        
+                        <span class="card-title">【第一课】公开课：独立站运营系统解析与训练营介绍</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%A1%BE%E5%B0%8F%E5%8C%97-Shopify%E4%BB%8E0-1/" class="post-category">
+                                    顾小北-Shopify从0-1
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%8B%AC%E7%AB%8B%E7%AB%99/">
+                        <span class="chip bg-color">独立站</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2022</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">5coder</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">239.1k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2021";
+                    var startMonth = "5";
+                    var startDate = "19";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="https://beian.miit.gov.cn" target="_blank">粤ICP备2022101498号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/5coder-leo" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:leo@5coder.cn" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=245616972" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 245616972" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

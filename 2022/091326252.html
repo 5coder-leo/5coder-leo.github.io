@@ -1,0 +1,1671 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="【第一课】公开课：独立站运营系统解析与训练营介绍, JavaScript Vue">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>【第一课】公开课：独立站运营系统解析与训练营介绍 | 5coder</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="5coder" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">5coder</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">5coder</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '4a012e0b7cba0fe9de7d3c466e3830e7dfd1a36c260954c55e911d3162202c2c';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/31.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">【第一课】公开课：独立站运营系统解析与训练营介绍</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%8B%AC%E7%AB%8B%E7%AB%99/">
+                                <span class="chip bg-color">独立站</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E9%A1%BE%E5%B0%8F%E5%8C%97-Shopify%E4%BB%8E0-1/" class="post-category">
+                                顾小北-Shopify从0-1
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-09-13
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-09-15
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    17.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    58 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="【第一课】公开课：独立站运营系统解析与训练营介绍"><a href="#【第一课】公开课：独立站运营系统解析与训练营介绍" class="headerlink" title="【第一课】公开课：独立站运营系统解析与训练营介绍"></a>【第一课】公开课：独立站运营系统解析与训练营介绍</h1><p>更新于：2022-04-20 4:00:22</p>
+<p>在讲到独立站之前，想先和大家一起讨论下关于“赚钱的本质”的问题。关于这个问题，小北老师之前有一篇文章进行了非常深入和直白的探讨（<a target="_blank" rel="noopener" href="http://guxiaobei.com/the-nature-of-making-money.html">http://guxiaobei.com/the-nature-of-making-money.html</a>） 核心观点我们可以这样总结，“生意的本质其实就四个字：低买高卖“，我想大家可以仔细思考下，是不是大部分的商业行为都可以用这个四个字来理解。</p>
+<p>在我们了解赚钱的本质以后，我们就要了解赚钱的模式是什么，如果用四点来总结，那就是产品、渠道、运营、供应链，如果范围再缩小一点，其实就围绕下面三大点来展开，即产品、流量和变现。想要赚钱，围绕这套模式，所有的方法，策略，万变不离其宗！</p>
+<p>从本质上来讲，平台和独立站对我们来说只是两个不同形式的销售渠道，不是非此即彼的关系，相反，二者各有所长，相互补充。独立站的意义在于可以帮我们更简单更直接地触及这个世界上可触及的所有流量，而不是局限在某个平台里。从当前的发展趋势来说，独立站是平台卖家从单纯的销售产品转型品牌化路线的必由之路。</p>
+<p>目前在平台和独立站上，都有很多优秀的大卖出现，比如：一个是以SHEIN所代表的独立站玩家，另外一个是以Anker所代表的倚借成熟平台运作的品牌出海玩家，形成了两种不同的路径，且同样在今年2020年同样的迎来了各自的高光时刻。</p>
+<p>公开数据显示，安克创新2020年8月25日登陆深交所创业板，当下市值已突破750亿元；SHEIN2020年6月销售额已超过400亿，全年有望迎来千亿规模。</p>
+<h3 id="1-什么是独立站"><a href="#1-什么是独立站" class="headerlink" title="1.什么是独立站"></a><strong>1.什么是独立站</strong></h3><h4 id="1-1独立站是怎样运行的"><a href="#1-1独立站是怎样运行的" class="headerlink" title="1.1独立站是怎样运行的"></a><strong>1.1独立站是怎样运行的</strong></h4><p>简单来说，独立站就是让我们脱离第三方平台束缚的独立自主的网站，是与传统电商平台相对应的一种网站形式。对跨境电商来说，独立站指的是有独立网站域名、服务器和网站程序，并能通过线上方式面向用户展示产品、选购和支付下单，由网站管理者完全独立运营，不受平台限制而实现跨国交易的网站。</p>
+<p>我们来举例说明，如果我想把西湖龙井卖到美国，我要怎么通过独立站来实现呢？首先，我需要先购买一个域名，假如这个域名是longjing.com，然后我通过建站平台，使用模板直接搭建一个网站，然后绑定我的域名，再绑定一个收款的工具，比如Paypal（Paypal就像是我们国内的支付宝一样）</p>
+<p>接着我在Facebook和谷歌上开始打广告，让潜在的消费者看到我的广告，他们通过点击广告链接进入我的网站longjing.com，发现我的产品不错，就直接下单购买，我收到订单以后，通过国际物流把茶叶快递给客户，这就完成了一个交易过程。</p>
+<h4 id="1-2独立站与平台的区别"><a href="#1-2独立站与平台的区别" class="headerlink" title="1.2独立站与平台的区别"></a><strong>1.2独立站与平台的区别</strong></h4><p>独立站与2C电商平台的有三个本质区别：</p>
+<p>1、流量获取灵活性及所有权。在2C平台上销售，流量是平台先获取，进到平台里就属于平台所有。平台制定规则和流量分配机制，无论是排名、权重、谁能卖（多少）谁不能卖（多少）、具体怎么卖、和谁一起卖，都是平台说了算。</p>
+<p>而独立站则是先创建自己的电商网站，然后建立自己的营销渠道并引流到网站，是拥有100%自主权的，可以随意支配，不受限制，还可以反复、随时触及。同时，还可以通过后台对不同的流量渠道和管理营销数据进行管理和分析。</p>
+<p>所以平台是分配给你流量，而独立站是你自己要去找流量</p>
+<p>2、顾客体验可控性及所有权。</p>
+<p>也就是你的品牌和商品以什么样的方式展示给顾客，还有整个浏览体验和购物流程的设计。这些东西在2C平台上全部都是由平台控制的，比如你的店铺什么样子、产品信息格式、图片规格、整个购物车到支付的流程等等。</p>
+<p>而且平台设计这一系列体验的目的并不是为了凸显某个第三方卖家的品牌，而是为了让消费者有最多最好的选择，还可以从这些选择里更快速的找到自己要什么。这也就决定了商家为什么要去和“跟卖”死磕，不停地改Listing，甚至采取“刷单”的动作，因为只有这些东西是商家可控可看到的。</p>
+<p>而在自己的电商独立网站上，商家可以自己决定如何最贴切的展示自己的品牌和商品，自己控制购物流程，包括整个浏览转化过程的数据。一切的一切都是为了在自己的地盘更好地凸显自己的特点，为品牌提升销售转化。</p>
+<p>所以平台是把产品的展示结构都给固化了，而独立站的产品展示可以更丰富，更灵活，在数据的把控上可以追踪更多的信息。</p>
+<p>3、最简单的也是最重要的，客户所有权。</p>
+<p>2C平台的流量是平台的，转化成了客户，客户也是平台的，和平台上的卖家没关系，只是以订单的方式告诉你要发货了。商家很难有与客户直接互动的可能，也无法获得第一手客户数据。这最直接影响的就是需求分析和客户留存。</p>
+<p>商家需要不断透过“平台需求“这个棱镜尝试判断”客户需求“，也要想方设法地跳过、跳出平台吸引客户复购。这些与独立站的模式都是相反的，独立站不仅使我们能获得全部的数据和信息，还能通过各种工具让我们更好地分析客户需求，与客户联动。</p>
+<p>诸如亚马逊，你产品卖的再好，但是你不知道客户的信息，没有客户的邮箱，地址，电话，那么你就不能二次利用客户，长久来说，这并不是一个可以“让你很踏实”的生意，但是独立站不是，独立站的用户，信息，电话，如果他们在你平台上有成交，你都是可以获取的，那么这样的信息就非常有价值了。</p>
+<p>综上所述：</p>
+<p>平台的优势在于它们拥有现成的流量资源，第三方卖家可以借助平台流量来实现自己的销售目标。但是受限于平台的规则，第三方卖家并不能真正的掌握客户数据，也就无法和客户建立比较紧密的联系；</p>
+<p>运营独立站虽然需要一定的推广能力为我们的网站带来流量，但是相比较于平台的条条框框，独立站的灵活性更高，我们所能掌握和控制的流程和客户数据也更加完整，而这些流程和数据可以帮你为客户提供更具个性的服务，提升客户体验和溢价能力的同时，树立更加鲜明的品牌形象，培养客户的忠诚度。</p>
+<h4 id="1-3独立站运营有哪些难点"><a href="#1-3独立站运营有哪些难点" class="headerlink" title="1.3独立站运营有哪些难点"></a><strong>1.3独立站运营有哪些难点</strong></h4><p>当然，如果独立站这么好，大家都去做独立站了，没有人会选择平台，那么独立站有哪些难点呢？</p>
+<p>首先，独立站还是有一定的入门门槛，需要基本的建站和运营能力。虽然说随着类似Shopify这样的第三方 SAAS 建站工具的普及，创建自己的独立站再也不像以前需要有技术前端后端做开发，但基本的网站的用户体验，购物流程的设置，网站的产品详情页等等还是需要一些基础的。</p>
+<p>对于一些有专人操作的公司，很容易就能在一周内建立网站，并且开始一天十几单。但对于那些没有专门的人来负责独立站的小团队和小公司来说，往往自己尝试几次受阻之后，独立站跨境电商这个事情就搁置了。</p>
+<p>其次，独立站最大的问题是没有直接的自然流量。需要自己搭建网站的引流渠道，也需要做用户的运营来最大化前期引流回来的用户留存，转化和价值挖掘。</p>
+<p>不同于亚马逊、eBay这一类平台像一个大市场一样在每个页面展示众多卖家的产品信息，独立站是我们拥有的一个专业的属于商家自己的独立电商网站，每一个独立站都有一个商家自己选择的品牌域名，用户要点击访问域名才能浏览到我们在售的商品。</p>
+<p>因此，网站上线之后需要我们通过SEO，社交网络，红人推广，视频营销，付费广告等等营销推广方式主动的将我们的品牌和商品推送展示给潜在客户。除非我们的品牌已经有一定知名度，否则我们开了店什么都不做，是很难有自然流量的，更不要说销量。</p>
+<h4 id="1-4独立站有哪些建站方式"><a href="#1-4独立站有哪些建站方式" class="headerlink" title="1.4独立站有哪些建站方式"></a><strong>1.4独立站有哪些建站方式</strong></h4><p>电商独立站建站主要有两种方式，一种是Saas建站方式，例如Shopify，另一种是开源建站方式，例如Wordpress+Woocommerce。</p>
+<p>我们可以这样理解，对于Shopify这种Saas系统来说，它就是已经建好的简装商品房，房子的选址、建设、装修工作都由Shopify来完成，我们缴纳租金租赁，就可以拥有一个功能齐全的房子，重要的是这个房子还有Shopify的保安每天帮我们巡逻，我们也不用担心安全问题。</p>
+<p>如果我们想给这个房子搞装修，在不损坏房子架构的基础上，利用官方或者第三方主题和插件去进行升级改造即可，我们也不需要自己去写代码或者一砖一瓦的配置。只要我们按时缴纳租金，遵守Shopify的规定，我们就可以持续经营。</p>
+<p>而Wordpress+Woocommerce就像是自建房，我们要自己租赁服务器，配置服务器，然后再盖房子，当然，这个盖房子也无须一砖一瓦的写代码，而是利用Wordpress工具框架去实现即可，同样利用主题和插件来进行装修和功能的完善。房子建好以后，我们还要多做两步工作，一个是建立自己的安防系统，避免有人恶意来破坏我们的房子；另一个是对服务器进行日常维护。</p>
+<p>在实际操作上，使用开源程序建站，我们要解决的建站技术问题会比较多，如购买服务器，域名的解析配置，服务器环境配置，网站程序的配置，前台页面显示效果的实现，支付通道集成，风险的控制，网站备份，以及后期的技术维护，这些都需要比较专业的技术知识。</p>
+<p>而且我们也要做好随时解决问题的准备，或者说你可以托付给可以信任的专业团队来代为维护外围工作。Wordpress的好处在于，它才能算是真正意义上的自建站，不会遇到类似于Shopify的封店等问题。对于做ToB的用户来说，Wordpress在定制化、灵活性和SEO上的巨大优势绝对是Shopify难以企及的。</p>
+<p>但是，对于大多数中小卖家来讲，我们要优先解决的，是生存问题，而对于独立站卖家来讲，要解决生存问题的第一要务，是解决流量问题。因此，在Shopify已经可以很好的解决99%的技术问题的前提下，暂时没有必要花太多的时间精力去研究建站技术问题，而应该集中精力研究如何为我们的网站带来更多更精准的流量资源。</p>
+<p>另外，单从技术上来讲，我们网站最核心的价值在域名上，而不在我们使用了什么建站程序，无论何时，我们都可以把你的网站数据从Magento或者WooCommerce迁移到Shopify，当然，也是可以随时把网站数据从Shopify迁移到WooCommerce或者Magento的。</p>
+<p>总体上来看，Shopify 较 WordPress 和 Wix 这类的纯网站建站工具来说要相对更适合电商用户，和Magento、Woocommerce 类的开源电商系统相比在使用上又比较轻便。不需要懂代码，不需要懂服务器，不需要额外的聘请专业的建站技术团队，只需要在 Shopify 网站上注册账号完成基本设置，就可以很快很轻的开始。</p>
+<p>Shopify 和同类型的其他云端建站工具或平台相比，产品体验更棒，更安全，平台的生态系统也更加的完善可靠，还有非常多活跃的服务商和开发者。大家去Google，YouTube或者Facebook搜索可以找到海量的有关 Shopify 的内容，很全面。</p>
+<p>因此本次训练营课程中，我们也将使用Shopify作为我们的建站工具，来演示独立站的建设过程，但是原理是相通的，后期如果我们想使用Wordpress来建站，也可以参考本次课程的理论和内容。</p>
+<h4 id="1-5运营一个独立站需要哪些资源"><a href="#1-5运营一个独立站需要哪些资源" class="headerlink" title="1.5运营一个独立站需要哪些资源"></a><strong>1.5运营一个独立站需要哪些资源</strong></h4><p>回到我们开头讲的内容，独立站的资源和其他平台所需要的资源，如果从大方向来说，都是一样的，那就是：产品、渠道、运营、供应链。具体到建站的准备资料和关键设置信息，我们可以参考下表。</p>
+<p>但是参与训练营的同学无须提前准备下述内容，因为每一项资料和设置我们都要讲解其原理、操作方法和注意事项，自行操作可能会踩很多坑，而且最后发现是无用功。</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>内容</th>
+<th>要求</th>
+<th>是否必须</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>网站域名</td>
+<td>符合产品特性和品牌要求</td>
+<td>是</td>
+</tr>
+<tr>
+<td>2</td>
+<td>电子邮箱</td>
+<td>推荐国外常用邮箱gmail或outlook，或者企业邮箱</td>
+<td>是</td>
+</tr>
+<tr>
+<td>3</td>
+<td>客服号码</td>
+<td>显示在网站页面的客服电话，可购买Google Voice</td>
+<td>建议</td>
+</tr>
+<tr>
+<td>4</td>
+<td>实际地址</td>
+<td>用于店铺注册和发货设置，可以验证的实际地址</td>
+<td>是</td>
+</tr>
+<tr>
+<td>5</td>
+<td>支付方式</td>
+<td>信用卡或Paypal,用于Shopify月租及其他费用支付</td>
+<td>是</td>
+</tr>
+<tr>
+<td>6</td>
+<td>收单工具</td>
+<td>例如Paypal、Stripe等，用于收取客户支付的货款</td>
+<td>是</td>
+</tr>
+<tr>
+<td>7</td>
+<td>竞品网站</td>
+<td>找到适合的竞品网站，用于参考模仿</td>
+<td>建议</td>
+</tr>
+<tr>
+<td>8</td>
+<td>主题选择</td>
+<td>Shopify官方主题或者第三方主题</td>
+<td>是</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Logo</td>
+<td>Png格式的Logo及Favicon</td>
+<td>是</td>
+</tr>
+<tr>
+<td>10</td>
+<td>主题颜色和字体</td>
+<td>网站主要颜色和强调颜色，字体</td>
+<td>是</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Facebook账号</td>
+<td>建立Facebook page，开通Facebook shop</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Insgram账号</td>
+<td>如需使用Ins Shop，或进行社交展示</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Google Analystic</td>
+<td>绑定GA，用于对网站流量及数据进行分析</td>
+<td>建议</td>
+</tr>
+<tr>
+<td>14</td>
+<td>货币和计量单位</td>
+<td>如美元、澳元，lb或kg，用于系统对产品的计量</td>
+<td>是</td>
+</tr>
+<tr>
+<td>15</td>
+<td>店铺时区</td>
+<td>设置与发货地或广告、GA一致的时区</td>
+<td>是</td>
+</tr>
+<tr>
+<td>16</td>
+<td>税收政策</td>
+<td>是否对产品征税，税率是多少</td>
+<td>是</td>
+</tr>
+<tr>
+<td>17</td>
+<td>退换货政策</td>
+<td>是否接受退换货，接受多少天内退换货</td>
+<td>是</td>
+</tr>
+<tr>
+<td>18</td>
+<td>发货时间</td>
+<td>产品发货时间和预计运输时间</td>
+<td>是</td>
+</tr>
+<tr>
+<td>19</td>
+<td>运费政策</td>
+<td>运费收费标准及免邮条件</td>
+<td>是</td>
+</tr>
+<tr>
+<td>20</td>
+<td>产品类目</td>
+<td>产品类目设置</td>
+<td>是</td>
+</tr>
+<tr>
+<td>21</td>
+<td>菜单</td>
+<td>Header Menu内容和Footer Menu</td>
+<td>是</td>
+</tr>
+<tr>
+<td>22</td>
+<td>筛选tag</td>
+<td>客户根据哪些内容进行筛选，例如类目、价格、颜色</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>23</td>
+<td>产品评论</td>
+<td></td>
+<td>建议</td>
+</tr>
+</tbody></table>
+<h4 id="1-6运营独立站需要多少费用"><a href="#1-6运营独立站需要多少费用" class="headerlink" title="1.6运营独立站需要多少费用"></a><strong>1.6运营独立站需要多少费用</strong></h4><p>第一阶段:筹备</p>
+<p>这里我们考虑以个人为主体来运营独立站</p>
+<p><strong>1、Shopify模板费用</strong></p>
+<p>有免费版本和付费版本，初始阶段可以先用免费模板，所以前期你的模板费用可以是0元；如果是付费模板，Shopify官方价格在120-180美元，第三方如Themeforest，一般在59-99美元，模板都是一次付费，终生免费更新使用的</p>
+<p><strong>2、Shopify月租费用</strong></p>
+<p>对于初入Shopify来说，基础版29美元/月的套餐已经可以满足大部分需求</p>
+<p><strong>3、域名费用</strong></p>
+<p>以新注册.com域名来计算，国内外域名服务商价格相差不大，一般是每年60人民币左右</p>
+<p><strong>4. 接入支付通道</strong></p>
+<p>PayPal是免费开通，所以无接入费用；信用卡支付渠道差异比较大，如果是2checkout和Stripe这样的渠道，而且资料齐全的话，可以计算为免费，其他国内渠道一般费用在3000以上，价格不等。</p>
+<p>如果我们以最低配置来计算，那么必要的筹备费用就是每月29美元月租+60元/年的域名费用。</p>
+<p>第二阶段：运营</p>
+<p>这里涉及到广告账户开户等行为，因此我们以公司或个体户为主体来计算。</p>
+<p>1.、公司注册费用</p>
+<p>如采用云上注册，有些园区可提供免费注册，每年代理记账的费用一般在2500元以内；注册个体工商户同样可行，可以直接网上免费注册，费用可计算为0，代理记账一般在几百元即可</p>
+<p>2、广告费用</p>
+<p>目前国内Facebook开户预存费用一般是500美元起步，广告投放费用则根据产品和投放策略差异巨大，从每天数十美元到数千美元不等。</p>
+<p>3、采购及物流</p>
+<p>如果我们是小型创业团队，前期可以采用dropshipping一件代发模式。这样我们没有垫付资金，可以默认采购成本、物流成本、包装成本为0 。</p>
+<p>如果是亚马逊转型独立站的，调用的也是已有的资源，这一项的成本只有在产生销售的时候才会出现。所以，对于转型的亚马逊卖家来说前期成本依旧为0。</p>
+<p>4、交易费用</p>
+<p>交易费用分几个部分，第一个部分是Shopify的交易费用，以29美元的基础套餐来计算，这个费用是销售金额的2%；第二个部分是收单工具手续费，例如Paypal初阶费率为4.4%+$0.3</p>
+<p>第三个部分是国内结汇汇损，例如Payoneer新账户为1.2%，如果我们产品的售价为100美元，那么中间产生的费用总计4.7美金(PayPal费用)+2美金(Shopify交易费)+1.12美金(汇损)=7.82美金，也就是7.8%左右。当然我们使用不同的收单工具和不同的结汇方式，这个费率都是不同的，如果使用Shopify Payment，一般可以降低到4.5%左右。</p>
+<p>Shopify的营销渠道广泛，因而随着我们营销策略的变化将会产生各种营销费用，这个无法详细计算，因而不再赘述。</p>
+<p>上述费用都可以看作我们运营Shopify必须支出的运营费用，而这些费用是跟我们的销售额相关的，销售额越高，支付的费用也就越高。当然销售额越高，我们也可以向我们的收单渠道申请更低的费率。</p>
+<p>要不要做独立站</p>
+<h4 id="2-1独立站新卖家可能想了解的内容"><a href="#2-1独立站新卖家可能想了解的内容" class="headerlink" title="2.1独立站新卖家可能想了解的内容"></a><strong>2.1独立站新卖家可能想了解的内容</strong></h4><p>“我们不是亚马逊的竞争对手”，Shopify的创始人Lütke说，”当你在亚马逊上买完所有必需品后，会期待看到让你眼前一亮的商品。这是你来到 Shopify 的原因”。</p>
+<p>其实关于能不能做，要不要做，我们还是要回到前面关于赚钱的本质问题，我们的业务不应该是基于Shopify或者是基于Amazon的，而是基于我们的产品或者服务，基于我们的客户的，无论是Shopify还是Amazon，都只是我们将产品或者服务送达到客户手里的一个销售渠道罢了。你要评估的，是就你自己现在所掌握的资源，你自己的优势，以及独立站和平台各自的特点来讲，哪条路更容易成功。</p>
+<p>小北老师说过，创业=长期主义+专业主义，我们做事情一定要做能够沉淀的，没有沉淀，做事是没有未来的！你去看跨境电商中的很多人，其实早就赚钱了，但是根本没有任何用户，没有品牌。所以很多人，因为没有沉淀，你会发现他们每做一件事，都要重新再开始，这样是非常的累，至少在我看来是这样的。</p>
+<p>沉淀是非常重要的，今天可能你跑的比别人慢，但是一件事如果有沉淀，那么你未来一定要远远胜过你周围的很多人!所以，为什么跨境电商中的很多大卖，是边赚钱边焦虑。钱是赚了很多，但是心里是虚的的，因为你都不知道你现在做的这个事，未来会如何。</p>
+<p>如果你没做好这种长期的准备，那么你可能现在还不适合做独立站。</p>
+<p>很多人可能会问，老外是傻么，独立站这么贵也买，为什么不从亚马逊上买？不要以为亚马逊非常火，全部老外都跑到亚马逊上去购买东西了。这么说吧，老外在开始做一个产品的时候。</p>
+<p>首先必须，一定要把自己的官网，博客都搭建起来的，在国外用户对独立站的认知度是非常高的。国内基本很少人玩论坛，博客了，都把时间花在自媒体上，但是老外不同，论坛，博客，独立站一样非常火热！</p>
+<p>所以不要用低价思维去思考很多事情，你把好的东西，有价值的东西传递给别人，别人是愿意付这个钱的，如果以我们自己低价的思维去做市场，那市场不用做了，会让你觉得每个人可能都没钱吧。</p>
+<p>所以独立站，不是你能不能做的问题，也不是有没有利润的问题，是你想不想去做的问题！</p>
+<h4 id="2-2亚马逊等平台卖家可能想了解的内容"><a href="#2-2亚马逊等平台卖家可能想了解的内容" class="headerlink" title="2.2亚马逊等平台卖家可能想了解的内容"></a><strong>2.2亚马逊等平台卖家可能想了解的内容</strong></h4><p>亚马逊和独立站（以Shopify为例）多维度对比：</p>
+<p>（1）启动资金</p>
+<p>首先，在初期费用上，Amazon开店月租为39.99美金，Shopify开店的月租为29.9美金。在交易费用上，亚马逊的交易费用在15%左右，Shopify的交易费用在2%以下（对整体业务来讲，加上收款渠道的费用，真实的交易费用在5-8%左右）。</p>
+<p>不过这个都是表面上我们能看到的，在我们实际运营过程中，Amazon你可能还需要先备一些货，甚至先发一些货到FBA的仓库或者海外仓里面，以保证能够拿到亚马逊的优质流量，满足Amazon对商家绩效的要求，而备货，发海外仓，以及这些货如果因为卖不出去成为了积压的库存所产生的边际成本和滞仓费用，也都是我们需要考虑到初期费用上的；</p>
+<p>Shopify在前期可以不备货（Dropshipping的模式去做，或者有订单了再采购），不过为了保证客户的用户体验，提前备货甚至发海外仓会更好一些。Shopify在前期的主要费用来自于推广的费用。这个费用灵活，因人而异。如果你有广告推广经验，这个费用不叫做费用，而叫做投资。</p>
+<p>如果你没有广告推广经验，而是一个完完全全的小白，前期的推广费用可能更多的是在交学费。所以在推广费用上，是可大可小的，你一定要按照你自己或者你们公司的实际情况，设置好预算，然后采取对应的策略。这个我们后面再展开详细说明。</p>
+<p>（2）开户难易程度</p>
+<p>在账户开通的难易程度上，Amazon相比较于Shopify来讲，卖家数量多很多，因此流程上要相对复杂一些，而且受平台政策影响相对要大一些，账户注册下来之后，也并不意味着你就高枕无忧了，后续还会因为经营绩效，以及平台政策的原因收到账户审查的通知。</p>
+<p>而Shopify在账户开通上就要简单很多，只需要准备一张支持美金付款的信用卡或者一个绑定了你的借记卡或者信用卡的PayPal账户，一个邮箱，花2-3分钟注册账户，就可以开通你的Shopify账户了，相比较于Amazon，Shopify的经营方式，策略和理念是不同的，因此，你可以理解为Shopify对于商家的管理要更加的佛系和开放，不会轻易的关闭你的账户，但是Shopify也有它不能触犯的底线。</p>
+<p>具体你可以查看Shopify的Terms of Service来详细了解。当然，网上也流传有很多关于Shopify封号的消息，你可以查看这篇文章来详细了解封号的原因和规避封号的风险，在我看来，这些封号都不是真正意义上的封号。只要你不触犯Shopify的底线，那你的账户就是始终安全的。</p>
+<p>（3）流量资源</p>
+<p>在流量资源上，对我们中小卖家来说，Amazon有着巨大的诱惑力。Amazon凭借它多年的苦心经营，建立起了今天我们看的到的商业帝国，亚马逊的创始人杰夫也一度登上世界首富的宝座。</p>
+<p>根据eMarketer的数据（<a target="_blank" rel="noopener" href="https://www.emarketer.com/content/more-than-half-of-us-households-will-be-amazon-prime-members-in-2019">https://www.emarketer.com/content/more-than-half-of-us-households-will-be-amazon-prime-members-in-2019</a>），超过半数的美国家庭是Amazon的Prime会员，而另外一个网站提供的数据则为82%的美国家庭是Amazon的Prime会员（<a target="_blank" rel="noopener" href="https://www.digitalcommerce360.com/2019/07/11/82-of-us-households-have-a-amazon-prime-membership/">https://www.digitalcommerce360.com/2019/07/11/82-of-us-households-have-a-amazon-prime-membership/</a>）这个数字还是相当恐怖的 – Prime意味着更优质的买家资源，更强的购买力。</p>
+<p>亚马逊开店相当于亚马逊将这些优质的流量资源共享给了全球卖家，卖家们站在巨人的肩膀上起舞，能不能借亚马逊的资源发展壮大自己，就要看你的舞步是否足够精彩漂亮了。</p>
+<p>Shopify的经营模式决定了它没有办法给它的用户提供像亚马逊那样的流量资源，这样就对Shopify的卖家朋友们提出了更高的要求，不管是资金上的，还是流量运营上的。Shopify卖家需要各显神通，想尽办法获取更多更优质的流量资源。不管流量渠道是FB广告，还是Google Shopping，是SEO，还是红人，视频，社媒运营。</p>
+<p>（4）竞争环境</p>
+<p>Amazon和Shopify在流量上的不同特征，也影响着各自业务的竞争环境的差异。亚马逊的竞争环境相比较要更加的直接和残酷一些。亚马逊的第三方中小卖家要面对的，除了牛皮癣一样的跟卖，还有来自于大卖家以及亚马逊自营这个超级大卖家的围剿。</p>
+<p>Shopify的竞争环境则要更加的宽泛和复杂一些。Shopify卖家要抢夺的，是Facebook的广告位资源，是搜索引擎SERP页面的展示资源，是各个圈子里面的流量资源，战场更加的分散一些。不过相同的是，Shopify卖家同样也要正面面对着来自于亚马逊这个超级巨头，以及Ebay，速卖通，Wish等等巨头带来的在争夺流量资源上所给予的竞争压力。</p>
+<p>（5）选品方法</p>
+<p>竞争无论如何肯定是存在的，因此，无论对于Amazon卖家还是对于Shopify卖家来讲，尤其是Amazon或者Shopify的中小卖家来讲，选品是通往成功这条路上至关重要的一环。在选品方法策略上，无论你的主战场是Amazon，还是Shopify，是没有太大的差别的。</p>
+<p>你可以把亚马逊的那一套选品策略直接用到Shopify独立站的选品上，无非调研的网站做一些调整。你也可以把你用在独立站上选品方法扩展到亚马逊的选品上。不过有一点我比较建议的选品方向是，在某个垂直方向上精细化运营，而不是无止境的选品铺货，尤其在当前独立站大规模爆发的情况下。</p>
+<p>（6）资金周转</p>
+<p>在资金的周转上，Shopify的周转周期，相比较于亚马逊来讲，要快很多。因为Shopify的收款是通过PayPal，信用卡通道收款的，绝大多数情况下，只要客户付款，钱是马上到达你的PayPal账户和信用卡收款账户里面的，你也可以随时将资金提现到你的人民币账户，通常7天以内就可以到账。而亚马逊则有14天的放款周期。资金周转快，也就意味着资金的使用效率更高，单位货币可以给你带来更多的利润，从而实现业务更加快速的扩展。</p>
+<p>（7）客户资源</p>
+<p>在客户资源上，Shopify要比Amazon有着明显的优势。近两年国内流行的私域流量的概念，反映在我们跨境电商行业，就是我们辛苦经营沉淀在手里的客户信息资源，尤其是邮箱信息。这些客户信息资源可以用来干嘛？你可以看看亚马逊以及行业里面的独立站大卖们是怎么使用这些资源的。</p>
+<p>为了更好的说明问题，我们暂且片面的举例为，Business #1(Amazon)通过借助平台的流量资源，而Business #2(独立站)通过猛打Facebook广告，在第一个月M1都达到了50000美金的销售额。</p>
+<p>在第二个月，Business #1和Business #2都在失去获取新的流量来源的情况下，比方说，Business #1(Amazon)的账户被封，因为没有办法再获取新的流量，而导致销售额马上变成了0；Business #2（独立站）的FB广告被封，虽然和Business #1（Amazon）面临同样的窘境，但是Business #2凭借它在M1沉淀下来的客户信息资源，使用邮件营销也可以让第二个月有很好的销售额。</p>
+<p>要知道，<a target="_blank" rel="noopener" href="https://www.waimaob2c.com/tag/emailmarketing">邮件营销</a>的成本是要远远低于FB的广告成本的，M2的销售额可能是M1的销售额的一半，但是在利润层面上，M2却有可能是远远高于M1的。</p>
+<p>因此，我说，客户信息资源，尤其是邮箱资源，是我们建立更加稳固的流量矩阵和更有竞争力更坚固长久的业务，提供更好的客户体验和服务，建立品牌和品牌忠诚度的基石，应该不会有人反对吧？</p>
+<p>（8）业务模式</p>
+<p>Shopify 能颠覆亚马逊吗？著名互联网分析师 Ben Thompson 认为，‘这是对付像亚马逊这种“聚合者”（Aggregator）的唯一方法’。在他看来，亚马逊是具有控制权的中介。而 Shopify 是一个平台，‘平台之所以强大，是因为它们促进了第三方供应商和最终用户之间的关系’，平台关心互利。</p>
+<p>亚马逊到现在总共建立 300 多个物流中心和比这更多的分销和分拣中心，除了自营，这家电商巨头从 2006 年就开始让第三方卖家涌入亚马逊的网站。但是，这些网站使用亚马逊的物流中心的同时，也被套上了那个画着微笑符号的盒子。</p>
+<p>这意味着，品牌自身的形象并不完全是鲜明的，它们只是亚马逊货架上的一员，与站内竞品打着价格战。而Shopify在做的，是去激励各个环节的最优部分，主动协调。商户、开发者、设计师、第三方物流供应商也因此被调动了起来。他们和 Shopify 一样，正在慢慢做大自己的蛋糕。</p>
+<p>不管独立站，还是亚马逊，对于品牌来讲，都只是一个销售渠道而已。客户在独立站上下单，那你就能拿到客户的电话邮箱信息，就可以以极其最低廉的成本，以各种渠道方式，无限次的和客户沟通来实现返单，提高客户对品牌的忠诚度，保证业务的稳定增长。如果客户在亚马逊上下单，从本质上讲，这个客户不是你的，而是亚马逊的。</p>
+<p>要不要做独立站，不是选择的问题，而是时机的问题。</p>
+<h3 id="3-如何做独立站"><a href="#3-如何做独立站" class="headerlink" title="3.如何做独立站"></a><strong>3.如何做独立站</strong></h3><h4 id="3-1运营独立站的系统思维"><a href="#3-1运营独立站的系统思维" class="headerlink" title="3.1运营独立站的系统思维"></a><strong>3.1运营独立站的系统思维</strong></h4><p>独立站的基本运营流程包括搭建网站、引流、优化。</p>
+<p>第一步：搭建网站</p>
+<p>这一步很简单，注册登录Shopify以后，把各个部分设置，添加插件以补充各种功能，就可以搭建一个很漂亮的网站。</p>
+<p>第二步：引流</p>
+<p>流量有免费的和付费的。一般而言，我们想要快速获得结果的话，就要做广告获取流量，主流一般是Facebook广告和谷歌广告。要获取免费流量就需要做SEO，这个见效相对较慢。</p>
+<p>第三步：优化</p>
+<p>优化这一步是为了提升复购率。当你的网站有了流量有了订单以后，你就要思考如何才能进一步提高转化率、提高利润，不断优化用户体验，拓展有效的流量渠道。</p>
+<p><img src="https://guxiaobei.oss-cn-shenzhen.aliyuncs.com/wp-content/uploads/2022/06/af547ffa1984449f8454e802fdadf2341800.png" alt="img"></p>
+<p>系统化的Shopify运营思维流程图</p>
+<p>对这张图做一个简单的解释：</p>
+<p>我们做独立站这件事情第一件事情，就是建站，建站可以使用<a target="_blank" rel="noopener" href="https://www.waimaob2c.com/shopify.html">Shopify</a>，<a target="_blank" rel="noopener" href="https://www.waimaob2c.com/woocommerce.html">Woocommerce</a>，Magento，或者Bigcommerce来实现，但是建站的过程本质上就是我们图中倒三角“销售漏斗Sales Funnel”建立的过程，那这个销售漏斗任务是什么？</p>
+<p>将流量变现。这个流量可以是用广告的方式买来的，也可以是红人，视频，SEO等等其他方式带来的。流量变现的载体就是我们提供(大部分卖家在做的)实物商品 Physical Product 或者 (部分卖家在做的) 虚拟商品/服务 Virtual Products/Serivice (选品方向参考)。</p>
+<p>我们导入到销售漏斗里面的流量有两种选择，一种是流失掉，一种是不断向下最终转化为订单和客户。对于流失的流量，在不同的漏斗层级需要使用不同的再营销手段或者挽救策略将他们(Warm Traffic)再次导入到我们的销售漏斗中转化为订单和客户。我们独立站的终极目标是销售，赚更多的钱，因此根据公式</p>
+<p>当我们不断有更多新的流量进入销售漏斗，有更高水平的CR和AOC，也就意味着拥有更多的订单，客户资源以及更高的销售额。因此，在我们的工作中就有了新的目标 – 追求更高的客户终身价值 (Customer Lifetime Value)，这也是提高广义上AOV的重要策略之一。</p>
+<p>这一新的目标最直接的体现在我们通过邮件营销，Messenger营销等等方式维系客户关系，从老客户手中挖掘出更高的价值。间接的还体现在，我们可以通过口碑营销，类似受众等等方式裂变出更多高质量精准流量/客户。</p>
+<p>我们说了 $=V x CR x AOV: 更多的流量，更高的转化率，更高的客单价，一定是更高的销售额。但是更高的销售额就一定等于更高的利润吗？</p>
+<p>肯定不是的吧！因此，我们还要将RoAS (Return on Ad Spend)，ROI (Return on Investment)纳入到日常运营过程中必须关注的两个指标。ROAS更多关注的是销售额和推广费用之间的关系，ROI更多关注的是销售额和整个运营投入(推广成本，产品成本，运输成本，仓储成本等等)之间的关系。</p>
+<p>我们做独立站就是为了赚钱，就是追求更高的ROI，ROAS，追求更高的V，CR，以及AOV，追求更高的客户终身价值。有目标追求是好的，但是总会遇到瓶颈的，比方说，独立站的CR从2%提高到5%可能相对比较简单，但是从5%提高到8%就要困难很多很多了。那么下一步呢？</p>
+<p>你可以持续投入更多的时间精力去提高各项指标，又或者，你可以花相对更少的时间精力直接复制上面成功的运营模型，开始走批量路线。</p>
+<h4 id="3-2什么是Dropshipping"><a href="#3-2什么是Dropshipping" class="headerlink" title="3.2什么是Dropshipping"></a><strong>3.2什么是Dropshipping</strong></h4><p>在一项交易的环节中，其实分别存在三种不同的角色：</p>
+<p>◎ 供应商</p>
+<p>◎ 零售商</p>
+<p>◎ 客户</p>
+<p>这个道理很简单，零售商从供应商这里拿货，然后通过一定的渠道销售给客户，这是我们很常见的售卖模式，无论你是做ebay，还是亚马逊，还是速卖通，都是遵循这套模式。</p>
+<p>而Dropshipping其实也是遵循这套模式，但是这个过程他更轻便，零售商现在</p>
+<p>◎ 不需要自己拿货</p>
+<p>◎ 没有库存</p>
+<p>◎ 没有大量的资金投入（主要费用在引流成本上）</p>
+<p>◎ 不需要客服</p>
+<p>◎ 不需要自己打包发货</p>
+<p>那dropshipping他的整个流程是怎么样的呢？</p>
+<p>第一阶段：零售商将支持一代发业务的供应商提供的产品信息放到自己的网站上</p>
+<p>第二阶段：买家到零售商的网站上下单购物，零售商将买家的订单信息以及订货成本和运费费用发给支持一件代发业务的供应商</p>
+<p>第三阶段：零售商赚取的是“买家的付款-供应商的货款-运费”之后的差价。</p>
+<p>各位可以看到：</p>
+<p>在第一阶段，零售商把产品放在网上销售，很多时候就是利用独立站来搭建的</p>
+<p>在第二阶段：零售商把买家的订单信息发给供应商，这个就是倒买倒卖的模式（很多时候是利用插件来的）</p>
+<p>在第三阶段：零售商赚取的就是差价</p>
+<p>下面这张图很好的解释了dropshipping的整个流程！</p>
+<p><img src="https://guxiaobei.oss-cn-shenzhen.aliyuncs.com/wp-content/uploads/2022/06/d639c48f3ab44f01bed8c70b51c30d131800.png" alt="img"></p>
+<p>我们来做个比较：</p>
+<p>传统方法：</p>
+<p>传统的方法，你首先需要一定的创业资金对不对，假设你的启动资本是10W人民币。然后呢，你再开一个店，这个时候你可能要去alibaba.com上进货，拿货的成本有多有少，假设这个成本在4w人民币，剩下的6w还有各种各样的费用支出，那么用在广告推广上的钱就没多少了。而且更为重要的是，你囤的这些货，可不是一天两天能卖的出去的。</p>
+<p>如果加上你选品错误，那么这个过程可能会存在滞销，库存压力，广告转化不行，那么货就变成库存，你的压力就摆着呢。</p>
+<p>Dropshipping模式：</p>
+<p>而利用Dropshipping就没有这种问题了，在Dropshipping业务模式中，卖家成功的将库存风险转移到了供应商那里，也把订单的打包发货外包给了供应商，自己只需要专注于网站的运营推广。</p>
+<p>在这种方式下没有库存，也不要处理发货，打包的事，你只是需要把时间放在营销上，获取更多的流量上，或者你可以有更充足的时间来测试产品。</p>
+<p>那么在这个过程也就意味着有更多的预算可以投入到广告推广上，同样的创业成本，在Dropshipping模式下，可以至少可以用8成的费用来推广。</p>
+<p>所以从这个角度来看dropshipping的优势非常明显！而且通常老外的做法是，推某一款产品，如果连续推一周都不出单或者出单比较少，就会直接换产品。如果手里有大量库存，就没有这么轻松了。</p>
+<p>我们使用独立站来实现Dropshipping也无须手动处理上述流转的过程，Shopify有一个免费但是非常好用的一件代发工具：Oberlo，可以帮你打通Shopify和速卖通这两个平台。通过Oberlo，你点几下鼠标就可以轻松的将速卖通的产品信息和产品图片导入到Shopify网站里面，实时同步速卖通的产品库存信息到Shopify。同样的。在你的Shopify产生订单之后，点几下鼠标就可以将订单下到速卖通，完成Dropshipping所需要的所有操作。</p>
+<h4 id="3-3什么是POD"><a href="#3-3什么是POD" class="headerlink" title="3.3什么是POD"></a><strong>3.3什么是POD</strong></h4><p>POD就是Print On Demand，也就是定制服务。由你自己（或找设计师）设计图案，然后把图案印在衣服、杯子等产品上。POD的运作流程是这样的：</p>
+<p>第一步：你要有设计图</p>
+<p>第二步：把你的设计与产品结合，并把产品上传到店铺</p>
+<p>第三步：你的店铺会把订单信息通过app发给服务商</p>
+<p>第四步：服务商开始生产你的产品，打包，然后发邮件告诉客户已发货，并告诉客户物流信息</p>
+<p>这种模式可以通过Shopify的插件实现，比如printful, customcat，ViralStyle，和dropshipping一样，这种模式不需要囤货。费用可能花在设计图案上的要多一些。但是，这种定制产品和普货不同，有独特的设计，也能卖得起价格。</p>
+<h4 id="3-4免费产品-付运费模式"><a href="#3-4免费产品-付运费模式" class="headerlink" title="3.4免费产品+付运费模式"></a><strong>3.4免费产品+付运费模式</strong></h4><p>免费产品+付运费的模式就是：产品为0美金，客户只需要付运费就可以购买产品。</p>
+<p>比如，一个店铺打算卖5美金的产品，收运费2.5美金。如果用免费产品+付运费的模式，那么产品价格就是0，而运费会涨到7.5美金。这种模式对顾客来说会更有吸引力，毕竟大家都喜欢免费的东西。</p>
+<p>有一点要注意：免费产品+付运费的模式并不适合所有产品。你想想看，如果你是卖相机的，你设置成免费，然后运费要收100美金，这种情况的话，客户就可能对你的产品和店铺产生质疑。</p>
+<p>所以，我个人建议，如果你要用这种模式，那么产品成本价要尽量保持在10美金以下，这样你还能留一点利润空间给自己。</p>
+<h4 id="3-5该选择General杂货店还是Niche利基店"><a href="#3-5该选择General杂货店还是Niche利基店" class="headerlink" title="3.5该选择General杂货店还是Niche利基店"></a><strong>3.5该选择General杂货店还是Niche利基店</strong></h4><p>Shopify 本身，在商家不违背服务协议（Shopify.com/legal/aup）的基础上，对所谓”铺货模式“没有限制，有些品牌的商店SKU数量也是可以达到几十上百万。但是针对这个问题背后的逻辑，“深耕痛点、聚焦需求、关注品质、积累口碑”是亘古不变的成功企业的商业逻辑。</p>
+<p>在 Shopify 上也适用，尤其适用。因为使用 Shopify 搭建自己的独立品牌是真真正正的创业过程。大家常说的铺货模式其实是由2C平台时代的多店铺多SKU所养成的习惯，一个为了实现短期流量最大化的有效手段。但是在多元化电商时代的今天，简单粗暴的铺货带来的也许只会有短期红利，往往还会因为供需关系失衡，带来一系列问题。我还是建议大家尽快从流量思维升级成如何更好地服务用户需求的用户思维，做好品牌积累，可持续发展。</p>
+<p>Shopify 不同于亚马逊，eBay这些平台，并不是说我们上传的产品越多，出单的几率就越大。所以一味的添加SKU或者做站群其实意义不大，反而可能添加不必要的运营成本和风险。</p>
+<p>我们所尝试过的“铺货”模式其实是一种运用Shopify + 广告的形式进行选品测试的方法，这个方法可以做为初期选品的一个过渡阶段。但是即使是这种模式，也不是说漫无目的的进行选品和测试，而是要有一个成体系的从选品到网站优化，到推广再到售后服务的方式方法。</p>
+<p>此外大家在测试时一定要注意对供应链端的把控，因为很容易造成出单没货或者发货出问题的情况，对你品牌初期的口碑带来当头一棒，也容易被广告平台或者支付渠道采取处罚措施。说到底，还是要把服务好你的顾客作为底线。</p>
+<p>我们来详细解释下杂货店和利基店的优劣势：</p>
+<p>利基店的目标受众是一群对某个点很有热气的用户。比如，你针对猫咪爱好者建一个店铺，那么这群受众对猫咪是很有热情的。所以呢，一个Niche的店铺，其优势在于</p>
+<p><strong>1).可以集中为某类顾客解决问题，迅速打开品牌知名度</strong></p>
+<p>利基店能吸引重复购买客户，他们的购物行为是非常疯狂的。在利基店里，他们会认为你的品牌了解他们，你的品牌是他们这个群体中的一份子。你想想看，如果是杂货店，客户到杂货店看到了一双猫咪袜子，还看到了手机充电器、手机壳等和猫咪毫不相关的产品。</p>
+<p>那么客户就不会觉得和你的品牌有什么连结，他们购买猫咪袜子仅仅只是因为喜欢这双袜子而已，而不太可能成为重复购买者。</p>
+<p><strong>2).可以精准定位受众，广告费用更划算，同时客户的忠诚价值会更高</strong></p>
+<p>因为客户对这个利基有激情，所以你可以不断地销售利基产品给他们。而且，建立售后跟进邮件也更容易。你可以发通用的推荐产品邮件给客户，而不用像杂货店那样需要根据用户购买的不同产品来设置不同的邮件。</p>
+<p><strong>3).利基店可以轻松积累客户群</strong></p>
+<p>客户对这个利基抱有激情，所以会不断从你这里购买产品。如果你能提供相关产品给喜欢某个利基的受众，那么你的赚钱之路是会持续不断的。</p>
+<p><strong>4).选品更容易</strong></p>
+<p>因为基于利基来选品的话，产品数量不会很多。所以，你选品的时候就没有那么多选择，就会更加容易。如果你是做杂货店，因为品类不限，选品就会要花很长时间。</p>
+<p>利基店的劣势在于：</p>
+<p><strong>1).利基店很难规模化，因为你的受众太过精准</strong></p>
+<p>假如你开了一个店铺，卖的产品是有大象元素的。那么，你的产品只能吸引到那些喜欢大象的受众。而这些喜欢大象的受众不一定对有大象元素的产品有激情而产生购买。假设你的受众是100万左右，而会产生购买的受众不会太多。</p>
+<p>在产生购买的受众里面，可能他们会购买2-3次，客户的终生价值确实增加了，但是你能提供的产品是有限的，所以针对这群受众，最终你可能会面临无产品可卖的情况。</p>
+<p><strong>2).利基店很难跨类目经营</strong></p>
+<p>比如，如果你是卖有大象元素的产品，那么利基店就很难去卖有猫咪元素的产品，因为你的域名可能就是elepphantlovers.com，和猫咪完全不沾边。</p>
+<p>如果你是卖鞋带的，但是又想卖宠物用品，那么你就要重新开一个店。</p>
+<p><strong>3).成本高</strong></p>
+<p>因为利基店的受众是有激情的，所以利基店能赚钱。但是，你想想，如果你的店铺是卖大象元素产品的，那么可能需要一个人专门管理你的店铺。</p>
+<p>如果你开了一个狗用品店，就要另外一个人来打理店铺，重新购买域名、插件等，成本就会增加。</p>
+<p><strong>4).你很难测品</strong></p>
+<p>大家都知道选品是非常难的，那么你在调研一个niche的时候，其实是花了很多的时间，但是大家有没有想过，你花了很多时间，你怎么能保证你所选的产品到时候会成功？</p>
+<p>也就是说，你很可能一开始选Niche，专注在一个垂直领域来做，花了很多时间，但是反而在后面营销的时候，你会发现，这个产品不受用户的喜欢，或者广告成本非常大</p>
+<p>这个时候Niche的局限性就来了，而General的店铺就不存在这个问题，那个产品测试不行，那就换，直到选出Winning ads，并在此基础上扩量</p>
+<p>下面再来看看杂货店的优劣势</p>
+<p>杂货店的优势</p>
+<p><strong>1).杂货店不限品类</strong></p>
+<p>杂货店就是不限品类，什么都可以卖，比如你可以卖印有猫咪图案的袜子，你可以卖带大象图案的T恤，还可以卖手机支架</p>
+<p><strong>2).杂货店很容易规模化</strong></p>
+<p>你的产品是不受限制的，不用担心要迎合某类受众或利基的口味，因为你的受众是所有人。当然，杂货店在无形中降低了你的品牌价值。</p>
+<p>我的意思是杂货店会对转化率有影响，根据我的经验，利基店的转化率普遍比杂货店的要高出1%-5%，因为对某个事物有激情的受众更倾向于从利基店里购买产品。不过，杂货店确实流量会比较大。</p>
+<p><strong>3).成本低</strong></p>
+<p>因为你不用为不同领域的产品创建新店铺，也就不需要雇佣别人打理不同店铺了。而利基店就需要创建不同的店铺售卖不同利基的产品。</p>
+<p><strong>4).在建店铺的过程中就能获得订单</strong></p>
+<p>你可以上传很多产品到杂货店里，然后开始做广告。所以在你不断上传产品的过程中，广告为你店铺带来订单。</p>
+<p>订单带来的收入又可以重新投入到广告中。而且，因为你的产品很多，所以你测试的空间很大，比如你可以测试不同的受众。</p>
+<p>但是如果做的是利基店，假设你做的是有关大象元素产品的利基店，你可能会发现根本赚不到钱，那么你之前所有的投入与努力几乎都白费了。</p>
+<p>那么就要重新开一个店去尝试别的产品。</p>
+<p><strong>5).很方便跨类目经营</strong></p>
+<p>杂货店里可以卖利基产品，但是利基店里不能把产品卖杂。你可以测试不同的受众，看看哪个效果最好。</p>
+<p>可能很多大卖都没有说过这样一件事：我们会有杂货店，通过杂货店来测试看哪些产品赚钱。</p>
+<p>如果测试结束以后，有些产品赚了足够多的钱，我们就会把这些产品转移到利基店里去卖，以提高转化率。</p>
+<p><strong>杂货店的劣势</strong></p>
+<p><strong>1).很难建立客户忠诚度</strong></p>
+<p>如果你什么都卖，那么客户会很难忠诚于你的店铺。用户更倾向于被利基店吸引。</p>
+<p>如果你的目标受众是喜欢大象的受众，你的店铺地址是：</p>
+<p>elephantlovers.com,你卖的是有大象元素的产品，那么会有更多买家购买你的产品，因为他们会认为你的品牌就是他们这个群体的一份子。</p>
+<p><strong>2).杂货店的转化率更低</strong></p>
+<p>如果你的Ins或FB页面不是针对某个具体利基的，那么杂货店的转化率一般都比利基店的转化率要低。</p>
+<p>什么意思呢？打个比方，假设你的店铺名称是cool store, 那么你的广告就不要在facebook上的cool store主页了，而要在比如cat store这个主页上做广告，用户在cat store主页上点击了你的广告以后，就会打开你coolstore.com的店铺网站了。</p>
+<p>也就是说，你的店铺可以是杂货店，但是你的facebook主页必须要针对具体利基。</p>
+<p><strong>3).杂货店很难建立售后跟进邮件</strong></p>
+<p>如果客户购买了猫咪袜子，那就不能在售后跟进邮件里面推荐手机支架等不相关产品，因为这样对客户来说毫无意义。所以对杂货店来说就要做得更细致一点。</p>
+<p>比如，我们可以在sendlane里面设置产品标签，如果有人购买了猫咪袜子，如果你设置了猫咪标签，那么客户会收到有关猫咪产品的邮件。</p>
+<p>如果客户购买了有关苹果手机的产品，那么客户会收到有关苹果手机其他产品的邮件。但是利基店不一样，建立售后跟进邮件就很简单。</p>
+<p>比如，你的店铺是卖大象元素的产品，那么你的邮件里面自然推荐的就是相关的产品。所以就不需要针对不同用户群体设置不同的跟进邮件。</p>
+<p>所以，就这一点而言，利基店能节约很多时间，而且利润也高。你要知道，大概30%-40%的利润都将来自于邮件营销，所以邮件营销非常重要。</p>
+<p>综合以上分析，我们可以用一句话来总结店铺选择的原则，即用General选品，用Niche深耕。</p>
+<h3 id="4-独立站选品策略及方法"><a href="#4-独立站选品策略及方法" class="headerlink" title="4.独立站选品策略及方法"></a><strong>4.独立站选品策略及方法</strong></h3><p>我们之所以将选品章节放到第一课，是希望大家整个训练营课程都是有目标的，先完成初次的选品，后期我们所有的学习都是围绕如何建立符合我们这个产品特点的网站，如何针对产品进行后台设置，以及针对产品进行营销。</p>
+<p>即便到最后我们发现可能最初的选品是失败的，但我们的学习过程不会是失败的，只要我们重新选品，利用训练营学到的东西我们就可以迅速从头再来。而如果我们一开始就只学习技术，那么我们是无法深刻理解独立站的运营模式的，那么我们的学习都只会浮于表面。因此，我们也要求，所有参与本次训练营的同学，在开课之前必须完成选品工作。</p>
+<h4 id="4-1独立站的选品逻辑"><a href="#4-1独立站的选品逻辑" class="headerlink" title="4.1独立站的选品逻辑"></a><strong>4.1独立站的选品逻辑</strong></h4><p>独立站存在的意义是可以让我们更简单更直接地触及这个世界上所有可触及的流量，而不是局限在某一个平台里。所以对于独立站，选品逻辑就要拓展成“你的目标市场或群体的具体消费需求是什么”，因为世界太大了，哪里都会有需求，但是要实际获取需求就必须要找准你的具体目标，清楚理解他们要什么。</p>
+<p>另外一点要注意的是，在2C平台上卖货，顾客是由平台直接服务的。卖家要做的无非三件事：找货源、上产品、拉流量。你的角色可以被理解为“帮平台供货”，所以知晓“平台上什么最好卖“基本就是你要问的全部问题。但是独立站的模式决定了你不再是为平台打工，而是为自己创业，要切切实实地服务好你自己的顾客。这个时候“什么最好卖”已经不足够了，还要弄清楚“什么样的需求我们可以服务得最好”。</p>
+<p>比如如果我本身都不了解宠物用品，能不能很好的回答顾客对我商品的问题？而独立站要做的就是，无论你想卖什么，都能助力你更快开始，更好地服务你的客户。</p>
+<p>除了一些基本的选品方法，如从自己感兴趣的领域入手挖掘产品，关注竞争对手，关注当下的流行趋势，分析不同平台数据，现有供应商新品推荐等等方法，选品更要从用户的需求出发。</p>
+<p>例如很多亚马逊卖家在使用的新品开发方法：通过搜集研究竞品在亚马逊以及社交媒体以及专业论坛上的客户反馈，总结出客户群体在使用该款产品时还有哪些痛点亟待解决，以解决这些痛点为目标对产品进行升级改造，从而成功打造出属于品牌自己的爆品。</p>
+<p><strong>独立站选品的七大价值逻辑：</strong></p>
+<ul>
+<li>视觉价值 Visual Value</li>
+<li>实用价值 Practical Value</li>
+<li>认知价值 Percieved Value</li>
+<li>情感价值 Emotion Value</li>
+<li>利基价值 Niche Value</li>
+<li>趋势价值 Trend Value</li>
+<li>热点价值 Hotspot Value</li>
+</ul>
+<p>参考链接<a target="_blank" rel="noopener" href="http://guxiaobei.com/2019-hot-style-selection-case.html">http://guxiaobei.com/2019-hot-style-selection-case.html</a></p>
+<h4 id="4-2Shopify-选品的短线操作与长线思维"><a href="#4-2Shopify-选品的短线操作与长线思维" class="headerlink" title="4.2Shopify 选品的短线操作与长线思维"></a><strong>4.2Shopify 选品的短线操作与长线思维</strong></h4><p>短线操作就是在短期内赚快钱，我们理解为两层意思：</p>
+<p><strong>第一：跟风追热点，赶潮流，赚一波是一波</strong></p>
+<p>比如之前的指尖陀螺。如果你赶上了风口，那就能轻松赚快钱。如果风头已经过去了，卖不出去的只能长期压仓库。</p>
+<p><strong>第二：季节性/节假日产品</strong></p>
+<p>也就是只能能满足某个季节或节假日需求的产品，比如圣诞帽，几乎只能在圣诞季才卖得动。</p>
+<p>我们所说的长线思维是指：找到常年需求的产品，可以说是刚需产品，用户全年都能用得到的产品，不受季节影响不受潮流影响。</p>
+<p><strong>选品常见的几个误区</strong></p>
+<p><strong>第一：凭感觉选品</strong></p>
+<p>完全根据自己想当然的想法来选品，自认为什么好卖就卖什么产品。</p>
+<p><strong>第二：跟风，不进行调研</strong></p>
+<p>看到市场上火什么就卖什么。跟风产品会面临激烈的竞争，就算你卖爆款也不一定有销量，还有可能遇到侵权问题。</p>
+<p><strong>第三：以为冷门产品就是蓝海</strong></p>
+<p>有些卖家会避开热销产品选择冷门产品，但是冷门并不一定就是蓝海，可能是市场容量太有限，你推起来也会没什么销量。</p>
+<p>第四：产品选好准备躺赢。毋庸置疑，选好产品超级无敌重要。但是，七分产品三分运营，千万不要忽略了运营的作用。</p>
+<h4 id="4-3独立站竞争分析及选品工具"><a href="#4-3独立站竞争分析及选品工具" class="headerlink" title="4.3独立站竞争分析及选品工具"></a><strong>4.3独立站竞争分析及选品工具</strong></h4><p>选品有几个基本原则：利润高，重量轻，不易碎，非危险品。</p>
+<p>一般来说，选品的时候，我们可以按照以下思路来思考：</p>
+<p><strong>第一：充分利用社交网站</strong></p>
+<p>比如Pinterest, Instagram, Youtube等。看看这些平台有哪些流行趋势产品。</p>
+<p>第二：电商平台</p>
+<p>这个就不用赘述了，速卖通、Ebay、亚马逊等，看它们有哪些热卖品。这样的产品是已经被证明有销售市场的。</p>
+<p><strong>第三：论坛社区</strong></p>
+<p>比如Reddit, quora等，看用户在讨论什么，关心什么，推荐什么。</p>
+<p>第四：关注杂志与博客网站</p>
+<p>比如trendhunter, trend watching, spingwise等。</p>
+<p><strong>第五：利用选品工具</strong></p>
+<p>比如google trends, productFinder.co</p>
+<p><strong>第六：关注利基市场中的网红</strong></p>
+<p>网红就意味着有一大推追随者，他们在社交媒体上推荐的产品，往往都可能成为热门产品。</p>
+<p>无论你用哪种方法选品，总结下来就是要多看多思考，不要凭感觉选。</p>
+<p>1）要做Dropshipping，如何选品？<a target="_blank" rel="noopener" href="http://guxiaobei.com/dropshipping-choose-products.html">http://guxiaobei.com/dropshipping-choose-products.html</a></p>
+<p>2）如何有效进行选品？<a target="_blank" rel="noopener" href="http://guxiaobei.com/how-to-select-products-effectively.html">http://guxiaobei.com/how-to-select-products-effectively.html</a></p>
+<p>3）直播课：如何借力，并寻找机会产品</p>
+<p>——小北老师直播《如何判断和选择一个市场值不值得做》</p>
+<p><img src="https://guxiaobei.oss-cn-shenzhen.aliyuncs.com/wp-content/uploads/2022/06/93a170e5722b403b99ab767e6874aa171800.png" alt="img"></p>
+<ol>
+<li>1）<a target="_blank" rel="noopener" href="https://nichescraper.com/scraper/">https://nichescraper.com/scraper/</a><ol>
+<li>2）<a target="_blank" rel="noopener" href="https://dropship-spy.com/">https://dropship-spy.com/</a><ol>
+<li>Adspy<ol>
+<li>Bigspy</li>
+<li>Facebook选品</li>
+<li>监测竞争对手选品</li>
+<li>谷歌趋势</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>通过谷歌趋势来了解某个行业或产品的历史数据，看看产品的整体趋势。比如新潮产品就有很明显的上升期和跌落期。如果你能在趋势早期介入这个产品，那么就正好可以借势打造品牌。所以，通过谷歌趋势来找准时机很重要。</p>
+<p>如果你选择的是常年需求比较稳定的产品，那么竞争可能会比较大，一般不会像新潮产品那样大起大落，有利于建立长久的品牌形象。</p>
+<p>8、productfinder.co</p>
+<p><a target="_blank" rel="noopener" href="https://www.productfinder.co/%EF%BC%8C%E8%BF%99%E9%87%8C%E9%9D%A2%E7%9A%84%E4%BA%A7%E5%93%81%E5%87%A0%E4%B9%8E%E9%83%BD%E6%98%AFShopify%E5%BA%97%E9%93%BA%E7%9A%84%EF%BC%8C%E6%88%91%E4%BB%AC%E5%8F%AF%E4%BB%A5%E6%A0%B9%E6%8D%AE%E6%97%B6%E9%97%B4%E3%80%81%E5%B8%81%E7%A7%8D%E3%80%81%E4%BB%B7%E6%A0%BC%E8%8C%83%E5%9B%B4%E3%80%81%E4%BB%A5%E5%8F%8A%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83%E5%92%8C%E4%BB%B7%E6%A0%BC%E7%94%B1%E9%AB%98%E5%88%B0%E4%BD%8E%E6%88%96%E7%94%B1%E4%BD%8E%E5%88%B0%E9%AB%98%E6%9D%A5%E8%BF%87%E6%BB%A4%E7%BB%93%E6%9E%9C%E3%80%82">https://www.productfinder.co/，这里面的产品几乎都是Shopify店铺的，我们可以根据时间、币种、价格范围、以及最新发布和价格由高到低或由低到高来过滤结果。</a></p>
+<p>点击产品进入他们的店铺以后，如果他们店铺里没有Best Seller这个按钮选择，那么我们可以通过在域名后面加上 /collections/all?sort_by=best-selling 来查看这个潜在竞争对手的热销产品。</p>
+<p>我们要查看竞品的款式及竞争对手店铺的流量来源（可以用similarweb查），这样我们就知道需要用什么样的产品从哪些渠道引流了。</p>
+<p>这个工具是免费的，可以作为选品的入门级工具使用。</p>
+<p>选品的时候，我们可以想想自己有什么兴趣爱好，你身边在流行什么，把任何想到的东西都写下来；还有利用上面所说的选品方法来选品。</p>
+<p>这个时候不用纠结产品好不好卖，唯一要做的就是做好记录。</p>
+<p>然后，等你有了足够多的选品想法后，就要开始进行筛选了。我们的目标是找细分市场，像哪些明显已经饱和市场，就不要再进入了。</p>
+<p>这个阶段要结果谷歌趋势查看产品处于上升期还是跌落期，同时，可以把产品拿到Instagram , Youtube等平台上验证一下，看看有没有人在这些平台分享产品图片或视频，如果有，看用户评价怎么样，用户有没有提出一些问题等。</p>
+<p><strong>课程大纲与逻辑</strong></p>
+<p>本次训练营课程共9课，以产品为主线和目标来讲解独立站建设、优化与运营的整体思路，而不是简单的教大家建站的技术。课程分为四个部分和三个阶段：</p>
+<p>第一部分——公开课，讲解独立站运营系统解析，介绍本期训练营安排，共1课时。</p>
+<p>第二部分前期工作——网站后台操作与设置，主要讲解[Shopify开店准备、实操，介绍](<a target="_blank" rel="noopener" href="https://kdocs.cn/l/cj999DJwolp0">https://kdocs.cn/l/cj999DJwolp0</a> [金山文档] 【第二课】基础入门：Shopify开店详解教程.docx)网站后台操作与设置，产品管理与Listing打造，共3课时。</p>
+<p>第三部分中期工作——网站设计、建设与优化，讲解网站设计思路与网站结构剖析，网站设计流程与主题建站实操，网站速度性能优化与上线测试，共3课时。</p>
+<p>第四部分后期工作——网站营销与售后管理，讲解独立站营销渠道与引流思路，订单处理与网站数据分析，共2课时。</p>
+<p>具体课程大纲近300个细目，请大家参考详细文件。经过对第一期训练营的经验总结和课程的打磨，我们认为这个内容应该是较为适合新手的系统化的流程，有序且环环相扣。</p>
+<p><strong>本期训练营规则</strong></p>
+<p>本期训练营招生规则：采用筛选机制加学费制度，主要考察报名人员的目的性、准备程度、时间是否充裕，且必须在开课前完成选品。</p>
+<p>本期训练营考核规则：每节课均设置作业，共8次，缺交一次，训练营积分赛-10积分，缺交两次，降为旁听生，学费不退。</p>
+<p>本次训练营激励规则：本期训练营全部学费收入都将用于出海天团奖励和学员激励，出海天团根据表现获得助力评级奖励，学员评选设置积分榜和精华榜，积分榜分为个人积分榜与小组积分榜，优秀学员与优秀领航小组都将获得专属奖励。未上榜学员也可使用积分兑换权益和奖励。</p>
+<p>本期训练营其他特色：每周作业批阅与点评、积分榜&amp;精华榜每周更新、学员选举小组长、小组PK赛、每周课后问答帖及值班船助答疑</p>
+<p>最后，分享一篇小北老师博客的文章给到大家（<a target="_blank" rel="noopener" href="http://guxiaobei.com/start-oberlo-store-profitable-plan.html">http://guxiaobei.com/start-oberlo-store-profitable-plan.html</a>),</p>
+<p>文章主要是讲国外小白博主是如何进入独立站，并且开始自己的电商事业的故事。对于他的经历、思考方式、操作方式，包括踩过的坑都有可能都会是我们后续将会讲到或者遇到的，读完这篇文章，我想我们大家可以更加深刻的理解独立站的运行机制和运营过程。</p>
+<p>如果在听完本堂课，同时阅读完上述文章后，大家依然坚定方向，认为独立站是适合的方向，且现在有足够的精力能在接下来的课程中顺利完成学习，请积极踊跃报名新手训练营第二期，我们会根据报名情况进行匹配，并认真筛选出新一期的学员。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">5coder</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://5coder.cn/2022/091326252.html">http://5coder.cn/2022/091326252.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">5coder</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%8B%AC%E7%AB%8B%E7%AB%99/">
+                                    <span class="chip bg-color">独立站</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/09137951.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="06-Listing的撰写">
+                        
+                        <span class="card-title">06-Listing的撰写</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-13
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%BA%9A%E9%A9%AC%E9%80%8A%E6%96%B0%E6%89%8B%E8%AE%AD%E7%BB%83%E8%90%A50-1%E6%95%99%E7%A8%8B/" class="post-category">
+                                    亚马逊新手训练营0~1教程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BA%9A%E9%A9%AC%E9%80%8A%E6%96%B0%E6%89%8B%E8%AE%AD%E7%BB%83%E8%90%A50-1%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">亚马逊新手训练营0~1教程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/082829206.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Python爬取壁纸">
+                        
+                        <span class="card-title">Python爬取壁纸</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%88%AC%E8%99%AB/">
+                        <span class="chip bg-color">爬虫</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%B7%A5%E5%85%B7%E7%B1%BB/">
+                        <span class="chip bg-color">工具类</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%A3%81%E7%BA%B8/">
+                        <span class="chip bg-color">壁纸</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2022</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">5coder</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">239.1k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2021";
+                    var startMonth = "5";
+                    var startDate = "19";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="https://beian.miit.gov.cn" target="_blank">粤ICP备2022101498号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/5coder-leo" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:leo@5coder.cn" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=245616972" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 245616972" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

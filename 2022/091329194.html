@@ -1,0 +1,1434 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="07-关键词的调研与布局, JavaScript Vue">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>07-关键词的调研与布局 | 5coder</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="5coder" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">5coder</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">5coder</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '4a012e0b7cba0fe9de7d3c466e3830e7dfd1a36c260954c55e911d3162202c2c';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">07-关键词的调研与布局</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E4%BA%9A%E9%A9%AC%E9%80%8A%E6%96%B0%E6%89%8B%E8%AE%AD%E7%BB%83%E8%90%A50-1%E6%95%99%E7%A8%8B/">
+                                <span class="chip bg-color">亚马逊新手训练营0~1教程</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E4%BA%9A%E9%A9%AC%E9%80%8A%E6%96%B0%E6%89%8B%E8%AE%AD%E7%BB%83%E8%90%A50-1%E6%95%99%E7%A8%8B/" class="post-category">
+                                亚马逊新手训练营0~1教程
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-09-13
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-09-15
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    8.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    29 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="一、什么是关键词？"><a href="#一、什么是关键词？" class="headerlink" title="一、什么是关键词？"></a>一、什么是关键词？</h2><p><img src="https://guxiaobei.oss-cn-shenzhen.aliyuncs.com/wp-content/uploads/2022/06/%E5%9B%BE%E7%89%871.jpg" alt="img"><br>关键词Search Term是我们天天会说到的，指的是买家在搜索引擎中输入的单词，来表达他们的个人需求。search term里的关键词不是给买家看的，而是给亚马逊系统来收录，给买家搜索的。</p>
+<p><strong>也就是买家用来在亚马逊搜索产品的那些词，就是关键词</strong></p>
+<p>比如说当我们上传产品后，系统是不知道这是一款什么样的产品，系统对产品的识别认知，比较重要的一环就是靠我们lisitng里边的关键词。</p>
+<p>所以，我们镶入什么关键词就关系到我们的产品在亚马逊眼里就是什么样子</p>
+<p>关键词，也可以说是我们产品在亚马逊平台的身份识别器</p>
+<p>精准而正确的关键词会使产品有更多的曝光机会，买家搜索看到产品的几率也会增加</p>
+<p>那么大家说一说，做个调研，关键词是站在用户的角度还是卖家的角度去写？</p>
+<p>关键词一定要基于用户的认知和搜索思维展开，不要基于自己的产品展开。</p>
+<p>比如我们产品的某些工艺，材质，这个我们作为卖家是非常清楚的，作为卖点也是可以，但是是否就代表这个适合作为关键词？</p>
+<p>不一定的。</p>
+<p>如果说这个工艺、材质等等特性恰好是买家非常在意并且会用来搜索的，那么毫无疑问作为产品关键词是OK的。</p>
+<p>但是如果工艺是买家不会搜索的词，仅仅是我们自己对产品非常了解或者作为了卖点使用，就认为某个词也是关键词的话，那客户的点击率也就可想而知了。</p>
+<p>比如说衣服的工艺有裁剪、缝合，我们在网上买衣服一般都不会去搜这些，而是会搜索男士外套，女士裙子等等是吧。</p>
+<p>又比如，对我们普通人来说，我们想在买一瓶水，肯定是直接搜索纯净水或矿泉水，很少人会把“水”说成“H2O”。</p>
+<p>另外关键词要符合外国人的语言习惯（产品特性、亮点等也一样），我们可以参考当地门户网站，模仿外国出名的购物网站产品的标题。</p>
+<p>可以在这些网站上搜索跟自己类似的产品，看别人的标题是什么，一般都是比较符合外国人搜索习惯，同时我们也可以把买家的评论作为参考词</p>
+<p>买家会使用的词，一般来说是比较care 的词</p>
+<h3 id="关键词类型："><a href="#关键词类型：" class="headerlink" title="关键词类型："></a><strong>关键词类型：</strong></h3><p>关键词主要可以分为主关键词（大词），精准词以及长尾词。</p>
+<h4 id="主关键词"><a href="#主关键词" class="headerlink" title="主关键词"></a><strong>主关键词</strong></h4><p>通常流量巨大大，但是非常泛。比如说移动电源 portable charger</p>
+<p>· 是最能简单直接的反映出产品主要属性的名词。</p>
+<p>· 搜索效果上一般是大词，热词，很多大卖家都会使用。</p>
+<p>· 主关键词一般是由1-3个单词组成，一般不超过3个单词；</p>
+<p>· 直接直观反映这个产品的单词或者词组。</p>
+<h4 id="精准词"><a href="#精准词" class="headerlink" title="精准词"></a><strong>精准词</strong></h4><p>属于中部出单词，加了定语修饰成份。或指向特定的客户群体。</p>
+<p>如portable charger for iphone ， watch band for men</p>
+<h4 id="长尾关键词"><a href="#长尾关键词" class="headerlink" title="长尾关键词"></a><strong>长尾关键词</strong></h4><p>· 比精准关键词更精准的词，既符合产品特征又符合客户精确搜索习惯。</p>
+<p>· 从长尾关键词上体现出来的信息，可以有产品的款式、颜色、材质、功能、包装、用途以及其他方面的优势。</p>
+<p>· 长尾关键词主要是根据主要关键词延伸的长尾词，一般有3-5个单词组成。</p>
+<p>比如，移动电源，主要关键词/核心关键词是portable charger，但25000mah Waterproof portable charger很明显就是一个比较精准的长尾关键词。</p>
+<p>长尾关键词相对于主关键词来说，搜索量较小，但产品匹配度更高，转化率更好。</p>
+<h2 id="二、A9算法下的关键词"><a href="#二、A9算法下的关键词" class="headerlink" title="二、A9算法下的关键词"></a><strong>二、A9算法下的关键词</strong></h2><p>我们都知道需要通过在产品listing里设置关键词， 然后Listing会被亚马逊系统收录，</p>
+<p>当买家通过这些关键词搜索产品的时候，就会顺利的展现出来。</p>
+<p>但我们的产品具体会出现在第几页，在什么位置，那么，就要看我们的Listing的销量和质量表现决定</p>
+<p>亚马逊关键词优化 → 优化亚马逊Listing →更好的排序 →更多的曝光展现 → 更多转化销售</p>
+<p>而判断亚马逊关键词优化的就是亚马逊A9算法</p>
+<p><strong>亚马逊A9算法是什么？</strong></p>
+<p>亚马逊搜寻引擎我感觉跟我们在淘宝搜索购物其实也是差不多的。</p>
+<p>买家在搜索框上输入一个搜索词，就能得到一连串的结果。</p>
+<p>一般来说，我们也大都只会点击排在最前面的几个结果，或者看前几页</p>
+<p>而越往后，点击概率越低</p>
+<p>我们的Listing在亚马逊排名越前面，就能卖出更多产品</p>
+<p>反之，如果我们的排序在越后面，产品被卖出去的可能性也就越小了。</p>
+<p>亚马逊对不同的排名是有一定的流量分配的。</p>
+<p>亚马逊一般只给大类前20页产品曝光机会，后面基本上没有什么销量和曝光。</p>
+<p>那么20页大家知道大概有多少个产品吗？</p>
+<p>差不多400个产品。</p>
+<p>一些小分类大部分产品出单都在前三页，亚马逊就是公平的给这400个产品展示的机会。400名以外的产品基本上出单就非常少了。</p>
+<p>所以，如果我们的关键词没优化好，那将失去很多潜在商机</p>
+<p>使用无痕模式去搜索关键词，这样结果更加精准。我们站在亚马逊的角度考虑，A9算法的目的就是获得最大销量.</p>
+<p>因为只有销售产品了，亚马比逊才能赚拥金，FBA配送费用那些只是光光高BID去跑广告但也不出单的产品，亚马逊虽然也可以赚钱，但其实是不喜欢的这样的店铺的。</p>
+<p><strong>有同学可能会问为什么呢？</strong></p>
+<p>高价推广告亚马逊不是也可以赚钱嘛。但亚马逊的宗旨不是这样的。亚马逊是用户第一为原则的平台，</p>
+<p>我们烧了广告，亚马逊起初也给了流量，但是无转化，说明用户不喜欢。所以亚马逊就会判断我们的产品为不受欢迎的产品，最后导致很多同学说的，广告花不出去的情况。</p>
+<p>其实亚马逊的用户可以分为三大块来看：买家、卖家、平台</p>
+<p><img src="https://guxiaobei.oss-cn-shenzhen.aliyuncs.com/wp-content/uploads/2022/06/%E5%9B%BE%E7%89%872.jpg" alt="img"></p>
+<p>买家来到亚马逊，只为了一个目的，她想要买东西！我们卖家，只想卖产品。而亚马逊平台呢，要赚钱，还有留住买家，三者结合起来的一个共同点就是：</p>
+<p>有订单！</p>
+<p>所以亚马逊A9算法，会根据数以亿计的大数据运算，找出「最有可能」产生订单的产品，放在第一个搜寻结果上。「第二可能」的产品放在第二个，以此类推，亚马逊是没有完整公布A9算法是如何决定搜寻关键词排序。</p>
+<p>但我们根据运营经验，总结出几个最关键的要素，掌握这些A9算法的关键要素也可以帮助我们来提升亚马逊Listing转换率以及销售。</p>
+<h4 id="影响关键词排名的几个因素："><a href="#影响关键词排名的几个因素：" class="headerlink" title="影响关键词排名的几个因素："></a><strong>影响关键词排名的几个因素：</strong></h4><h5 id="1-关键词相关性"><a href="#1-关键词相关性" class="headerlink" title="1. 关键词相关性"></a><strong>1. 关键词相关性</strong></h5><p>「相关性」是一个决定排序的关键因素</p>
+<p>实际上，如果我们关键词相关设定的好，不只在亚马逊，在其他搜寻引擎像谷歌，也都能找到我们的产品</p>
+<p>基本上，我们的产品与关键词相关性越高，我们的排序也会越高</p>
+<p>我们一定要花点时间检查Listing标题、描述或五点，是否与我们的关键词高度相关</p>
+<p>这些都是必须要去做的</p>
+<h5 id="2-转化率"><a href="#2-转化率" class="headerlink" title="2. 转化率"></a><strong>2. 转化率</strong></h5><h6 id="1-销量-（销售金额出单量）"><a href="#1-销量-（销售金额出单量）" class="headerlink" title="1. 销量 （销售金额出单量）"></a>1. 销量 （销售金额出单量）</h6><p>这也是亚马逊A9算法很重要的一个排序因素，产品销售越好，说明产品是越受消费者欢迎和接受的，所以亚马逊在计算分析的时候，会结合这个数字来影响我们的搜索排名，</p>
+<p>比如说一个关键词能出100单，肯定是比出30单的关键词排名要高的。</p>
+<p>A9算法会跟你在同个关键词搜寻下的竞争者比较，谁的销售金额较高，谁较能帮助亚马逊平台赚钱，谁的排序就会胜出</p>
+<h6 id="2-价格"><a href="#2-价格" class="headerlink" title="2. 价格"></a><strong>2. 价格</strong></h6><p>除了销售最热门与最相关的产品外，A9算法同时也考虑商品的价格是否合适。</p>
+<p>但价格因素比较复杂，因为A9算法不只看你的售价是否最便宜，同时也会参考这个价格对整个Listing是否恰当</p>
+<p>虽然以上几个因素是A9算法最重要的因素，但以下几个因素也很重要，都会间接影响到你的关键词排序</p>
+<h6 id="3-CPC广告"><a href="#3-CPC广告" class="headerlink" title="3. CPC广告"></a><strong>3. CPC广告</strong></h6><p>销售速度是目前亚马逊A9算法最重要的排名因素</p>
+<p>但要如何增加销售速度？</p>
+<p>那就是透过亚马逊CPC广告</p>
+<p>你可以持续优化广告转换效果，增加销售速度，获取最大化利润</p>
+<h6 id="4-FBA-Fulfilled-By-Amazon"><a href="#4-FBA-Fulfilled-By-Amazon" class="headerlink" title="4. FBA(Fulfilled By Amazon)"></a><strong>4. FBA(Fulfilled By Amazon)</strong></h6><p>亚马逊FBA是卖家必须考虑的要素，这边不细谈，但当你的商品在任何一个亚马逊仓库有库存时，</p>
+<p>你会被标记为「特色卖家」，并且让你能接触到「Prime 会员」</p>
+<p>这同时也增加了你赢得亚马逊购物车的机会，纵合以上，使用FBA对增加你的销售金额会很有帮助。</p>
+<p>同时使用FBA，也让亚马逊赚钱，这会帮助提升你的排序</p>
+<h6 id="5-图片-高画质-大小与质量"><a href="#5-图片-高画质-大小与质量" class="headerlink" title="5. 图片(高画质)大小与质量"></a><strong>5. 图片(高画质)大小与质量</strong></h6><p>在一个线上销售的平台，卖的不是产品 ，而是图片。因为买家是没有办法直接体验实体商品，图片是唯一能取信他们的机会。</p>
+<p>当然现在有品牌备案的卖家可以加上视频，那就更加直观了。</p>
+<p>明亮、清晰、高画质的图片，加上亚马逊的图片放大功能，我们测试证明对转换率有是有非常大的帮助</p>
+<p>尽可能上传高画质图片，从产品的每个角度拍摄</p>
+<p>可以更有效的帮助亚马逊A9算法增加你的关键词排序</p>
+<h6 id="6-促销"><a href="#6-促销" class="headerlink" title="6. 促销"></a><strong>6. 促销</strong></h6><p>促销是非常有效提升销售速度的方式，</p>
+<p>就是给予产品一个无法拒绝的优惠，可以迅速提升销量，</p>
+<p>这个可以帮助亚马逊关键词排序短暂提升，但并不是一个长期帮助改善排序的策略</p>
+<p>当然我们也不能不考虑成本与利润一味的促销折扣，要有推广节奏</p>
+<p>我们最好还是专注于优化listing,改善关键词相关性,准备足够的库存</p>
+<h6 id="7-商品库存"><a href="#7-商品库存" class="headerlink" title="7. 商品库存"></a><strong>7. 商品库存</strong></h6><p>你一定听过不少培训机构跟你讲，一定要确保库存足够，有想过为什么吗？</p>
+<p>因为这是亚马逊A9排序算法的重要因素</p>
+<p>换句话说，如果你商品爆仓了，你永远不可能排在搜寻最前面</p>
+<p>亚马逊不喜欢平白损失销售机会</p>
+<p>如果你的商品没有库存，这不只让买家失望，亚马逊平台也不高兴</p>
+<h5 id="3-客户满意度"><a href="#3-客户满意度" class="headerlink" title="3. 客户满意度"></a><strong>3. 客户满意度</strong></h5><p>我们都知道，好的商品评论与卖家反馈永远是销量的保证，超过80%消费者购买以前都会参考过往的商品评价。</p>
+<p>我们的商品评级同样也帮助亚马逊A9算法决定这个商品的热度与满意度，所以为什么那么多人冒着高风险高价格去会去刷单，好评REVEIW，我们不建议这么干。做长期主义者，不走捷径。</p>
+<p>像这次赫赫有名的深圳坂田五虎倒了四虎就是刷单公司信息泄漏原因，导致店铺被关，资金冻结。牵连有20万卖家。这20卖家亚马逊早晚也是要挖出来的.我们做的每一个动作亚马逊都有记录的，秋后算账，养肥了再宰是姐夫一贯作风。</p>
+<p>如果别人都在刷单，我不刷会觉得不公平对不对，但现在这反而是给脚踏实地做产品做品牌的卖家更多更好的机会。亚马逊会把优质卖家留下来，给客户更多好的体验</p>
+<p>其实现在购物平台，都是千人千面的，不同的ip, 买家账号，邮编，pc端，手机端等搜索结果都是有差异的。所以我们的关键词排名需要综合这些数据看。</p>
+<p>Amazon呈现给买家的：卖的什么，有没有人看，看了有没有人买，买的人多不多，买了觉得怎么样，是否还会再买。</p>
+<p>Amazon呈现给卖家的：卖的什么玩意自己表述清楚，自己找好位置，推你一把试试你争不争气，争气了给我好好干别断货了，价格给我搞低点，质量给我搞好点，给我搞变体搞页面让上帝多留会，给我到外面挖人，别让上帝对你不满意，更别让上帝对我不满意投诉到我这来了。</p>
+<p>上帝不满意了上差评了，这条listing的权重同时也会下来。</p>
+<h2 id="三、关键词的重要性"><a href="#三、关键词的重要性" class="headerlink" title="三、关键词的重要性"></a><strong>三、关键词的重要性</strong></h2><p>关键词调研是亚马逊推广环节中的重中之重，他就像是建房子一砖头样，好不好，影响整个房子的质量。</p>
+<p>说了这么多，既然关键词这么重要 ，那么，如何调研找到对我们产品来说有用的关键词呢？</p>
+<h2 id="四、如何调研关键词？"><a href="#四、如何调研关键词？" class="headerlink" title="四、如何调研关键词？"></a><strong>四、如何调研关键词？</strong></h2><p>首先我们要搞清楚的是，我们的产品核心关键词到底是什么？简单来说，你要卖的到底是一件什么产品呢？苹果还是桔子？搞清楚这个问题后，我们要围绕这个产品的核心关键词去做关键词挖掘</p>
+<p>好，这里让大家一起想一想哪，我们调研关键词，从哪些维度来调研？</p>
+<p>其实我们的嘉宾分享也有讲到几点，包括咱们圈子分享内容也有写到关键词调研。</p>
+<h3 id="1-Amazon搜索框提示关键词"><a href="#1-Amazon搜索框提示关键词" class="headerlink" title="1. Amazon搜索框提示关键词"></a><strong>1. Amazon搜索框提示关键词</strong></h3><p>我们在亚马逊搜索框输入产品关键词，下面会自动匹配一些相关或常用搜索词，在这些词中可以选择与自己产品相关的关键词。如果自动出现的相关词较少，可以尝试输入自己的主关键字，然后键入A到Z的任意字母，看amazon会给推送什么样的关键词。</p>
+<p>比如说我们在亚马逊前台搜索 portable charger ,搜索框会自动给出这些提示的关键词。</p>
+<p><img src="https://guxiaobei.oss-cn-shenzhen.aliyuncs.com/wp-content/uploads/2022/06/%E5%9B%BE%E7%89%873.jpg" alt="img"></p>
+<p>调研关键词的维度有很多，为什么我第一个推荐的调研维度是亚马逊的下拉框呢？其实我们要站在背后的逻辑去思考。</p>
+<p>大家首先要有一个概念：为什么一个平台要有下拉框，为什么会有下拉框的推荐呢？为什么会有对应的建议给你呢？底层的逻辑是什么呢？</p>
+<p>其实说到底很简单：就是提高用户的检索体验，让用户能够更快的找到自己想要的产品！</p>
+<p>而这些搜索的下拉框为什么要作为我们重要需要搜集的关键词呢？</p>
+<p><strong>底层逻辑是啥呢？</strong></p>
+<p>其实本质真的很简单！这些关键词一定是用户检索最多的，数据匹配最多的关键词，因此才会被平台推荐到下拉框！</p>
+<p>搜索量的大小，代表的就是这款产品的市场需求程度的大小。所以我会把下拉框的关键词调研放到第一步跟大家去讲！</p>
+<p>这里大家可以把所有的核心词输入到搜索框，然后收集这些核心词的发散词，做一个表格。</p>
+<h3 id="2-同行产品的listing页面"><a href="#2-同行产品的listing页面" class="headerlink" title="2. 同行产品的listing页面"></a><strong>2. 同行产品的listing页面</strong></h3><p>一开始我们做一个新东西的时候，不知道怎么去做，大家想想，最简直粗暴的方法是什么？</p>
+<p>先是研究别人做的好的，然后去模仿他，最后才是超越对吧？？嗯嗯，研究、模仿、超越! 小北老师的六字真言，放四海皆通的。</p>
+<p>优秀的竞争对手是我们最好的老师！通过拆解竞争对手的产品链接，我们可以学习到非常多的知识点和细节！</p>
+<p>比如说：竞争对手的图片设计风格是怎样的？竞争对手的listing关键词布局是怎样的？</p>
+<p><strong>标题是怎么写的？</strong></p>
+<p>类目节点也是关键词之一。</p>
+<p>这里发散一下：通常我们也会把本身的类目节点关键词布局及想要新增的类目节点词布局到listing页面，促进出单，然后去开case找客服，说看别人类似差不多的产品有在那个类目，自己的ASIN为什么不在，可以达到增加类目节点的可能性。</p>
+<p><img src="https://guxiaobei.oss-cn-shenzhen.aliyuncs.com/wp-content/uploads/2022/06/%E5%9B%BE%E7%89%874.jpg" alt="img"></p>
+<p><strong>竞争对手的review布局和QA布局到底是怎样的？</strong></p>
+<p>从竞争对手的review和QA的痛点调研过程中，我们都能调研出非常多的关键词，而且这些关键词都是经过市场验证的关键词，是吧，非常具体参考和借鉴价值。</p>
+<p>尤其是那些卖的特别好的BSR竞争对手，更是我们重点要去学习的对象，这样的竞争对手，核心关键词的流量布局基本上都是覆盖到了。</p>
+<p>这个过程也是一个竞品调研的过程，我们平时在做竞品调研的时候，先确定好自己产品的类目节点，然后根据类目节点，把竞品信息收集出来，挑选BSR排名前5、排名40<del>60、排名90</del>100各一个。</p>
+<p>从小类目竞品TOP20名的竞品，这样每个层次的竞品都有，更好的去做分析不同阶段产品的情况。把竞品信息收集下来做成excel表。</p>
+<p>重要信息：标题、5点卖点、描述、A+、好评，差评制作成表格，进行横向比较</p>
+<p>重点把标题的每一个词都扣出来，看词频。因为所以卖家都是把最核心的关键词放在标题里的。</p>
+<p><img src="https://guxiaobei.oss-cn-shenzhen.aliyuncs.com/wp-content/uploads/2022/06/%E5%9B%BE%E7%89%875.jpg" alt="img"></p>
+<h3 id="3-多平台去搜集关键词"><a href="#3-多平台去搜集关键词" class="headerlink" title="3.多平台去搜集关键词"></a>3.多平台去搜集关键词</h3><p>我们做市场的应该知道，肯定不会是一个平台独大。比如说我们做美国市场，依然是会的一些其他的电商平台。</p>
+<p>比如说：ebay、wish、速卖通、沃尔玛等等</p>
+<p>这是我打开速卖通手输入了同样的关键词portable charger,他的搜索框也是有推荐关键词的，这些都是平台过滤出来，用户常的搜索词，这些词是可以根据自己产品 属性拿来放在自己listing里边的</p>
+<p><img src="https://guxiaobei.oss-cn-shenzhen.aliyuncs.com/wp-content/uploads/2022/06/%E5%9B%BE%E7%89%876.jpg" alt="img"></p>
+<p>而我们如果是在做亚马逊平台，同样也可以在相同市场的其他平台去做关键词的调研分析以及整理归纳，甚至可以做选品方面的调研。</p>
+<p>通过这种跨越平台的调研，我们甚至可以发掘一些信息差，找到一些潜在的赚钱的机会！</p>
+<h3 id="4-亚马逊的广告匹配数据"><a href="#4-亚马逊的广告匹配数据" class="headerlink" title="4. 亚马逊的广告匹配数据"></a><strong>4. 亚马逊的广告匹配数据</strong></h3><p>这个是通过广告数据进行挖掘，也是一个潜在的重要挖掘点。</p>
+<p>我们做过广告的同学都知道，后台可以下载广告报告</p>
+<p>我们通过自动/手动广告跑出来的一些词，很有可能是我们调研的时候都没有看到过的。因为老外的的有些习惯用词我们我们真猜不到是吧。</p>
+<p>广告报告下载下来，</p>
+<p>第1步全选数据，插入数据透视表 确定 生成透视表</p>
+<p>第2步 筛选产品所在广告系列，拉汇总分析维度并求和，一般展现：点击、花费、订单量、销售额、转化率、点击率都属于我们需要分析的维度。</p>
+<p><strong>分析思路：</strong></p>
+<p>查看click是否集中在单个或几个搜索词，或属性上</p>
+<p>搜索词对应的点击基数足够（70-100+)情况下，是否产品了订单，转化率有没有达到预期（3%以上）</p>
+<p>从曝光量大小，转化率高低，也可以挖到放大或缩小投放的切入点</p>
+<p>点击基数大，转化次数越多，词的价值越大</p>
+<h3 id="5-BA-Brand-Analytics-品牌分析工具"><a href="#5-BA-Brand-Analytics-品牌分析工具" class="headerlink" title="5. BA (Brand Analytics)品牌分析工具"></a><strong>5. BA (Brand Analytics)品牌分析工具</strong></h3><p>这个是针对有品牌备案的卖家，输入关键词，可以看到关键词在亚马逊上面的搜索排名。</p>
+<p>如果我们输入关键词，就会看到相关的长尾词，以及他们的热度和排名。</p>
+<p>我们可以按日周月下载数据源筛选查看，或者同一个关键词按不同的时间段查看，也能看到这个词的趋势如何，是否是热度在上升或者是下降的词。</p>
+<p>这里输入关键词或ASIN都是可以查到数据的。</p>
+<p>竞品的BA源数据关键词我们导出来后，先去重，然后按搜索频率排序，就能知道哪些是流量大的关键词了。</p>
+<p>将ASIN放入search term里，挖掘出它的主流出单核心热词。我们写文案，打广告，需要研究竞争对手的关键词的时候，这个功能可以查到asin的关键词。</p>
+<p>这里的词比较精准，并且有一定流量的。收录了190万的词，不管是长尾也好，核心词也好，流量都不会小</p>
+<h3 id="6-关键词查询工具。"><a href="#6-关键词查询工具。" class="headerlink" title="6. 关键词查询工具。"></a><strong>6. 关键词查询工具。</strong></h3><p>很多站外工具提供了类目关键词及反查关键词的功能，我们可以根据自已的喜好和习惯尝试选择。</p>
+<p>比如google adwords; 谷歌关键字规划师，免费的。我们分析竞品得到一些词后，用谷歌关键字规划师来帮助找到流量最大的词和最适合我们的词，在我们不确定哪个词流量大，以及不确定目的地国家的搜索习惯时，将不同的词组成词组，用这个工具来搜索及验证。</p>
+<p><strong>竞争对手流量入口工具：surtime。</strong></p>
+<p>反查对手关键词工具：声纳：<a href="https://link.zhihu.com/?target=http://sonartool.com">http://sonartool.com</a>；<a href="https://link.zhihu.com/?target=http://merchantwords.com">http://merchantwords.com</a> 等</p>
+<p>其实关键词工具有很多 ，常用的也就几个。我用H10 和Merchantwords 较多。</p>
+<p>Merchantwords：<a href="https://link.zhihu.com/?target=https://www.merchantwords.com/">https://www.merchantwords.com/</a></p>
+<p>Helium 10: <a target="_blank" rel="noopener" href="https://members.helium10.com/">https://members.helium10.com/</a> (可先用免费版功能）</p>
+<p>Keywordtool：<a href="https://link.zhihu.com/?target=https://keywordtool.io/">https://keywordtool.io/</a></p>
+<p>AsinSeed ：<a target="_blank" rel="noopener" href="https://www.asinseed.com/cn/">https://www.asinseed.com/cn/</a></p>
+<p>下面用portable charger在Merhcantwords一起来操作看看~</p>
+<p>左边那里就有很多相关的关键词可以选择</p>
+<p><img src="https://guxiaobei.oss-cn-shenzhen.aliyuncs.com/wp-content/uploads/2022/06/%E5%9B%BE%E7%89%877.jpg" alt="img"></p>
+<p>接下来H 10同样来搜索关键词 portable charger</p>
+<p>这里是可以用来过滤掉很多选项的啊，搜索量，销售价格，销售金额、评价、类目，最大最小排名。变体数量 、都是可以根据自己的需要选最大值与最小值</p>
+<p><img src="https://guxiaobei.oss-cn-shenzhen.aliyuncs.com/wp-content/uploads/2022/06/%E5%9B%BE%E7%89%878.jpg" alt="img"></p>
+<p><img src="https://guxiaobei.oss-cn-shenzhen.aliyuncs.com/wp-content/uploads/2022/06/%E5%9B%BE%E7%89%879.jpg" alt="img"></p>
+<p>五、筛选选择合适的关键词</p>
+<p>很多人凭直觉选关键词，或者说凭自己主观臆断创造关键词，再或者，看到竞争对手用什么关键词就直接照搬过来。</p>
+<p>大家 都知道关键词的重要性啊，选关键词不是我觉得。</p>
+<p>调研出来的关键词我们需要去做分析、归纳整理，哪些是核心关键词，哪些是长尾关键词，哪些是我们要主打的关键词，</p>
+<p>要有一个清晰明了的关键词调研表出来</p>
+<h4 id="筛选关键词的三个指标："><a href="#筛选关键词的三个指标：" class="headerlink" title="筛选关键词的三个指标："></a><strong>筛选关键词的三个指标：</strong></h4><h5 id="1-search-volume搜索量"><a href="#1-search-volume搜索量" class="headerlink" title="1. search volume搜索量"></a><strong>1. search volume搜索量</strong></h5><p>找的关键词一定要有搜索量，太低（比如1000以下）就没有意义</p>
+<h5 id="2-competition-level-竞争度"><a href="#2-competition-level-竞争度" class="headerlink" title="2. competition level 竞争度"></a><strong>2. competition level 竞争度</strong></h5><p>关键词下边竞争强度是怎么样的，自己要有判断，竞争度越强，获得关键词排名的难度越大</p>
+<h5 id="3-relevancy-相关性"><a href="#3-relevancy-相关性" class="headerlink" title="3.relevancy 相关性"></a><strong>3.relevancy 相关性</strong></h5><p>有些卖家喜欢蹭相关的节日热点或者购物季的热点，这其实对于卖家的转化率提高帮助并不大，尤其当你的产品不是这种节假日装饰或礼物类型的产品。</p>
+<p>我们卖家在选择关键词时，还是要坚持自己产品相关性的原则，不相关的词语或者相关度不高的词语，尽可能少用或不用。</p>
+<p>使用不相关的关键词，反而会降低Listing 的权重。</p>
+<p>因为当我们的产品有吸引客户的关键词却没有点击或者很少点击。点击又没有购买的情况下，亚马逊会判定这个产品并非用户所需求的，反而会降低listing 的权重，排名越靠后，listing被展示的机会越来越少，恶性循环就开始了。</p>
+<p>所以，如果选用的词语和产品不相关，即使是热词，不仅不能给产品带来好的作用，反而会适得其反。</p>
+<p>如果找的关键词相关性差，那你如果把这个关键词放在标题里边，RANK 排名难度会加大，这种转化率是很低的。即使广告推上去了，排名后面也会慢慢掉下来</p>
+<p>我们一定要注意的是，无论我们通过何种方法找到了关键词，都一定要重新放到amazon的搜索框上，让真正的匹配结果来检验找到的关键词是否合适自己的产品。</p>
+<p>而不是查到了对手的关键词就得意洋洋的直接使用，做起点击并出单的白日梦。</p>
+<h2 id="六、关键词布局"><a href="#六、关键词布局" class="headerlink" title="六、关键词布局"></a><strong>六、关键词布局</strong></h2><p>产品页面关键词的丰富程度，布局位置，相关度和精准度是被搜索引擎展示和推荐的关键因素。</p>
+<p>做产品上架计划的时候，我们必须确定产品的</p>
+<p>核心关键词，主推关键词和辅助关键词，针对关键词的重要性和推广时期，有所侧重的去埋词</p>
+<h3 id="1、标题不要重复关键词"><a href="#1、标题不要重复关键词" class="headerlink" title="1、标题不要重复关键词"></a><strong>1、标题不要重复关键词</strong></h3><p>官方有严格的说明不准，不允许堆砌。如堆窃会降权。</p>
+<p>开始我们点评的作业里有，还有很多同学重复堆砌关键词，这个需要注意。</p>
+<h3 id="2-新上的产品少用大词"><a href="#2-新上的产品少用大词" class="headerlink" title="2.新上的产品少用大词"></a><strong>2.新上的产品少用大词</strong></h3><p>对于刚上新的产品来说，因为Listing没有任何权重，没有review支撑，该listing一般承接不了大词流量，导致转化率很低，并且会浪费很多广告费。</p>
+<p>所以，特别是标题上面的关键字，我们尽量选择“搜索结果/搜索次数”相对较低的词，这些数据，我们可以参考选品软件获得。</p>
+<h3 id="3-关键词不是一尘不变的"><a href="#3-关键词不是一尘不变的" class="headerlink" title="3. 关键词不是一尘不变的"></a><strong>3. 关键词不是一尘不变的</strong></h3><p>关键词可能会随着时间的变更出现变化。</p>
+<p>比如说手机壳，几个年前是 for iphone7，现在是for iphone12。</p>
+<p>这些都会随着产品更新换代而出现关键词更新，我们如果做这类产品，就要随时更新自己的Listing。</p>
+<p><strong>如何在Listing里布局关键词</strong></p>
+<p>最好的关键词，就是竞争性相对低的关键词放在标题，（这里根据我们自己的推广计划来，前期可以放相对精准一些的词，形成出单后，慢慢可以改成核心关键词。</p>
+<p>但是由于标题限制200个字符，就要求我们一定要做到最大限度利用好标题字符数，不要出现关键字重复堆砌。</p>
+<p>举个例子，假如我们卖的是男士足球运动鞋，不要在标题里写</p>
+<p>”men shoes, sports shoes, football shoes”，</p>
+<p>而是应该写成“sport basketball sheos for women”，这样我们就可以用一个”for”换两个“shoes”的字符空间。</p>
+<h3 id="4-埋词数量，取决于产品竞争情况。"><a href="#4-埋词数量，取决于产品竞争情况。" class="headerlink" title="4.埋词数量，取决于产品竞争情况。"></a><strong>4.埋词数量，取决于产品竞争情况。</strong></h3><p>如不写ST，甚至埋的词不多，只有一两个核心大词，你在上面的权重集权是非常大的</p>
+<p>所以说埋词的多少是取决于我们的推广策略，还有我们产品的竞争情况。</p>
+<h3 id="5-ST里边必须核心关键词"><a href="#5-ST里边必须核心关键词" class="headerlink" title="5. ST里边必须核心关键词"></a><strong>5. ST里边必须核心关键词</strong></h3><p>会直接的影响到广告的抓取，自动广告发散位置。如果关键词埋入的太发散，直接会影响自动广告的成本。</p>
+<h3 id="关键词布局的原则有哪些？"><a href="#关键词布局的原则有哪些？" class="headerlink" title="关键词布局的原则有哪些？"></a><strong>关键词布局的原则有哪些？</strong></h3><p><img src="https://guxiaobei.oss-cn-shenzhen.aliyuncs.com/wp-content/uploads/2022/06/%E5%9B%BE%E7%89%8710.jpg" alt="img"></p>
+<p>1、关键词不能堆砌（标题、五点描述，description,search term）</p>
+<p>标题：放2-3个关键词即可：主关键词，次关键词+产品属性</p>
+<p>产品页: 不要超过3个关键词</p>
+<p>内容:5-6个关键词左右，围绕一个关键词来延伸的，长尾词的延展，</p>
+<p>合理的标题很重要！需要放关键词，开头前100个字符需要放关键词，</p>
+<p>五点里的主题概括 需要放关键词</p>
+<p>结尾一个关键词</p>
+<p>图片关键词命名</p>
+<p>2、关键词要站在用户的角度思考</p>
+<p>3、关键词不要太宽泛，不精准的关键词转化率低</p>
+<p>4、关键词要与所选的网站相关</p>
+<p>5、关键词搜索次数多，尽量竞争程度小的</p>
+<p><strong>关键词的曝光跟什么有关？主要是以下三点：</strong></p>
+<p><img src="https://guxiaobei.oss-cn-shenzhen.aliyuncs.com/wp-content/uploads/2022/04/AMZ.jpg" alt="img"></p>
+<p>1.关键词的大小</p>
+<p>2.关键词的位置（同样的关键词越靠前越优先曝光）</p>
+<p>3.关键词出现的频次（1个指令和4个指令的区别）</p>
+<p>3个产品关键词必须包含在标题里。</p>
+<p>尽可能站在卖家的立场上整理关键词。</p>
+<p>同样的产品，但国家不同，叫法也不同。比如灯，有lamp和light两种叫法。</p>
+<p>在节日前半个月左右，在关键词中加入相关词组，比如黑五、圣诞节等</p>
+<p><strong>关键词确定的基本方法</strong></p>
+<p>1、通过观察同类产品大卖家对手的详情页面，从他们的标题，描述，5点描述，Review中提炼出现频率最多的并且跟产品的相关的词组并记录下来；</p>
+<p>尽量越多越好不要有遗漏。同时也可以参考其他平台如ebay中同款产品的相应热词。</p>
+<p>2、把提炼出来的关键词用关键词工具scientificseller深度拓展。</p>
+<p>3、使用其他的关键词查询拓展工具 google Adword， merchantwords， KTD等挖掘其它的与产品功能性能相关的关键词，记录下来。</p>
+<p>4、把之前记录下来的关键词，用google Adwors上验证关键词的搜索热度，并且需要把关键词进行排序（按热度从高到低）。</p>
+<p>5、产品依托的平台是亚马逊，亚马逊从某种意义上也是一个搜索引擎，在这个搜索引擎上针对搜索的词也有热度和相关度的排序。</p>
+<p>因此需要把以上排序好的关键词放在亚马逊上一个一个的搜索，进行最终的关键词重要程度排序。</p>
+<p>1、埋词。把确定好的主关键词1-3个，自然并通顺的编辑在标题，5点特征描述，详细描述，问答里边，甚至重复提到5-6次产品的主关键词或者重要的长尾关键词，让产品有更多的曝光机会。</p>
+<p>2、可做PPC广告。从以上数据找出的词，对于后期推广也是至关重要的。找出精准关键词，能够最大程度的提高收益。</p>
+<p><strong>SEARCH TERM哪些关键词不能写</strong></p>
+<p><strong>1.与自己产品没有相关性的关键词</strong></p>
+<p>尽管用到某些关键词可能会蹭到更多的爆光率，但匹配度低，并不是买家需要搜寻的产品，也不会有流量和转化率。</p>
+<p><strong>2.别人的品牌名称</strong></p>
+<p>有的运营为了蹭流量把别人的品牌名写进自己的Search terms里面，尤其是大牌的名称，这样是非常容易被人警告或投诉的。亚马逊也是在明文规定不可以写的</p>
+<p>比如说，我们卖的是手表带，我们可以在标题或者描述写我们的产品fit for seiko 浪情等手表。但Search terms里面是不能直接填写手表大品牌名称。</p>
+<p>举个栗子：以关键词 portable charger 为例。这时我用的Helium 10 免费版的功能，大家可以注册一下，也可以用其他工具。</p>
+<p><strong>产品关键词贯穿listing文案的始终。</strong></p>
+<p>主要用在5个位置。标题、五点、描述、searchterm以及QA评论。我的看法是长尾词及精准词优先放在标题中，</p>
+<p>宽泛放在searchterm里面。</p>
+<p>如果关键词多到标题中放不下的，加在五点以及描述里面。同时为了增加listing与关键词的关联度，可以在qa及评论中添加，要注意保持语句通顺。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">5coder</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://5coder.cn/2022/091329194.html">http://5coder.cn/2022/091329194.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">5coder</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E4%BA%9A%E9%A9%AC%E9%80%8A%E6%96%B0%E6%89%8B%E8%AE%AD%E7%BB%83%E8%90%A50-1%E6%95%99%E7%A8%8B/">
+                                    <span class="chip bg-color">亚马逊新手训练营0~1教程</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/091327266.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="002准备篇之1.0《准备工作之店铺注册整理版—详》">
+                        
+                        <span class="card-title">002准备篇之1.0《准备工作之店铺注册整理版—详》</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-13
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%BA%9A%E9%A9%AC%E9%80%8A%E5%A5%97%E5%88%A9%EF%BC%88OA%EF%BC%89%E4%BB%8E0-1%E6%95%99%E7%A8%8B/" class="post-category">
+                                    亚马逊套利（OA）从0~1教程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BA%9A%E9%A9%AC%E9%80%8A%E5%A5%97%E5%88%A9%EF%BC%88OA%EF%BC%89%E4%BB%8E0-1%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">亚马逊套利（OA）从0~1教程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/09137951.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="06-Listing的撰写">
+                        
+                        <span class="card-title">06-Listing的撰写</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%BA%9A%E9%A9%AC%E9%80%8A%E6%96%B0%E6%89%8B%E8%AE%AD%E7%BB%83%E8%90%A50-1%E6%95%99%E7%A8%8B/" class="post-category">
+                                    亚马逊新手训练营0~1教程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BA%9A%E9%A9%AC%E9%80%8A%E6%96%B0%E6%89%8B%E8%AE%AD%E7%BB%83%E8%90%A50-1%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">亚马逊新手训练营0~1教程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2022</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">5coder</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">239.1k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2021";
+                    var startMonth = "5";
+                    var startDate = "19";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="https://beian.miit.gov.cn" target="_blank">粤ICP备2022101498号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/5coder-leo" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:leo@5coder.cn" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=245616972" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 245616972" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
