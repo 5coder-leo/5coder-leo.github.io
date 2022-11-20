@@ -6,7 +6,7 @@
   <link href="http://5coder.cn/atom.xml" rel="self"/>
   
   <link href="http://5coder.cn/"/>
-  <updated>2022-09-15T15:13:00.734Z</updated>
+  <updated>2022-11-20T13:13:45.836Z</updated>
   <id>http://5coder.cn/</id>
   
   <author>
@@ -17,11 +17,192 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Webpack 5</title>
+    <link href="http://5coder.cn/2022/112021855.html"/>
+    <id>http://5coder.cn/2022/112021855.html</id>
+    <published>2022-11-20T13:12:56.000Z</published>
+    <updated>2022-11-20T13:13:45.836Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Webpack5&quot;&gt;&lt;a href=&quot;#Webpack5&quot; class=&quot;headerlink&quot; title=&quot;Webpack5&quot;&gt;&lt;/a&gt;Webpack5&lt;/h1&gt;&lt;h2 id=&quot;1-Why-Webpack&quot;&gt;&lt;a href=&quot;#1-Why-Webpack&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Webpack" scheme="http://5coder.cn/tags/Webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第二章：HTML中的JavaScript</title>
+    <link href="http://5coder.cn/2022/101032552.html"/>
+    <id>http://5coder.cn/2022/101032552.html</id>
+    <published>2022-10-10T01:37:16.000Z</published>
+    <updated>2022-11-20T13:11:33.235Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;第二章：HTML中的JavaScript&quot;&gt;&lt;a href=&quot;#第二章：HTML中的JavaScript&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript高级程序设计" scheme="http://5coder.cn/categories/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+    <category term="JavaScript高级程序设计" scheme="http://5coder.cn/tags/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一章：什么是Javascript</title>
+    <link href="http://5coder.cn/2022/100915719.html"/>
+    <id>http://5coder.cn/2022/100915719.html</id>
+    <published>2022-10-09T06:06:33.000Z</published>
+    <updated>2022-11-20T13:11:33.232Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;第一章：什么是JavaScript&quot;&gt;&lt;a href=&quot;#第一章：什么是JavaScript&quot; class=&quot;headerlink&quot; title=&quot;第一章：什么是JavaScript&quot;&gt;&lt;/a&gt;第一章：什么是JavaScript&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript高级程序设计" scheme="http://5coder.cn/categories/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+    <category term="JavaScript高级程序设计" scheme="http://5coder.cn/tags/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript高级程序设计(第4版读书笔记</title>
+    <link href="http://5coder.cn/2022/100953002.html"/>
+    <id>http://5coder.cn/2022/100953002.html</id>
+    <published>2022-10-09T06:01:41.000Z</published>
+    <updated>2022-11-20T13:11:33.212Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;JavaScript高级程序设计第四版读书笔记&quot;&gt;&lt;a href=&quot;#JavaScript高级程序设计第四版读书笔记&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript高级程序设计" scheme="http://5coder.cn/categories/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+    <category term="JavaScript高级程序设计" scheme="http://5coder.cn/tags/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript高级程序设计（第4版）</title>
+    <link href="http://5coder.cn/2022/100914882.html"/>
+    <id>http://5coder.cn/2022/100914882.html</id>
+    <published>2022-10-09T03:14:14.000Z</published>
+    <updated>2022-11-20T13:11:33.219Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;JavaScript高级程序设计（第4版）&quot;&gt;&lt;a href=&quot;#JavaScript高级程序设计（第4版）&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript高级程序设计" scheme="http://5coder.cn/categories/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+    <category term="JavaScript高级程序设计" scheme="http://5coder.cn/tags/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript高级程序设计（第3版）</title>
+    <link href="http://5coder.cn/2022/092333321.html"/>
+    <id>http://5coder.cn/2022/092333321.html</id>
+    <published>2022-09-23T09:27:53.000Z</published>
+    <updated>2022-11-20T13:11:33.216Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;JavaScript高级程序设计（第3版）&quot;&gt;&lt;a href=&quot;#JavaScript高级程序设计（第3版）&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript高级程序设计" scheme="http://5coder.cn/categories/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+    <category term="JavaScript高级程序设计" scheme="http://5coder.cn/tags/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端面试准备</title>
+    <link href="http://5coder.cn/2022/092315570.html"/>
+    <id>http://5coder.cn/2022/092315570.html</id>
+    <published>2022-09-23T09:02:37.000Z</published>
+    <updated>2022-11-20T13:11:33.228Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;很多朋友问我：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;我要达到什么水平才可以进大厂？&lt;/li&gt;
+&lt;li&gt;我现在工作三年了，应该达到什么样的水平才算正常？&lt;/li&gt;
+&lt;li&gt;我很迷茫，不知道该学什么，感觉自己什么都不会。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我觉得这些问题我还是比较有资格来回答的</summary>
+        
+      
+    
+    
+    
+    <category term="前端面试题" scheme="http://5coder.cn/categories/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+    
+    <category term="面试" scheme="http://5coder.cn/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Tiktok 0~1完整版（建议收藏）</title>
     <link href="http://5coder.cn/2022/09151805.html"/>
     <id>http://5coder.cn/2022/09151805.html</id>
     <published>2022-09-15T07:57:15.000Z</published>
-    <updated>2022-09-15T15:13:00.734Z</updated>
+    <updated>2022-11-20T13:11:33.224Z</updated>
     
     
       
@@ -348,186 +529,6 @@
     
     
     <category term="Nuxt.js" scheme="http://5coder.cn/tags/Nuxt-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Nuxt.js基础</title>
-    <link href="http://5coder.cn/2021/072225880.html"/>
-    <id>http://5coder.cn/2021/072225880.html</id>
-    <published>2021-07-22T13:43:29.000Z</published>
-    <updated>2022-08-19T13:10:07.365Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Nuxt-js基础&quot;&gt;&lt;a href=&quot;#Nuxt-js基础&quot; class=&quot;headerlink&quot; title=&quot;Nuxt.js基础&quot;&gt;&lt;/a&gt;Nuxt.js基础&lt;/h2&gt;&lt;h2 id=&quot;Nuxt-js介绍&quot;&gt;&lt;a href=&quot;#Nuxt-js介绍&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="Nuxt.js" scheme="http://5coder.cn/tags/Nuxt-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>服务端渲染基础</title>
-    <link href="http://5coder.cn/2021/07224909.html"/>
-    <id>http://5coder.cn/2021/07224909.html</id>
-    <published>2021-07-21T21:32:36.000Z</published>
-    <updated>2022-08-19T13:10:07.354Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;服务端渲染基础&quot;&gt;&lt;a href=&quot;#服务端渲染基础&quot; class=&quot;headerlink&quot; title=&quot;服务端渲染基础&quot;&gt;&lt;/a&gt;服务端渲染基础&lt;/h2&gt;&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="Nuxt.js" scheme="http://5coder.cn/tags/Nuxt-js/"/>
-    
-    <category term="服务端渲染" scheme="http://5coder.cn/tags/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vuex 状态管理</title>
-    <link href="http://5coder.cn/2021/071931096.html"/>
-    <id>http://5coder.cn/2021/071931096.html</id>
-    <published>2021-07-19T13:22:53.000Z</published>
-    <updated>2022-08-23T15:11:45.767Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Vuex状态管理&quot;&gt;&lt;a href=&quot;#Vuex状态管理&quot; class=&quot;headerlink&quot; title=&quot;Vuex状态管理&quot;&gt;&lt;/a&gt;Vuex状态管理&lt;/h1&gt;&lt;h2 id=&quot;课程目标&quot;&gt;&lt;a href=&quot;#课程目标&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="Vuex" scheme="http://5coder.cn/tags/Vuex/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue.js 源码剖析-响应式原理、虚拟 DOM、模板编译和组件化</title>
-    <link href="http://5coder.cn/2021/071840057.html"/>
-    <id>http://5coder.cn/2021/071840057.html</id>
-    <published>2021-07-18T13:34:37.000Z</published>
-    <updated>2022-08-23T13:44:39.819Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1-请简述Vue首次渲染过程&quot;&gt;&lt;a href=&quot;#1-请简述Vue首次渲染过程&quot; class=&quot;headerlink&quot; title=&quot;1.请简述Vue首次渲染过程&quot;&gt;&lt;/a&gt;1.请简述Vue首次渲染过程&lt;/h2&gt;&lt;h3</summary>
-        
-      
-    
-    
-    
-    <category term="大前端(杂识)" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF-%E6%9D%82%E8%AF%86/"/>
-    
-    
-    <category term="Vue源码解析" scheme="http://5coder.cn/tags/Vue%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue.js 源码剖析-模板编译和组件化</title>
-    <link href="http://5coder.cn/2021/071650852.html"/>
-    <id>http://5coder.cn/2021/071650852.html</id>
-    <published>2021-07-15T22:38:14.000Z</published>
-    <updated>2022-08-19T13:10:07.158Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Vue-js-源码剖析-模板编译和组件化&quot;&gt;&lt;a href=&quot;#Vue-js-源码剖析-模板编译和组件化&quot; class=&quot;headerlink&quot; title=&quot;Vue.js 源码剖析-模板编译和组件化&quot;&gt;&lt;/a&gt;Vue.js</summary>
-        
-      
-    
-    
-    
-    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="Vue模板编译" scheme="http://5coder.cn/tags/Vue%E6%A8%A1%E6%9D%BF%E7%BC%96%E8%AF%91/"/>
-    
-    <category term="Vue组件化" scheme="http://5coder.cn/tags/Vue%E7%BB%84%E4%BB%B6%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue.js 源码剖析-虚拟DOM</title>
-    <link href="http://5coder.cn/2021/070923019.html"/>
-    <id>http://5coder.cn/2021/070923019.html</id>
-    <published>2021-07-08T21:27:00.000Z</published>
-    <updated>2022-08-23T13:44:39.822Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Vue-js-源码剖析-虚拟DOM&quot;&gt;&lt;a href=&quot;#Vue-js-源码剖析-虚拟DOM&quot; class=&quot;headerlink&quot; title=&quot;Vue.js 源码剖析-虚拟DOM&quot;&gt;&lt;/a&gt;Vue.js 源码剖析-虚拟DOM&lt;/h1&gt;&lt;hr&gt;
-&lt;h1</summary>
-        
-      
-    
-    
-    
-    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="Vue虚拟DOM" scheme="http://5coder.cn/tags/Vue%E8%99%9A%E6%8B%9FDOM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue.js 源码剖析-响应式原理-随堂测试</title>
-    <link href="http://5coder.cn/2021/07074548.html"/>
-    <id>http://5coder.cn/2021/07074548.html</id>
-    <published>2021-07-06T22:40:46.000Z</published>
-    <updated>2022-08-09T12:00:09.052Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Vue-js-源码剖析-响应式原理-随堂测试&quot;&gt;&lt;a href=&quot;#Vue-js-源码剖析-响应式原理-随堂测试&quot; class=&quot;headerlink&quot; title=&quot;Vue.js 源码剖析-响应式原理-随堂测试&quot;&gt;&lt;/a&gt;Vue.js</summary>
-        
-      
-    
-    
-    
-    <category term="大前端(杂识)" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF-%E6%9D%82%E8%AF%86/"/>
-    
-    
-    <category term="Vue响应式" scheme="http://5coder.cn/tags/Vue%E5%93%8D%E5%BA%94%E5%BC%8F/"/>
     
   </entry>
   
