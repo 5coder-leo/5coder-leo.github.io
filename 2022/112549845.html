@@ -1,0 +1,1750 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Webpack Resolve文档, JavaScript Vue">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Webpack Resolve文档 | 5coder</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="5coder" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">5coder</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">5coder</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Webpack Resolve文档</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Webpack-Resolve/">
+                                <span class="chip bg-color">Webpack Resolve</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/" class="post-category">
+                                大前端
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-11-25
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-11-25
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    11 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="解析-Resolve"><a href="#解析-Resolve" class="headerlink" title="解析(Resolve)"></a>解析(Resolve)</h1><p>这些选项能设置模块如何被解析。webpack 提供合理的默认值，但是还是可能会修改一些解析的细节。关于 resolver 具体如何工作的更多解释说明，请查看<a target="_blank" rel="noopener" href="https://www.webpackjs.com/concepts/module-resolution">模块解析</a>。</p>
+<h2 id="resolve"><a href="#resolve" class="headerlink" title="resolve"></a>resolve</h2><pre class="line-numbers language-none"><code class="language-none">object<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>配置模块如何解析。例如，当在 ES2015 中调用 <code>import 'lodash'</code>，<code>resolve</code> 选项能够对 webpack 查找 <code>'lodash'</code> 的方式去做修改（查看<a target="_blank" rel="noopener" href="https://www.webpackjs.com/configuration/resolve/#resolve-modules"><code>模块</code></a>）。</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// configuration options</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="resolve-alias"><a href="#resolve-alias" class="headerlink" title="resolve.alias"></a>resolve.alias</h3><pre class="line-numbers language-none"><code class="language-none">object<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>创建 <code>import</code> 或 <code>require</code> 的别名，来确保模块引入变得更简单。例如，一些位于 <code>src/</code> 文件夹下的常用模块：</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    alias<span class="token operator">:</span> <span class="token punctuation">{</span>
+      Utilities<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src/utilities/'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      Templates<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src/templates/'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>现在，替换“在导入时使用相对路径”这种方式，就像这样：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> Utility <span class="token keyword">from</span> <span class="token string">'../../utilities/utility'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>你可以这样使用别名：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> Utility <span class="token keyword">from</span> <span class="token string">'Utilities/utility'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>也可以在给定对象的键后的末尾添加 <code>$</code>，以表示精准匹配：</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    alias<span class="token operator">:</span> <span class="token punctuation">{</span>
+      xyz$<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'path/to/file.js'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这将产生以下结果：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> Test1 <span class="token keyword">from</span> <span class="token string">'xyz'</span><span class="token punctuation">;</span> <span class="token comment">// 精确匹配，所以 path/to/file.js 被解析和导入</span>
+<span class="token keyword">import</span> Test2 <span class="token keyword">from</span> <span class="token string">'xyz/file.js'</span><span class="token punctuation">;</span> <span class="token comment">// 非精确匹配，触发普通解析</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>下面的表格展示了一些其他情况：</p>
+<table>
+<thead>
+<tr>
+<th align="left"><code>alias:</code></th>
+<th align="left"><code>import 'xyz'</code></th>
+<th align="left"><code>import 'xyz/file.js'</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>{}</code></td>
+<td align="left"><code>/abc/node_modules/xyz/index.js</code></td>
+<td align="left"><code>/abc/node_modules/xyz/file.js</code></td>
+</tr>
+<tr>
+<td align="left"><code>{ xyz: '/abc/path/to/file.js' }</code></td>
+<td align="left"><code>/abc/path/to/file.js</code></td>
+<td align="left">error</td>
+</tr>
+<tr>
+<td align="left"><code>{ xyz$: '/abc/path/to/file.js' }</code></td>
+<td align="left"><code>/abc/path/to/file.js</code></td>
+<td align="left"><code>/abc/node_modules/xyz/file.js</code></td>
+</tr>
+<tr>
+<td align="left"><code>{ xyz: './dir/file.js' }</code></td>
+<td align="left"><code>/abc/dir/file.js</code></td>
+<td align="left">error</td>
+</tr>
+<tr>
+<td align="left"><code>{ xyz$: './dir/file.js' }</code></td>
+<td align="left"><code>/abc/dir/file.js</code></td>
+<td align="left"><code>/abc/node_modules/xyz/file.js</code></td>
+</tr>
+<tr>
+<td align="left"><code>{ xyz: '/some/dir' }</code></td>
+<td align="left"><code>/some/dir/index.js</code></td>
+<td align="left"><code>/some/dir/file.js</code></td>
+</tr>
+<tr>
+<td align="left"><code>{ xyz$: '/some/dir' }</code></td>
+<td align="left"><code>/some/dir/index.js</code></td>
+<td align="left"><code>/abc/node_modules/xyz/file.js</code></td>
+</tr>
+<tr>
+<td align="left"><code>{ xyz: './dir' }</code></td>
+<td align="left"><code>/abc/dir/index.js</code></td>
+<td align="left"><code>/abc/dir/file.js</code></td>
+</tr>
+<tr>
+<td align="left"><code>{ xyz: 'modu' }</code></td>
+<td align="left"><code>/abc/node_modules/modu/index.js</code></td>
+<td align="left"><code>/abc/node_modules/modu/file.js</code></td>
+</tr>
+<tr>
+<td align="left"><code>{ xyz$: 'modu' }</code></td>
+<td align="left"><code>/abc/node_modules/modu/index.js</code></td>
+<td align="left"><code>/abc/node_modules/xyz/file.js</code></td>
+</tr>
+<tr>
+<td align="left"><code>{ xyz: 'modu/some/file.js' }</code></td>
+<td align="left"><code>/abc/node_modules/modu/some/file.js</code></td>
+<td align="left">error</td>
+</tr>
+<tr>
+<td align="left"><code>{ xyz: 'modu/dir' }</code></td>
+<td align="left"><code>/abc/node_modules/modu/dir/index.js</code></td>
+<td align="left"><code>/abc/node_modules/modu/dir/file.js</code></td>
+</tr>
+<tr>
+<td align="left"><code>{ xyz$: 'modu/dir' }</code></td>
+<td align="left"><code>/abc/node_modules/modu/dir/index.js</code></td>
+<td align="left"><code>/abc/node_modules/xyz/file.js</code></td>
+</tr>
+</tbody></table>
+<p>如果在 <code>package.json</code> 中定义，<code>index.js</code> 可能会被解析为另一个文件。</p>
+<p><code>/abc/node_modules</code> 也可能在 <code>/node_modules</code> 中解析。</p>
+<h6 id="Warning"><a href="#Warning" class="headerlink" title="Warning"></a>Warning</h6><p><code>resolve.alias</code> 优先级高于其它模块解析方式。</p>
+<h6 id="Warning-1"><a href="#Warning-1" class="headerlink" title="Warning"></a>Warning</h6><p><a target="_blank" rel="noopener" href="https://github.com/webpack-contrib/null-loader"><code>null-loader</code></a> 在webpack5中被废弃。使用 <code>alias: { xyz$: false }</code> 或绝对路径 <code>alias: {[path.resolve(__dirname, './path/to/module')]: false }</code></p>
+<h6 id="Warning-2"><a href="#Warning-2" class="headerlink" title="Warning"></a>Warning</h6><p><code>[string]</code> 字符串值在 webapck 5 中被支持。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    alias<span class="token operator">:</span> <span class="token punctuation">{</span>
+      _<span class="token operator">:</span> <span class="token punctuation">[</span>
+        path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src/utilities/'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src/templates/'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>将 <code>resolve.alias</code> 设置为 <code>false</code> 将告知 webpack 忽略模块。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    alias<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">'ignored-module'</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token string">'./ignored-module'</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="resolve-aliasFields"><a href="#resolve-aliasFields" class="headerlink" title="resolve.aliasFields"></a>resolve.aliasFields</h3><pre class="line-numbers language-none"><code class="language-none">[string]: ['browser']<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>指定一个字段，例如 <code>browser</code>，根据 <a target="_blank" rel="noopener" href="https://github.com/defunctzombie/package-browser-field-spec">此规范</a>进行解析。</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    aliasFields<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'browser'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="resolve-cacheWithContext"><a href="#resolve-cacheWithContext" class="headerlink" title="resolve.cacheWithContext"></a>resolve.cacheWithContext</h3><pre class="line-numbers language-none"><code class="language-none">boolean<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>如果启用了不安全缓存，请在缓存键(cache key)中引入 <code>request.context</code>。这个选项被 <a target="_blank" rel="noopener" href="https://github.com/webpack/enhanced-resolve/"><code>enhanced-resolve</code></a> 模块考虑在内。从 webpack 3.1.0 开始，在配置了 resolve 或 resolveLoader 插件时，解析缓存(resolve caching)中的上下文(context)会被忽略。这解决了性能衰退的问题。</p>
+<h3 id="resolve-conditionNames"><a href="#resolve-conditionNames" class="headerlink" title="resolve.conditionNames"></a>resolve.conditionNames</h3><pre class="line-numbers language-none"><code class="language-none">string[]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><a target="_blank" rel="noopener" href="https://nodejs.org/api/packages.html#packages_exports"><code>exports</code> 配置项</a> （定义一个库的入口）的 conditionName。</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    conditionNames<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'require'</span><span class="token punctuation">,</span> <span class="token string">'node'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Webpack 将会匹配列在 <code>resolve.conditionNames</code> 数组中的 <a target="_blank" rel="noopener" href="https://nodejs.org/api/packages.html#conditional-exports">export conditions</a>。</p>
+<p><code>exports</code> 字段中的键顺序很重要。在条件匹配期间，较早的入口具有更高的优先级并优先于后面的入口。</p>
+<p>例如，</p>
+<p><strong>package.json</strong></p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"foo"</span><span class="token punctuation">,</span>
+  <span class="token property">"exports"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"."</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"import"</span><span class="token operator">:</span> <span class="token string">"./index-import.js"</span><span class="token punctuation">,</span>
+      <span class="token property">"require"</span><span class="token operator">:</span> <span class="token string">"./index-require.js"</span><span class="token punctuation">,</span>
+      <span class="token property">"node"</span><span class="token operator">:</span> <span class="token string">"./index-node.js"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"./bar"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"node"</span><span class="token operator">:</span> <span class="token string">"./bar-node.js"</span><span class="token punctuation">,</span>
+      <span class="token property">"require"</span><span class="token operator">:</span> <span class="token string">"./bar-require.js"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"./baz"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"import"</span><span class="token operator">:</span> <span class="token string">"./baz-import.js"</span><span class="token punctuation">,</span>
+      <span class="token property">"node"</span><span class="token operator">:</span> <span class="token string">"./baz-node.js"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    conditionNames<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'require'</span><span class="token punctuation">,</span> <span class="token string">'node'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>importing</p>
+<ul>
+<li><code>'foo'</code> 将解析为 <code>'foo/index-require.js'</code></li>
+<li><code>'foo/bar'</code>将解析为 <code>'foo/bar-node.js'</code>，因为在条件导出对象中， <code>"node"</code> 字段在 <code>"require"</code> 之前。</li>
+<li><code>'foo/baz'</code> 将解析为 <code>'foo/baz-node.js'</code></li>
+</ul>
+<h3 id="resolve-descriptionFiles"><a href="#resolve-descriptionFiles" class="headerlink" title="resolve.descriptionFiles"></a>resolve.descriptionFiles</h3><pre class="line-numbers language-none"><code class="language-none">[string] = ['package.json']<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>用于描述的 JSON 文件。</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    descriptionFiles<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'package.json'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="resolve-enforceExtension"><a href="#resolve-enforceExtension" class="headerlink" title="resolve.enforceExtension"></a>resolve.enforceExtension</h3><pre class="line-numbers language-none"><code class="language-none">boolean = false<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>如果是 <code>true</code>，将不允许无扩展名文件。默认如果 <code>./foo</code> 有 <code>.js</code> 扩展，<code>require('./foo')</code> 可以正常运行。但如果启用此选项，只有 <code>require('./foo.js')</code> 能够正常工作。</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    enforceExtension<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="resolve-extensionAlias"><a href="#resolve-extensionAlias" class="headerlink" title="resolve.extensionAlias"></a>resolve.extensionAlias</h3><pre class="line-numbers language-none"><code class="language-none">object<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>一个将拓展名与拓展名别名映射的对象。</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    extensionAlias<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">'.js'</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'.ts'</span><span class="token punctuation">,</span> <span class="token string">'.js'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token string">'.mjs'</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'.mts'</span><span class="token punctuation">,</span> <span class="token string">'.mjs'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="resolve-extensions"><a href="#resolve-extensions" class="headerlink" title="resolve.extensions"></a>resolve.extensions</h3><pre class="line-numbers language-none"><code class="language-none">[string] = ['.js', '.json', '.wasm']<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>尝试按顺序解析这些后缀名。如果有多个文件有相同的名字，但后缀名不同，webpack 会解析列在数组首位的后缀的文件 并跳过其余的后缀。</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    extensions<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'.js'</span><span class="token punctuation">,</span> <span class="token string">'.json'</span><span class="token punctuation">,</span> <span class="token string">'.wasm'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>能够使用户在引入模块时不带扩展：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> File <span class="token keyword">from</span> <span class="token string">'../path/to/file'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>请注意，以上这样使用 <code>resolve.extensions</code> 会 <strong>覆盖默认数组</strong>，这就意味着 webpack 将不再尝试使用默认扩展来解析模块。然而你可以使用 <code>'...'</code> 访问默认拓展名：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    extensions<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'.ts'</span><span class="token punctuation">,</span> <span class="token string">'...'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="resolve-fallback"><a href="#resolve-fallback" class="headerlink" title="resolve.fallback"></a>resolve.fallback</h3><pre class="line-numbers language-none"><code class="language-none">object<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>当正常解析失败时，重定向模块请求。</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    fallback<span class="token operator">:</span> <span class="token punctuation">{</span>
+      abc<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// do not include a polyfill for abc</span>
+      xyz<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'path/to/file.js'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// include a polyfill for xyz</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>webpack 5 不再自动 polyfill Node.js 的核心模块，这意味着如果你在浏览器或类似的环境中运行的代码中使用它们，你必须从 NPM 中安装兼容的模块，并自己包含它们。以下是 webpack 在 webpack 5 之前使用过的 polyfill 包列表：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    fallback<span class="token operator">:</span> <span class="token punctuation">{</span>
+      assert<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'assert'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      buffer<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'buffer'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      console<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'console-browserify'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      constants<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'constants-browserify'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      crypto<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'crypto-browserify'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      domain<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'domain-browser'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      events<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'events'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      http<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'stream-http'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      https<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'https-browserify'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      os<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'os-browserify/browser'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      path<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'path-browserify'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      punycode<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'punycode'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      process<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'process/browser'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      querystring<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'querystring-es3'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      stream<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'stream-browserify'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      string_decoder<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'string_decoder'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      sys<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'util'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      timers<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'timers-browserify'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      tty<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'tty-browserify'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      url<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'url'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      util<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'util'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      vm<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'vm-browserify'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      zlib<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'browserify-zlib'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="resolve-mainFields"><a href="#resolve-mainFields" class="headerlink" title="resolve.mainFields"></a>resolve.mainFields</h3><pre class="line-numbers language-none"><code class="language-none">[string]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>当从 npm 包中导入模块时（例如，<code>import * as D3 from 'd3'</code>），此选项将决定在 <code>package.json</code> 中使用哪个字段导入模块。根据 webpack 配置中指定的 <a target="_blank" rel="noopener" href="https://www.webpackjs.com/concepts/targets"><code>target</code></a> 不同，默认值也会有所不同。</p>
+<p>当 <code>target</code> 属性设置为 <code>webworker</code>, <code>web</code> 或者没有指定：</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    mainFields<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'browser'</span><span class="token punctuation">,</span> <span class="token string">'module'</span><span class="token punctuation">,</span> <span class="token string">'main'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>对于其他任意的 target（包括 <code>node</code>），默认值为：</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    mainFields<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'module'</span><span class="token punctuation">,</span> <span class="token string">'main'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>例如，考虑任意一个名为 <code>upstream</code> 的类库 <code>package.json</code> 包含以下字段：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"browser"</span><span class="token operator">:</span> <span class="token string">"build/upstream.js"</span><span class="token punctuation">,</span>
+  <span class="token property">"module"</span><span class="token operator">:</span> <span class="token string">"index"</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在我们 <code>import * as Upstream from 'upstream'</code> 时，这实际上会从 <code>browser</code> 属性解析文件。在这里 <code>browser</code> 属性是最优先选择的，因为它是 <code>mainFields</code> 的第一项。同时，由 webpack 打包的 Node.js 应用程序首先会尝试从 <code>module</code> 字段中解析文件。</p>
+<h3 id="resolve-mainFiles"><a href="#resolve-mainFiles" class="headerlink" title="resolve.mainFiles"></a>resolve.mainFiles</h3><pre class="line-numbers language-none"><code class="language-none">[string] = ['index']<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>解析目录时要使用的文件名。</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    mainFiles<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'index'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="resolve-exportsFields"><a href="#resolve-exportsFields" class="headerlink" title="resolve.exportsFields"></a>resolve.exportsFields</h3><pre class="line-numbers language-none"><code class="language-none">[string] = ['exports']<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在 package.json 中用于解析模块请求的字段。欲了解更多信息，请查阅 <a target="_blank" rel="noopener" href="https://www.webpackjs.com/guides/package-exports/">package-exports guideline</a> 文档。</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    exportsFields<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'exports'</span><span class="token punctuation">,</span> <span class="token string">'myCompanyExports'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="resolve-modules"><a href="#resolve-modules" class="headerlink" title="resolve.modules"></a>resolve.modules</h3><pre class="line-numbers language-none"><code class="language-none">[string] = ['node_modules']<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>告诉 webpack 解析模块时应该搜索的目录。</p>
+<p>绝对路径和相对路径都能使用，但是要知道它们之间有一点差异。</p>
+<p>通过查看当前目录以及祖先路径（即 <code>./node_modules</code>, <code>../node_modules</code> 等等）， 相对路径将类似于 Node 查找 ‘node_modules’ 的方式进行查找。</p>
+<p>使用绝对路径，将只在给定目录中搜索。</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    modules<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'node_modules'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>如果你想要添加一个目录到模块搜索目录，此目录优先于 <code>node_modules/</code> 搜索：</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    modules<span class="token operator">:</span> <span class="token punctuation">[</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'node_modules'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="resolve-unsafeCache"><a href="#resolve-unsafeCache" class="headerlink" title="resolve.unsafeCache"></a>resolve.unsafeCache</h3><pre class="line-numbers language-none"><code class="language-none">RegExp` `[RegExp]` `boolean: true<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>启用，会主动缓存模块，但并 <strong>不安全</strong>。传递 <code>true</code> 将缓存一切。</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    unsafeCache<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>正则表达式，或正则表达式数组，可以用于匹配文件路径或只缓存某些模块。 例如，只缓存 utilities 模块：</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    unsafeCache<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">src\/utilities</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h6 id="Warning-3"><a href="#Warning-3" class="headerlink" title="Warning"></a>Warning</h6><p>修改缓存路径可能在极少数情况下导致失败。</p>
+<h3 id="resolve-useSyncFileSystemCalls"><a href="#resolve-useSyncFileSystemCalls" class="headerlink" title="resolve.useSyncFileSystemCalls"></a>resolve.useSyncFileSystemCalls</h3><pre class="line-numbers language-none"><code class="language-none">boolean<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>对 resolver 使用同步文件系统调用。</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    useSyncFileSystemCalls<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="resolve-plugins"><a href="#resolve-plugins" class="headerlink" title="resolve.plugins"></a>resolve.plugins</h3><p><a target="_blank" rel="noopener" href="https://www.webpackjs.com/plugins/"><code>[Plugin]</code></a></p>
+<p>应该使用的额外的解析插件列表。 它允许插件，如 <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/directory-named-webpack-plugin"><code>DirectoryNamedWebpackPlugin</code></a>。</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token keyword">new</span> <span class="token class-name">DirectoryNamedWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="resolve-preferRelative"><a href="#resolve-preferRelative" class="headerlink" title="resolve.preferRelative"></a>resolve.preferRelative</h3><pre class="line-numbers language-none"><code class="language-none">boolean<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>当启用此选项时，webpack 更倾向于将模块请求解析为相对请求，而不使用来自 <code>node_modules</code> 目录下的模块。</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    preferRelative<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>src/index.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// let's say `src/logo.svg` exists</span>
+<span class="token keyword">import</span> logo1 <span class="token keyword">from</span> <span class="token string">'logo.svg'</span><span class="token punctuation">;</span> <span class="token comment">// this is viable when `preferRelative` enabled</span>
+<span class="token keyword">import</span> logo2 <span class="token keyword">from</span> <span class="token string">'./logo.svg'</span><span class="token punctuation">;</span> <span class="token comment">// otherwise you can only use relative path to resolve logo.svg</span>
+
+<span class="token comment">// `preferRelative` is enabled by default for `new URL()` case</span>
+<span class="token keyword">const</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">'module/path'</span><span class="token punctuation">,</span> <span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">'./module/path'</span><span class="token punctuation">,</span> <span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="resolve-preferAbsolute"><a href="#resolve-preferAbsolute" class="headerlink" title="resolve.preferAbsolute"></a>resolve.preferAbsolute</h3><pre class="line-numbers language-none"><code class="language-none">boolean<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>5.13.0+</p>
+<p>解析时，首选的绝对路径为 <a target="_blank" rel="noopener" href="https://www.webpackjs.com/configuration/resolve/#resolveroots"><code>resolve.roots</code></a>。</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    preferAbsolute<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="resolve-symlinks"><a href="#resolve-symlinks" class="headerlink" title="resolve.symlinks"></a>resolve.symlinks</h3><pre class="line-numbers language-none"><code class="language-none">boolean = true<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>是否将符号链接(symlink)解析到它们的符号链接位置(symlink location)。</p>
+<p>启用时，符号链接(symlink)的资源，将解析为其 <em>真实</em> 路径，而不是其符号链接(symlink)的位置。注意，当使用创建符号链接包的工具（如 <code>npm link</code>）时，这种方式可能会导致模块解析失败。</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    symlinks<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="resolve-cachePredicate"><a href="#resolve-cachePredicate" class="headerlink" title="resolve.cachePredicate"></a>resolve.cachePredicate</h3><pre class="line-numbers language-none"><code class="language-none">function(module) =&gt; boolean<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>决定请求是否应该被缓存的函数。函数传入一个带有 <code>path</code> 和 <code>request</code> 属性的对象。 必须返回一个 boolean 值。</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">cachePredicate</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">module</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token comment">// additional logic</span>
+      <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="resolve-restrictions"><a href="#resolve-restrictions" class="headerlink" title="resolve.restrictions"></a>resolve.restrictions</h3><pre class="line-numbers language-none"><code class="language-none">[string, RegExp]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>解析限制列表，用于限制可以解析请求的路径。</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    restrictions<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.(sass|scss|css)$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="resolve-roots"><a href="#resolve-roots" class="headerlink" title="resolve.roots"></a>resolve.roots</h3><pre class="line-numbers language-none"><code class="language-none">[string]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>A list of directories where requests of server-relative URLs (starting with ‘/‘) are resolved, defaults to <a target="_blank" rel="noopener" href="https://www.webpackjs.com/configuration/entry-context/#context"><code>context</code> configuration option</a>. On non-Windows systems these requests are resolved as an absolute path first.</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> fixtures <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'fixtures'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    roots<span class="token operator">:</span> <span class="token punctuation">[</span>__dirname<span class="token punctuation">,</span> fixtures<span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="resolve-importsFields"><a href="#resolve-importsFields" class="headerlink" title="resolve.importsFields"></a>resolve.importsFields</h3><pre class="line-numbers language-none"><code class="language-none">[string]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>Fields from <code>package.json</code> which are used to provide the internal requests of a package (requests starting with <code>#</code> are considered internal).</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    importsFields<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'browser'</span><span class="token punctuation">,</span> <span class="token string">'module'</span><span class="token punctuation">,</span> <span class="token string">'main'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="resolve-byDependency"><a href="#resolve-byDependency" class="headerlink" title="resolve.byDependency"></a>resolve.byDependency</h3><p>通过 module 请求类型来配置 resolve 选项。</p>
+<ul>
+<li><p>Type: <code>[type: string]: ResolveOptions</code></p>
+</li>
+<li><p>Example:</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+    byDependency<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">// ...</span>
+      esm<span class="token operator">:</span> <span class="token punctuation">{</span>
+        mainFields<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'browser'</span><span class="token punctuation">,</span> <span class="token string">'module'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      commonjs<span class="token operator">:</span> <span class="token punctuation">{</span>
+        aliasFields<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'browser'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      url<span class="token operator">:</span> <span class="token punctuation">{</span>
+        preferRelative<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h2 id="resolveLoader"><a href="#resolveLoader" class="headerlink" title="resolveLoader"></a>resolveLoader</h2><pre class="line-numbers language-none"><code class="language-none">object { modules [string] = ['node_modules'], extensions [string] = ['.js', '.json'], mainFields [string] = ['loader', 'main']}<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这组选项与上面的 <code>resolve</code> 对象的属性集合相同， 但仅用于解析 webpack 的 <a target="_blank" rel="noopener" href="https://www.webpackjs.com/concepts/loaders">loader</a> 包。</p>
+<p><strong>webpack.config.js</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolveLoader<span class="token operator">:</span> <span class="token punctuation">{</span>
+    modules<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'node_modules'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    extensions<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'.js'</span><span class="token punctuation">,</span> <span class="token string">'.json'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    mainFields<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'loader'</span><span class="token punctuation">,</span> <span class="token string">'main'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h6 id="Tip"><a href="#Tip" class="headerlink" title="Tip"></a>Tip</h6><p>请注意你可以在这里使用别名和 resolve 中熟悉的其他特性。例如 <code>{ txt: 'raw-loader' }</code> 将会 shim <code>txt!templates/demo.txt</code> 使用 <code>raw-loader</code>。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">5coder</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://5coder.cn/2022/112549845.html">http://5coder.cn/2022/112549845.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">5coder</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Webpack-Resolve/">
+                                    <span class="chip bg-color">Webpack Resolve</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/112540604.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="一文搞清楚前端 polyfill">
+                        
+                        <span class="card-title">一文搞清楚前端 polyfill</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-25
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    大前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Polyfill/">
+                        <span class="chip bg-color">Polyfill</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/112538302.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Webpack 4">
+                        
+                        <span class="card-title">Webpack 4</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    大前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Webpack4/">
+                        <span class="chip bg-color">Webpack4</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2022</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">5coder</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">381.1k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2021";
+                    var startMonth = "5";
+                    var startDate = "19";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="https://beian.miit.gov.cn" target="_blank">粤ICP备2022101498号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/5coder-leo" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:leo@5coder.cn" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=245616972" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 245616972" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

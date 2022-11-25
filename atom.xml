@@ -6,7 +6,7 @@
   <link href="http://5coder.cn/atom.xml" rel="self"/>
   
   <link href="http://5coder.cn/"/>
-  <updated>2022-11-20T13:13:56.369Z</updated>
+  <updated>2022-11-25T15:29:31.469Z</updated>
   <id>http://5coder.cn/</id>
   
   <author>
@@ -15,6 +15,158 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>这20个JavaScript的数组实现方法，一定不要错过！</title>
+    <link href="http://5coder.cn/2022/112562254.html"/>
+    <id>http://5coder.cn/2022/112562254.html</id>
+    <published>2022-11-25T15:29:14.000Z</published>
+    <updated>2022-11-25T15:29:31.469Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript" scheme="http://5coder.cn/categories/JavaScript/"/>
+    
+    
+    <category term="JavaScript" scheme="http://5coder.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一文搞清楚前端 polyfill</title>
+    <link href="http://5coder.cn/2022/112540604.html"/>
+    <id>http://5coder.cn/2022/112540604.html</id>
+    <published>2022-11-25T15:26:51.000Z</published>
+    <updated>2022-11-25T15:27:23.448Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;polyfill</summary>
+        
+      
+    
+    
+    
+    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Polyfill" scheme="http://5coder.cn/tags/Polyfill/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Webpack Resolve文档</title>
+    <link href="http://5coder.cn/2022/112549845.html"/>
+    <id>http://5coder.cn/2022/112549845.html</id>
+    <published>2022-11-25T15:25:53.000Z</published>
+    <updated>2022-11-25T15:26:17.920Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;解析-Resolve&quot;&gt;&lt;a href=&quot;#解析-Resolve&quot; class=&quot;headerlink&quot; title=&quot;解析(Resolve)&quot;&gt;&lt;/a&gt;解析(Resolve)&lt;/h1&gt;&lt;p&gt;这些选项能设置模块如何被解析。webpack</summary>
+        
+      
+    
+    
+    
+    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Webpack Resolve" scheme="http://5coder.cn/tags/Webpack-Resolve/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Webpack 4</title>
+    <link href="http://5coder.cn/2022/112538302.html"/>
+    <id>http://5coder.cn/2022/112538302.html</id>
+    <published>2022-11-25T15:24:47.000Z</published>
+    <updated>2022-11-25T15:25:15.376Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;/media/attachment/2022/11/Webpack4-demo.rar&quot;&gt;【附件】Webpack4-demo.rar&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Webpack4&quot;&gt;&lt;a href=&quot;#Webpack4&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Webpack4" scheme="http://5coder.cn/tags/Webpack4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搭建自己的SSR</title>
+    <link href="http://5coder.cn/2022/112527646.html"/>
+    <id>http://5coder.cn/2022/112527646.html</id>
+    <published>2022-11-25T15:22:27.000Z</published>
+    <updated>2022-11-25T15:23:46.344Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Vue-SSR介绍&quot;&gt;&lt;a href=&quot;#Vue-SSR介绍&quot; class=&quot;headerlink&quot; title=&quot;Vue SSR介绍&quot;&gt;&lt;/a&gt;Vue SSR介绍&lt;/h2&gt;&lt;h3 id=&quot;是什么&quot;&gt;&lt;a href=&quot;#是什么&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Vue SSR" scheme="http://5coder.cn/tags/Vue-SSR/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Webpack 5</title>
+    <link href="http://5coder.cn/2022/112521855.html"/>
+    <id>http://5coder.cn/2022/112521855.html</id>
+    <published>2022-11-25T15:17:03.000Z</published>
+    <updated>2022-11-25T15:21:23.887Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Webpack5&quot;&gt;&lt;a href=&quot;#Webpack5&quot; class=&quot;headerlink&quot; title=&quot;Webpack5&quot;&gt;&lt;/a&gt;Webpack5&lt;/h1&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Webpack5" scheme="http://5coder.cn/tags/Webpack5/"/>
+    
+  </entry>
   
   <entry>
     <title>Webpack 5</title>
@@ -374,161 +526,6 @@
     <category term="工具类" scheme="http://5coder.cn/tags/%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
     
     <category term="壁纸" scheme="http://5coder.cn/tags/%E5%A3%81%E7%BA%B8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>面试题分享2</title>
-    <link href="http://5coder.cn/2022/082418074.html"/>
-    <id>http://5coder.cn/2022/082418074.html</id>
-    <published>2022-08-24T09:39:39.000Z</published>
-    <updated>2022-08-24T13:09:27.049Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;面试题-1&quot;&gt;&lt;a href=&quot;#面试题-1&quot; class=&quot;headerlink&quot; title=&quot;面试题-1&quot;&gt;&lt;/a&gt;面试题-1&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;一、请说出下列最终的执行结果，并解释为什么。&lt;/strong&gt;&lt;/p&gt;
-&lt;pre</summary>
-        
-      
-    
-    
-    
-    <category term="前端面试题" scheme="http://5coder.cn/categories/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    
-    
-    <category term="JavaScript" scheme="http://5coder.cn/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue基础难点总结</title>
-    <link href="http://5coder.cn/2022/082411622.html"/>
-    <id>http://5coder.cn/2022/082411622.html</id>
-    <published>2022-08-24T03:50:53.000Z</published>
-    <updated>2022-08-24T13:09:27.049Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;vue各种各样的命令和语法的格式容易记混&lt;/p&gt;
-&lt;h2 id=&quot;vue指令-v-model修饰符&quot;&gt;&lt;a href=&quot;#vue指令-v-model修饰符&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="Vue" scheme="http://5coder.cn/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript-堆栈分析</title>
-    <link href="http://5coder.cn/2022/082336194.html"/>
-    <id>http://5coder.cn/2022/082336194.html</id>
-    <published>2022-08-23T09:22:53.000Z</published>
-    <updated>2022-08-24T13:09:27.039Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;JavaScript-堆栈分析&quot;&gt;&lt;a href=&quot;#JavaScript-堆栈分析&quot; class=&quot;headerlink&quot; title=&quot;JavaScript-堆栈分析&quot;&gt;&lt;/a&gt;JavaScript-堆栈分析&lt;/h2&gt;&lt;h3 id=&quot;1-堆栈处理&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="JavaScript" scheme="http://5coder.cn/tags/JavaScript/"/>
-    
-    <category term="性能优化" scheme="http://5coder.cn/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo-theme-matery主题使用</title>
-    <link href="http://5coder.cn/2022/082310663.html"/>
-    <id>http://5coder.cn/2022/082310663.html</id>
-    <published>2022-08-23T02:52:49.000Z</published>
-    <updated>2022-08-23T13:44:39.834Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;hexo-theme-matery主题使用&quot;&gt;&lt;a href=&quot;#hexo-theme-matery主题使用&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="大前端(杂识)" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF-%E6%9D%82%E8%AF%86/"/>
-    
-    
-    <category term="hexo-theme-matery" scheme="http://5coder.cn/tags/hexo-theme-matery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>函数式编程-review</title>
-    <link href="http://5coder.cn/2022/081427799.html"/>
-    <id>http://5coder.cn/2022/081427799.html</id>
-    <published>2022-08-14T09:30:06.000Z</published>
-    <updated>2022-08-14T09:39:44.668Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;一、函数式编程&quot;&gt;&lt;a href=&quot;#一、函数式编程&quot; class=&quot;headerlink&quot; title=&quot;一、函数式编程&quot;&gt;&lt;/a&gt;一、函数式编程&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;函数式编程是一种编程范式，和面向对象编程是并列关系（编程范式：思想 +</summary>
-        
-      
-    
-    
-    
-    <category term="Web Review" scheme="http://5coder.cn/categories/Web-Review/"/>
-    
-    
-    <category term="Review" scheme="http://5coder.cn/tags/Review/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Nuxt.js 综合案例</title>
-    <link href="http://5coder.cn/2021/072632945.html"/>
-    <id>http://5coder.cn/2021/072632945.html</id>
-    <published>2021-07-26T13:35:34.000Z</published>
-    <updated>2022-08-19T13:10:07.213Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Nuxt-js-综合案例&quot;&gt;&lt;a href=&quot;#Nuxt-js-综合案例&quot; class=&quot;headerlink&quot; title=&quot;Nuxt.js 综合案例&quot;&gt;&lt;/a&gt;Nuxt.js 综合案例&lt;/h2&gt;&lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="大前端" scheme="http://5coder.cn/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="Nuxt.js" scheme="http://5coder.cn/tags/Nuxt-js/"/>
     
   </entry>
   
