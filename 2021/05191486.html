@@ -617,16 +617,16 @@ console<span class="token punctuation">.</span><span class="token function">log<
   name
   ^
 
-SyntaxError: Identifier 'name' has already been declared
-    at createScript (vm.js:80:10)
-    at Object.runInThisContext (vm.js:139:10)
-    at Module._compile (module.js:599:28)
-    at Object.Module._extensions..js (module.js:646:10)
-    at Module.load (module.js:554:32)
-    at tryModuleLoad (module.js:497:12)
-    at Function.Module._load (module.js:489:3)
-    at Function.Module.runMain (module.js:676:10)
-    at startup (bootstrap_node.js:187:16)
+SyntaxError: Identifier <span class="token string">'name'</span> has already been declared
+    at createScript <span class="token punctuation">(</span>vm.js:80:10<span class="token punctuation">)</span>
+    at Object.runInThisContext <span class="token punctuation">(</span>vm.js:139:10<span class="token punctuation">)</span>
+    at Module._compile <span class="token punctuation">(</span>module.js:599:28<span class="token punctuation">)</span>
+    at Object.Module._extensions<span class="token punctuation">..</span>js <span class="token punctuation">(</span>module.js:646:10<span class="token punctuation">)</span>
+    at Module.load <span class="token punctuation">(</span>module.js:554:32<span class="token punctuation">)</span>
+    at tryModuleLoad <span class="token punctuation">(</span>module.js:497:12<span class="token punctuation">)</span>
+    at Function.Module._load <span class="token punctuation">(</span>module.js:489:3<span class="token punctuation">)</span>
+    at Function.Module.runMain <span class="token punctuation">(</span>module.js:676:10<span class="token punctuation">)</span>
+    at startup <span class="token punctuation">(</span>bootstrap_node.js:187:16<span class="token punctuation">)</span>
     at bootstrap_node.js:608:3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>因为 <code>obj</code> 对象的 <code>name</code> 属性必须在解构中定义 <code>name</code> 变量进行获取，那么这一冲突就无法避免。这个时候可以通过重命名的方式来解决这样的问题，如下代码所示：</p>
@@ -1910,7 +1910,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">385.1k</span>&nbsp;字
+                class="white-color">397.7k</span>&nbsp;字
             
             
             
