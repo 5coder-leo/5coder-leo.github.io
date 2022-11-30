@@ -1,0 +1,1535 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Vite实现原理, JavaScript Vue">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Vite实现原理 | 5coder</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="5coder" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">5coder</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">5coder</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/42.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Vite实现原理</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Vite/">
+                                <span class="chip bg-color">Vite</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/" class="post-category">
+                                大前端
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-11-30
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-11-30
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    7.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    27 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Vite实现原理"><a href="#Vite实现原理" class="headerlink" title="Vite实现原理"></a>Vite实现原理</h1><h2 id="1-Vite"><a href="#1-Vite" class="headerlink" title="1.Vite"></a>1.Vite</h2><p>接下来再来回顾一下Vite，之前已经演示过Vite的基本使用，这里的重点是来了解Vite的核心实现原理。先来回顾一下Vite的概念，<strong>Vite是一个面向现代浏览器的一个更轻、更快的web应用开发工具，它基于<code>ECMAScript</code>标准的原生模块系统<code>ES Module</code>来实现的。</strong></p>
+<p>它的出现是为了解决外<code>webpack</code>在开发阶段使用<code>webpack-dev-server</code>冷启动时间过长，另外<code>webpack-HMR</code>热更新反应速度慢的问题。使用Vite创建的项目就是一个普通的Vue3的应用，没有太多特殊的地方，相比基于Vue cli创建的项目也少了很多的配置文件和依赖。</p>
+<p>Vite创建的项目开发依赖非常的简单，只有<code>vite</code>和@<code>vue/compiler-sfc</code>。Vite就是接下来要模拟实现的命令航工具，<code>vue/compiler-sfc</code>就是用来编译项目中的<code>.vue</code>结尾的单文件组件，vue2中使用的是<code>vue/template-compiler</code>。这里需要注意的是，Vite目前只支持Vue3.0的版本，在创建项目的时候通过指定使用不同的模板，也可以支持其他的框架。</p>
+<p>Vite项目中提供了两个子命令，<code>vite serve</code>和<code>vite build</code>。<code>vite serve</code>开启一个用于开发的web服务器，在启动服务器的时候不需要编译所有的代码文件，启动速度非常的快。</p>
+<p><img src="http://5coder.cn/img/1669797562_6fdf1c95663663a09de25d918c517f25.png"></p>
+<p>在运行<code>vite serve</code>的时候，不需要打包，直接开启一个web服务器，当浏览器请求服务器，比如请求一个单文件组件，这个时候在服务器端编译单文件组件，然后把编译的结果返回给浏览器。注意，这里的编译是在<strong>服务器端</strong>，另外模块的处理是在请求到服务器端处理的。</p>
+<p><img src="http://5coder.cn/img/1669797660_d22a81bdc26a08631ae31f7066bbd82a.png"></p>
+<p>再来回顾一下<code>vue-cli</code>创建的应用，它在启动开发的web服务器的时候使用的是<code>vue-cli-service-serve</code>，当运行<code>vue-cli-service-serve</code>的时候，它内部会使用<code>webpack</code>首先去打包所有的模块。如果模块比较多的话，打包速度会非常的慢，把打包的结果存储到内存中，然后才会开启开发的外部服务器浏览器，请求外部服务器把内存中打包的结果直接返回给浏览器。</p>
+<p><code>webpack</code>这类工具，它的做法是将所有的模块提前编译打包进<code>bundle</code>里。换句话说，不管模块是否被执行，是否使用到，都要被编译和打包到<code>bundle</code>里。随着项目越来越大，打包后的帮也越来越大，打包的速度自然也就越来越慢。</p>
+<p>Vite利用现代浏览器原生支持的<code>ES Module</code>模块化的特性，省略了对模块的打包，对于需要编译的文件，比如单文件、组件、样式模块等为采用的另一种模式，<strong>即时编译</strong>。也就是说只有具体去请求某个文件的时候，才会在服务端编译这个文件。所以这种即时编译的好处主要体现在按需编译速度会更快。</p>
+<p>Vite默认也支持HMR模块热更新，相对于<code>webpack</code>中的<code>HMR</code>，性能更好，因为Vite只需要立即编译当前所修改的文件即可，所以响应速度非常快。而<code>webpack</code>修改某个文件过后会自动以这个文件为入口重新<code>build</code>一次，所有涉及到的依赖也会被重新加载一次，所以反应速度稍微会慢一些。</p>
+<ul>
+<li>Vite HMR<ul>
+<li>立即编译当前所修改的文件</li>
+</ul>
+</li>
+<li>Webpack HMR<ul>
+<li>会自动以这个文件为入口重写build一次，所有的涉及到的依赖也都会被加载一遍</li>
+</ul>
+</li>
+</ul>
+<p>Vite在生产模式下打包需要使用<code>vite build</code>的命令，这个命令内部采用的是<code>rollup</code>进行打包，最终还是会把文件都提前编译并打包到一起。对于代码切割的需求，vite它内部采用的是原生的动态导入的特性实现的，所以<strong>打包结果还是只能够支持现代浏览器</strong>，不过动态导入特性是有相应的<code>Polyfill</code>的。</p>
+<p>那随着Vite的出现，引发了另外一个值得思考的问题，究竟有没有必要去打包应用呢？之前使用<code>webpack</code>进行打包，会把所有的模块打包到一个<code>bundle.js</code>中，主要有两个原因，第一是浏览器环境并不支持模块化，第二是零散的模块文件会产生大量的<code>http</code>请求。</p>
+<p>先来看第一个问题，浏览器环境并不支持模块化。随着现在浏览器对<code>ES Module</code>标准支持的逐渐完善，第一个问题已经慢慢不存在了，现阶段绝大多数浏览器都是支持<code>ES Module</code>特性的。</p>
+<p>再来看第二个问题，之前打包还有一个目的，就是当JS文件比较多的时候，每个JS文件都要发送一次请求，每个请求都要创建一个连接，那为了减少请求服务器的次数，所以打包成一个文件。这个问题HTTP已经帮我们解决，它可以复用链接。</p>
+<p>下面看一下浏览器对<code>ES Module</code>的支持情况。</p>
+<p><img src="http://5coder.cn/img/1669800466_96b54ab7be9945dae0ca0e7ccce45438.png"></p>
+<p>Vite创建的项目几乎不需要额外的配置，默认就支持<code>TypeScript</code>以及<code>CSS</code>的预编译器，但是需要单独安装对应的编译器以及支持JSX和<code>Web Assembly</code>。其他的future你可以打开官网来查看。</p>
+<blockquote>
+<p>Vite带来的优势主要体现在提升开发者在开发过程中的体验。外部开发服务器不需要等待，可以立即启动。另外模块热更新几乎是实时的，所需的文件是按需编译，避免编译用不到的文件，还有开箱即用，避免各种<code>loader</code>以及<code>plugin</code>的配置。</p>
+</blockquote>
+<h2 id="2-Vite-实现原理-静态Web服务器"><a href="#2-Vite-实现原理-静态Web服务器" class="headerlink" title="2.Vite 实现原理-静态Web服务器"></a>2.Vite 实现原理-静态Web服务器</h2><p>接下来通过实现一个自己的Vite工具来深入了解Vite的工作原理。先来回顾一下Vite的核心功能。Vite的核心功能包括开启一个静态的web服务器，并且能够编译单文件组件，而且提供<code>HMR</code>的功能。</p>
+<p>当启动Vite的时候，首先会将当前项目目录作为静态文件服务器的根目录。静态文件服务器会拦截部分请求，例如当请求单文件组件的时候，会实施编译以及处理其他浏览器不能识别的模块。通过<code>webSocket</code>实现<code>HMR</code>，这个功能会跳过。下面首先来实现一个能够开启静态web服务器的命令行工具。Vite内部使用的是<code>koa</code>来开启静态web服务器。</p>
+<p>项目目录：</p>
+<p><img src="http://5coder.cn/img/1669801692_b5b2525988a5f23cd9c8a57d469f2829.png"></p>
+<p><code>index.js</code></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>env node
+<span class="token keyword">const</span> Koa <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> send <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"koa-send"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Koa</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 1.静态文件服务器</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">await</span> <span class="token function">send</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> ctx<span class="token punctuation">.</span>path<span class="token punctuation">,</span> <span class="token punctuation">{</span> root<span class="token operator">:</span> process<span class="token punctuation">.</span><span class="token function">cwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> index<span class="token operator">:</span> <span class="token string">'index.html'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">await</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Server 3000'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>要基于<code>koa</code>来开发一个静态的we部服务器，所以<code>index.js</code>这里先来导入所需要的两个模块，<code>koa</code>和<code>koa-send</code>。然后再来创建一个<code>koa</code>的实例，接下来使用<code>koa</code>开发静态web服务器，默认返回根目录中的<code>index.html</code>。</p>
+<p>先来创建一个中间键，它负责去处理静态文件，默认加载当前目录下，也就是运行该命令行工具目录中的<code>index.html</code>。</p>
+<p>接下来直接调用<code>send</code>，把<code>index.html</code>面返回给浏览器，当然返回的是当前目录，也就是运行该命令行工具的这个目录下的<code>index.html</code>。直接调用<code>send</code>的函数，第一个参数是<code>ctx</code>上下文，第二个参数是<code>ctx.path</code>当前请求的路径。第三个参数要去配置根目录，当前web服务器的根目录是<code>root: process.cwd()</code>，接着要设置默认的页面index，默认的页面就是<code>index.html</code>。返回静态页面就写完了，因为是中间键，所以还要调用一下<code>next</code>。</p>
+<p>接下来需要去监听端口<code>3000</code>。</p>
+<p>到这里静态服务器就暂时写完了来测试一下，测试之前我们先来<code>npm link</code>一下，它会把当前这个项目链接到<code>npm</code>这个安装目录里边来，下面打开一个基于Vue3开发的项目，然后在终端里边只需要输入<code>my-vite-cli</code>，也就是开发的这个命令行工具。</p>
+<p><img src="http://5coder.cn/img/1669801422_9e9b557af1f9c90c08e1749371e19ad6.png"></p>
+<p>因为还没处理完，页面上什么都没看到。打开<code>console</code>控制台，这里有个错误，它告诉我们解析vue模块的时候失败了。我们使用<code>import</code>导入模块的时候，这里要求使用相对路径。</p>
+<p><img src="http://5coder.cn/img/1669802248_700608cfca48d7d107ba93f1d08c490a.png"></p>
+<p>再切换到<code>network</code>，刷新一下来看<code>main.js</code>，这次请求这里导入了<code>vue</code>，但导入<code>vue</code>的时候，它后边的路径没有<code>/、./、../</code>，所以浏览器不识别，我们希望他去<code>node_modules</code>文件夹去加载<code>vue</code>，这是打包工具的默认行为，但是浏览器不支持。想要解决这个问题的话，来看一下<code>Vite</code>中是如何处理的。</p>
+<p><img src="http://5coder.cn/img/1669801378_22b64993e507b6dee6fd84f74a442337.png"></p>
+<p>当浏览器从Vite开启的外部服务器加载<code>main.js</code>的时候，首先会去处理加载第三方模块的路径，所以在服务器端要手动来处理这个路径的问题。当请求一个模块的时候，比如当前请求的<code>main.js</code>这个模块，要把该模块中加载第三方模块的<code>import</code>中的路径做一个处理，让它加载一个不存在的路径，这里的<code>/@modules/vue.js</code>。</p>
+<p>再来看一下这次请求的<code>headers</code>，在响应头中可以找到<code>contentType</code>，它的值是<code>application/javascript</code>，它的作用是告诉浏览器返还的文件是一个<code>JavaScript</code>文件。所以一会可以在web服务器输出之前先判断一下当前返回的文件是否是<code>js</code>文件，如果是的话，再来处理里边的第三方模块的路径，然后再去请求<code>/@modules/vue.js</code>的时候，这个路径在服务器上是根本不存在的，没有<code>@modules</code>文件夹，需要在服务器上要去处理这个请求，去<code>node_modules</code>去加载的<code>vue</code>模块。</p>
+<p>好，这是我们的思路，那到这里我们加载<code>index.html</code>的静态服务器其实就搞定了，稍后再来处理加载第三方模块的问题。</p>
+<h2 id="3-Vite-实现原理-修改第三方模块的路径"><a href="#3-Vite-实现原理-修改第三方模块的路径" class="headerlink" title="3.Vite 实现原理-修改第三方模块的路径"></a>3.Vite 实现原理-修改第三方模块的路径</h2><p>接下来处理请求第三方模块的问题，需要来创建两个中间键，一个中间键是把加载第三方模块的<code>import</code>中的路径改变，改成加载<code>/@modules/模块的名称</code>。另一个中间件，当请求过来之后，判断请求路径中是否有<code>/@modules/模块的名称</code>，如果有的话，取<code>node_modules</code>目录中加载对应的模块。下面实现第一个中间键，<strong>修改第三方模块的路径</strong>。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>env node
+<span class="token keyword">const</span> Koa <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> send <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"koa-send"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Koa</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">streamToString</span> <span class="token operator">=</span> <span class="token parameter">stream</span> <span class="token operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> chunks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  stream<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token parameter">chunk</span> <span class="token operator">=&gt;</span> chunks<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>chunk<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  stream<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'end'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">resolve</span><span class="token punctuation">(</span>Buffer<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>chunks<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  stream<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> reject<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 1.静态文件服务器</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">await</span> <span class="token function">send</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> ctx<span class="token punctuation">.</span>path<span class="token punctuation">,</span> <span class="token punctuation">{</span> root<span class="token operator">:</span> process<span class="token punctuation">.</span><span class="token function">cwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> index<span class="token operator">:</span> <span class="token string">'index.html'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">await</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 2.修改第三方模块的路径</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>ctx<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">'application/javascript'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> contents <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">streamToString</span><span class="token punctuation">(</span>ctx<span class="token punctuation">.</span>body<span class="token punctuation">)</span>
+    <span class="token comment">// import vue from 'vue</span>
+    <span class="token comment">// import App from './App.vue</span>
+    <span class="token comment">// 这里需要将【from '】替换成【from '@modules】</span>
+    ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> contents<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">(from\s+['"])(?!\.\/)</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'$1/@modules/'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Server 3000'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>第一个中间件中加载了静态文件，当把静态文件返回给浏览器之前，要判断一下当前返回的文件是否是<code>javascript</code>模块，如果是的话，来修改第三方模块的路径，修改成<code>/@modules/模块的名称</code>。</p>
+<p>在把文件返回给浏览器之前，需要判断一下当前返回给浏览器的文件是否是<code>javascript</code>，在这里只需要判断响应头中的contentType是否为<code>application/javascript</code>，如果是，那需要找到这个文件中的内容，然后处理<code>import</code>中的路径。</p>
+<p><code>ctx.body</code>就是要返回给浏览器的<code>js</code>文件。注意<code>ctx.body</code>是一个流，要修改字符串中的路径，所以需要把<strong>流转换成字符串</strong>。这件事情其他位置还有用，所以在最上面来定一个函数<code>streamToString</code>，这个函数的作用是把流转换成字符串。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">streamToString</span> <span class="token operator">=</span> <span class="token parameter">stream</span> <span class="token operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> chunks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  stream<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token parameter">chunk</span> <span class="token operator">=&gt;</span> chunks<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>chunk<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  stream<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'end'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">resolve</span><span class="token punctuation">(</span>Buffer<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>chunks<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  stream<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> reject<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>因为读取流是一个异步的过程，所以这里要返回一个<code>promise</code>对象。在这个函数里，首先要定一个<code>chunks</code>数组，它存储一会读取到的<code>buffer</code>，然后来注册<code>stream</code>的<code>data</code>事件，去监听读取到的<code>buffer</code>，把读取到的<code>buffer</code>存储到<code>chunks</code>数组中。当数据读取完毕之后，把获取到的结果传递给<code>resolve</code>。这里先要把数组中的<code>buffer</code>合并，然后再转换成字符串。把以上流程注册到<code>end</code>事件中。最后如果出错的话，调用<code>reject</code>，再注册出错的事件<code>error</code>，这个时候直接执行reject。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 2.修改第三方模块的路径</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>ctx<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">'application/javascript'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> contents <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">streamToString</span><span class="token punctuation">(</span>ctx<span class="token punctuation">.</span>body<span class="token punctuation">)</span>
+    <span class="token comment">// import vue from 'vue'</span>
+    <span class="token comment">// import App from './App.vue</span>
+    <span class="token comment">// 这里需要将【from '】替换成【from '@modules】</span>
+    ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> contents<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">(from\s+['"])(?!\.\/)</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'$1/@modules/'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>现在可以把<code>ctx.body</code>转换成字符串，来接收一下它的返回结果<code>const contents = await streamToString(ctx.body)</code>。接下来把<code>contents</code>中加载第三方模块的路径修改一下，然后把结果重新赋值给<code>ctx.body</code>输出。这里需要通过<strong>正则表达式</strong>把第三方模块匹配出来，然后替换成<code>/@modules/模块的名称</code>。</p>
+<p>下面打开浏览器来测试一下，打开浏览器之前我们还需要重启一下服务器，因为这里代码修改了。</p>
+<p>先来看一下<code>main.js</code>请求，找到<code>response</code>来看这次请求的结果，注意这里的<code>vue</code>的路径已经被修改了，修改成了<code>/@modules/vue</code>，这个路径是不存在的。下一个请求是<code>/@modules/vue</code>这个文件，而现在返回的是<code>404</code>，这个路径根本是不存在的，所以获取不到文件。所以在静态的web服务器中，当请求过来之后，还要首先去判断一下当前请求的路径中是否以<code>/@modules/</code>开头，如果是的话就去<code>node_module</code>找对应的模块，下面实现这个功能。</p>
+<p><img src="http://5coder.cn/img/1669811866_4a24cedb94cfb25805bd9b1571e5d315.png"></p>
+<h2 id="4-Vite-实现原理-加载第三方模块"><a href="#4-Vite-实现原理-加载第三方模块" class="headerlink" title="4.Vite 实现原理-加载第三方模块"></a>4.Vite 实现原理-加载第三方模块</h2><p>上一小节中创建了一个中间件，负责把加载的第三方模块的路径修改成<code>/@modules/</code>的形式。现在再来创建一个中间键，当请求过来以后，判断请求的路径是否以<code>/@modules/</code>开头，如果是的话，去<code>node_modules</code>目录中加载对应的模块。</p>
+<p>接下来在处理静态文件<strong>之前</strong>再来创建一个中间键。注意这里是在处理静态文件之前。这里要做的事情是当请求的路径是以<code>/@modules/</code>开头的话，把请求的路径修改成<code>node_modules</code>中对应的文件路径，然后继续交给处理静态文件的中间件去处理，所以这个中间界应该写在第一个位置。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>env node
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> Koa <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> send <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"koa-send"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Koa</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">streamToString</span> <span class="token operator">=</span> <span class="token parameter">stream</span> <span class="token operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> chunks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  stream<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token parameter">chunk</span> <span class="token operator">=&gt;</span> chunks<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>chunk<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  stream<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'end'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">resolve</span><span class="token punctuation">(</span>Buffer<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>chunks<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  stream<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> reject<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 3. 加载第三方模块</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ctx.path --&gt; /@modules/vue</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>ctx<span class="token punctuation">.</span>path<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">'/@modules/'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> moduleName <span class="token operator">=</span> ctx<span class="token punctuation">.</span>path<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> pkgPath <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span><span class="token function">cwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'node_modules'</span><span class="token punctuation">,</span> moduleName<span class="token punctuation">,</span> <span class="token string">'package.json'</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> pkg <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span>pkgPath<span class="token punctuation">)</span>
+    ctx<span class="token punctuation">.</span>path <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'/node_modules'</span><span class="token punctuation">,</span> moduleName<span class="token punctuation">,</span> pkg<span class="token punctuation">.</span>module<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">await</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 1.静态文件服务器</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">await</span> <span class="token function">send</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> ctx<span class="token punctuation">.</span>path<span class="token punctuation">,</span> <span class="token punctuation">{</span> root<span class="token operator">:</span> process<span class="token punctuation">.</span><span class="token function">cwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> index<span class="token operator">:</span> <span class="token string">'index.html'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">await</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 2.修改第三方模块的路径</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>ctx<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">'application/javascript'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> contents <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">streamToString</span><span class="token punctuation">(</span>ctx<span class="token punctuation">.</span>body<span class="token punctuation">)</span>
+    <span class="token comment">// import vue from 'vue</span>
+    <span class="token comment">// import App from './App.vue</span>
+    <span class="token comment">// 这里需要将【from '】替换成【from '@modules】</span>
+    ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> contents<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">(from\s+['"])(?!\.\/)</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'$1/@modules/'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Server 3000'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在这个函数里首先要获取当前的路径，使用的是<code>ctx.path</code>，当前希望处理的路径是这个样子的<code>ctx.path --&gt; /@modules/vue</code>。所以先来判断一下<code>ctx.path</code>属性是否是以<code>/@modules/</code>开头的，如果是的话，那再从这个路径中截取模块的名字<code>vue</code>。注意这里的<code>/@modules/</code>总共是10个字符，以直接来截取。</p>
+<p>拿到模块的名称之后，要获取这个模块的入口文件，这里要获取的是<code>ES Module</code>模块的入口文件。需要先找到这个模块的<code>package.json</code>，然后再获取<code>package.json</code>的<code>module</code>字段的值，也就是<code>ES Module</code>模块的入口，需要先来拼接模块的<code>package.json</code>文件的路径。这里用到<code>node</code>中的<code>path</code>模块，可以调用<code>path.join()</code>来拼接路径。</p>
+<p>先定一个常量来接收拼接好的路径，现在要拼接的是<code>package.json</code>的路径。当前项目的路径是<code>process.cwd()</code>，然后是<code>node_modules</code>文件夹，在<code>node_modules</code>文件夹里边来找模块<code>moduleName</code>，然后再去找这个模块下面的<code>package.json</code>。有了这个路径之后，再使用<code>require</code>来加载<code>package.json</code>。最后重新给<code>cpx.path</code>赋值，因为之前请求的这个路径是不存在的，需要重新给它设置一个存在的路径，让它去加载这个文件。</p>
+<p>到这里加载第三方模块就写完了，然后重启一下服务器，再打开浏览器来测试一下，看看是否OK。</p>
+<p><img src="http://5coder.cn/img/1669814888_136d2577d494314bdbbb12efe828b5b6.png"></p>
+<p>但是这还有一个问题，加载的<code>vue</code>是<code>bundle</code>的<code>vue</code>版本，也就是需要打包的vue，但这个vue里边它又去加载了vue源码中的<code>runtime-dom</code>模块，还去加载了vue中的<code>shared</code>的模块，但是看一下请求这个位置，它根本就没有请求到这两个模块，是不是加载这两个模块出了问题呢？好，我们来看一下在<code>console</code>里面有两个错误。</p>
+<p>这两个错误告诉我们加载模块失败。第一个是<code>App.vue</code>，第二个是<code>index.css</code>，也就是当前去加载<code>App.vue</code>和<code>index.css</code>这l两个个模块时，浏览器不能识别，所以在服务器上还要去处理浏览器不能够识别的模块。</p>
+<h2 id="5-Vite-实现原理-编译单文件组件"><a href="#5-Vite-实现原理-编译单文件组件" class="headerlink" title="5.Vite 实现原理-编译单文件组件"></a>5.Vite 实现原理-编译单文件组件</h2><p>刚刚演示过浏览器无法处理在<code>main.js</code>中使用<code>import</code>加载的单文件组件模块和样式模块，浏览器只能够处理<code>js</code>模块，所以通过<code>import</code>加载的其他模块都需要在服务器端处理。当请求单文件组件的时候，需要在服务器上把单文件组件编译成<code>js</code>模块，然后返回给浏览器。下面先打开浏览器来观察一下<code>Vite</code>中是如何去处理单文件组件的，然后再来自己实现。这里只演示单文件组件的处理过程，其他通过<code>import</code>导入的模块你可以参考我们的实现思路自己来写。</p>
+<p><img src="http://5coder.cn/img/1669816945_09b10701e4c6b263aa718735f19501ef.png"></p>
+<p>当第一次请求这个文件的时候，服务器会把单文件组件编译成一个对象。这里先加载<code>HelloWorld</code>这个组件，然后创建了一个组件的选项对象。注意这里没有模板，因为模板最终要被编译成<code>render</code>函数，然后挂载到选项对象上。那下面又去加载了<code>App.vue?type=template</code>。</p>
+<p><img src="http://5coder.cn/img/1669817160_649e6ee5bb99549a6dc433f17cd55ab6.png"></p>
+<p>这次请求是告诉服务器，你去帮我编一下这个单文件组件的模板，然后返回一个<code>render</code>函数，注意现在下载的就是它的<code>render</code>函数，然后把<code>render</code>函数挂载到刚刚创建的组件选项对象上来。从这里可以看到，<strong>当请求单文件组件的时候，服务器会来编译单文件组件，并把相应的结果返回给浏览器。</strong></p>
+<p><code>App.vue?type=template</code>这次请求是告诉服务器，你帮我把单文件组件编译成<code>render</code>函数，可以找到这个<code>render</code>函数这块，通过<code>export</code>把这个<code>render</code>函数导出了。在<code>app.vue</code>里边，去加载这个组件返回的这个<code>render</code>函数，并且把它挂载到<code>script</code>对象的<code>render</code>方法上来。</p>
+<p>这是<code>vite</code>中是如何去处理单文件组件的，它会发送两次请求，第一次请求是把单文件组件编译成一个对象，第二次请求是编译单文件组件的模板返回一个<code>render</code>函数，并且把这个<code>render</code>函数挂载到刚刚创建的那个对象的<code>render</code>方法上。</p>
+<p>下面实现一下第一次请求的过程：把单文件组件编译成一个对象</p>
+<p>这次请求需要把单文件组件编译成一个组件的选项对象，这里需要写一个中间件来处理单文件组件。现在需要确定这个中间件书写的位置。当请求到单文件组件并把单文件组件读取完成之后。接下来需要对单文件组件进行编译，并且把编译的结果返回给浏览器，这里的核心是把单文件组件读取完成之后再处理，所以是在处理完静态文件之后，并且单文件组件也有可能会加载第三方模块，所以是在处理第三方模块之前，1和3中间。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>env node
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> Koa <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> send <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"koa-send"</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> compilerSFC <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@vue/compiler-sfc'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> Readable <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"stream"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Koa</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">streamToString</span> <span class="token operator">=</span> <span class="token parameter">stream</span> <span class="token operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> chunks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  stream<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token parameter">chunk</span> <span class="token operator">=&gt;</span> chunks<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>chunk<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  stream<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'end'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">resolve</span><span class="token punctuation">(</span>Buffer<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>chunks<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  stream<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> reject<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">stringToStream</span> <span class="token operator">=</span> <span class="token parameter">text</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> stream <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Readable</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  stream<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+  stream<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> stream
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 3. 加载第三方模块</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ctx.path --&gt; /@modules/vue</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>ctx<span class="token punctuation">.</span>path<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">'/@modules/'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> moduleName <span class="token operator">=</span> ctx<span class="token punctuation">.</span>path<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> pkgPath <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span><span class="token function">cwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'node_modules'</span><span class="token punctuation">,</span> moduleName<span class="token punctuation">,</span> <span class="token string">'package.json'</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> pkg <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span>pkgPath<span class="token punctuation">)</span>
+    ctx<span class="token punctuation">.</span>path <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'/node_modules'</span><span class="token punctuation">,</span> moduleName<span class="token punctuation">,</span> pkg<span class="token punctuation">.</span>module<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">await</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 1.静态文件服务器</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">await</span> <span class="token function">send</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> ctx<span class="token punctuation">.</span>path<span class="token punctuation">,</span> <span class="token punctuation">{</span> root<span class="token operator">:</span> process<span class="token punctuation">.</span><span class="token function">cwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> index<span class="token operator">:</span> <span class="token string">'index.html'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">await</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 4.处理单文件组件</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>ctx<span class="token punctuation">.</span>path<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">'.vue'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 把ctx.body转换成字符串</span>
+    <span class="token keyword">const</span> contents <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">streamToString</span><span class="token punctuation">(</span>ctx<span class="token punctuation">.</span>body<span class="token punctuation">)</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> descriptor <span class="token punctuation">}</span> <span class="token operator">=</span> compilerSFC<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>contents<span class="token punctuation">)</span>
+    <span class="token keyword">let</span> code
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>ctx<span class="token punctuation">.</span>query<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      code <span class="token operator">=</span> descriptor<span class="token punctuation">.</span>script<span class="token punctuation">.</span>content
+      <span class="token comment">// console.log(code)</span>
+
+      code <span class="token operator">=</span> code<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">export\s+default\s+</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'const __script = '</span><span class="token punctuation">)</span>
+
+      code <span class="token operator">+=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+        import { render as __render } from "</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>ctx<span class="token punctuation">.</span>path<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">?type=template"
+        __script.render = __render
+        export default __script
+      </span><span class="token template-punctuation string">`</span></span>
+    <span class="token punctuation">}</span>
+    ctx<span class="token punctuation">.</span>type <span class="token operator">=</span> <span class="token string">'application/javascript'</span>
+    ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token function">stringToStream</span><span class="token punctuation">(</span>code<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">await</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+
+<span class="token comment">// 2.修改第三方模块的路径</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>ctx<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">'application/javascript'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> contents <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">streamToString</span><span class="token punctuation">(</span>ctx<span class="token punctuation">.</span>body<span class="token punctuation">)</span>
+    <span class="token comment">// import vue from 'vue</span>
+    <span class="token comment">// import App from './App.vue</span>
+    <span class="token comment">// 这里需要将【from '】替换成【from '@modules】</span>
+    ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> contents<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">(from\s+['"])(?![\.\/])</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'$1/@modules/'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Server 3000'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>当请求的文件是单文件组件的时候，需要对单文件组件进行编译，编译的工作比较复杂，因为Vue3里的每一个模块都可以拿出来单独使用，而Vue3中又提供了编译单文件组件的模块<code>@vue/compiler-sfc</code>，所以可以直接使用这个模块来对单文件组件进行编译。</p>
+<p>接下来要分两次来处理单文件组件，首先要去判断当前请求的是否是单文件组件，也就是请求的路径的后缀是否是以<code>.vue</code>结尾<code>ctx.path.endsWith('.vue')</code>。如果是以<code>.vue</code>结尾的话，需要把<code>ctx.body</code>转换成字符串，因为<code>ctx.body</code>中现在就是单文件组件中的内容，而在编译单文件组件的时候是需要单文件组件的内容的。<code>const contents = await streamToString(ctx.body)</code>。</p>
+<p>这个单文件组件的内容就获取到了。下面要调用<code>compilerSFC.parse()</code>方法编译单文件组件，<code>const { descriptor } = compilerSFC.parse(contents)</code></p>
+<p>然后在下面再来定一个<code>code</code>变量，这是最终要返回给浏览器的代码。之前看过<code>vite</code>中的处理过程，单文件组件的请求有两次，第一次是不带<code>type</code>参数，第二次是带着<code>type=template</code>参数。</p>
+<p>先来处理不带参数的情况，也就是第一次的请求。第一次请求的时候需要返回这个单文件组件编译之后的选项对象。先来判断一下当前的查询字符串中是否有<code>type</code>，如果当前<code>query</code>中没有<code>type</code>属性的时候，说明是第一次请求，先去接收到当前单文件组件编译之后的<code>js</code>代码。<code>code = descriptor.script.content</code>，可以打印一下</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> HelloWorld <span class="token keyword">from</span> <span class="token string">'./components/HelloWorld.vue'</span>
+                                                    
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>                                    
+  name<span class="token operator">:</span> <span class="token string">'App'</span><span class="token punctuation">,</span>
+  components<span class="token operator">:</span> <span class="token punctuation">{</span>                                     
+    HelloWorld                                      
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>                                                   
+
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>     
+  name<span class="token operator">:</span> <span class="token string">'HelloWorld'</span><span class="token punctuation">,</span>
+  props<span class="token operator">:</span> <span class="token punctuation">{</span>           
+    msg<span class="token operator">:</span> String      
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>           
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>         
+      count<span class="token operator">:</span> <span class="token number">0</span>       
+    <span class="token punctuation">}</span>                
+  <span class="token punctuation">}</span>                  
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>下面来改造一下这里的<code>code</code>，刚刚看过<code>code</code>的形式了，下面需要先把<code>code</code>中的<code>export default</code>方替换成<code>const __script =</code> ，<code>code = code.replace(/export\s+default\s+/g, 'const __script = ')</code></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span>render <span class="token keyword">as</span> __render<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"/src/App.vue?type=template"</span>
+__script<span class="token punctuation">.</span>render <span class="token operator">=</span> __render
+__script<span class="token punctuation">.</span>__hmrId <span class="token operator">=</span> <span class="token string">"/src/App.vue"</span>
+<span class="token keyword">typeof</span> __VUE_HMR_RUNTIME__ <span class="token operator">!==</span> <span class="token string">'undefined'</span> <span class="token operator">&amp;&amp;</span> __VUE_HMR_RUNTIME__<span class="token punctuation">.</span><span class="token function">createRecord</span><span class="token punctuation">(</span>__script<span class="token punctuation">.</span>__hmrId<span class="token punctuation">,</span> __script<span class="token punctuation">)</span>
+__script<span class="token punctuation">.</span>__file <span class="token operator">=</span> <span class="token string">"F:\\Web\\lagou\\03-05-Vue.js3.0\\code\\02-vite-demo\\src\\App.vue"</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> __script<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>然后后面还要去拼接上一段代码，</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">code <span class="token operator">+=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+        import { render as __render } from "</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>ctx<span class="token punctuation">.</span>path<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">?type=template"
+        __script.render = __render
+        export default __script
+      </span><span class="token template-punctuation string">`</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>接下来设置响应头中的<code>contentType</code>，把它设置为<code>application/javascript</code>，需要告诉浏览器，现在发给你的是<code>javascript</code>模块，让浏览器去执行<code>javascript</code>模块。</p>
+<p>最后还要把<code>code</code>输出给浏览器，<code>code</code>是字符串，需要把<code>code</code>转换成只读流设置给<code>ctx.body</code>，因为下一个中间键中要去处理的这个<code>body</code>是流的形式。</p>
+<p>所以下面我们要来写一个辅助的函数，把字符串转换成流。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">{</span> Readable <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"stream"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">stringToStream</span> <span class="token operator">=</span> <span class="token parameter">text</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> stream <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Readable</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  stream<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+  stream<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> stream
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>给<code>ctx.body</code>去赋值，<code>ctx.body = stringToStream(code)</code>。重启测试</p>
+<p><img src="http://5coder.cn/img/1669819029_783e5a00785ac79d329837a566150e6c.png"></p>
+<p>刷新一下浏览器，先找到<code>app.vue</code>，请求的这个路径已经OK了，第二次请求<code>App.vue?type=template</code>此时还没有返回的内容是因为还没有处理第二次请求。</p>
+<h2 id="6-Vite-实现原理-编译单文件组件"><a href="#6-Vite-实现原理-编译单文件组件" class="headerlink" title="6.Vite 实现原理-编译单文件组件"></a>6.Vite 实现原理-编译单文件组件</h2><p>我们已经把单文件组件的第一次请求处理完毕，第一次请求会把单文件组件定义成组件的选项对象，然后返回给浏览器，但是这个选项对象中没有模板或者<code>render</code>函数，接下来再来处理单文件组件的第二次请求，第二次请求<code>url</code>中会带着参数<code>type=template</code>。第二次请求中，要把单文件组件的模板编译成<code>render</code>函数。</p>
+<pre class="line-numbers language-none"><code class="language-none">ctx.query.type === 'template'<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><code>ctx.query.type === 'template'</code>的时候是对单文件组件的第二次请求。在这里要去编译模板，<code>compilerSFC</code>对象下有一个专门编译模板的方法<code>compileTemplate</code>，它需要接受一个对象形式的参数，设置要编译的模板的内容。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> templateRender <span class="token operator">=</span> compilerSFC<span class="token punctuation">.</span><span class="token function">compileTemplate</span><span class="token punctuation">(</span><span class="token punctuation">{</span> source<span class="token operator">:</span> descriptor<span class="token punctuation">.</span>template<span class="token punctuation">.</span>content <span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>组件模板中的内容可以通过<code>descriptor.template.content</code>获取，返回的对象中有<code>code</code>属性，<code>code</code>就是的<code>render</code>函数。</p>
+<p><img src="http://5coder.cn/img/1669819353_bd1ac54a4ee87f30f6f5fc0276685e84.png"></p>
+<p>但是<code>console</code>中有一个报错，它指向<code>shared</code>文件。</p>
+<p><img src="http://5coder.cn/img/1669819369_ad1b0b50d06ce781d679c1bf5d8dbe3f.png"></p>
+<p><img src="http://5coder.cn/img/1669819385_23749ee79a7fb993fb95314cab6dff89.png"></p>
+<p>注意这个位置出错，它访问不到<code>process</code>。当前的代码是在浏览器环境下执行的，而<code>process</code>是<code>node</code>的环境中的对象，而现在是在浏览器环境中执行的，浏览器环境中没有<code>process</code>对象，所以报错，因此需要在返回的<code>js</code>模块中处理这部分。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> contents
+      <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">(from\s+['"])(?![\.\/])</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'$1/@modules/'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">process\.env\.NODE_ENV</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'"development"'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>在返回<code>js</code>模块之前，要把<code>js</code>模块中的所有<code>process.env.NODE_ENV</code>都替换成<code>development</code>，表示当前是开发环境。</p>
+<p>打开浏览器来测试一下。</p>
+<p>刷新浏览器，终于可以看到这个结果了。这块没有样式是因为我们之前把样式模块以及图片都给它注释起来了。点击这个按钮组件也可以正常工作。</p>
+<p>到这里，模拟<code>vite</code>的实现就写完了。这里的核心是在开发阶段不需要本地打包，根据需要请求服务器编译单文件组件。当然这里还没有去处理样式和图片模块，可以根据实现单文件组件的思路来尝试实现处理样式模块和图片模块，可以观察Vite返回的结果，自己来模拟。</p>
+<p><img src="http://5coder.cn/img/1669819499_c2db34f8d35a40c9a133d42585c60837.png"></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">5coder</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://5coder.cn/2022/113035306.html">http://5coder.cn/2022/113035306.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">5coder</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Vite/">
+                                    <span class="chip bg-color">Vite</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2022/113035306.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/42.jpg" class="responsive-img" alt="Vite实现原理">
+                        
+                        <span class="card-title">Vite实现原理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    大前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Vite/">
+                        <span class="chip bg-color">Vite</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/112728180.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Vue3.0响应式系统原理">
+                        
+                        <span class="card-title">Vue3.0响应式系统原理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    大前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Vue3-0%E5%93%8D%E5%BA%94%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">
+                        <span class="chip bg-color">Vue3.0响应式系统原理</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2022</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">5coder</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">414k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2021";
+                    var startMonth = "5";
+                    var startDate = "19";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="https://beian.miit.gov.cn" target="_blank">粤ICP备2022101498号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/5coder-leo" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:leo@5coder.cn" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=245616972" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 245616972" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
